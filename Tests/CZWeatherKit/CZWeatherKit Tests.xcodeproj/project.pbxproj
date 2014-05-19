@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DD4514F0192A916100CB09E1 /* Build configuration list for PBXProject "CZWeatherKit" */;
+			buildConfigurationList = DD4514F0192A916100CB09E1 /* Build configuration list for PBXProject "CZWeatherKit Tests" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -286,7 +286,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD4514F0192A916100CB09E1 /* Build configuration list for PBXProject "CZWeatherKit" */ = {
+		DD4514F0192A916100CB09E1 /* Build configuration list for PBXProject "CZWeatherKit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD45151F192A916100CB09E1 /* Debug */,
