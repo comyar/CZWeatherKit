@@ -26,7 +26,7 @@
 
 /**
  */
-+ service;
++ (instancetype)service;
 
 /**
  */
