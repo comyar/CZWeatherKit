@@ -21,6 +21,7 @@
 		DD5181EE192AF6D100D896A6 /* CZWeatherKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181ED192AF6D100D896A6 /* CZWeatherKitTests.m */; };
 		DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181F9192AF72800D896A6 /* CZWeatherRequest.m */; };
 		DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181FD192AF72800D896A6 /* CZWundergroundService.m */; };
+		DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518208192B07C200D896A6 /* CZWeatherData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		DD5181FB192AF72800D896A6 /* CZWeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherService.h; sourceTree = "<group>"; };
 		DD5181FC192AF72800D896A6 /* CZWundergroundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWundergroundService.h; sourceTree = "<group>"; };
 		DD5181FD192AF72800D896A6 /* CZWundergroundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundService.m; sourceTree = "<group>"; };
+		DD518207192B07C200D896A6 /* CZWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CZWeatherData.h; path = Data/CZWeatherData.h; sourceTree = "<group>"; };
+		DD518208192B07C200D896A6 /* CZWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CZWeatherData.m; path = Data/CZWeatherData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,7 @@
 				DD5181F7192AF72800D896A6 /* CZWeatherKit.h */,
 				DD5181FA192AF72800D896A6 /* Request */,
 				DD5181FE192AF72800D896A6 /* Service */,
+				DD518206192B07AB00D896A6 /* Data */,
 			);
 			name = CZWeatherKit;
 			path = ../CZWeatherKit;
@@ -206,6 +210,15 @@
 				DD5181D8192AF6D100D896A6 /* CZAppDelegate.m */,
 			);
 			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		DD518206192B07AB00D896A6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD518207192B07C200D896A6 /* CZWeatherData.h */,
+				DD518208192B07C200D896A6 /* CZWeatherData.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +320,7 @@
 				DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */,
 				DD5181D5192AF6D100D896A6 /* main.m in Sources */,
 				DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */,
+				DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */,
 				DD5181D9192AF6D100D896A6 /* CZAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,18 +16,14 @@
 #pragma mark - CZWundergroundService Implementation
 
 @implementation CZWundergroundService
+@synthesize key = _key;
 
-+ (instancetype)service
-{
-    return [CZWundergroundService new];
-}
-
-+ (NSURL *)urlForRequest:(CZWeatherRequest *)request
+- (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
     return nil;
 }
 
-+ (CZWeatherData *)weatherDataForResponseData:(NSData *)data
+- (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
 {
     return nil;
 }

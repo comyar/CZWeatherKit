@@ -78,7 +78,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (data) {
-            CZWeatherData *weatherData = [self.service weatherDataForResponseData:data];
+            CZWeatherData *weatherData = [self.service weatherDataForResponseData:data request:self];
             if (weatherData) {
                 self.completionHandler(weatherData, nil);
             } else {    // Error if parsing error occurred

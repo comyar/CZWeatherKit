@@ -21,6 +21,35 @@
 
 #pragma mark - Constants
 
+/**
+ Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
+ */
+extern NSString * const CZWeatherRequestErrorDomain;
+
+/**
+ */
+struct CZWeatherKitLocationName {
+    /** */
+    __unsafe_unretained NSString * const CountryCityName;
+    /** */
+    __unsafe_unretained NSString * const CoordinateName;
+    /** */
+    __unsafe_unretained NSString * const StateCityName;
+    /** */
+    __unsafe_unretained NSString * const ZipcodeName;
+    /** */
+    __unsafe_unretained NSString * const AutoIPName;
+};
+extern const struct CZWeatherKitLocationName CZWeatherKitLocation;
+
+
+#pragma mark - Type Definitions
+
+/**
+ Completion handler block type for requests.
+ */
+typedef void (^CZWeatherRequestCompletion) (CZWeatherData *weatherData, NSError *error);
+
 /** 
  Indicates the level of detail being requested for a weather request. Weather services
  define the data each detail level provides.
@@ -33,16 +62,6 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestDetail) {
     /** Indicates that the maxmimum amount of data is being requested. */
     CZWeatherRequestFullDetail
 };
-
-/**
- Completion handler block type for requests.
- */
-typedef void (^CZWeatherRequestCompletion) (CZWeatherData *weatherData, NSError *error);
-
-/**
- Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
- */
-extern NSString * const CZWeatherRequestErrorDomain;
 
 /**
  Error codes for errors passed as arguments to CZWeatherRequestCompletion blocks.
@@ -102,7 +121,7 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
 /**
  Location to request weather data for.
  */
-@property (nonatomic) CLLocation                            *location;
+@property (nonatomic) NSDictionary                          *location;
 
 /**
  Service to use when requesting and parsing data. 

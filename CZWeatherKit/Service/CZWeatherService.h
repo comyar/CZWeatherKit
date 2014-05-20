@@ -33,7 +33,7 @@
 // @name Creating a Weather Service
 // -----
 
-#pragma mark Creating a Weather Service
+#pragma mark Using a Weather Service
 
 /**
  Returns the appropriate URL for the given request.
@@ -49,5 +49,14 @@
  @return        Weather data instance from the parsed response data.
  */
 - (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request;
+
+// -----
+// @name Properties
+// -----
+
+/**
+ API key for the given service.
+ */
+@property (nonatomic) NSString *key;
 
 @end
