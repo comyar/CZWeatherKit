@@ -30,10 +30,10 @@
 
 /**
  */
-+ (NSURL *)urlForRequest:(CZWeatherRequest *)request;
+- (NSURL *)urlForRequest:(CZWeatherRequest *)request;
 
 /**
  */
-+ (CZWeatherData *)weatherDataForResponseData:(NSData *)data;
+- (CZWeatherData *)weatherDataForResponseData:(NSData *)data;
 
 @end

@@ -12,8 +12,14 @@
 #import "CZWeatherRequest.h"
 
 
+#pragma mark - Forward Declarations
+
+@class CZWeatherData;
+
+
 #pragma mark - Constants
 
+// Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
 NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 
@@ -51,15 +57,39 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 - (void)start
 {
-    self.hasStarted = YES;
+    if (self.hasStarted || !self.completionHandler) {
+        self.hasStarted = YES;  // Request is considered "started" even it has no completion handler
+        return;
+    }
     
-    // Get URL from service
+    if (!self.service || !self.location) {  // Requests require a service and location
+        self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                        code:CZWeatherRequestConfigurationError
+                                                    userInfo:nil]);
+    }
     
-    // Send request
+    NSURL *url = [self.service urlForRequest:self];
     
-    // Parse data using service
+    if (!url) { // Error if no url provided by service
+        self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                        code:CZWeatherRequestServiceURLError
+                                                    userInfo:nil]);
+    }
     
-    // Run completion block
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data) {
+            CZWeatherData *weatherData = [self.service weatherDataForResponseData:data];
+            if (weatherData) {
+                self.completionHandler(weatherData, nil);
+            } else {    // Error if parsing error occurred
+                self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                                code:CZWeatherRequestServiceParseError
+                                                            userInfo:nil]);
+            }
+        } else {
+            self.completionHandler(nil, connectionError);
+        }
+    }];
 }
 
 #pragma mark Setters

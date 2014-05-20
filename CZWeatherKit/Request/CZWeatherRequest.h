@@ -35,14 +35,23 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestDetail) {
 };
 
 /**
- Completion handler block type for requests
+ Completion handler block type for requests.
  */
 typedef void (^CZWeatherRequestCompletion) (CZWeatherData *weatherData, NSError *error);
 
 /**
- Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks
+ Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
  */
 extern NSString * const CZWeatherRequestErrorDomain;
+
+/**
+ Error codes for errors passed as arguments to CZWeatherRequestCompletion blocks.
+ */
+typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
+    CZWeatherRequestConfigurationError  = -1,
+    CZWeatherRequestServiceURLError     = -2,
+    CZWeatherRequestServiceParseError   = -3
+};
 
  
 #pragma mark - CZWeatherRequest Interface
@@ -119,6 +128,6 @@ extern NSString * const CZWeatherRequestErrorDomain;
 /**
  Completion handler block.
  */
-@property (nonatomic, strong) CZWeatherRequestCompletion    completionHandler;
+@property (nonatomic, copy) CZWeatherRequestCompletion      completionHandler;
 
 @end
