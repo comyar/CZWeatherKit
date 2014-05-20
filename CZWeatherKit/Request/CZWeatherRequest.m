@@ -21,11 +21,8 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 @interface CZWeatherRequest ()
 
-//
-@property (nonatomic) BOOL                          hasStarted;
-
-//
-@property (nonatomic) CZWeatherRequestCompletion    completion;
+// YES if the request has started.
+@property (nonatomic) BOOL                                  hasStarted;
 
 @end
 
@@ -34,12 +31,23 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 @implementation CZWeatherRequest
 
-- (void)completion:(CZWeatherRequestCompletion)completion
+#pragma mark Creating a Weather Request
+
+- (instancetype)init
 {
-    if (!self.hasStarted) {
-        self.completion = completion;
+    if (self = [super init]) {
+        self.forecastDetail     = CZWeatherRequestNoDetail;
+        self.conditionsDetail   = CZWeatherRequestNoDetail;
     }
+    return self;
 }
+
++ (CZWeatherRequest *)request
+{
+    return [CZWeatherRequest new];
+}
+
+#pragma mark Using a Weather Request
 
 - (void)start
 {
@@ -54,5 +62,41 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
     // Run completion block
 }
 
+#pragma mark Setters
+
+- (void)setLocation:(CLLocation *)location
+{
+    if (!self.hasStarted) {
+        _location = location;
+    }
+}
+
+- (void)setService:(id<CZWeatherService>)service
+{
+    if (!self.hasStarted) {
+        _service = service;
+    }
+}
+
+- (void)setConditionsDetail:(CZWeatherRequestDetail)conditionsDetail
+{
+    if (!self.hasStarted) {
+        _conditionsDetail = conditionsDetail;
+    }
+}
+
+- (void)setForecastDetail:(CZWeatherRequestDetail)forecastDetail
+{
+    if (!self.hasStarted) {
+        _forecastDetail = forecastDetail;
+    }
+}
+
+- (void)setCompletionHandler:(CZWeatherRequestCompletion)completionHandler
+{
+    if (!self.hasStarted) {
+        _completionHandler = completionHandler;
+    }
+}
 
 @end
