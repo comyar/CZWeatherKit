@@ -21,7 +21,11 @@ static NSString * const host = @"api.wunderground.com";
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
-    if ([self.key length] == 0) {    // Wunderground API requires key
+    if ([self.key length] == 0) {
+        return nil;
+    }
+    
+    if (request.conditionsDetail == CZWeatherRequestNoDetail && request.forecastDetail == CZWeatherRequestNoDetail) {
         return nil;
     }
     
