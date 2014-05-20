@@ -12,8 +12,23 @@
 @import Foundation;
 
 
+#pragma mark - Forward Declarations
+
+@class CZWeatherState;
+
+
 #pragma mark - CZWeatherData Interface
 
 @interface CZWeatherData : NSObject
+
+@property (nonatomic, readonly) CZWeatherState      *currentConditions;
+
+@property (nonatomic, readonly) NSArray             *forecasts;
+
+@property (nonatomic, readonly) NSDictionary        *location;
+
+@property (nonatomic, readonly) NSDate              *localTime;
+
+@property (nonatomic, readonly) NSDate              *timestamp;
 
 @end

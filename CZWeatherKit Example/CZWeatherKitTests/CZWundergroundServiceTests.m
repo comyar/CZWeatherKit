@@ -7,12 +7,40 @@
 //
 
 
+#pragma mark - Imports
+
 #import "CZWeatherServiceTestCase.h"
 
 
+#pragma mark - Constants
+
+//
+static NSString * const conditionsJSONFilename      = @"conditions_wunderground";
+
+//
+static NSString * const forecastLightJSONFilename   = @"forecastLight_wunderground";
+
+//
+static NSString * const forecastFullJSONFilename    = @"forecastFull_wunderground";
+
+
+#pragma mark - CZWundergroundServiceTests Class Extension
+
 @interface CZWundergroundServiceTests : CZWeatherServiceTestCase
 
+//
+@property (nonatomic) NSData *conditionsData;
+
+//
+@property (nonatomic) NSData *forecastLightData;
+
+//
+@property (nonatomic) NSData *forecastFullData;
+
 @end
+
+
+#pragma mark - CZWundergroundServiceTests Implementation
 
 @implementation CZWundergroundServiceTests
 
@@ -20,14 +48,21 @@
 
 - (void)setUp
 {
-    self.request = [CZWeatherRequest request];
-    self.service = [CZWundergroundService new];
-    self.request.service = self.service;
+    self.request            = [CZWeatherRequest request];
+    self.service            = [CZWundergroundService new];
+    self.service.key        = @"1234567890123456";
+    self.request.service    = self.service;
     
-    NSString *path              = [[NSBundle bundleForClass:[self class]]pathForResource:@"API_KEY" ofType:@"txt"];
-    NSString *content           = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSString *wundergroundKey   = [content stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    self.service.key = wundergroundKey;
+    self.conditionsData     = [self loadFileData:conditionsJSONFilename];
+    self.forecastLightData  = [self loadFileData:forecastLightJSONFilename];
+    self.forecastFullData   = [self loadFileData:forecastFullJSONFilename];
+}
+
+- (NSData *)loadFileData:(NSString *)filename
+{
+    NSString *path      = [[NSBundle bundleForClass:[self class]]pathForResource:filename ofType:@"json"];
+    NSString *contents  = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return [contents dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 - (void)tearDown
@@ -58,7 +93,7 @@
     self.request.forecastDetail   = CZWeatherRequestFullDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/forecast10/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/forecast10day/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for forecast full detail");
 }
 
@@ -119,7 +154,7 @@
     self.request.forecastDetail     = CZWeatherRequestFullDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/forecast10/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/forecast10day/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
 }
 

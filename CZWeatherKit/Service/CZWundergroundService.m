@@ -11,13 +11,25 @@
 
 #import "CZWundergroundService.h"
 #import "CZWeatherRequest.h"
+#import "CZWeatherData.h"
+#import "CZWeatherData_Friend.h"
 
+
+#pragma mark - Constants
+
+// Host endpoint for API
 static NSString * const host = @"api.wunderground.com";
+
+// Name of the service
+static NSString * const serviceName = @"Weather Underground";
+
 
 #pragma mark - CZWundergroundService Implementation
 
 @implementation CZWundergroundService
 @synthesize key = _key;
+
+#pragma mark Using a Weather Service
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
@@ -41,7 +53,7 @@ static NSString * const host = @"api.wunderground.com";
     if (request.forecastDetail == CZWeatherRequestLightDetail) {
         components.path = [components.path stringByAppendingString:@"forecast/"];
     } else if (request.forecastDetail == CZWeatherRequestFullDetail) {
-        components.path = [components.path stringByAppendingString:@"forecast10/"];
+        components.path = [components.path stringByAppendingString:@"forecast10day/"];
     }
     
     components.path = [components.path stringByAppendingString:@"q/"];
@@ -69,6 +81,13 @@ static NSString * const host = @"api.wunderground.com";
 - (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
 {
     return nil;
+}
+
+#pragma mark Class Methods
+
++ (NSString *)serviceName
+{
+    return serviceName;
 }
 
 @end
