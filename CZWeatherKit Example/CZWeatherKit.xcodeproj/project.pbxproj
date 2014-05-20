@@ -18,10 +18,12 @@
 		DD5181E3192AF6D100D896A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181C8192AF6D100D896A6 /* Foundation.framework */; };
 		DD5181E4192AF6D100D896A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CC192AF6D100D896A6 /* UIKit.framework */; };
 		DD5181EC192AF6D100D896A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD5181EA192AF6D100D896A6 /* InfoPlist.strings */; };
-		DD5181EE192AF6D100D896A6 /* CZWeatherKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181ED192AF6D100D896A6 /* CZWeatherKitTests.m */; };
 		DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181F9192AF72800D896A6 /* CZWeatherRequest.m */; };
 		DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181FD192AF72800D896A6 /* CZWundergroundService.m */; };
 		DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518208192B07C200D896A6 /* CZWeatherData.m */; };
+		DD518213192B15B600D896A6 /* CZWeatherServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */; };
+		DD518216192B167400D896A6 /* CZWundergroundServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */; };
+		DD518218192B184500D896A6 /* API_KEY in Resources */ = {isa = PBXBuildFile; fileRef = DD518217192B184500D896A6 /* API_KEY */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,6 @@
 		DD5181E1192AF6D100D896A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DD5181E9192AF6D100D896A6 /* CZWeatherKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKitTests-Info.plist"; sourceTree = "<group>"; };
 		DD5181EB192AF6D100D896A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DD5181ED192AF6D100D896A6 /* CZWeatherKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZWeatherKitTests.m; sourceTree = "<group>"; };
 		DD5181F7192AF72800D896A6 /* CZWeatherKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherKit.h; sourceTree = "<group>"; };
 		DD5181F8192AF72800D896A6 /* CZWeatherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherRequest.h; sourceTree = "<group>"; };
 		DD5181F9192AF72800D896A6 /* CZWeatherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherRequest.m; sourceTree = "<group>"; };
@@ -59,6 +60,10 @@
 		DD5181FD192AF72800D896A6 /* CZWundergroundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundService.m; sourceTree = "<group>"; };
 		DD518207192B07C200D896A6 /* CZWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CZWeatherData.h; path = Data/CZWeatherData.h; sourceTree = "<group>"; };
 		DD518208192B07C200D896A6 /* CZWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CZWeatherData.m; path = Data/CZWeatherData.m; sourceTree = "<group>"; };
+		DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherServiceTestCase.h; sourceTree = "<group>"; };
+		DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherServiceTestCase.m; sourceTree = "<group>"; };
+		DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundServiceTests.m; sourceTree = "<group>"; };
+		DD518217192B184500D896A6 /* API_KEY */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 		DD5181CE192AF6D100D896A6 /* CZWeatherKit Example */ = {
 			isa = PBXGroup;
 			children = (
+				DD518217192B184500D896A6 /* API_KEY */,
 				DD518204192AF77300D896A6 /* Resources */,
 				DD518202192AF76900D896A6 /* Classes */,
 				DD5181CF192AF6D100D896A6 /* Supporting Files */,
@@ -141,7 +147,7 @@
 		DD5181E7192AF6D100D896A6 /* CZWeatherKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD5181ED192AF6D100D896A6 /* CZWeatherKitTests.m */,
+				DD518210192B159D00D896A6 /* Services */,
 				DD5181E8192AF6D100D896A6 /* Supporting Files */,
 			);
 			path = CZWeatherKitTests;
@@ -219,6 +225,16 @@
 				DD518208192B07C200D896A6 /* CZWeatherData.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		DD518210192B159D00D896A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */,
+				DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */,
+				DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5181EC192AF6D100D896A6 /* InfoPlist.strings in Resources */,
+				DD518218192B184500D896A6 /* API_KEY in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5181EE192AF6D100D896A6 /* CZWeatherKitTests.m in Sources */,
+				DD518216192B167400D896A6 /* CZWundergroundServiceTests.m in Sources */,
+				DD518213192B15B600D896A6 /* CZWeatherServiceTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

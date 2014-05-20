@@ -40,7 +40,7 @@ struct CZWeatherKitLocationName {
     /** */
     __unsafe_unretained NSString * const AutoIPName;
 };
-extern const struct CZWeatherKitLocationName CZWeatherKitLocation;
+extern const struct CZWeatherKitLocationName CZWeatherKitLocationName;
 
 
 #pragma mark - Type Definitions
@@ -100,9 +100,8 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
 /**
  Initiates a weather request. 
  
- In order for a weather request to complete successfully, the location and service
- must not be nil. Otherwise, the request completes immediately and an error is passed
- to the completion handler. 
+ In order for a weather request to complete successfully, the service must not be nil. 
+ Otherwise, the request completes immediately and an error is passed to the completion handler.
  
  If both conditionsDetail and forecastDetail are CZWeatherRequestNoDetail, the request
  completes immediately and both the weatherData and error arguments to the completion 
@@ -121,7 +120,7 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
 /**
  Location to request weather data for.
  */
-@property (nonatomic) NSDictionary                          *location;
+@property (nonatomic, readonly) NSMutableDictionary         *location;
 
 /**
  Service to use when requesting and parsing data. 

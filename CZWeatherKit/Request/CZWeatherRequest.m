@@ -19,8 +19,8 @@
 
 #pragma mark - Constants
 
-//
-const struct CZWeatherKitLocationName CZWeatherKitLocation = {
+// 
+const struct CZWeatherKitLocationName CZWeatherKitLocationName = {
     .CountryCityName    = @"CZWeatherLocationCountryCityName",
     .CoordinateName     = @"CZWeatherLocationCoordinateName",
     .StateCityName      = @"CZWeatherLocationStateCityName",
@@ -51,6 +51,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 - (instancetype)init
 {
     if (self = [super init]) {
+        _location               = [NSMutableDictionary new];
         self.forecastDetail     = CZWeatherRequestNoDetail;
         self.conditionsDetail   = CZWeatherRequestNoDetail;
     }
@@ -71,7 +72,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
         return;
     }
     
-    if (!self.service || !self.location) {  // Requests require a service and location
+    if (!self.service) {  // Requests require a service
         self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
                                                         code:CZWeatherRequestConfigurationError
                                                     userInfo:nil]);
@@ -102,13 +103,6 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 }
 
 #pragma mark Setters
-
-- (void)setLocation:(CLLocation *)location
-{
-    if (!self.hasStarted) {
-        _location = location;
-    }
-}
 
 - (void)setService:(id<CZWeatherService>)service
 {
