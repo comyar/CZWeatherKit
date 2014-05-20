@@ -19,6 +19,15 @@
 
 #pragma mark - Constants
 
+//
+const struct CZWeatherKitLocationName CZWeatherKitLocation = {
+    .CountryCityName    = @"CZWeatherLocationCountryCityName",
+    .CoordinateName     = @"CZWeatherLocationCoordinateName",
+    .StateCityName      = @"CZWeatherLocationStateCityName",
+    .ZipcodeName        = @"CZWeatherLocationZipcodeName",
+    .AutoIPName         = @"CZWeatherLocationAutoIPName"
+};
+
 // Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
 NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
