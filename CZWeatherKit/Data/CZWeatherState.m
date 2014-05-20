@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Comyar Zaheri. All rights reserved.
 //
 
+
+#pragma mark - Imports
+
 #import "CZWeatherState.h"
+
+
+#pragma mark - CZWeatherState Implementation
 
 @implementation CZWeatherState
 

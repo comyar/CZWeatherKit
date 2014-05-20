@@ -7,7 +7,7 @@
 //
 
 
-#pragma mark - CZWeatherData Imports
+#pragma mark - Imports
 
 #import "CZWeatherData.h"
 
@@ -21,10 +21,24 @@
 
 @interface CZWeatherData (Friend)
 
+/**
+ */
 - (void)setTimestamp:(NSDate *)timestamp;
-- (void)setLocalTime:(NSDate *)localTime;
+
+/**
+ */
 - (void)setCurrentConditions:(CZWeatherState *)currentConditions;
+
+/**
+ */
 - (void)setForecasts:(NSArray *)forecasts;
+
+/**
+ */
 - (void)setLocation:(NSDictionary *)location;
+
+/**
+ */
+- (void)setServiceName:(NSString *)serviceName;
 
 @end

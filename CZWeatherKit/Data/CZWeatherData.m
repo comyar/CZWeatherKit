@@ -16,15 +16,15 @@
 
 @interface CZWeatherData ()
 
-@property (nonatomic) CZWeatherState      *currentConditions;
+@property (nonatomic) CZWeatherState    *currentConditions;
 
-@property (nonatomic) NSArray             *forecasts;
+@property (nonatomic) NSArray           *forecasts;
 
-@property (nonatomic) NSDictionary        *location;
+@property (nonatomic) NSDictionary      *location;
 
-@property (nonatomic) NSDate              *localTime;
+@property (nonatomic) NSDate            *timestamp;
 
-@property (nonatomic) NSDate              *timestamp;
+@property (nonatomic) NSString          *serviceName;
 
 @end
 
@@ -32,6 +32,5 @@
 #pragma mark - CZWeatherData Implementation
 
 @implementation CZWeatherData
-
 
 @end

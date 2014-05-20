@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Comyar Zaheri. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
+#pragma mark - Imports
+
+@import Foundation;
+
+
+#pragma mark - CZWeatherState Interface
 
 @interface CZWeatherState : NSObject
 

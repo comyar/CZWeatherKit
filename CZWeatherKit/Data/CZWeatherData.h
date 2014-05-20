@@ -21,14 +21,30 @@
 
 @interface CZWeatherData : NSObject
 
+// -----
+// @name Properties
+// -----
+
+#pragma mark Properties
+
+/**
+ */
 @property (nonatomic, readonly) CZWeatherState      *currentConditions;
 
+/**
+ */
 @property (nonatomic, readonly) NSArray             *forecasts;
 
+/**
+ */
 @property (nonatomic, readonly) NSDictionary        *location;
 
-@property (nonatomic, readonly) NSDate              *localTime;
-
+/**
+ */
 @property (nonatomic, readonly) NSDate              *timestamp;
+
+/**
+ */
+@property (nonatomic, readonly) NSString            *serviceName;
 
 @end

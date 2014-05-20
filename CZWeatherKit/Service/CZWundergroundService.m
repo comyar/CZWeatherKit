@@ -13,6 +13,7 @@
 #import "CZWeatherRequest.h"
 #import "CZWeatherData.h"
 #import "CZWeatherData_Friend.h"
+#import "CZWeatherState.h"
 
 
 #pragma mark - Constants
@@ -80,8 +81,50 @@ static NSString * const serviceName = @"Weather Underground";
 
 - (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
 {
-    return nil;
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    if (!JSON) {
+        return nil;
+    }
+    
+    CZWeatherData *weatherData  = [CZWeatherData new];
+    weatherData.location        = [request.location copy];
+    weatherData.timestamp       = [NSDate date];
+    
+    if (request.conditionsDetail != CZWeatherRequestNoDetail) {
+        [self parseCurrentConditionsFromJSON:JSON forWeatherData:weatherData];
+    }
+    
+    if (request.forecastDetail != CZWeatherRequestNoDetail) {
+        [self parseForecastFromJSON:JSON forWeatherData:weatherData];
+    }
+    
+    return weatherData;
 }
+
+- (void)parseCurrentConditionsFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
+{
+    CZWeatherState *weatherState = [CZWeatherState new];
+}
+
+- (void)parseForecastFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
+{
+    NSMutableArray *forecasts = [NSMutableArray new];
+    
+    NSArray *forecastDay = JSON[@"forecast"][@"simpleforecast"][@"forecastday"];
+    
+    for (NSDictionary *day in forecastDay) {
+        CZWeatherState *weatherState = [CZWeatherState new];
+        
+        
+        
+        
+        [forecasts addObject:weatherState];
+    }
+    
+    
+    weatherData.forecasts = [forecasts copy];
+}
+
 
 #pragma mark Class Methods
 
