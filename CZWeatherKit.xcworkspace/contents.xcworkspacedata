@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:CZWeatherKit"
+      name = "CZWeatherKit">
+      <FileRef
+         location = "group:CZWeatherKit.h">
+      </FileRef>
+      <Group
+         location = "group:Request"
+         name = "Request">
+         <FileRef
+            location = "group:CZWeatherRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:CZWeatherRequest.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Service"
+         name = "Service">
+         <FileRef
+            location = "group:CZWeatherService.h">
+         </FileRef>
+         <FileRef
+            location = "group:CZWundergroundService.h">
+         </FileRef>
+         <FileRef
+            location = "group:CZWundergroundService.m">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

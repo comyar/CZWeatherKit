@@ -9,7 +9,7 @@
 
 #pragma mark - Imports
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 #import "CZWeatherService.h"
 
 #pragma mark - Forward Declarations
@@ -58,6 +58,7 @@ extern NSString * const CZWeatherRequestErrorDomain;
 // -----
 
 /**
+ 
  */
 - (void)start;
 
