@@ -16,13 +16,15 @@
 
 @implementation CZWundergroundServiceTests
 
+#pragma mark Setup and Teardown
+
 - (void)setUp
 {
     self.request = [CZWeatherRequest request];
     self.service = [CZWundergroundService new];
     self.request.service = self.service;
     
-    NSString *path              = [[NSBundle mainBundle]pathForResource:@"API_KEY" ofType:@""];
+    NSString *path              = [[NSBundle bundleForClass:[self class]]pathForResource:@"API_KEY" ofType:@"txt"];
     NSString *content           = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSString *wundergroundKey   = [content stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     self.service.key = wundergroundKey;
@@ -34,14 +36,65 @@
     self.service = nil;
 }
 
+#pragma mark urlForRequest: Tests
+
 - (void)test_urlForRequest_locationCoordinate
 {
-    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(30.25, -97.75)];
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
     self.request.conditionsDetail   = CZWeatherRequestFullDetail;
     self.request.forecastDetail     = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/30.25,-97.25.json", self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
+}
+
+- (void)test_urlForRequest_locationZipcode
+{
+    NSString * const zipcode = @"77581";
+    self.request.location[CZWeatherKitLocationName.ZipcodeName] = zipcode;
+    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    
+    NSURL *url = [self.service urlForRequest:self.request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, zipcode];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
+}
+
+- (void)test_urlForRequest_locationAutoIP
+{
+    self.request.location[CZWeatherKitLocationName.AutoIPName] = @"autoip";
+    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    
+    NSURL *url = [self.service urlForRequest:self.request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/autoip.json", self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
+}
+
+- (void)test_urlForRequest_locationStateCity
+{
+    NSString * const stateCity = @"TX/Austin";
+    self.request.location[CZWeatherKitLocationName.StateCityName] = stateCity;
+    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    
+    NSURL *url = [self.service urlForRequest:self.request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, stateCity];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
+}
+
+- (void)test_urlForRequest_locationCountryCity
+{
+    NSString * const countryCity = @"England/London";
+    self.request.location[CZWeatherKitLocationName.CountryCityName] = countryCity;
+    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    
+    NSURL *url = [self.service urlForRequest:self.request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, countryCity];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
 }
 

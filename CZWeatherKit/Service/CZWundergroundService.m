@@ -21,14 +21,14 @@ static NSString * const host = @"api.wunderground.com";
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
-    if (!self.key) {    // Wunderground API requires key
+    if ([self.key length] == 0) {    // Wunderground API requires key
         return nil;
     }
     
     NSURLComponents *components = [NSURLComponents new];
     components.scheme   = @"http";
     components.host     = host;
-    components.path     = [NSString stringWithFormat:@"api/%@/", self.key];
+    components.path     = [NSString stringWithFormat:@"/api/%@/", self.key];
     
     if (request.conditionsDetail != CZWeatherRequestNoDetail) {
         components.path = [components.path stringByAppendingString:@"conditions/"];
@@ -44,7 +44,7 @@ static NSString * const host = @"api.wunderground.com";
     
     if (request.location[CZWeatherKitLocationName.CoordinateName]) {
         CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"%f,%f", coordinate.x, coordinate.y]];
+        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
     } else if (request.location[CZWeatherKitLocationName.ZipcodeName]) {
         components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.ZipcodeName]];
     } else if (request.location[CZWeatherKitLocationName.AutoIPName]) {

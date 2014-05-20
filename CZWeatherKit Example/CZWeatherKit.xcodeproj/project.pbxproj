@@ -23,7 +23,7 @@
 		DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518208192B07C200D896A6 /* CZWeatherData.m */; };
 		DD518213192B15B600D896A6 /* CZWeatherServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */; };
 		DD518216192B167400D896A6 /* CZWundergroundServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */; };
-		DD518218192B184500D896A6 /* API_KEY in Resources */ = {isa = PBXBuildFile; fileRef = DD518217192B184500D896A6 /* API_KEY */; };
+		DD518218192B184500D896A6 /* API_KEY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD518217192B184500D896A6 /* API_KEY.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 		DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherServiceTestCase.h; sourceTree = "<group>"; };
 		DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherServiceTestCase.m; sourceTree = "<group>"; };
 		DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundServiceTests.m; sourceTree = "<group>"; };
-		DD518217192B184500D896A6 /* API_KEY */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY; sourceTree = "<group>"; };
+		DD518217192B184500D896A6 /* API_KEY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		DD5181CE192AF6D100D896A6 /* CZWeatherKit Example */ = {
 			isa = PBXGroup;
 			children = (
-				DD518217192B184500D896A6 /* API_KEY */,
+				DD518217192B184500D896A6 /* API_KEY.txt */,
 				DD518204192AF77300D896A6 /* Resources */,
 				DD518202192AF76900D896A6 /* Classes */,
 				DD5181CF192AF6D100D896A6 /* Supporting Files */,
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5181EC192AF6D100D896A6 /* InfoPlist.strings in Resources */,
-				DD518218192B184500D896A6 /* API_KEY in Resources */,
+				DD518218192B184500D896A6 /* API_KEY.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
