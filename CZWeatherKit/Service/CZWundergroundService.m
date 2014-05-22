@@ -145,14 +145,16 @@ static NSString * const serviceName = @"Weather Underground";
     NSArray *forecastDay = JSON[@"forecast"][@"simpleforecast"][@"forecastday"];
     
     for (NSDictionary *day in forecastDay) {
-        CZWeatherCondition *weatherState = [CZWeatherCondition new];
+        CZWeatherCondition *condition = [CZWeatherCondition new];
         
+        NSTimeInterval epoch = [day[@"date"][@"epoch"]floatValue];
+        condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
+        condition.description = day[@"conditions"];
+        condition.highTemperature = (CZTemperature){[day[@"high"][@"fahrenheit"]floatValue], [day[@"high"][@"celsius"]floatValue]};
+        condition.lowTemperature = (CZTemperature){[day[@"low"][@"fahrenheit"]floatValue], [day[@"low"][@"celsius"]floatValue]};
         
-        
-        
-        [forecasts addObject:weatherState];
+        [forecasts addObject:condition];
     }
-    
     
     weatherData.forecastedConditions = forecasts;
 }
