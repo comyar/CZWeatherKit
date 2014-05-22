@@ -119,7 +119,7 @@ static NSString * const serviceName = @"Weather Underground";
     
     
     
-    weatherData.current = weatherState;
+    weatherData.currentCondition = weatherState;
 }
 
 - (void)parseForecastFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
@@ -138,7 +138,7 @@ static NSString * const serviceName = @"Weather Underground";
     }
     
     
-    weatherData.forecasts = [forecasts copy];
+    weatherData.forecastedConditions = forecasts;
 }
 
 @end

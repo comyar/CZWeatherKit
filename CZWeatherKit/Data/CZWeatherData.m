@@ -16,15 +16,20 @@
 
 @interface CZWeatherData ()
 
-@property (nonatomic) CZWeatherCondition    *current;
+// Date the data was retrieved.
+@property (nonatomic) NSDate                *timestamp;
 
-@property (nonatomic) NSArray           *forecasts;
+// Current conditions at the specified location.
+@property (nonatomic) CZWeatherCondition    *currentCondition;
 
-@property (nonatomic) NSDictionary      *location;
+// Forecasted conditions at the specified location.
+@property (nonatomic, copy) NSArray         *forecastedConditions;
 
-@property (nonatomic) NSDate            *timestamp;
+// Location dictionary provided to the CZWeatherRequest object that retrieved the data.
+@property (nonatomic, copy) NSDictionary    *location;
 
-@property (nonatomic) NSString          *serviceName;
+// Human-readable name for the service that retrieved the data.
+@property (nonatomic, copy) NSString        *serviceName;
 
 @end
 

@@ -23,8 +23,8 @@
 @interface CZWeatherData (Friend)
 
 - (void)setTimestamp:(NSDate *)timestamp;
-- (void)setCurrent:(CZWeatherCondition *)current;
-- (void)setForecasts:(NSArray *)forecasts;
+- (void)setCurrentCondition:(CZWeatherCondition *)currentCondition;
+- (void)setForecastedConditions:(NSArray *)forecastedConditions;
 - (void)setLocation:(NSDictionary *)location;
 - (void)setServiceName:(NSString *)serviceName;
 

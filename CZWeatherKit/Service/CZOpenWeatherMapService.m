@@ -17,5 +17,27 @@
 #pragma mark - CZOpenWeatherMapService Implementation
 
 @implementation CZOpenWeatherMapService
+@synthesize key = _key;
+@synthesize serviceName = _serviceName;
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _serviceName = @"Open Weather Map";
+    }
+    return self;
+}
+
+#pragma mark Using a Weather Service
+
+- (NSURL *)urlForRequest:(CZWeatherRequest *)request
+{
+    return nil;
+}
+
+- (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
+{
+    return nil;
+}
 
 @end
