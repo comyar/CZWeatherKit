@@ -38,4 +38,15 @@
 
 @implementation CZWeatherCondition
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.lowTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+        self.highTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+        self.currentTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+    }
+    return self;
+}
+
+
 @end

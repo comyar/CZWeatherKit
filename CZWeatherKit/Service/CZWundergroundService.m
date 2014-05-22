@@ -24,6 +24,14 @@ static NSString * const host        = @"api.wunderground.com";
 static NSString * const serviceName = @"Weather Underground";
 
 
+@interface CZWundergroundService ()
+
+// RFC 822 Date Formatter
+@property (nonatomic) NSDateFormatter *rfc822DateFormatter;
+
+@end
+
+
 #pragma mark - CZWundergroundService Implementation
 
 @implementation CZWundergroundService
@@ -36,6 +44,8 @@ static NSString * const serviceName = @"Weather Underground";
 {
     if (self = [super init]) {
         _serviceName = @"Weather Underground";
+        _rfc822DateFormatter = [NSDateFormatter new];
+        _rfc822DateFormatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"];
     }
     return self;
 }
@@ -97,8 +107,9 @@ static NSString * const serviceName = @"Weather Underground";
     }
     
     CZWeatherData *weatherData  = [CZWeatherData new];
-    weatherData.location        = [request.location copy];
+    weatherData.location        = request.location;
     weatherData.timestamp       = [NSDate date];
+    weatherData.serviceName     = self.serviceName;
     
     if (request.currentDetail != CZWeatherRequestNoDetail) {
         [self parseCurrentConditionsFromJSON:JSON forWeatherData:weatherData];
@@ -115,11 +126,16 @@ static NSString * const serviceName = @"Weather Underground";
 
 - (void)parseCurrentConditionsFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
 {
-    CZWeatherCondition *weatherState = [CZWeatherCondition new];
+    CZWeatherCondition *condition = [CZWeatherCondition new];
     
+    NSDictionary *currentObservation = JSON[@"current_observation"];
     
+    condition.date = [self.rfc822DateFormatter dateFromString:currentObservation[@"observation_time_rfc822"]];
+    condition.description = currentObservation[@"weather"];
     
-    weatherData.currentCondition = weatherState;
+    condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
+    
+    weatherData.currentCondition = condition;
 }
 
 - (void)parseForecastFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
