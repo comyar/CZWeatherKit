@@ -14,46 +14,77 @@
 
 #pragma mark - Type Definitions
 
+/**
+ Temperature struct.
+ */
 typedef struct {
+    /** Fahrenheit */
     CGFloat f;
+    /** Celsius */
     CGFloat c;
 } CZTemperature;
 
-
-#pragma mark - Constants
-
-// Forecast/Current Conditions
-extern NSString * const CZConditionDateName;
-extern NSString * const CZConditionDescriptionName;
-extern NSString * const CZLowTemperatureName;
-extern NSString * const CZHighTemperatureName;
-
-// Current Conditions Only
-extern NSString * const CZCurrentTemperatureName;
-extern NSString * const CZCurrentRelativeHumidityName;
-extern NSString * const CZCurrentWindDirectionName;
-extern NSString * const CZCurrentWindSpeedName;
-extern NSString * const CZCurrentAirPressureName;
-extern NSString * const CZCurrentDewpointName;
-extern NSString * const CZCurrentFeelsLikeTemperatureName;
-extern NSString * const CZCurrentHeatIndexName;
-extern NSString * const CZCurrentWindChillName;
-extern NSString * const CZCurrentPrecipitationDayName;
-extern NSString * const CZCurrentPrecipitationHourName;
+/**
+ Special values
+ */
+typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
+    /** Indicates no value is available */
+    CZWeatherKitNoValue = NSIntegerMin
+};
 
 
 #pragma mark - CZWeatherCondition Interface
 
+/**
+ CZWeatherCondition represents the weather conditions at a particular time. This may be the current time or some
+ time at a future date. 
+ 
+ For example, a CZWeatherCondition object may be used to represent the current weather conditions as well as
+ forecasted weather condtions for a later date.
+ */
 @interface CZWeatherCondition : NSObject
 
 // -----
-// @name Using a Weather Condition
+// @name Properties
 // -----
 
-#pragma mark Using a Weather Condition
+#pragma mark Properties
 
 /**
+ Date of the weather conditions represented.
+ 
+ The exact time of day and timezone is dependent on the specifc weather service's API. 
+ However, it's (probably, hopefully...) safe to assume the month, day, and year are correct.
  */
-- (id)objectForKeyedSubscript:(id<NSCopying>)key;
+@property (nonatomic, readonly) NSDate          *date;
+
+/**
+ Word or phrase describing the conditions. 
+ 
+ (e.g. 'Clear', 'Rain', etc.) The possible words/phrases are defined by each weather
+ service's API.
+ */
+@property (nonatomic, readonly) NSString        *description;
+
+/**
+ Predicted low temperature.
+ 
+ If no values are available, each member of the struct will be equal to CZWeatherKitNoValue.
+ */
+@property (nonatomic, readonly) CZTemperature   lowTemperature;
+
+/**
+ Predicted high temperature.
+ 
+ If no values are available, each member of the struct will be equal to CZWeatherKitNoValue.
+ */
+@property (nonatomic, readonly) CZTemperature   highTemperature;
+
+/**
+ Current temperature.
+ 
+ If no values are available, each member of the struct will be equal to CZWeatherKitNoValue.
+ */
+@property (nonatomic, readonly) CZTemperature   currentTemperature;
 
 @end

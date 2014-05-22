@@ -10,10 +10,11 @@
 #pragma mark - Imports
 
 @import Foundation;
-#import "CZWeatherData.h"
+
 
 #pragma mark - Forward Declarations
 
+@class CZWeatherData;
 @class CZWeatherRequest;
 
 
@@ -68,30 +69,4 @@
 @end
 
 
-#pragma mark - CZWeatherData Friend Category
 
-/**
- */
-@interface CZWeatherData (Friend)
-
-/**
- */
-- (void)setTimestamp:(NSDate *)timestamp;
-
-/**
- */
-- (void)setCurrent:(CZWeatherCondition *)current;
-
-/**
- */
-- (void)setForecasts:(NSArray *)forecasts;
-
-/**
- */
-- (void)setLocation:(NSDictionary *)location;
-
-/**
- */
-- (void)setServiceName:(NSString *)serviceName;
-
-@end

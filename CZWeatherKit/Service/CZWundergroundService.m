@@ -9,10 +9,10 @@
 
 #pragma mark - Imports
 
+#import "CZWeatherService_Internal.h"
 #import "CZWundergroundService.h"
 #import "CZWeatherRequest.h"
-#import "CZWeatherData.h"
-#import "CZWeatherCondition.h"
+
 
 
 #pragma mark - Constants

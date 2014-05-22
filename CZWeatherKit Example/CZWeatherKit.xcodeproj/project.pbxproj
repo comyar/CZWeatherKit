@@ -74,6 +74,7 @@
 		DD518222192BE98700D896A6 /* CZWeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CZWeatherCondition.m; path = Data/CZWeatherCondition.m; sourceTree = "<group>"; };
 		DD518224192D738200D896A6 /* CZOpenWeatherMapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZOpenWeatherMapService.h; sourceTree = "<group>"; };
 		DD518225192D738200D896A6 /* CZOpenWeatherMapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZOpenWeatherMapService.m; sourceTree = "<group>"; };
+		DD518227192D7F0D00D896A6 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				DD5181FB192AF72800D896A6 /* CZWeatherService.h */,
+				DD518227192D7F0D00D896A6 /* CZWeatherService_Internal.h */,
 				DD5181FC192AF72800D896A6 /* CZWundergroundService.h */,
 				DD5181FD192AF72800D896A6 /* CZWundergroundService.m */,
 				DD518224192D738200D896A6 /* CZOpenWeatherMapService.h */,
