@@ -65,39 +65,41 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 #pragma mark Using a Weather Request
 
-- (void)start
+- (void)startWithCompletion:(CZWeatherRequestCompletion)completion
 {
-    if (self.hasStarted || !self.completionHandler) {
+    if (self.hasStarted || !completion) {
         self.hasStarted = YES;  // Request is considered "started" even it has no completion handler
         return;
     }
     
     if (!self.service) {  // Requests require a service
-        self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                                        code:CZWeatherRequestConfigurationError
-                                                    userInfo:nil]);
+        completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                            code:CZWeatherRequestConfigurationError
+                                        userInfo:nil]);
+        return;
     }
     
     NSURL *url = [self.service urlForRequest:self];
     
     if (!url) { // Error if no url provided by service
-        self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                                        code:CZWeatherRequestServiceURLError
-                                                    userInfo:nil]);
+        completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                            code:CZWeatherRequestServiceURLError
+                                        userInfo:nil]);
+        return;
     }
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (data) {
             CZWeatherData *weatherData = [self.service weatherDataForResponseData:data request:self];
             if (weatherData) {
-                self.completionHandler(weatherData, nil);
+                completion(weatherData, nil);
             } else {    // Error if parsing error occurred
-                self.completionHandler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                                                code:CZWeatherRequestServiceParseError
-                                                            userInfo:nil]);
+                completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                    code:CZWeatherRequestServiceParseError
+                                                    userInfo:nil]);
             }
         } else {
-            self.completionHandler(nil, connectionError);
+            completion(nil, connectionError);
         }
     }];
 }
@@ -122,13 +124,6 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 {
     if (!self.hasStarted) {
         _forecastDetail = forecastDetail;
-    }
-}
-
-- (void)setCompletionHandler:(CZWeatherRequestCompletion)completionHandler
-{
-    if (!self.hasStarted) {
-        _completionHandler = completionHandler;
     }
 }
 

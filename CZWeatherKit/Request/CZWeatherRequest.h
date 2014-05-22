@@ -66,7 +66,7 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestDetail) {
 /**
  Error codes for errors passed as arguments to CZWeatherRequestCompletion blocks.
  */
-typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
+typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
     CZWeatherRequestConfigurationError  = -1,
     CZWeatherRequestServiceURLError     = -2,
     CZWeatherRequestServiceParseError   = -3
@@ -108,8 +108,9 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
  handler will be nil.
  
  Changing a request's properties once the request has started is undefined.
+ @param completion Completion handler block
  */
-- (void)start;
+- (void)startWithCompletion:(CZWeatherRequestCompletion)completion;
 
 // -----
 // @name Properties
@@ -142,10 +143,5 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
  Default is CZWeatherRequestNoDetail.
  */
 @property (nonatomic) CZWeatherRequestDetail                forecastDetail;
-
-/**
- Completion handler block.
- */
-@property (nonatomic, copy) CZWeatherRequestCompletion      completionHandler;
 
 @end

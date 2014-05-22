@@ -317,4 +317,56 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
 }
 
+#pragma mark Wunderground Request Tests
+
+- (void)test_wundergroundRequest_full
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    self.request.currentDetail  = CZWeatherRequestFullDetail;
+    self.request.forecastDetail = CZWeatherRequestFullDetail;
+    
+    if ([self.service.key length] > 0) {
+        [self.request startWithCompletion:^(CZWeatherData *weatherData, NSError *error) {
+            XCTAssertNotNil(weatherData, @"Weather Data is nil");
+            XCTAssertNotNil(weatherData.timestamp, @"Timestamp is nil");
+            XCTAssertNotEqualObjects(weatherData.serviceName, self.service.serviceName, @"Service name is not equal");
+            XCTAssertNotNil(weatherData.currentCondition, @"Current condition is nil");
+            XCTAssertNotEqual([weatherData.forecastedConditions count], 0, @"Forecast conditions count is 0");
+        }];
+    }
+}
+
+- (void)test_wundergroundRequest_configurationError
+{
+    self.request.service = nil;
+    self.request.currentDetail  = CZWeatherRequestFullDetail;
+    self.request.forecastDetail = CZWeatherRequestFullDetail;
+    
+    if ([self.service.key length] > 0) {
+        [self.request startWithCompletion:^(CZWeatherData *weatherData, NSError *error) {
+            XCTAssertNil(weatherData, @"Weather data should be nil");
+            XCTAssertEqualObjects(error, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                             code:CZWeatherRequestConfigurationError
+                                                         userInfo:nil], @"Error should be configuration error");
+        }];
+    }
+}
+
+- (void)test_wundergroundRequest_URLError
+{
+    self.request.currentDetail  = CZWeatherRequestFullDetail;
+    self.request.forecastDetail = CZWeatherRequestFullDetail;
+    
+    if ([self.service.key length] > 0) {
+        [self.request startWithCompletion:^(CZWeatherData *weatherData, NSError *error) {
+            XCTAssertNil(weatherData, @"Weather data should be nil");
+            XCTAssertEqualObjects(error, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                             code:CZWeatherRequestServiceURLError
+                                                         userInfo:nil], @"Error should be URL error");
+        }];
+    }
+}
+
 @end
