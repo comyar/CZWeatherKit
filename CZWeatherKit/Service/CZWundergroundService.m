@@ -12,14 +12,13 @@
 #import "CZWundergroundService.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherData.h"
-#import "CZWeatherData_Friend.h"
-#import "CZWeatherState.h"
+#import "CZWeatherCondition.h"
 
 
 #pragma mark - Constants
 
-// Host endpoint for API
-static NSString * const host = @"api.wunderground.com";
+// Host for API
+static NSString * const host        = @"api.wunderground.com";
 
 // Name of the service
 static NSString * const serviceName = @"Weather Underground";
@@ -29,6 +28,17 @@ static NSString * const serviceName = @"Weather Underground";
 
 @implementation CZWundergroundService
 @synthesize key = _key;
+@synthesize serviceName = _serviceName;
+
+#pragma mark Creating a Weather Service
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _serviceName = @"Weather Underground";
+    }
+    return self;
+}
 
 #pragma mark Using a Weather Service
 
@@ -38,7 +48,7 @@ static NSString * const serviceName = @"Weather Underground";
         return nil;
     }
     
-    if (request.conditionsDetail == CZWeatherRequestNoDetail && request.forecastDetail == CZWeatherRequestNoDetail) {
+    if (request.currentDetail == CZWeatherRequestNoDetail && request.forecastDetail == CZWeatherRequestNoDetail) {
         return nil;
     }
     
@@ -47,7 +57,7 @@ static NSString * const serviceName = @"Weather Underground";
     components.host     = host;
     components.path     = [NSString stringWithFormat:@"/api/%@/", self.key];
     
-    if (request.conditionsDetail != CZWeatherRequestNoDetail) {
+    if (request.currentDetail != CZWeatherRequestNoDetail) {
         components.path = [components.path stringByAppendingString:@"conditions/"];
     }
     
@@ -90,7 +100,7 @@ static NSString * const serviceName = @"Weather Underground";
     weatherData.location        = [request.location copy];
     weatherData.timestamp       = [NSDate date];
     
-    if (request.conditionsDetail != CZWeatherRequestNoDetail) {
+    if (request.currentDetail != CZWeatherRequestNoDetail) {
         [self parseCurrentConditionsFromJSON:JSON forWeatherData:weatherData];
     }
     
@@ -101,9 +111,15 @@ static NSString * const serviceName = @"Weather Underground";
     return weatherData;
 }
 
+#pragma mark Helper
+
 - (void)parseCurrentConditionsFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
 {
-    CZWeatherState *weatherState = [CZWeatherState new];
+    CZWeatherCondition *weatherState = [CZWeatherCondition new];
+    
+    
+    
+    weatherData.current = weatherState;
 }
 
 - (void)parseForecastFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
@@ -113,7 +129,7 @@ static NSString * const serviceName = @"Weather Underground";
     NSArray *forecastDay = JSON[@"forecast"][@"simpleforecast"][@"forecastday"];
     
     for (NSDictionary *day in forecastDay) {
-        CZWeatherState *weatherState = [CZWeatherState new];
+        CZWeatherCondition *weatherState = [CZWeatherCondition new];
         
         
         
@@ -123,14 +139,6 @@ static NSString * const serviceName = @"Weather Underground";
     
     
     weatherData.forecasts = [forecasts copy];
-}
-
-
-#pragma mark Class Methods
-
-+ (NSString *)serviceName
-{
-    return serviceName;
 }
 
 @end

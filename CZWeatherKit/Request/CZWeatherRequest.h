@@ -57,7 +57,7 @@ typedef void (^CZWeatherRequestCompletion) (CZWeatherData *weatherData, NSError 
 typedef NS_ENUM(u_int8_t, CZWeatherRequestDetail) {
     /** Indicates that no data is being requested. */
     CZWeatherRequestNoDetail = 0,
-    /** Indicates that a minimal amount of data is being requested. */
+    /** Indicates that the minimum amount of data is being requested. */
     CZWeatherRequestLightDetail,
     /** Indicates that the maxmimum amount of data is being requested. */
     CZWeatherRequestFullDetail
@@ -134,7 +134,7 @@ typedef NS_ENUM(u_int8_t, CZWeatherRequestError) {
  
  Default is CZWeatherRequestNoDetail.
  */
-@property (nonatomic) CZWeatherRequestDetail                conditionsDetail;
+@property (nonatomic) CZWeatherRequestDetail                currentDetail;
 
 /**
  Indicates the detail level for forecast data.

@@ -16,7 +16,7 @@
 
 @interface CZWeatherData ()
 
-@property (nonatomic) CZWeatherState    *currentConditions;
+@property (nonatomic) CZWeatherCondition    *current;
 
 @property (nonatomic) NSArray           *forecasts;
 

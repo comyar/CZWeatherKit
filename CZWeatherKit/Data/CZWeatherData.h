@@ -14,7 +14,7 @@
 
 #pragma mark - Forward Declarations
 
-@class CZWeatherState;
+@class CZWeatherCondition;
 
 
 #pragma mark - CZWeatherData Interface
@@ -29,14 +29,6 @@
 
 /**
  */
-@property (nonatomic, readonly) CZWeatherState      *currentConditions;
-
-/**
- */
-@property (nonatomic, readonly) NSArray             *forecasts;
-
-/**
- */
 @property (nonatomic, readonly) NSDictionary        *location;
 
 /**
@@ -46,5 +38,13 @@
 /**
  */
 @property (nonatomic, readonly) NSString            *serviceName;
+
+/**
+ */
+@property (nonatomic, readonly) NSArray             *forecasts;
+
+/**
+ */
+@property (nonatomic, readonly) CZWeatherCondition  *current;
 
 @end

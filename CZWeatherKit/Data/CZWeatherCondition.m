@@ -1,5 +1,5 @@
 //
-//  CZWeatherState.h
+//  CZWeatherState.m
 //  CZWeatherKit
 //
 //  Created by Comyar Zaheri on 5/20/14.
@@ -9,11 +9,11 @@
 
 #pragma mark - Imports
 
-@import Foundation;
+#import "CZWeatherCondition.h"
 
 
-#pragma mark - CZWeatherState Interface
+#pragma mark - CZWeatherState Implementation
 
-@interface CZWeatherState : NSObject
+@implementation CZWeatherCondition
 
 @end

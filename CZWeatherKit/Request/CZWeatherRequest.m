@@ -53,7 +53,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
     if (self = [super init]) {
         _location               = [NSMutableDictionary new];
         self.forecastDetail     = CZWeatherRequestNoDetail;
-        self.conditionsDetail   = CZWeatherRequestNoDetail;
+        self.currentDetail      = CZWeatherRequestNoDetail;
     }
     return self;
 }
@@ -114,7 +114,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 - (void)setConditionsDetail:(CZWeatherRequestDetail)conditionsDetail
 {
     if (!self.hasStarted) {
-        _conditionsDetail = conditionsDetail;
+        _currentDetail = conditionsDetail;
     }
 }
 

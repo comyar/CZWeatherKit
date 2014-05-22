@@ -10,11 +10,10 @@
 #pragma mark - Imports
 
 @import Foundation;
-
+#import "CZWeatherData.h"
 
 #pragma mark - Forward Declarations
 
-@class CZWeatherData;
 @class CZWeatherRequest;
 
 
@@ -51,18 +50,6 @@
 - (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request;
 
 // -----
-// @name Class Methods
-// -----
-
-#pragma mark Class Methods
-
-/**
- Returns a human-readable name for the weather service
- @return Name of the weather service
- */
-+ (NSString *)serviceName;
-
-// -----
 // @name Properties
 // -----
 
@@ -72,5 +59,39 @@
  API key for the given service.
  */
 @property (nonatomic) NSString *key;
+
+/**
+ Human-readable name for the weather service
+ */
+@property (nonatomic, readonly) NSString *serviceName;
+
+@end
+
+
+#pragma mark - CZWeatherData Friend Category
+
+/**
+ */
+@interface CZWeatherData (Friend)
+
+/**
+ */
+- (void)setTimestamp:(NSDate *)timestamp;
+
+/**
+ */
+- (void)setCurrent:(CZWeatherCondition *)current;
+
+/**
+ */
+- (void)setForecasts:(NSArray *)forecasts;
+
+/**
+ */
+- (void)setLocation:(NSDictionary *)location;
+
+/**
+ */
+- (void)setServiceName:(NSString *)serviceName;
 
 @end
