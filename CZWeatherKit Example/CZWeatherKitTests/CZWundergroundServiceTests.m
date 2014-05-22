@@ -10,7 +10,6 @@
 #pragma mark - Imports
 
 #import "CZWeatherServiceTestCase.h"
-#import "CZWeatherService_Internal.h"
 
 #pragma mark - Constants
 
@@ -24,10 +23,10 @@ static NSString * const forecastLightJSONFilename           = @"forecastLight_wu
 static NSString * const forecastFullJSONFilename            = @"forecastFull_wunderground";
 
 //
-static NSString * const currentForecastLightJSONFilename    = @"currentForecastLight_wunderground";
+static NSString * const currentForecastLightJSONFilename    = @"current_forecastLight_wunderground";
 
 //
-static NSString * const currentForecastFullJSONFilename     = @"currentForecastFull_wunderground";
+static NSString * const currentForecastFullJSONFilename     = @"current_forecastFull_wunderground";
 
 
 #pragma mark - CZWundergroundServiceTests Class Extension
@@ -42,6 +41,12 @@ static NSString * const currentForecastFullJSONFilename     = @"currentForecastF
 
 //
 @property (nonatomic) NSData *forecastFullData;
+
+//
+@property (nonatomic) NSData *currentForecastLightData;
+
+//
+@property (nonatomic) NSData *currentForecastFullData;
 
 @end
 
@@ -59,9 +64,11 @@ static NSString * const currentForecastFullJSONFilename     = @"currentForecastF
     self.service.key        = @"1234567890123456";
     self.request.service    = self.service;
     
-    self.currentData        = [self loadFileData:currentJSONFilename];
-    self.forecastLightData  = [self loadFileData:forecastLightJSONFilename];
-    self.forecastFullData   = [self loadFileData:forecastFullJSONFilename];
+    self.currentData                = [self loadFileData:currentJSONFilename];
+    self.forecastLightData          = [self loadFileData:forecastLightJSONFilename];
+    self.forecastFullData           = [self loadFileData:forecastFullJSONFilename];
+    self.currentForecastLightData   = [self loadFileData:currentForecastLightJSONFilename];
+    self.currentForecastFullData    = [self loadFileData:currentForecastFullJSONFilename];
 }
 
 - (NSData *)loadFileData:(NSString *)filename
@@ -238,7 +245,9 @@ static NSString * const currentForecastFullJSONFilename     = @"currentForecastF
 
 - (void)test_weatherDataForResponseData_current
 {
-    self.request.location[CZWeatherKitLocationName.StateCityName] = @"TX/Austin";
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];;
     self.request.currentDetail   = CZWeatherRequestFullDetail;
     self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
@@ -253,17 +262,59 @@ static NSString * const currentForecastFullJSONFilename     = @"currentForecastF
 
 - (void)test_weatherDataForResponseData_forecastLight
 {
-    self.request.location[CZWeatherKitLocationName.StateCityName] = @"TX/Austin";
-    self.request.currentDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail  = CZWeatherRequestNoDetail;
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    self.request.currentDetail   = CZWeatherRequestNoDetail;
+    self.request.forecastDetail  = CZWeatherRequestLightDetail;
     
-    CZWeatherData *parsedData = [self.service weatherDataForResponseData:self.currentData request:self.request];
+    CZWeatherData *parsedData = [self.service weatherDataForResponseData:self.forecastLightData request:self.request];
+    
+    // 3 Day forecast plus current day
+    XCTAssertEqual([parsedData.forecastedConditions count], 4, @"Forecast light count not equal");
+    
+    CZWeatherCondition *firstCondition = parsedData.forecastedConditions[0];
+    XCTAssertEqualObjects(firstCondition.date, [NSDate dateWithTimeIntervalSince1970:1400630400], @"First condition date not equal");
+    XCTAssertEqualObjects(firstCondition.description, @"Clear", @"First condition description not equal");
     
     // Account for floating point rounding errors
-    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.f, 84.6, 0.01, @"Current fahrenheit temperature not equal");
-    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 29.2, 0.01, @"Current celsius temperature not equal");
-    XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
-    XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.f, 88.0, 0.01, @"First condition high fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.c, 31.0, 0.01, @"First condition high celsius temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
 }
+
+- (void)test_weatherDataForResponseData_currentForecastLight
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestLightDetail;
+    
+    CZWeatherData *parsedData = [self.service weatherDataForResponseData:self.currentForecastLightData request:self.request];
+    
+    XCTAssertEqualObjects(parsedData.currentCondition.description, @"Clear", @"Current description not equal");
+    XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400728310], @"Current date not equal");
+    
+    // Account for floating point rounding errors
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.f, 77.5, 0.01, @"Current fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 25.3, 0.01, @"Current celsius temperature not equal");
+    
+    // 3 Day forecast plus current day
+    XCTAssertEqual([parsedData.forecastedConditions count], 4, @"Forecast light count not equal");
+    
+    CZWeatherCondition *firstCondition = parsedData.forecastedConditions[0];
+    XCTAssertEqualObjects(firstCondition.date, [NSDate dateWithTimeIntervalSince1970:1400716800], @"First condition date not equal");
+    XCTAssertEqualObjects(firstCondition.description, @"Clear", @"First condition description not equal");
+    
+    // Account for floating point rounding errors
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.f, 90.0, 0.01, @"First condition high fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.c, 32.0, 0.01, @"First condition high celsius temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
+}
+
+
 
 @end
