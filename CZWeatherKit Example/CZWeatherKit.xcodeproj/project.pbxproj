@@ -30,6 +30,7 @@
 		DD518229192DA08300D896A6 /* CZWeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518222192BE98700D896A6 /* CZWeatherCondition.m */; };
 		DD51822C192DA2B700D896A6 /* current_forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */; };
 		DD51822D192DA2B700D896A6 /* current_forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */; };
+		DD51822F192DA95800D896A6 /* API_KEY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD51822E192DA95800D896A6 /* API_KEY.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		DD518227192D7F0D00D896A6 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 		DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastFull_wunderground.json; path = JSON/current_forecastFull_wunderground.json; sourceTree = "<group>"; };
 		DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastLight_wunderground.json; path = JSON/current_forecastLight_wunderground.json; sourceTree = "<group>"; };
+		DD51822E192DA95800D896A6 /* API_KEY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		DD518204192AF77300D896A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD51822E192DA95800D896A6 /* API_KEY.txt */,
 				DD5181DA192AF6D100D896A6 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -359,6 +362,7 @@
 				DD51821F192BDD6400D896A6 /* forecastLight_wunderground.json in Resources */,
 				DD51822D192DA2B700D896A6 /* current_forecastLight_wunderground.json in Resources */,
 				DD5181EC192AF6D100D896A6 /* InfoPlist.strings in Resources */,
+				DD51822F192DA95800D896A6 /* API_KEY.txt in Resources */,
 				DD51821D192BDD6400D896A6 /* current_wunderground.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,9 @@
 #pragma mark - Constants
 
 //
+static NSString * const apiKeyFilename                      = @"API_KEY";
+
+//
 static NSString * const currentJSONFilename                 = @"current_wunderground";
 
 //
@@ -61,21 +64,20 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
 {
     self.request            = [CZWeatherRequest request];
     self.service            = [CZWundergroundService new];
-    self.service.key        = @"1234567890123456";
     self.request.service    = self.service;
     
-    self.currentData                = [self loadFileData:currentJSONFilename];
-    self.forecastLightData          = [self loadFileData:forecastLightJSONFilename];
-    self.forecastFullData           = [self loadFileData:forecastFullJSONFilename];
-    self.currentForecastLightData   = [self loadFileData:currentForecastLightJSONFilename];
-    self.currentForecastFullData    = [self loadFileData:currentForecastFullJSONFilename];
+    self.service.key                = [self loadFile:apiKeyFilename extension:@"txt"];
+    self.currentData                = [[self loadFile:currentJSONFilename extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.forecastLightData          = [[self loadFile:forecastLightJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.forecastFullData           = [[self loadFile:forecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.currentForecastLightData   = [[self loadFile:currentForecastLightJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.currentForecastFullData    = [[self loadFile:currentForecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (NSData *)loadFileData:(NSString *)filename
+- (NSString *)loadFile:(NSString *)filename extension:(NSString *)extension
 {
-    NSString *path      = [[NSBundle bundleForClass:[self class]]pathForResource:filename ofType:@"json"];
-    NSString *contents  = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    return [contents dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *path      = [[NSBundle bundleForClass:[self class]]pathForResource:filename ofType:extension];
+    return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 }
 
 - (void)tearDown
@@ -314,7 +316,5 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
 }
-
-
 
 @end
