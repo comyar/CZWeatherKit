@@ -10,18 +10,24 @@
 #pragma mark - Imports
 
 #import "CZWeatherServiceTestCase.h"
-
+#import "CZWeatherService_Internal.h"
 
 #pragma mark - Constants
 
 //
-static NSString * const conditionsJSONFilename      = @"conditions_wunderground";
+static NSString * const currentJSONFilename                 = @"current_wunderground";
 
 //
-static NSString * const forecastLightJSONFilename   = @"forecastLight_wunderground";
+static NSString * const forecastLightJSONFilename           = @"forecastLight_wunderground";
 
 //
-static NSString * const forecastFullJSONFilename    = @"forecastFull_wunderground";
+static NSString * const forecastFullJSONFilename            = @"forecastFull_wunderground";
+
+//
+static NSString * const currentForecastLightJSONFilename    = @"currentForecastLight_wunderground";
+
+//
+static NSString * const currentForecastFullJSONFilename     = @"currentForecastFull_wunderground";
 
 
 #pragma mark - CZWundergroundServiceTests Class Extension
@@ -29,7 +35,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 @interface CZWundergroundServiceTests : CZWeatherServiceTestCase
 
 //
-@property (nonatomic) NSData *conditionsData;
+@property (nonatomic) NSData *currentData;
 
 //
 @property (nonatomic) NSData *forecastLightData;
@@ -53,7 +59,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     self.service.key        = @"1234567890123456";
     self.request.service    = self.service;
     
-    self.conditionsData     = [self loadFileData:conditionsJSONFilename];
+    self.currentData        = [self loadFileData:currentJSONFilename];
     self.forecastLightData  = [self loadFileData:forecastLightJSONFilename];
     self.forecastFullData   = [self loadFileData:forecastFullJSONFilename];
 }
@@ -78,7 +84,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.forecastDetail   = CZWeatherRequestLightDetail;
+    self.request.forecastDetail = CZWeatherRequestLightDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/forecast/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -90,7 +96,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.forecastDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail = CZWeatherRequestFullDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/forecast10day/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -102,7 +108,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestLightDetail;
+    self.request.currentDetail  = CZWeatherRequestLightDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -114,7 +120,7 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.currentDetail  = CZWeatherRequestFullDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -126,8 +132,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestNoDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestNoDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     XCTAssertNil([self.service urlForRequest:self.request], @"URL should be nil if both forecast and conditions set to 'no detail'");
 }
@@ -137,8 +143,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestLightDetail;
-    self.request.forecastDetail     = CZWeatherRequestLightDetail;
+    self.request.currentDetail   = CZWeatherRequestLightDetail;
+    self.request.forecastDetail  = CZWeatherRequestLightDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/forecast/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -150,8 +156,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestFullDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestFullDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/forecast10day/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -163,8 +169,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     self.request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%.4f,%.4f.json", self.service.key, latitude, longitude];
@@ -175,8 +181,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 {
     NSString * const zipcode = @"77581";
     self.request.location[CZWeatherKitLocationName.ZipcodeName] = zipcode;
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, zipcode];
@@ -186,8 +192,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 - (void)test_urlForRequest_locationAutoIP
 {
     self.request.location[CZWeatherKitLocationName.AutoIPName] = @"autoip";
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/autoip.json", self.service.key];
@@ -198,8 +204,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 {
     NSString * const stateCity = @"TX/Austin";
     self.request.location[CZWeatherKitLocationName.StateCityName] = stateCity;
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, stateCity];
@@ -210,8 +216,8 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 {
     NSString * const countryCity = @"England/London";
     self.request.location[CZWeatherKitLocationName.CountryCityName] = countryCity;
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
-    self.request.forecastDetail     = CZWeatherRequestNoDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
     
     NSURL *url = [self.service urlForRequest:self.request];
     NSString *expected = [NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@.json", self.service.key, countryCity];
@@ -221,11 +227,43 @@ static NSString * const forecastFullJSONFilename    = @"forecastFull_wundergroun
 - (void)test_urlForRequest_missingKey
 {
     self.request.location[CZWeatherKitLocationName.AutoIPName] = @"autoip";
-    self.request.conditionsDetail   = CZWeatherRequestFullDetail;
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
     self.request.forecastDetail     = CZWeatherRequestNoDetail;
     self.request.service.key        = nil;
     
     XCTAssertNil([self.service urlForRequest:self.request], @"URL should be nil when service is missing key");
+}
+
+#pragma mark weatherDataForResponseData Tests
+
+- (void)test_weatherDataForResponseData_current
+{
+    self.request.location[CZWeatherKitLocationName.StateCityName] = @"TX/Austin";
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
+    
+    CZWeatherData *parsedData = [self.service weatherDataForResponseData:self.currentData request:self.request];
+    
+    // Account for floating point rounding errors
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.f, 84.6, 0.01, @"Current fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 29.2, 0.01, @"Current celsius temperature not equal");
+    XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
+    XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
+}
+
+- (void)test_weatherDataForResponseData_forecastLight
+{
+    self.request.location[CZWeatherKitLocationName.StateCityName] = @"TX/Austin";
+    self.request.currentDetail   = CZWeatherRequestFullDetail;
+    self.request.forecastDetail  = CZWeatherRequestNoDetail;
+    
+    CZWeatherData *parsedData = [self.service weatherDataForResponseData:self.currentData request:self.request];
+    
+    // Account for floating point rounding errors
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.f, 84.6, 0.01, @"Current fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 29.2, 0.01, @"Current celsius temperature not equal");
+    XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
+    XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
 }
 
 @end

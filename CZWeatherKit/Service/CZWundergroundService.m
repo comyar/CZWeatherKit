@@ -11,8 +11,9 @@
 
 #import "CZWeatherService_Internal.h"
 #import "CZWundergroundService.h"
+#import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-
+#import "CZWeatherData.h"
 
 
 #pragma mark - Constants
@@ -24,19 +25,10 @@ static NSString * const host        = @"api.wunderground.com";
 static NSString * const serviceName = @"Weather Underground";
 
 
-@interface CZWundergroundService ()
-
-// RFC 822 Date Formatter
-@property (nonatomic) NSDateFormatter *rfc822DateFormatter;
-
-@end
-
-
 #pragma mark - CZWundergroundService Implementation
 
 @implementation CZWundergroundService
-@synthesize key = _key;
-@synthesize serviceName = _serviceName;
+@synthesize key = _key, serviceName = _serviceName;
 
 #pragma mark Creating a Weather Service
 
@@ -44,8 +36,6 @@ static NSString * const serviceName = @"Weather Underground";
 {
     if (self = [super init]) {
         _serviceName = @"Weather Underground";
-        _rfc822DateFormatter = [NSDateFormatter new];
-        _rfc822DateFormatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"];
     }
     return self;
 }
@@ -130,7 +120,8 @@ static NSString * const serviceName = @"Weather Underground";
     
     NSDictionary *currentObservation = JSON[@"current_observation"];
     
-    condition.date = [self.rfc822DateFormatter dateFromString:currentObservation[@"observation_time_rfc822"]];
+    NSTimeInterval epoch = [currentObservation[@"observation_epoch"]doubleValue];
+    condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
     condition.description = currentObservation[@"weather"];
     
     condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
@@ -147,7 +138,7 @@ static NSString * const serviceName = @"Weather Underground";
     for (NSDictionary *day in forecastDay) {
         CZWeatherCondition *condition = [CZWeatherCondition new];
         
-        NSTimeInterval epoch = [day[@"date"][@"epoch"]floatValue];
+        NSTimeInterval epoch = [day[@"date"][@"epoch"]doubleValue];
         condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
         condition.description = day[@"conditions"];
         condition.highTemperature = (CZTemperature){[day[@"high"][@"fahrenheit"]floatValue], [day[@"high"][@"celsius"]floatValue]};

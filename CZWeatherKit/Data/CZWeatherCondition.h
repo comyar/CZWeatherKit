@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  time at a future date. 
  
  For example, a CZWeatherCondition object may be used to represent the current weather conditions as well as
- forecasted weather condtions for a later date.
+ forecasted weather condtions at a later date.
  */
 @interface CZWeatherCondition : NSObject
 

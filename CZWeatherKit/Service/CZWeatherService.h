@@ -59,12 +59,12 @@
 /**
  API key for the given service.
  */
-@property (nonatomic) NSString *key;
+@property (nonatomic) NSString              *key;
 
 /**
  Human-readable name for the weather service
  */
-@property (nonatomic, readonly) NSString *serviceName;
+@property (nonatomic, readonly) NSString    *serviceName;
 
 @end
 

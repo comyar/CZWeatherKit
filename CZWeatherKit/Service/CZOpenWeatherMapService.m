@@ -17,8 +17,9 @@
 #pragma mark - CZOpenWeatherMapService Implementation
 
 @implementation CZOpenWeatherMapService
-@synthesize key = _key;
-@synthesize serviceName = _serviceName;
+@synthesize key = _key, serviceName = _serviceName;
+
+#pragma mark Creating a Weather Service
 
 - (instancetype)init
 {

@@ -10,6 +10,7 @@
 #pragma mark - Imports
 
 #import "CZWeatherData.h"
+#import "CZWeatherCondition.h"
 
 
 #pragma mark - CZWeatherData Class Extension
