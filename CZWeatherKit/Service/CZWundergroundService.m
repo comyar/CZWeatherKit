@@ -9,6 +9,7 @@
 
 #pragma mark - Imports
 
+#import "NSString+CZWeatherKit_Substring.h"
 #import "CZWeatherService_Internal.h"
 #import "CZWundergroundService.h"
 #import "CZWeatherCondition.h"
@@ -123,7 +124,7 @@ static NSString * const serviceName = @"Weather Underground";
     NSTimeInterval epoch = [currentObservation[@"observation_epoch"]doubleValue];
     condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
     condition.description = currentObservation[@"weather"];
-    
+    condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
     condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
     
     weatherData.currentCondition = condition;
@@ -143,11 +144,42 @@ static NSString * const serviceName = @"Weather Underground";
         condition.description = day[@"conditions"];
         condition.highTemperature = (CZTemperature){[day[@"high"][@"fahrenheit"]floatValue], [day[@"high"][@"celsius"]floatValue]};
         condition.lowTemperature = (CZTemperature){[day[@"low"][@"fahrenheit"]floatValue], [day[@"low"][@"celsius"]floatValue]};
-        
+        condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
         [forecasts addObject:condition];
     }
     
     weatherData.forecastedConditions = forecasts;
+}
+
+- (Climacon)climaconCharacterForDescription:(NSString *)description
+{
+    Climacon icon = ClimaconSun;
+    NSString *lowercaseDescription = [description lowercaseString];
+    
+    if([lowercaseDescription contains:@"clear"]) {
+        icon = ClimaconSun;
+    } else if([lowercaseDescription contains:@"cloud"]) {
+        icon = ClimaconCloud;
+    } else if([lowercaseDescription contains:@"drizzle"]  ||
+              [lowercaseDescription contains:@"rain"]     ||
+              [lowercaseDescription contains:@"thunderstorm"]) {
+        icon = ClimaconRain;
+    } else if([lowercaseDescription contains:@"snow"]     ||
+              [lowercaseDescription contains:@"hail"]     ||
+              [lowercaseDescription contains:@"ice"]) {
+        icon = ClimaconSnow;
+    } else if([lowercaseDescription contains:@"fog"]      ||
+              [lowercaseDescription contains:@"overcast"] ||
+              [lowercaseDescription contains:@"smoke"]    ||
+              [lowercaseDescription contains:@"dust"]     ||
+              [lowercaseDescription contains:@"ash"]      ||
+              [lowercaseDescription contains:@"mist"]     ||
+              [lowercaseDescription contains:@"haze"]     ||
+              [lowercaseDescription contains:@"spray"]    ||
+              [lowercaseDescription contains:@"squall"]) {
+        icon = ClimaconHaze;
+    }
+    return icon;
 }
 
 @end

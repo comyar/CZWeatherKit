@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD3D0676192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */; };
 		DD5181C9192AF6D100D896A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181C8192AF6D100D896A6 /* Foundation.framework */; };
 		DD5181CB192AF6D100D896A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CA192AF6D100D896A6 /* CoreGraphics.framework */; };
 		DD5181CD192AF6D100D896A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CC192AF6D100D896A6 /* UIKit.framework */; };
@@ -44,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD3D0672192EA01400CD8D4F /* Climacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Climacon.h; sourceTree = "<group>"; };
+		DD3D0674192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZWeatherKit_Substring.h"; sourceTree = "<group>"; };
+		DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZWeatherKit_Substring.m"; sourceTree = "<group>"; };
 		DD5181C5192AF6D100D896A6 /* CZWeatherKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CZWeatherKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5181C8192AF6D100D896A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DD5181CA192AF6D100D896A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD3D0673192EEF4700CD8D4F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DD3D0674192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.h */,
+				DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		DD5181BC192AF6D100D896A6 = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +217,12 @@
 		DD5181FF192AF72800D896A6 /* CZWeatherKit */ = {
 			isa = PBXGroup;
 			children = (
+				DD3D0672192EA01400CD8D4F /* Climacon.h */,
 				DD5181F7192AF72800D896A6 /* CZWeatherKit.h */,
 				DD5181FA192AF72800D896A6 /* Request */,
 				DD5181FE192AF72800D896A6 /* Service */,
 				DD518206192B07AB00D896A6 /* Data */,
+				DD3D0673192EEF4700CD8D4F /* Helper */,
 			);
 			name = CZWeatherKit;
 			path = ../CZWeatherKit;
@@ -377,6 +392,7 @@
 				DD518228192DA08300D896A6 /* CZOpenWeatherMapService.m in Sources */,
 				DD518229192DA08300D896A6 /* CZWeatherCondition.m in Sources */,
 				DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */,
+				DD3D0676192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m in Sources */,
 				DD5181D5192AF6D100D896A6 /* main.m in Sources */,
 				DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */,
 				DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */,

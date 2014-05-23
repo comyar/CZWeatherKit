@@ -17,19 +17,22 @@
 @interface CZWeatherCondition ()
 
 // Date of the weather conditions represented.
-@property (nonatomic) NSDate          *date;
+@property (nonatomic) NSDate            *date;
 
 // Word or phrase describing the conditions.
-@property (nonatomic) NSString        *description;
+@property (nonatomic) NSString          *description;
+
+// Climacon character that matches the condition description.
+@property (nonatomic) Climacon          climaconCharacter;
 
 // Predicted low temperature.
-@property (nonatomic) CZTemperature   lowTemperature;
+@property (nonatomic) CZTemperature     lowTemperature;
 
 // Predicted high temperature.
-@property (nonatomic) CZTemperature   highTemperature;
+@property (nonatomic) CZTemperature     highTemperature;
 
 // Current temperature.
-@property (nonatomic) CZTemperature   currentTemperature;
+@property (nonatomic) CZTemperature     currentTemperature;
 
 @end
 
@@ -47,6 +50,5 @@
     }
     return self;
 }
-
 
 @end

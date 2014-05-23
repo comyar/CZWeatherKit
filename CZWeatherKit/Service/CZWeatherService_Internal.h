@@ -9,6 +9,7 @@
 
 #pragma mark - Imports
 
+#import "Climacon.h"
 #import "CZWeatherData.h"
 #import "CZWeatherCondition.h"
 
@@ -42,6 +43,7 @@
 
 - (void)setDate:(NSDate *)date;
 - (void)setDescription:(NSString *)description;
+- (void)setClimaconCharacter:(Climacon)climaconCharacter;
 - (void)setCurrentTemperature:(CZTemperature)currentTemperature;
 - (void)setHighTemperature:(CZTemperature)highTemperature;
 - (void)setLowTemperature:(CZTemperature)lowTemperature;

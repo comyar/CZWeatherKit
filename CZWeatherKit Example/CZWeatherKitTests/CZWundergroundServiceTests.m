@@ -260,6 +260,7 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 29.2, 0.01, @"Current celsius temperature not equal");
     XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
     XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
+    XCTAssertEqual(parsedData.currentCondition.climaconCharacter, ClimaconCloud, @"Climacon character not equal");
 }
 
 - (void)test_weatherDataForResponseData_forecastLight
@@ -284,6 +285,7 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.highTemperature.c, 31.0, 0.01, @"First condition high celsius temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
+    XCTAssertEqual(firstCondition.climaconCharacter, ClimaconSun, @"Climacon character not equal");
 }
 
 - (void)test_weatherDataForResponseData_currentForecastLight
@@ -315,6 +317,7 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.highTemperature.c, 32.0, 0.01, @"First condition high celsius temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
+    XCTAssertEqual(firstCondition.climaconCharacter, ClimaconSun, @"Climacon character not equal");
 }
 
 #pragma mark Wunderground Request Tests

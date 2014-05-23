@@ -10,6 +10,7 @@
 #pragma mark - Imports
 
 @import Foundation;
+#import "Climacon.h"
 
 
 #pragma mark - Type Definitions
@@ -65,6 +66,11 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  service's API.
  */
 @property (nonatomic, readonly) NSString        *description;
+
+/**
+ Climacon character that matches the condition description.
+ */
+@property (nonatomic, readonly) Climacon        climaconCharacter;
 
 /**
  Predicted low temperature.
