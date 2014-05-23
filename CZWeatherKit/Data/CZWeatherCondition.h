@@ -26,6 +26,16 @@ typedef struct {
 } CZTemperature;
 
 /**
+ Wind struct.
+ */
+typedef struct {
+    /** Kilometers per hour */
+    CGFloat kph;
+    /** Miles per hour */
+    CGFloat mph;
+} CZWindSpeed;
+
+/**
  Special values
  */
 typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
@@ -92,5 +102,20 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  If no values are available, each member of the struct will be equal to CZWeatherKitNoValue.
  */
 @property (nonatomic, readonly) CZTemperature   currentTemperature;
+
+/**
+ Relative humidity.
+ */
+@property (nonatomic, readonly) CGFloat         humidity;
+
+/**
+ Wind direction in degrees.
+ */
+@property (nonatomic, readonly) CGFloat         windDegrees;
+
+/**
+ Wind speed.
+ */
+@property (nonatomic, readonly) CZWindSpeed     windSpeed;
 
 @end
