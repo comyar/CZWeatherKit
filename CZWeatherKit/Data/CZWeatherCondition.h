@@ -9,8 +9,12 @@
 
 #pragma mark - Imports
 
-@import UIKit;
 @import Foundation;
+
+#if TARGET_OS_IPHONE
+@import UIKit;
+#endif
+
 #import "Climacon.h"
 
 

@@ -17,6 +17,11 @@
 #import "CZWeatherData.h"
 
 
+#if !(TARGET_OS_IPHONE)
+#define CGPointValue pointValue
+#endif
+
+
 #pragma mark - Constants
 
 // Host for API

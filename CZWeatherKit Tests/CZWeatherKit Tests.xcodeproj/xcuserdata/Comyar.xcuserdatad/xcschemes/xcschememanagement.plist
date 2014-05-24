@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CZWeatherKit.xcscheme</key>
+		<key>OSX Tests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>iOS Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>DD5181DF192AF6D100D896A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDB94A2419306CC20079DF6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDB94A4C1930737E0079DF6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDB94A6B193073F30079DF6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

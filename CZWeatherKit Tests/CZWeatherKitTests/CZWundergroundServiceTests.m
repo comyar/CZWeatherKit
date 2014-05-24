@@ -11,6 +11,13 @@
 
 #import "CZWeatherServiceTestCase.h"
 
+
+#if !(TARGET_OS_IPHONE)
+#define valueWithCGPoint valueWithPoint
+#endif
+
+
+
 #pragma mark - Constants
 
 //

@@ -10,7 +10,6 @@
 #pragma mark - Imports
 
 @import Foundation;
-@import CoreLocation;
 #import "CZWeatherService.h"
 
 
