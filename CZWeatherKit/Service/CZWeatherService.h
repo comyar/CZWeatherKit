@@ -30,6 +30,26 @@
 @required
 
 // -----
+// @name Creating a Weather Service
+// -----
+
+#pragma mark Creating a Weather Service
+
+/**
+ Creates and returns a weather service with the given key.
+ @param key API key to use for the given service.
+ @return    A newly created weather service.
+ */
++ (instancetype)serviceWithKey:(NSString *)key;
+
+/**
+ Initializes a newly allocated weather service.
+ @param key API key to use for the given service.
+ @return    A newly initialized weather service.
+ */
+- (instancetype)initWithKey:(NSString *)key;
+
+// -----
 // @name Using a Weather Service
 // -----
 
@@ -59,7 +79,7 @@
 /**
  API key for the given service.
  */
-@property (nonatomic) NSString              *key;
+@property (nonatomic, readonly) NSString    *key;
 
 /**
  Human-readable name for the weather service

@@ -28,6 +28,12 @@ const struct CZWeatherKitLocationName CZWeatherKitLocationName = {
     .AutoIPName         = @"CZWeatherLocationAutoIPName"
 };
 
+//
+const struct CZWeatherRequestType CZWeatherRequestType = {
+    .CZForecastRequestType          = @"CZForecastRequestType",
+    .CZCurrentConditionsRequestType = @"CZCurrentConditionsRequestType"
+};
+
 // Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
 NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 

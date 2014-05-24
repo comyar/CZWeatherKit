@@ -41,6 +41,16 @@ struct CZWeatherKitLocationName {
 };
 extern const struct CZWeatherKitLocationName CZWeatherKitLocationName;
 
+/**
+ */
+struct CZWeatherRequestType {
+    /** Request type to retrieve forecast data. */
+    __unsafe_unretained NSString * const CZForecastRequestType;
+    /** Request type to retrieve current conditions data. */
+    __unsafe_unretained NSString * const CZCurrentConditionsRequestType;
+};
+extern const struct CZWeatherRequestType CZWeatherRequestType;
+
 
 #pragma mark - Type Definitions
 
@@ -88,7 +98,7 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
 
 /**
  */
-+ (CZWeatherRequest *)request;
++ (CZWeatherRequest *)requestWithType:(CZwe);
 
 // -----
 // @name Using a Weather Request
