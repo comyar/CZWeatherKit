@@ -7,58 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD3D0676192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */; };
-		DD5181C9192AF6D100D896A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181C8192AF6D100D896A6 /* Foundation.framework */; };
-		DD5181CB192AF6D100D896A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CA192AF6D100D896A6 /* CoreGraphics.framework */; };
-		DD5181CD192AF6D100D896A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CC192AF6D100D896A6 /* UIKit.framework */; };
-		DD5181D3192AF6D100D896A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD5181D1192AF6D100D896A6 /* InfoPlist.strings */; };
-		DD5181D5192AF6D100D896A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181D4192AF6D100D896A6 /* main.m */; };
-		DD5181D9192AF6D100D896A6 /* CZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181D8192AF6D100D896A6 /* CZAppDelegate.m */; };
-		DD5181DB192AF6D100D896A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5181DA192AF6D100D896A6 /* Images.xcassets */; };
 		DD5181E2192AF6D100D896A6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181E1192AF6D100D896A6 /* XCTest.framework */; };
 		DD5181E3192AF6D100D896A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181C8192AF6D100D896A6 /* Foundation.framework */; };
 		DD5181E4192AF6D100D896A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5181CC192AF6D100D896A6 /* UIKit.framework */; };
 		DD5181EC192AF6D100D896A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD5181EA192AF6D100D896A6 /* InfoPlist.strings */; };
-		DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181F9192AF72800D896A6 /* CZWeatherRequest.m */; };
-		DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5181FD192AF72800D896A6 /* CZWundergroundService.m */; };
-		DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518208192B07C200D896A6 /* CZWeatherData.m */; };
 		DD518213192B15B600D896A6 /* CZWeatherServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */; };
 		DD518216192B167400D896A6 /* CZWundergroundServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */; };
 		DD51821D192BDD6400D896A6 /* current_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821A192BDD6400D896A6 /* current_wunderground.json */; };
 		DD51821E192BDD6400D896A6 /* forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */; };
 		DD51821F192BDD6400D896A6 /* forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821C192BDD6400D896A6 /* forecastLight_wunderground.json */; };
-		DD518228192DA08300D896A6 /* CZOpenWeatherMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518225192D738200D896A6 /* CZOpenWeatherMapService.m */; };
-		DD518229192DA08300D896A6 /* CZWeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518222192BE98700D896A6 /* CZWeatherCondition.m */; };
 		DD51822C192DA2B700D896A6 /* current_forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */; };
 		DD51822D192DA2B700D896A6 /* current_forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */; };
 		DD51822F192DA95800D896A6 /* API_KEY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD51822E192DA95800D896A6 /* API_KEY.txt */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DD5181E5192AF6D100D896A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD5181BD192AF6D100D896A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD5181C4192AF6D100D896A6;
-			remoteInfo = CZWeatherKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		DD3D0672192EA01400CD8D4F /* Climacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Climacon.h; sourceTree = "<group>"; };
 		DD3D0674192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZWeatherKit_Substring.h"; sourceTree = "<group>"; };
 		DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZWeatherKit_Substring.m"; sourceTree = "<group>"; };
-		DD5181C5192AF6D100D896A6 /* CZWeatherKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CZWeatherKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5181C8192AF6D100D896A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DD5181CA192AF6D100D896A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DD5181CC192AF6D100D896A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DD5181D0192AF6D100D896A6 /* CZWeatherKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKit-Info.plist"; sourceTree = "<group>"; };
-		DD5181D2192AF6D100D896A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DD5181D4192AF6D100D896A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DD5181D6192AF6D100D896A6 /* CZWeatherKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZWeatherKit-Prefix.pch"; sourceTree = "<group>"; };
-		DD5181D7192AF6D100D896A6 /* CZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAppDelegate.h; sourceTree = "<group>"; };
-		DD5181D8192AF6D100D896A6 /* CZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAppDelegate.m; sourceTree = "<group>"; };
-		DD5181DA192AF6D100D896A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD5181E0192AF6D100D896A6 /* CZWeatherKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CZWeatherKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5181E1192AF6D100D896A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DD5181E9192AF6D100D896A6 /* CZWeatherKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKitTests-Info.plist"; sourceTree = "<group>"; };
@@ -84,20 +53,10 @@
 		DD518227192D7F0D00D896A6 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 		DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastFull_wunderground.json; path = JSON/current_forecastFull_wunderground.json; sourceTree = "<group>"; };
 		DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastLight_wunderground.json; path = JSON/current_forecastLight_wunderground.json; sourceTree = "<group>"; };
-		DD51822E192DA95800D896A6 /* API_KEY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY.txt; sourceTree = "<group>"; };
+		DD51822E192DA95800D896A6 /* API_KEY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = API_KEY.txt; path = ../CZWeatherKit/API_KEY.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DD5181C2192AF6D100D896A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD5181CB192AF6D100D896A6 /* CoreGraphics.framework in Frameworks */,
-				DD5181CD192AF6D100D896A6 /* UIKit.framework in Frameworks */,
-				DD5181C9192AF6D100D896A6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DD5181DD192AF6D100D896A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				DD5181FF192AF72800D896A6 /* CZWeatherKit */,
-				DD5181CE192AF6D100D896A6 /* CZWeatherKit Example */,
 				DD5181E7192AF6D100D896A6 /* CZWeatherKitTests */,
 				DD5181C7192AF6D100D896A6 /* Frameworks */,
 				DD5181C6192AF6D100D896A6 /* Products */,
@@ -134,7 +92,6 @@
 		DD5181C6192AF6D100D896A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD5181C5192AF6D100D896A6 /* CZWeatherKit.app */,
 				DD5181E0192AF6D100D896A6 /* CZWeatherKitTests.xctest */,
 			);
 			name = Products;
@@ -151,31 +108,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DD5181CE192AF6D100D896A6 /* CZWeatherKit Example */ = {
-			isa = PBXGroup;
-			children = (
-				DD518204192AF77300D896A6 /* Resources */,
-				DD518202192AF76900D896A6 /* Classes */,
-				DD5181CF192AF6D100D896A6 /* Supporting Files */,
-			);
-			name = "CZWeatherKit Example";
-			path = CZWeatherKit;
-			sourceTree = "<group>";
-		};
-		DD5181CF192AF6D100D896A6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DD5181D0192AF6D100D896A6 /* CZWeatherKit-Info.plist */,
-				DD5181D1192AF6D100D896A6 /* InfoPlist.strings */,
-				DD5181D4192AF6D100D896A6 /* main.m */,
-				DD5181D6192AF6D100D896A6 /* CZWeatherKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		DD5181E7192AF6D100D896A6 /* CZWeatherKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				DD51822E192DA95800D896A6 /* API_KEY.txt */,
 				DD518219192BDD5900D896A6 /* JSON */,
 				DD518210192B159D00D896A6 /* Services */,
 				DD5181E8192AF6D100D896A6 /* Supporting Files */,
@@ -228,32 +164,6 @@
 			path = ../CZWeatherKit;
 			sourceTree = "<group>";
 		};
-		DD518202192AF76900D896A6 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				DD518205192AF77A00D896A6 /* App Delegate */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		DD518204192AF77300D896A6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DD51822E192DA95800D896A6 /* API_KEY.txt */,
-				DD5181DA192AF6D100D896A6 /* Images.xcassets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		DD518205192AF77A00D896A6 /* App Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				DD5181D7192AF6D100D896A6 /* CZAppDelegate.h */,
-				DD5181D8192AF6D100D896A6 /* CZAppDelegate.m */,
-			);
-			name = "App Delegate";
-			sourceTree = "<group>";
-		};
 		DD518206192B07AB00D896A6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,23 +200,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD5181C4192AF6D100D896A6 /* CZWeatherKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD5181F1192AF6D100D896A6 /* Build configuration list for PBXNativeTarget "CZWeatherKit" */;
-			buildPhases = (
-				DD5181C1192AF6D100D896A6 /* Sources */,
-				DD5181C2192AF6D100D896A6 /* Frameworks */,
-				DD5181C3192AF6D100D896A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CZWeatherKit;
-			productName = CZWeatherKit;
-			productReference = DD5181C5192AF6D100D896A6 /* CZWeatherKit.app */;
-			productType = "com.apple.product-type.application";
-		};
 		DD5181DF192AF6D100D896A6 /* CZWeatherKitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD5181F4192AF6D100D896A6 /* Build configuration list for PBXNativeTarget "CZWeatherKitTests" */;
@@ -318,7 +211,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DD5181E6192AF6D100D896A6 /* PBXTargetDependency */,
 			);
 			name = CZWeatherKitTests;
 			productName = CZWeatherKitTests;
@@ -352,22 +244,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD5181C4192AF6D100D896A6 /* CZWeatherKit */,
 				DD5181DF192AF6D100D896A6 /* CZWeatherKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DD5181C3192AF6D100D896A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD5181D3192AF6D100D896A6 /* InfoPlist.strings in Resources */,
-				DD5181DB192AF6D100D896A6 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DD5181DE192AF6D100D896A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,21 +267,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DD5181C1192AF6D100D896A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD518228192DA08300D896A6 /* CZOpenWeatherMapService.m in Sources */,
-				DD518229192DA08300D896A6 /* CZWeatherCondition.m in Sources */,
-				DD518201192AF72800D896A6 /* CZWundergroundService.m in Sources */,
-				DD3D0676192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m in Sources */,
-				DD5181D5192AF6D100D896A6 /* main.m in Sources */,
-				DD518200192AF72800D896A6 /* CZWeatherRequest.m in Sources */,
-				DD518209192B07C200D896A6 /* CZWeatherData.m in Sources */,
-				DD5181D9192AF6D100D896A6 /* CZAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DD5181DC192AF6D100D896A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,23 +278,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		DD5181E6192AF6D100D896A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD5181C4192AF6D100D896A6 /* CZWeatherKit */;
-			targetProxy = DD5181E5192AF6D100D896A6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		DD5181D1192AF6D100D896A6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD5181D2192AF6D100D896A6 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		DD5181EA192AF6D100D896A6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,36 +355,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		DD5181F2192AF6D100D896A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CZWeatherKit/CZWeatherKit-Prefix.pch";
-				INFOPLIST_FILE = "CZWeatherKit/CZWeatherKit-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		DD5181F3192AF6D100D896A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CZWeatherKit/CZWeatherKit-Prefix.pch";
-				INFOPLIST_FILE = "CZWeatherKit/CZWeatherKit-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -546,13 +371,15 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CZWeatherKit/CZWeatherKit-Prefix.pch";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "CZWeatherKitTests/CZWeatherKitTests-Info.plist";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -568,9 +395,11 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CZWeatherKit/CZWeatherKit-Prefix.pch";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CZWeatherKitTests/CZWeatherKitTests-Info.plist";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -585,15 +414,6 @@
 			buildConfigurations = (
 				DD5181EF192AF6D100D896A6 /* Debug */,
 				DD5181F0192AF6D100D896A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DD5181F1192AF6D100D896A6 /* Build configuration list for PBXNativeTarget "CZWeatherKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DD5181F2192AF6D100D896A6 /* Debug */,
-				DD5181F3192AF6D100D896A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
