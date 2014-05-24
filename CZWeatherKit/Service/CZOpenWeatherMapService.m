@@ -9,9 +9,26 @@
 
 #pragma mark - Imports
 
+#import "NSString+CZWeatherKit_Substring.h"
 #import "CZWeatherService_Internal.h"
 #import "CZOpenWeatherMapService.h"
+#import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
+#import "CZWeatherData.h"
+
+
+#if !(TARGET_OS_IPHONE)
+#define CGPointValue pointValue
+#endif
+
+
+#pragma mark - Constants
+
+// Host for API
+static NSString * const host        = @"api.openweathermap.org";
+
+// Name of the service
+static NSString * const serviceName = @"Open Weather Map";
 
 
 #pragma mark - CZOpenWeatherMapService Implementation
@@ -24,7 +41,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _serviceName = @"Open Weather Map";
+        _serviceName = serviceName;
     }
     return self;
 }

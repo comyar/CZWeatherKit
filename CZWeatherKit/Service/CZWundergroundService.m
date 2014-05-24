@@ -41,7 +41,7 @@ static NSString * const serviceName = @"Weather Underground";
 - (instancetype)init
 {
     if (self = [super init]) {
-        _serviceName = @"Weather Underground";
+        _serviceName = serviceName;
     }
     return self;
 }
