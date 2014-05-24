@@ -128,7 +128,7 @@ static NSString * const serviceName = @"Weather Underground";
     condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
     condition.windDegrees = [currentObservation[@"wind_degrees"]floatValue];
     condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_kph"]floatValue], [currentObservation[@"wind_mph"]floatValue]};
-    condition.humidity = [currentObservation[@"relative_humidity"]floatValue];
+    condition.humidity = [[currentObservation[@"relative_humidity"]stringByReplacingOccurrencesOfString:@"%" withString:@""]floatValue];
     
     weatherData.currentCondition = condition;
 }

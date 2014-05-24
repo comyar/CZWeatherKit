@@ -261,6 +261,7 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
     XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
     XCTAssertEqual(parsedData.currentCondition.climaconCharacter, ClimaconCloud, @"Climacon character not equal");
+    XCTAssertEqual(parsedData.currentCondition.humidity, <#a2#>, <#format...#>)
 }
 
 - (void)test_weatherDataForResponseData_forecastLight
