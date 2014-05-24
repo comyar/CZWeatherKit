@@ -261,7 +261,10 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualObjects(parsedData.currentCondition.description, @"Mostly Cloudy", @"Current description not equal");
     XCTAssertEqualObjects(parsedData.currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1400611999], @"Current date not equal");
     XCTAssertEqual(parsedData.currentCondition.climaconCharacter, ClimaconCloud, @"Climacon character not equal");
-    XCTAssertEqual(parsedData.currentCondition.humidity, <#a2#>, <#format...#>)
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.humidity, 52.0, 0.01, @"Humidity not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windDegrees, 121.0, 0.01, @"Wind degrees not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windSpeed.kph, 3.2, 0.01, @"Wind speed kph not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windSpeed.mph, 2.0, 0.01, @"Wind speed mph not equal");
 }
 
 - (void)test_weatherDataForResponseData_forecastLight
@@ -287,6 +290,11 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
     XCTAssertEqual(firstCondition.climaconCharacter, ClimaconSun, @"Climacon character not equal");
+    
+    XCTAssertEqualWithAccuracy(firstCondition.humidity, 74.0, 0.01, @"Humidity not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windDegrees, 173.0, 0.01, @"Wind degrees not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.kph, 23.0, 0.01, @"Wind speed kph not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.mph, 14.0, 0.01, @"Wind speed mph not equal");
 }
 
 - (void)test_weatherDataForResponseData_currentForecastLight
@@ -306,6 +314,12 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.f, 77.5, 0.01, @"Current fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(parsedData.currentCondition.currentTemperature.c, 25.3, 0.01, @"Current celsius temperature not equal");
     
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.humidity, 64.0, 0.01, @"Humidity not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windDegrees, 165.0, 0.01, @"Wind degrees not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windSpeed.kph, 4.8, 0.01, @"Wind speed kph not equal");
+    XCTAssertEqualWithAccuracy(parsedData.currentCondition.windSpeed.mph, 3.0, 0.01, @"Wind speed mph not equal");
+    
+    
     // 3 Day forecast plus current day
     XCTAssertEqual([parsedData.forecastedConditions count], 4, @"Forecast light count not equal");
     
@@ -319,6 +333,11 @@ static NSString * const currentForecastFullJSONFilename     = @"current_forecast
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 69.0, 0.01, @"First condition low fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 21.0, 0.01, @"First condition low celsius temperature not equal");
     XCTAssertEqual(firstCondition.climaconCharacter, ClimaconSun, @"Climacon character not equal");
+    
+    XCTAssertEqualWithAccuracy(firstCondition.humidity, 79.0, 0.01, @"Humidity not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windDegrees, 0.0, 0.01, @"Wind degrees not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.kph, 0.0, 0.01, @"Wind speed kph not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.mph, 0.0, 0.01, @"Wind speed mph not equal");
 }
 
 #pragma mark Wunderground Request Tests
