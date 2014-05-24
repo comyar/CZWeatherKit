@@ -126,6 +126,9 @@ static NSString * const serviceName = @"Weather Underground";
     condition.description = currentObservation[@"weather"];
     condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
     condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
+    condition.windDegrees = [currentObservation[@"wind_degrees"]floatValue];
+    condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_kph"]floatValue], [currentObservation[@"wind_mph"]floatValue]};
+    condition.humidity = [currentObservation[@"relative_humidity"]floatValue];
     
     weatherData.currentCondition = condition;
 }
@@ -145,6 +148,9 @@ static NSString * const serviceName = @"Weather Underground";
         condition.highTemperature = (CZTemperature){[day[@"high"][@"fahrenheit"]floatValue], [day[@"high"][@"celsius"]floatValue]};
         condition.lowTemperature = (CZTemperature){[day[@"low"][@"fahrenheit"]floatValue], [day[@"low"][@"celsius"]floatValue]};
         condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+        condition.humidity = [day[@"avehumidity"]floatValue];
+        condition.windSpeed = (CZWindSpeed){[day[@"avewind"][@"kph"]floatValue], [day[@"avewind"][@"mph"]floatValue]};
+        condition.windDegrees = [day[@"avewind"][@"degrees"]floatValue];
         [forecasts addObject:condition];
     }
     

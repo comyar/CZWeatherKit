@@ -47,5 +47,8 @@
 - (void)setCurrentTemperature:(CZTemperature)currentTemperature;
 - (void)setHighTemperature:(CZTemperature)highTemperature;
 - (void)setLowTemperature:(CZTemperature)lowTemperature;
+- (void)setWindDegrees:(CGFloat)windDegrees;
+- (void)setWindSpeed:(CZWindSpeed)windSpeed;
+- (void)setHumidity:(CGFloat)humidity;
 
 @end

@@ -34,6 +34,15 @@
 // Current temperature.
 @property (nonatomic) CZTemperature     currentTemperature;
 
+// Relative humidity.
+@property (nonatomic) CGFloat           humidity;
+
+// Wind direction in degrees.
+@property (nonatomic) CGFloat           windDegrees;
+
+// Wind speed.
+@property (nonatomic) CZWindSpeed       windSpeed;
+
 @end
 
 
