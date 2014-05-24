@@ -35,7 +35,7 @@
                BlueprintIdentifier = "DD5181DF192AF6D100D896A6"
                BuildableName = "CZWeatherKitTests.xctest"
                BlueprintName = "CZWeatherKitTests"
-               ReferencedContainer = "container:CZWeatherKit.xcodeproj">
+               ReferencedContainer = "container:CZWeatherKit Tests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

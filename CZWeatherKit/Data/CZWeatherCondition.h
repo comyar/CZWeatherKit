@@ -9,6 +9,7 @@
 
 #pragma mark - Imports
 
+@import UIKit;
 @import Foundation;
 #import "Climacon.h"
 
