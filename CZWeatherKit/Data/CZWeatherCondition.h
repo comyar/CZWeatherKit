@@ -106,7 +106,7 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  
  If no values are available, each member of the struct will be equal to CZWeatherKitNoValue.
  */
-@property (nonatomic, readonly) CZTemperature   currentTemperature;
+@property (nonatomic, readonly) CZTemperature   temperature;
 
 /**
  Relative humidity.

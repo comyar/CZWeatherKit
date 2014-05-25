@@ -6,7 +6,6 @@
 //
 //
 
-#import "CZWeatherData.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherService.h"
 #import "CZWeatherCondition.h"

@@ -14,7 +14,6 @@
 #import "CZOpenWeatherMapService.h"
 #import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-#import "CZWeatherData.h"
 
 
 #if !(TARGET_OS_IPHONE)

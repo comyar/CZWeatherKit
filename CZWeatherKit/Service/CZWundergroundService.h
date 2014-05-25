@@ -9,13 +9,11 @@
 
 #pragma mark - Imports
 
+@import Foundation;
+#import "CZWeatherService.h"
 #if TARGET_OS_IPHONE
 @import UIKit;
 #endif
-
-
-@import Foundation;
-#import "CZWeatherService.h"
 
 
 #pragma mark - CZWundergroundService Implementation

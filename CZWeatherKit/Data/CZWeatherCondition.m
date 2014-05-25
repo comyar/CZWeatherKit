@@ -32,7 +32,7 @@
 @property (nonatomic) CZTemperature     highTemperature;
 
 // Current temperature.
-@property (nonatomic) CZTemperature     currentTemperature;
+@property (nonatomic) CZTemperature     temperature;
 
 // Relative humidity.
 @property (nonatomic) CGFloat           humidity;
@@ -53,9 +53,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.lowTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
-        self.highTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
-        self.currentTemperature = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+        self.lowTemperature     = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+        self.highTemperature    = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
+        self.temperature        = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
     }
     return self;
 }

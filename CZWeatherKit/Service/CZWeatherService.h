@@ -14,7 +14,6 @@
 
 #pragma mark - Forward Declarations
 
-@class CZWeatherData;
 @class CZWeatherRequest;
 
 
@@ -68,7 +67,7 @@
  @param request Weather request that retrieved the response data.
  @return        Weather data instance from the parsed response data, or nil if the data is malformed.
  */
-- (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request;
+- (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request;
 
 // -----
 // @name Properties

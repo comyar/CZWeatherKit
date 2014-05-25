@@ -41,33 +41,21 @@ struct CZWeatherKitLocationName {
 };
 extern const struct CZWeatherKitLocationName CZWeatherKitLocationName;
 
-/**
- */
-struct CZWeatherRequestType {
-    /** Request type to retrieve forecast data. */
-    __unsafe_unretained NSString * const CZForecastRequestType;
-    /** Request type to retrieve current conditions data. */
-    __unsafe_unretained NSString * const CZCurrentConditionsRequestType;
-};
-extern const struct CZWeatherRequestType CZWeatherRequestType;
-
 
 #pragma mark - Type Definitions
 
 /**
  Completion handler block type for requests.
  */
-typedef void (^CZWeatherRequestCompletion) (CZWeatherData *weatherData, NSError *error);
+typedef void (^CZWeatherRequestHandler) (id data, NSError *error);
 
 /** 
  Indicates the level of detail being requested for a weather request. Weather services
  define the data each detail level provides.
  */
-typedef NS_ENUM(u_int8_t, CZWeatherRequestDetail) {
-    /** Indicates that no data is being requested. */
-    CZWeatherRequestNoDetail = 0,
+typedef NS_ENUM(NSInteger, CZWeatherRequestDetail) {
     /** Indicates that the minimum amount of data is being requested. */
-    CZWeatherRequestLightDetail,
+    CZWeatherRequestLightDetail = 0,
     /** Indicates that the maxmimum amount of data is being requested. */
     CZWeatherRequestFullDetail
 };
@@ -79,6 +67,16 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
     CZWeatherRequestConfigurationError  = -1,
     CZWeatherRequestServiceURLError     = -2,
     CZWeatherRequestServiceParseError   = -3
+};
+
+/**
+ Request types.
+ */
+typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
+    /** Request type to retrieve current conditions data */
+    CZCurrentConditionsRequestType  = 0,
+    /** Request type to retrieve forecast data */
+    CZForecastRequestType
 };
 
  
@@ -98,7 +96,11 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
 
 /**
  */
-+ (CZWeatherRequest *)requestWithType:(CZwe);
++ (CZWeatherRequest *)requestWithType:(CZWeatherRequestType)requestType;
+
+/**
+ */
+- (instancetype)initWithType:(CZWeatherRequestType)requestType;
 
 // -----
 // @name Using a Weather Request
@@ -119,7 +121,7 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
  Changing a request's properties once the request has started is undefined.
  @param completion Completion handler block
  */
-- (void)startWithCompletion:(CZWeatherRequestCompletion)completion;
+- (void)performRequestWithHandler:(CZWeatherRequestHandler)handler;
 
 // -----
 // @name Properties
@@ -140,17 +142,11 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
 @property (nonatomic) id<CZWeatherService>                  service;
 
 /**
- Indicates the detail level for current conditions data.
- 
- Default is CZWeatherRequestNoDetail.
  */
-@property (nonatomic) CZWeatherRequestDetail                currentDetail;
+@property (nonatomic) CZWeatherRequestType                  requestType;
 
 /**
- Indicates the detail level for forecast data.
- 
- Default is CZWeatherRequestNoDetail.
  */
-@property (nonatomic) CZWeatherRequestDetail                forecastDetail;
+@property (nonatomic) CZWeatherRequestDetail                detailLevel;
 
 @end

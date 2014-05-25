@@ -14,7 +14,6 @@
 #import "CZWundergroundService.h"
 #import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-#import "CZWeatherData.h"
 
 
 #if !(TARGET_OS_IPHONE)
@@ -41,9 +40,23 @@ static NSString * const serviceName = @"Weather Underground";
 - (instancetype)init
 {
     if (self = [super init]) {
-        _serviceName = serviceName;
+        
     }
     return self;
+}
+
+- (instancetype)initWithKey:(NSString *)key
+{
+    if (self = [super init]) {
+        _key            = key;
+        _serviceName    = serviceName;
+    }
+    return self;
+}
+
++ (instancetype)serviceWithKey:(NSString *)key
+{
+    return [[CZWundergroundService alloc]initWithKey:key];
 }
 
 #pragma mark Using a Weather Service
@@ -54,22 +67,18 @@ static NSString * const serviceName = @"Weather Underground";
         return nil;
     }
     
-    if (request.currentDetail == CZWeatherRequestNoDetail && request.forecastDetail == CZWeatherRequestNoDetail) {
-        return nil;
-    }
-    
     NSURLComponents *components = [NSURLComponents new];
     components.scheme   = @"http";
     components.host     = host;
     components.path     = [NSString stringWithFormat:@"/api/%@/", self.key];
     
-    if (request.currentDetail != CZWeatherRequestNoDetail) {
+    if (request.requestType == CZCurrentConditionsRequestType) {
         components.path = [components.path stringByAppendingString:@"conditions/"];
     }
     
-    if (request.forecastDetail == CZWeatherRequestLightDetail) {
+    if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
         components.path = [components.path stringByAppendingString:@"forecast/"];
-    } else if (request.forecastDetail == CZWeatherRequestFullDetail) {
+    } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestFullDetail) {
         components.path = [components.path stringByAppendingString:@"forecast10day/"];
     }
     
@@ -95,32 +104,27 @@ static NSString * const serviceName = @"Weather Underground";
     return [components URL];
 }
 
-- (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
+- (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
 {
-    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingAllowFragments
+                                                           error:nil];
     if (!JSON) {
         return nil;
     }
     
-    CZWeatherData *weatherData  = [CZWeatherData new];
-    weatherData.location        = request.location;
-    weatherData.timestamp       = [NSDate date];
-    weatherData.serviceName     = self.serviceName;
-    
-    if (request.currentDetail != CZWeatherRequestNoDetail) {
-        [self parseCurrentConditionsFromJSON:JSON forWeatherData:weatherData];
+    if (request.requestType == CZCurrentConditionsRequestType) {
+        return [self parseCurrentConditionsFromJSON:JSON];
+    } else if (request.requestType == CZForecastRequestType) {
+        return [self parseForecastFromJSON:JSON];
     }
     
-    if (request.forecastDetail != CZWeatherRequestNoDetail) {
-        [self parseForecastFromJSON:JSON forWeatherData:weatherData];
-    }
-    
-    return weatherData;
+    return nil;
 }
 
 #pragma mark Helper
 
-- (void)parseCurrentConditionsFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
+- (CZWeatherCondition *)parseCurrentConditionsFromJSON:(NSDictionary *)JSON
 {
     CZWeatherCondition *condition = [CZWeatherCondition new];
     
@@ -130,15 +134,15 @@ static NSString * const serviceName = @"Weather Underground";
     condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
     condition.description = currentObservation[@"weather"];
     condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
-    condition.currentTemperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
+    condition.temperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
     condition.windDegrees = [currentObservation[@"wind_degrees"]floatValue];
     condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_kph"]floatValue], [currentObservation[@"wind_mph"]floatValue]};
     condition.humidity = [[currentObservation[@"relative_humidity"]stringByReplacingOccurrencesOfString:@"%" withString:@""]floatValue];
     
-    weatherData.currentCondition = condition;
+    return condition;
 }
 
-- (void)parseForecastFromJSON:(NSDictionary *)JSON forWeatherData:(CZWeatherData *)weatherData
+- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON
 {
     NSMutableArray *forecasts = [NSMutableArray new];
     
@@ -159,7 +163,7 @@ static NSString * const serviceName = @"Weather Underground";
         [forecasts addObject:condition];
     }
     
-    weatherData.forecastedConditions = forecasts;
+    return [forecasts copy];
 }
 
 - (Climacon)climaconCharacterForDescription:(NSString *)description

@@ -12,11 +12,6 @@
 #import "CZWeatherRequest.h"
 
 
-#pragma mark - Forward Declarations
-
-@class CZWeatherData;
-
-
 #pragma mark - Constants
 
 // 
@@ -28,12 +23,6 @@ const struct CZWeatherKitLocationName CZWeatherKitLocationName = {
     .AutoIPName         = @"CZWeatherLocationAutoIPName"
 };
 
-//
-const struct CZWeatherRequestType CZWeatherRequestType = {
-    .CZForecastRequestType          = @"CZForecastRequestType",
-    .CZCurrentConditionsRequestType = @"CZCurrentConditionsRequestType"
-};
-
 // Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
 NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
@@ -41,9 +30,6 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 #pragma mark - CZWeatherRequest Class Extension
 
 @interface CZWeatherRequest ()
-
-// YES if the request has started.
-@property (nonatomic) BOOL                                  hasStarted;
 
 @end
 
@@ -56,81 +42,64 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 
 - (instancetype)init
 {
+    return [self initWithType:CZCurrentConditionsRequestType];
+}
+
+- (instancetype)initWithType:(CZWeatherRequestType)requestType
+{
     if (self = [super init]) {
         _location               = [NSMutableDictionary new];
-        self.forecastDetail     = CZWeatherRequestNoDetail;
-        self.currentDetail      = CZWeatherRequestNoDetail;
+        _detailLevel            = CZWeatherRequestLightDetail;
+        _requestType            = requestType;
     }
     return self;
 }
 
-+ (CZWeatherRequest *)request
+
++ (CZWeatherRequest *)requestWithType:(CZWeatherRequestType)requestType
 {
-    return [CZWeatherRequest new];
+    return [[CZWeatherRequest alloc]initWithType:requestType];
 }
 
 #pragma mark Using a Weather Request
 
-- (void)startWithCompletion:(CZWeatherRequestCompletion)completion
+- (void)performRequestWithHandler:(CZWeatherRequestHandler)handler
 {
-    if (self.hasStarted || !completion) {
-        self.hasStarted = YES;  // Request is considered "started" even it has no completion handler
+    if (!handler) {
         return;
     }
     
-    if (!self.service) {  // Requests require a service
-        completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                            code:CZWeatherRequestConfigurationError
-                                        userInfo:nil]);
+    if (!self.service) { // Requests require a service
+        handler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                         code:CZWeatherRequestConfigurationError
+                                     userInfo:nil]);
         return;
     }
-    
-    NSURL *url = [self.service urlForRequest:self];
+
+     __weak CZWeatherRequest *weakRequest = self;
+    NSURL *url = [self.service urlForRequest:weakRequest];
     
     if (!url) { // Error if no url provided by service
-        completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                            code:CZWeatherRequestServiceURLError
-                                        userInfo:nil]);
+        handler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                         code:CZWeatherRequestServiceURLError
+                                     userInfo:nil]);
         return;
     }
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (data) {
-            CZWeatherData *weatherData = [self.service weatherDataForResponseData:data request:self];
+            id weatherData = [self.service weatherDataForResponseData:data request:weakRequest];
             if (weatherData) {
-                completion(weatherData, nil);
-            } else {    // Error if parsing error occurred
-                completion(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
-                                                    code:CZWeatherRequestServiceParseError
-                                                    userInfo:nil]);
+                handler(weatherData, nil);
+            } else {    // Error if parsing failed
+                handler(nil, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                 code:CZWeatherRequestServiceParseError
+                                             userInfo:nil]);
             }
         } else {
-            completion(nil, connectionError);
+            handler(nil, connectionError);
         }
     }];
-}
-
-#pragma mark Setters
-
-- (void)setService:(id<CZWeatherService>)service
-{
-    if (!self.hasStarted) {
-        _service = service;
-    }
-}
-
-- (void)setConditionsDetail:(CZWeatherRequestDetail)conditionsDetail
-{
-    if (!self.hasStarted) {
-        _currentDetail = conditionsDetail;
-    }
-}
-
-- (void)setForecastDetail:(CZWeatherRequestDetail)forecastDetail
-{
-    if (!self.hasStarted) {
-        _forecastDetail = forecastDetail;
-    }
 }
 
 @end

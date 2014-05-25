@@ -10,26 +10,7 @@
 #pragma mark - Imports
 
 #import "Climacon.h"
-#import "CZWeatherData.h"
 #import "CZWeatherCondition.h"
-
-
-#pragma mark - CZWeatherData Friend Category
-
-/**
- Friend category for CZWeatherData. Allows write access to a CZWeatherData object's properties.
- 
- Should not be used outside of a weather service.
- */
-@interface CZWeatherData (Friend)
-
-- (void)setTimestamp:(NSDate *)timestamp;
-- (void)setCurrentCondition:(CZWeatherCondition *)currentCondition;
-- (void)setForecastedConditions:(NSArray *)forecastedConditions;
-- (void)setLocation:(NSDictionary *)location;
-- (void)setServiceName:(NSString *)serviceName;
-
-@end
 
 
 #pragma mark - CZWeatherCondition Friend Category
@@ -44,7 +25,7 @@
 - (void)setDate:(NSDate *)date;
 - (void)setDescription:(NSString *)description;
 - (void)setClimaconCharacter:(Climacon)climaconCharacter;
-- (void)setCurrentTemperature:(CZTemperature)currentTemperature;
+- (void)setTemperature:(CZTemperature)temperature;
 - (void)setHighTemperature:(CZTemperature)highTemperature;
 - (void)setLowTemperature:(CZTemperature)lowTemperature;
 - (void)setWindDegrees:(CGFloat)windDegrees;
