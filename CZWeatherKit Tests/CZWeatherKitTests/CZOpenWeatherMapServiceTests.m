@@ -13,6 +13,13 @@
 #import "CZOpenWeatherMapService.h"
 
 
+#pragma mark - Macros
+
+#if !(TARGET_OS_IPHONE)
+#define valueWithCGPoint valueWithPoint
+#endif
+
+
 #pragma mark - Constants
 
 //
@@ -70,8 +77,90 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/hourly?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/hourly%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for forecast light detail");
+}
+
+- (void)test_urlForRequest_forecastFullDetail
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/daily%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for forecast full detail");
+}
+
+- (void)test_urlForRequest_conditionsLightDetail
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel  = CZWeatherRequestLightDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for conditions light detail");
+}
+
+- (void)test_urlForRequest_conditionsFullDetail
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel  = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for conditions full detail");
+}
+
+- (void)test_urlForRequest_locationCoordinate
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel   = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
+}
+
+- (void)test_urlForRequest_locationStateCity
+{
+    NSString * const stateCity = @"Austin,TX";
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.StateCityName] = stateCity;
+    request.detailLevel   = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Fq=%@&mode=json&units=imperial&appid=%@", stateCity, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with state/city");
+}
+
+- (void)test_urlForRequest_locationCountryCity
+{
+    NSString * const countryCity = @"London,UK";
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CountryCityName] = countryCity;
+    request.detailLevel   = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSURL *url = [self.service urlForRequest:request];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Fq=%@&mode=json&units=imperial&appid=%@", countryCity, self.service.key];
+    XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with country/city");
 }
 
 @end
