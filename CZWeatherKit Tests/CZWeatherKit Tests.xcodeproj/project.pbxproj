@@ -37,6 +37,7 @@
 		DDCD8BAA1931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */; };
 		DDCD8BAB1931B8C200D9B731 /* CZOpenWeatherMapServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */; };
 		DDCD8D1E1931C09600D9B731 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8D1D1931C09600D9B731 /* API_KEY.plist */; };
+		DDCD8D1F19327EDD00D9B731 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8D1D1931C09600D9B731 /* API_KEY.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -348,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCD8D1F19327EDD00D9B731 /* API_KEY.plist in Resources */,
 				DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */,
 				DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */,
 				DDB94A60193073C40079DF6D /* forecastLight_wunderground.json in Resources */,
