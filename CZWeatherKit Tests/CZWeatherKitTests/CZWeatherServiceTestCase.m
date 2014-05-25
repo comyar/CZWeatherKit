@@ -30,9 +30,19 @@
 #import "CZWeatherServiceTestCase.h"
 
 
+#pragma mark - Constants
+
+static NSString * const keysFilename = @"API_KEY";
+
+
 #pragma mark - CZWeatherServiceTestCase Implementation
 
 @implementation CZWeatherServiceTestCase
 
+- (void)setUp
+{
+    NSString *path = [[NSBundle bundleForClass:[self class]]pathForResource:keysFilename ofType:@"plist"];
+    _keys = [NSDictionary dictionaryWithContentsOfFile:path];
+}
 
 @end

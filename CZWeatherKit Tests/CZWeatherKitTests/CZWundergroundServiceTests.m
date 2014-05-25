@@ -39,9 +39,6 @@
 #pragma mark - Constants
 
 //
-static NSString * const apiKeyFilename                      = @"API_KEY";
-
-//
 static NSString * const currentJSONFilename                 = @"current_wunderground";
 
 //
@@ -64,12 +61,6 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_wun
 //
 @property (nonatomic) NSData *forecastFullData;
 
-//
-@property (nonatomic) NSData *currentForecastLightData;
-
-//
-@property (nonatomic) NSData *currentForecastFullData;
-
 @end
 
 
@@ -81,10 +72,11 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_wun
 
 - (void)setUp
 {
-    self.service                    = [CZWundergroundService serviceWithKey:[self loadFile:apiKeyFilename extension:@"txt"]];
-    self.currentData                = [[self loadFile:currentJSONFilename extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
-    self.forecastLightData          = [[self loadFile:forecastLightJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
-    self.forecastFullData           = [[self loadFile:forecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    [super setUp];
+    self.service            = [CZWundergroundService serviceWithKey:self.keys[@"wunderground"]];
+    self.currentData        = [[self loadFile:currentJSONFilename       extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.forecastLightData  = [[self loadFile:forecastLightJSONFilename extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
+    self.forecastFullData   = [[self loadFile:forecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)loadFile:(NSString *)filename extension:(NSString *)extension

@@ -101,10 +101,12 @@ static NSString * const apiVerstion = @"2.5";
     if (request.location[CZWeatherKitLocationName.CoordinateName]) {
         CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
         components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
-    } if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
+    } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
+        NSString *query = request.location[CZWeatherKitLocationName.StateCityName];
+        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
     } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
+        NSString *query = request.location[CZWeatherKitLocationName.CountryCityName];
+        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
     } else {
         return nil;
     }
