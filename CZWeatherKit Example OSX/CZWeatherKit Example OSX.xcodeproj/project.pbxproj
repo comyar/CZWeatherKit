@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDCD8C8D1931BD9E00D9B731 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8C8C1931BD9E00D9B731 /* Cocoa.framework */; };
+		DDCD8C971931BD9E00D9B731 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8C951931BD9E00D9B731 /* InfoPlist.strings */; };
+		DDCD8C991931BD9E00D9B731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8C981931BD9E00D9B731 /* main.m */; };
+		DDCD8C9D1931BD9E00D9B731 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8C9B1931BD9E00D9B731 /* Credits.rtf */; };
+		DDCD8CA01931BD9E00D9B731 /* CZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8C9F1931BD9E00D9B731 /* CZAppDelegate.m */; };
+		DDCD8CA31931BD9E00D9B731 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8CA11931BD9E00D9B731 /* MainMenu.xib */; };
+		DDCD8CA51931BD9E00D9B731 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8CA41931BD9E00D9B731 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DDCD8C891931BD9E00D9B731 /* CZWeatherKit Example OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CZWeatherKit Example OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDCD8C8C1931BD9E00D9B731 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DDCD8C8F1931BD9E00D9B731 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DDCD8C901931BD9E00D9B731 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DDCD8C911931BD9E00D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDCD8C941931BD9E00D9B731 /* CZWeatherKit Example OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKit Example OSX-Info.plist"; sourceTree = "<group>"; };
+		DDCD8C961931BD9E00D9B731 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDCD8C981931BD9E00D9B731 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDCD8C9A1931BD9E00D9B731 /* CZWeatherKit Example OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZWeatherKit Example OSX-Prefix.pch"; sourceTree = "<group>"; };
+		DDCD8C9C1931BD9E00D9B731 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DDCD8C9E1931BD9E00D9B731 /* CZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAppDelegate.h; sourceTree = "<group>"; };
+		DDCD8C9F1931BD9E00D9B731 /* CZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAppDelegate.m; sourceTree = "<group>"; };
+		DDCD8CA21931BD9E00D9B731 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DDCD8CA41931BD9E00D9B731 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DDCD8CAB1931BD9E00D9B731 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDCD8C861931BD9E00D9B731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C8D1931BD9E00D9B731 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDCD8C801931BD9E00D9B731 = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C921931BD9E00D9B731 /* CZWeatherKit Example OSX */,
+				DDCD8C8B1931BD9E00D9B731 /* Frameworks */,
+				DDCD8C8A1931BD9E00D9B731 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDCD8C8A1931BD9E00D9B731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C891931BD9E00D9B731 /* CZWeatherKit Example OSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDCD8C8B1931BD9E00D9B731 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C8C1931BD9E00D9B731 /* Cocoa.framework */,
+				DDCD8CAB1931BD9E00D9B731 /* XCTest.framework */,
+				DDCD8C8E1931BD9E00D9B731 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDCD8C8E1931BD9E00D9B731 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C8F1931BD9E00D9B731 /* AppKit.framework */,
+				DDCD8C901931BD9E00D9B731 /* CoreData.framework */,
+				DDCD8C911931BD9E00D9B731 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DDCD8C921931BD9E00D9B731 /* CZWeatherKit Example OSX */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8CC01931BDB700D9B731 /* Classes */,
+				DDCD8CA11931BD9E00D9B731 /* MainMenu.xib */,
+				DDCD8CA41931BD9E00D9B731 /* Images.xcassets */,
+				DDCD8C931931BD9E00D9B731 /* Supporting Files */,
+			);
+			path = "CZWeatherKit Example OSX";
+			sourceTree = "<group>";
+		};
+		DDCD8C931931BD9E00D9B731 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C941931BD9E00D9B731 /* CZWeatherKit Example OSX-Info.plist */,
+				DDCD8C951931BD9E00D9B731 /* InfoPlist.strings */,
+				DDCD8C981931BD9E00D9B731 /* main.m */,
+				DDCD8C9A1931BD9E00D9B731 /* CZWeatherKit Example OSX-Prefix.pch */,
+				DDCD8C9B1931BD9E00D9B731 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDCD8CC01931BDB700D9B731 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C9E1931BD9E00D9B731 /* CZAppDelegate.h */,
+				DDCD8C9F1931BD9E00D9B731 /* CZAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDCD8C881931BD9E00D9B731 /* CZWeatherKit Example OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDCD8CBA1931BD9E00D9B731 /* Build configuration list for PBXNativeTarget "CZWeatherKit Example OSX" */;
+			buildPhases = (
+				DDCD8C851931BD9E00D9B731 /* Sources */,
+				DDCD8C861931BD9E00D9B731 /* Frameworks */,
+				DDCD8C871931BD9E00D9B731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CZWeatherKit Example OSX";
+			productName = "CZWeatherKit Example OSX";
+			productReference = DDCD8C891931BD9E00D9B731 /* CZWeatherKit Example OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDCD8C811931BD9E00D9B731 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Comyar Zaheri";
+			};
+			buildConfigurationList = DDCD8C841931BD9E00D9B731 /* Build configuration list for PBXProject "CZWeatherKit Example OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDCD8C801931BD9E00D9B731;
+			productRefGroup = DDCD8C8A1931BD9E00D9B731 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDCD8C881931BD9E00D9B731 /* CZWeatherKit Example OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDCD8C871931BD9E00D9B731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C971931BD9E00D9B731 /* InfoPlist.strings in Resources */,
+				DDCD8CA51931BD9E00D9B731 /* Images.xcassets in Resources */,
+				DDCD8C9D1931BD9E00D9B731 /* Credits.rtf in Resources */,
+				DDCD8CA31931BD9E00D9B731 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDCD8C851931BD9E00D9B731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C991931BD9E00D9B731 /* main.m in Sources */,
+				DDCD8CA01931BD9E00D9B731 /* CZAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DDCD8C951931BD9E00D9B731 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDCD8C961931BD9E00D9B731 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDCD8C9B1931BD9E00D9B731 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDCD8C9C1931BD9E00D9B731 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DDCD8CA11931BD9E00D9B731 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDCD8CA21931BD9E00D9B731 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDCD8CB81931BD9E00D9B731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DDCD8CB91931BD9E00D9B731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DDCD8CBB1931BD9E00D9B731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CZWeatherKit Example OSX/CZWeatherKit Example OSX-Prefix.pch";
+				INFOPLIST_FILE = "CZWeatherKit Example OSX/CZWeatherKit Example OSX-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDCD8CBC1931BD9E00D9B731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CZWeatherKit Example OSX/CZWeatherKit Example OSX-Prefix.pch";
+				INFOPLIST_FILE = "CZWeatherKit Example OSX/CZWeatherKit Example OSX-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDCD8C841931BD9E00D9B731 /* Build configuration list for PBXProject "CZWeatherKit Example OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDCD8CB81931BD9E00D9B731 /* Debug */,
+				DDCD8CB91931BD9E00D9B731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDCD8CBA1931BD9E00D9B731 /* Build configuration list for PBXNativeTarget "CZWeatherKit Example OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDCD8CBB1931BD9E00D9B731 /* Debug */,
+				DDCD8CBC1931BD9E00D9B731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDCD8C811931BD9E00D9B731 /* Project object */;
+}

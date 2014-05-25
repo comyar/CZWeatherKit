@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDCD8BFF1931BD1700D9B731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8BFE1931BD1700D9B731 /* Foundation.framework */; };
+		DDCD8C011931BD1700D9B731 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8C001931BD1700D9B731 /* CoreGraphics.framework */; };
+		DDCD8C031931BD1700D9B731 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8C021931BD1700D9B731 /* UIKit.framework */; };
+		DDCD8C091931BD1700D9B731 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8C071931BD1700D9B731 /* InfoPlist.strings */; };
+		DDCD8C0B1931BD1700D9B731 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8C0A1931BD1700D9B731 /* main.m */; };
+		DDCD8C0F1931BD1700D9B731 /* CZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8C0E1931BD1700D9B731 /* CZAppDelegate.m */; };
+		DDCD8C181931BD1700D9B731 /* CZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8C171931BD1700D9B731 /* CZViewController.m */; };
+		DDCD8C1A1931BD1700D9B731 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8C191931BD1700D9B731 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DDCD8BFB1931BD1700D9B731 /* CZWeatherKit Example iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CZWeatherKit Example iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDCD8BFE1931BD1700D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDCD8C001931BD1700D9B731 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DDCD8C021931BD1700D9B731 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DDCD8C061931BD1700D9B731 /* CZWeatherKit Example iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKit Example iOS-Info.plist"; sourceTree = "<group>"; };
+		DDCD8C081931BD1700D9B731 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDCD8C0A1931BD1700D9B731 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDCD8C0C1931BD1700D9B731 /* CZWeatherKit Example iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZWeatherKit Example iOS-Prefix.pch"; sourceTree = "<group>"; };
+		DDCD8C0D1931BD1700D9B731 /* CZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAppDelegate.h; sourceTree = "<group>"; };
+		DDCD8C0E1931BD1700D9B731 /* CZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAppDelegate.m; sourceTree = "<group>"; };
+		DDCD8C161931BD1700D9B731 /* CZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZViewController.h; sourceTree = "<group>"; };
+		DDCD8C171931BD1700D9B731 /* CZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZViewController.m; sourceTree = "<group>"; };
+		DDCD8C191931BD1700D9B731 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DDCD8C201931BD1700D9B731 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDCD8BF81931BD1700D9B731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C011931BD1700D9B731 /* CoreGraphics.framework in Frameworks */,
+				DDCD8C031931BD1700D9B731 /* UIKit.framework in Frameworks */,
+				DDCD8BFF1931BD1700D9B731 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDCD8BF21931BD1700D9B731 = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C041931BD1700D9B731 /* CZWeatherKit Example iOS */,
+				DDCD8BFD1931BD1700D9B731 /* Frameworks */,
+				DDCD8BFC1931BD1700D9B731 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDCD8BFC1931BD1700D9B731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8BFB1931BD1700D9B731 /* CZWeatherKit Example iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDCD8BFD1931BD1700D9B731 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8BFE1931BD1700D9B731 /* Foundation.framework */,
+				DDCD8C001931BD1700D9B731 /* CoreGraphics.framework */,
+				DDCD8C021931BD1700D9B731 /* UIKit.framework */,
+				DDCD8C201931BD1700D9B731 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDCD8C041931BD1700D9B731 /* CZWeatherKit Example iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C361931BD2400D9B731 /* Classes */,
+				DDCD8C191931BD1700D9B731 /* Images.xcassets */,
+				DDCD8C051931BD1700D9B731 /* Supporting Files */,
+			);
+			path = "CZWeatherKit Example iOS";
+			sourceTree = "<group>";
+		};
+		DDCD8C051931BD1700D9B731 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C061931BD1700D9B731 /* CZWeatherKit Example iOS-Info.plist */,
+				DDCD8C071931BD1700D9B731 /* InfoPlist.strings */,
+				DDCD8C0A1931BD1700D9B731 /* main.m */,
+				DDCD8C0C1931BD1700D9B731 /* CZWeatherKit Example iOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDCD8C361931BD2400D9B731 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DDCD8C0D1931BD1700D9B731 /* CZAppDelegate.h */,
+				DDCD8C0E1931BD1700D9B731 /* CZAppDelegate.m */,
+				DDCD8C161931BD1700D9B731 /* CZViewController.h */,
+				DDCD8C171931BD1700D9B731 /* CZViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDCD8BFA1931BD1700D9B731 /* CZWeatherKit Example iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDCD8C301931BD1700D9B731 /* Build configuration list for PBXNativeTarget "CZWeatherKit Example iOS" */;
+			buildPhases = (
+				DDCD8BF71931BD1700D9B731 /* Sources */,
+				DDCD8BF81931BD1700D9B731 /* Frameworks */,
+				DDCD8BF91931BD1700D9B731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CZWeatherKit Example iOS";
+			productName = "CZWeatherKit Example iOS";
+			productReference = DDCD8BFB1931BD1700D9B731 /* CZWeatherKit Example iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDCD8BF31931BD1700D9B731 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Comyar Zaheri";
+			};
+			buildConfigurationList = DDCD8BF61931BD1700D9B731 /* Build configuration list for PBXProject "CZWeatherKit Example iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDCD8BF21931BD1700D9B731;
+			productRefGroup = DDCD8BFC1931BD1700D9B731 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDCD8BFA1931BD1700D9B731 /* CZWeatherKit Example iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDCD8BF91931BD1700D9B731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C1A1931BD1700D9B731 /* Images.xcassets in Resources */,
+				DDCD8C091931BD1700D9B731 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDCD8BF71931BD1700D9B731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDCD8C0B1931BD1700D9B731 /* main.m in Sources */,
+				DDCD8C0F1931BD1700D9B731 /* CZAppDelegate.m in Sources */,
+				DDCD8C181931BD1700D9B731 /* CZViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DDCD8C071931BD1700D9B731 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDCD8C081931BD1700D9B731 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDCD8C2E1931BD1700D9B731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDCD8C2F1931BD1700D9B731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDCD8C311931BD1700D9B731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CZWeatherKit Example iOS/CZWeatherKit Example iOS-Prefix.pch";
+				INFOPLIST_FILE = "CZWeatherKit Example iOS/CZWeatherKit Example iOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDCD8C321931BD1700D9B731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CZWeatherKit Example iOS/CZWeatherKit Example iOS-Prefix.pch";
+				INFOPLIST_FILE = "CZWeatherKit Example iOS/CZWeatherKit Example iOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDCD8BF61931BD1700D9B731 /* Build configuration list for PBXProject "CZWeatherKit Example iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDCD8C2E1931BD1700D9B731 /* Debug */,
+				DDCD8C2F1931BD1700D9B731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDCD8C301931BD1700D9B731 /* Build configuration list for PBXNativeTarget "CZWeatherKit Example iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDCD8C311931BD1700D9B731 /* Debug */,
+				DDCD8C321931BD1700D9B731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDCD8BF31931BD1700D9B731 /* Project object */;
+}

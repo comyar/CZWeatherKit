@@ -4,4 +4,10 @@
    <FileRef
       location = "group:CZWeatherKit Tests/CZWeatherKit Tests.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:CZWeatherKit Example iOS/CZWeatherKit Example iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CZWeatherKit Example OSX/CZWeatherKit Example OSX.xcodeproj">
+   </FileRef>
 </Workspace>

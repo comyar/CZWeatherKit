@@ -111,6 +111,10 @@ static NSString * const apiVerstion = @"2.5";
     
     components.path = [components.path stringByAppendingString:@"&mode=json&units=imperial"];
     
+    if ([self.key length] > 0) {
+        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"&appid=%@", self.key]];
+    }
+    
     return [components URL];
 }
 
