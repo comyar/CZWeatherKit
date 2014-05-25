@@ -79,8 +79,7 @@
                         
                         
                         NSString *iconThree = [NSString stringWithFormat:@"%c", ((CZWeatherCondition *)forecasts[2]).climaconCharacter];
-                        self.weatherView.forecastIconThreeLabel.text = [dateFormatter stringFromDate:[NSDate
-                                                                                                      dateWithTimeIntervalSinceNow:259200]];
+                        self.weatherView.forecastDayThreeLabel.text = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:259200]];
                         self.weatherView.forecastIconThreeLabel.text = iconThree;
                     }
                     
