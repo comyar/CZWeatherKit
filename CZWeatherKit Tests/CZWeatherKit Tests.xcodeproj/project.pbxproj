@@ -40,6 +40,7 @@
 		DDCD8BA019307D2800D9B731 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8B9919307CF100D9B731 /* UIKit.framework */; };
 		DDCD8BA519307D4A00D9B731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8BA319307D4000D9B731 /* Foundation.framework */; };
 		DDCD8BA719307D5E00D9B731 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8B9719307CEC00D9B731 /* XCTest.framework */; };
+		DDCD8BAA1931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		DDCD8B9919307CF100D9B731 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDCD8B9B19307CF700D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDCD8BA319307D4000D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZOpenWeatherMapServiceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */,
 				DD518212192B15B600D896A6 /* CZWeatherServiceTestCase.m */,
 				DD518215192B167400D896A6 /* CZWundergroundServiceTests.m */,
+				DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			files = (
 				DDB94A92193079380079DF6D /* CZWeatherServiceTestCase.m in Sources */,
 				DDB94A93193079380079DF6D /* CZWundergroundServiceTests.m in Sources */,
+				DDCD8BAA1931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m in Sources */,
 				DDB94A7C1930740E0079DF6D /* CZWeatherRequest.m in Sources */,
 				DDB94A7D1930740E0079DF6D /* CZWundergroundService.m in Sources */,
 				DDB94A7E1930740E0079DF6D /* CZOpenWeatherMapService.m in Sources */,
