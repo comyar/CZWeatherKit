@@ -41,8 +41,8 @@
 
 #pragma mark - Constants
 
-// Host for API
-static NSString * const host        = @"api.wunderground.com";
+// Base URL
+static NSString * const base        = @"http://api.wunderground.com/api";
 
 // Name of the service
 static NSString * const serviceName = @"Weather Underground";
@@ -85,39 +85,36 @@ static NSString * const serviceName = @"Weather Underground";
         return nil;
     }
     
-    NSURLComponents *components = [NSURLComponents new];
-    components.scheme   = @"http";
-    components.host     = host;
-    components.path     = [NSString stringWithFormat:@"/api/%@/", self.key];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/", base, self.key];
     
     if (request.requestType == CZCurrentConditionsRequestType) {
-        components.path = [components.path stringByAppendingString:@"conditions/"];
+        url = [url stringByAppendingString:@"conditions/"];
     }else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
-        components.path = [components.path stringByAppendingString:@"forecast/"];
+        url = [url stringByAppendingString:@"forecast/"];
     } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestFullDetail) {
-        components.path = [components.path stringByAppendingString:@"forecast10day/"];
+        url = [url stringByAppendingString:@"forecast10day/"];
     }
     
-    components.path = [components.path stringByAppendingString:@"q/"];
+    url = [url stringByAppendingString:@"q/"];
     
     if (request.location[CZWeatherKitLocationName.CoordinateName]) {
         CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
     } else if (request.location[CZWeatherKitLocationName.ZipcodeName]) {
-        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.ZipcodeName]];
+        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.ZipcodeName]];
     } else if (request.location[CZWeatherKitLocationName.AutoIPName]) {
-        components.path = [components.path stringByAppendingString:@"autoip"];
+        url = [url stringByAppendingString:@"autoip"];
     } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
+        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
     } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
+        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
     } else {
         return nil;
     }
     
-    components.path = [components.path stringByAppendingString:@".json"];
+    url = [url stringByAppendingString:@".json"];
     
-    return [components URL];
+    return [NSURL URLWithString:url];
 }
 
 - (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request

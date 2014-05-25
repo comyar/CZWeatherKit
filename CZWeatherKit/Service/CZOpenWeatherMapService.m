@@ -41,13 +41,11 @@
 
 #pragma mark - Constants
 
-// Host for API
-static NSString * const host        = @"api.openweathermap.org";
+// Base URL
+static NSString * const base        = @"http://api.openweathermap.org/data/2.5/";
 
 // Name of the service
 static NSString * const serviceName = @"Open Weather Map";
-
-static NSString * const apiVerstion = @"2.5";
 
 
 #pragma mark - Macros
@@ -85,39 +83,36 @@ static NSString * const apiVerstion = @"2.5";
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
-    NSURLComponents *components = [NSURLComponents new];
-    components.scheme   = @"http";
-    components.host     = host;
-    components.path     = [NSString stringWithFormat:@"/data/%@/", apiVerstion];
+    NSString *url = base;
     
     if (request.requestType == CZCurrentConditionsRequestType) {
-        components.path = [components.path stringByAppendingString:@"weather?"];
+        url = [url stringByAppendingString:@"weather?"];
     } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
-        components.path = [components.path stringByAppendingString:@"forecast/hourly?"];
+        url = [url stringByAppendingString:@"forecast/hourly?"];
     } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestFullDetail) {
-        components.path = [components.path stringByAppendingString:@"forecast/daily?"];
+        url = [url stringByAppendingString:@"forecast/daily?"];
     }
     
     if (request.location[CZWeatherKitLocationName.CoordinateName]) {
         CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
     } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
         NSString *query = request.location[CZWeatherKitLocationName.StateCityName];
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
     } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
         NSString *query = request.location[CZWeatherKitLocationName.CountryCityName];
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
     } else {
         return nil;
     }
     
-    components.path = [components.path stringByAppendingString:@"&mode=json&units=imperial"];
+    url = [url stringByAppendingString:@"&mode=json&units=imperial"];
     
     if ([self.key length] > 0) {
-        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"&appid=%@", self.key]];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&appid=%@", self.key]];
     }
     
-    return [components URL];
+    return [NSURL URLWithString:url];
 }
 
 - (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request

@@ -81,7 +81,7 @@
         
         //  Initialize Ribbon
         self.ribbon = [[UIView alloc]initWithFrame:CGRectMake(0, 1.30 * self.center.y, self.bounds.size.width, 80)];
-        [self.ribbon setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.01]];
+        [self.ribbon setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.25]];
         [self.container addSubview:self.ribbon];
         
         //  Initialize Activity Indicator
@@ -154,7 +154,7 @@
     [self.conditionDescriptionLabel setCenter:CGPointMake(self.container.center.x, self.center.y)];
     [self.conditionDescriptionLabel setFont:[UIFont fontWithName:ULTRALIGHT_FONT size:fontSize]];
     [self.conditionDescriptionLabel setBackgroundColor:[UIColor clearColor]];
-    [self.conditionDescriptionLabel setTextColor:[UIColor blackColor]];
+    [self.conditionDescriptionLabel setTextColor:[UIColor whiteColor]];
     [self.conditionDescriptionLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.conditionDescriptionLabel];
 }
@@ -167,7 +167,7 @@
     [self.locationLabel setCenter:CGPointMake(self.container.center.x, 1.18 * self.center.y)];
     [self.locationLabel setFont:[UIFont fontWithName:LIGHT_FONT size:fontSize]];
     [self.locationLabel setBackgroundColor:[UIColor clearColor]];
-    [self.locationLabel setTextColor:[UIColor blackColor]];
+    [self.locationLabel setTextColor:[UIColor whiteColor]];
     [self.locationLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.locationLabel];
 }
@@ -178,7 +178,7 @@
     self.currentTemperatureLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 1.305 * self.center.y, 0.4 * CGRectGetWidth(self.bounds), fontSize)];
     [self.currentTemperatureLabel setFont:[UIFont fontWithName:ULTRALIGHT_FONT size:fontSize]];
     [self.currentTemperatureLabel setBackgroundColor:[UIColor clearColor]];
-    [self.currentTemperatureLabel setTextColor:[UIColor blackColor]];
+    [self.currentTemperatureLabel setTextColor:[UIColor whiteColor]];
     [self.currentTemperatureLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.currentTemperatureLabel];
 }
@@ -192,7 +192,7 @@
                                                  self.currentTemperatureLabel.center.y + 0.5 * self.currentTemperatureLabel.bounds.size.height + 12)];
     [self.hiloTemperatureLabel setFont:[UIFont fontWithName:LIGHT_FONT size:fontSize]];
     [self.hiloTemperatureLabel setBackgroundColor:[UIColor clearColor]];
-    [self.hiloTemperatureLabel setTextColor:[UIColor blackColor]];
+    [self.hiloTemperatureLabel setTextColor:[UIColor whiteColor]];
     [self.hiloTemperatureLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.hiloTemperatureLabel];
 }
@@ -211,7 +211,7 @@
         [forecastDayLabel setFrame:CGRectMake(0.425 * CGRectGetWidth(self.bounds) + (64 * i), 1.33 * self.center.y, 2 * fontSize, fontSize)];
         [forecastDayLabel setFont:[UIFont fontWithName:LIGHT_FONT size:fontSize]];
         [forecastDayLabel setBackgroundColor:[UIColor clearColor]];
-        [forecastDayLabel setTextColor:[UIColor blackColor]];
+        [forecastDayLabel setTextColor:[UIColor whiteColor]];
         [forecastDayLabel setTextAlignment:NSTextAlignmentCenter];
         [self.container addSubview:forecastDayLabel];
     }
@@ -231,7 +231,7 @@
         [forecastIconLabel setFrame:CGRectMake(0.425 * CGRectGetWidth(self.bounds) + (64 * i), 1.42 * self.center.y, fontSize, fontSize)];
         [forecastIconLabel setFont:[UIFont fontWithName:CLIMACON_FONT size:fontSize]];
         [forecastIconLabel setBackgroundColor:[UIColor clearColor]];
-        [forecastIconLabel setTextColor:[UIColor blackColor]];
+        [forecastIconLabel setTextColor:[UIColor whiteColor]];
         [forecastIconLabel setTextAlignment:NSTextAlignmentCenter];
         [self.container addSubview:forecastIconLabel];
     }

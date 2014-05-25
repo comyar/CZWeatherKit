@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor colorWithRed:0.439 green:0.868 blue:0.999 alpha:1.000];
     self.weatherView = [[CZWeatherView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:self.weatherView];
 }
@@ -52,8 +52,7 @@
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             CZWeatherCondition *condition = (CZWeatherCondition *)data;
-            NSLog(@"%f", condition.temperature.f);
-            NSLog(@"%@", condition.description);
+            self.weatherView.currentTemperatureLabel.text = [NSString stringWithFormat:@"%.0f°", condition.temperature.f];
         }
     }];
 }

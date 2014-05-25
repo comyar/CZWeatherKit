@@ -77,7 +77,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/hourly%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/hourly?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for forecast light detail");
 }
 
@@ -91,7 +91,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/daily%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast/daily?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for forecast full detail");
 }
 
@@ -105,7 +105,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for conditions light detail");
 }
 
@@ -119,7 +119,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for conditions full detail");
 }
 
@@ -133,7 +133,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Flat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%.4f&lon=%.4f&mode=json&units=imperial&appid=%@", latitude, longitude, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with coordinates");
 }
 
@@ -146,7 +146,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Fq=%@&mode=json&units=imperial&appid=%@", stateCity, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&mode=json&units=imperial&appid=%@", stateCity, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with state/city");
 }
 
@@ -159,7 +159,7 @@ static NSString * const forecastFullJSONFilename            = @"";
     request.service = self.service;
     
     NSURL *url = [self.service urlForRequest:request];
-    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather%%3Fq=%@&mode=json&units=imperial&appid=%@", countryCity, self.service.key];
+    NSString *expected = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&mode=json&units=imperial&appid=%@", countryCity, self.service.key];
     XCTAssertEqualObjects(url, [NSURL URLWithString:expected], @"Invalid URL for request with country/city");
 }
 
