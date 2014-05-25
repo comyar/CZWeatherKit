@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		DDB94A541930737E0079DF6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A521930737E0079DF6D /* InfoPlist.strings */; };
 		DDB94A5B193073C40079DF6D /* API_KEY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A1F193068310079DF6D /* API_KEY.txt */; };
-		DDB94A5C193073C40079DF6D /* current_forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */; };
-		DDB94A5D193073C40079DF6D /* current_forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */; };
 		DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821A192BDD6400D896A6 /* current_wunderground.json */; };
 		DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */; };
 		DDB94A60193073C40079DF6D /* forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821C192BDD6400D896A6 /* forecastLight_wunderground.json */; };
@@ -25,8 +23,6 @@
 		DDB94A801930740E0079DF6D /* CZWeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = DD518222192BE98700D896A6 /* CZWeatherCondition.m */; };
 		DDB94A811930740E0079DF6D /* NSString+CZWeatherKit_Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D0675192EEF6100CD8D4F /* NSString+CZWeatherKit_Substring.m */; };
 		DDB94A88193074520079DF6D /* API_KEY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A1F193068310079DF6D /* API_KEY.txt */; };
-		DDB94A89193074520079DF6D /* current_forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */; };
-		DDB94A8A193074520079DF6D /* current_forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */; };
 		DDB94A8B193074520079DF6D /* current_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821A192BDD6400D896A6 /* current_wunderground.json */; };
 		DDB94A8C193074520079DF6D /* forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */; };
 		DDB94A8D193074520079DF6D /* forecastLight_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821C192BDD6400D896A6 /* forecastLight_wunderground.json */; };
@@ -66,8 +62,6 @@
 		DD518224192D738200D896A6 /* CZOpenWeatherMapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZOpenWeatherMapService.h; sourceTree = "<group>"; };
 		DD518225192D738200D896A6 /* CZOpenWeatherMapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZOpenWeatherMapService.m; sourceTree = "<group>"; };
 		DD518227192D7F0D00D896A6 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
-		DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastFull_wunderground.json; path = JSON/current_forecastFull_wunderground.json; sourceTree = "<group>"; };
-		DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_forecastLight_wunderground.json; path = JSON/current_forecastLight_wunderground.json; sourceTree = "<group>"; };
 		DDB94A1F193068310079DF6D /* API_KEY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API_KEY.txt; sourceTree = SOURCE_ROOT; };
 		DDB94A4D1930737E0079DF6D /* OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB94A511930737E0079DF6D /* OSX Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSX Tests-Info.plist"; sourceTree = "<group>"; };
@@ -214,8 +208,6 @@
 		DD518219192BDD5900D896A6 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				DD51822A192DA2B700D896A6 /* current_forecastFull_wunderground.json */,
-				DD51822B192DA2B700D896A6 /* current_forecastLight_wunderground.json */,
 				DD51821A192BDD6400D896A6 /* current_wunderground.json */,
 				DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */,
 				DD51821C192BDD6400D896A6 /* forecastLight_wunderground.json */,
@@ -357,8 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB94A5B193073C40079DF6D /* API_KEY.txt in Resources */,
-				DDB94A5C193073C40079DF6D /* current_forecastFull_wunderground.json in Resources */,
-				DDB94A5D193073C40079DF6D /* current_forecastLight_wunderground.json in Resources */,
 				DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */,
 				DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */,
 				DDB94A60193073C40079DF6D /* forecastLight_wunderground.json in Resources */,
@@ -371,8 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB94A88193074520079DF6D /* API_KEY.txt in Resources */,
-				DDB94A89193074520079DF6D /* current_forecastFull_wunderground.json in Resources */,
-				DDB94A8A193074520079DF6D /* current_forecastLight_wunderground.json in Resources */,
 				DDB94A8B193074520079DF6D /* current_wunderground.json in Resources */,
 				DDB94A8C193074520079DF6D /* forecastFull_wunderground.json in Resources */,
 				DDB94A8D193074520079DF6D /* forecastLight_wunderground.json in Resources */,
