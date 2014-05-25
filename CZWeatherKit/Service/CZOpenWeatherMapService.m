@@ -141,6 +141,13 @@ static NSString * const serviceName = @"Open Weather Map";
     
     CGFloat tempF = [JSON[@"main"][@"temp"]floatValue];
     condition.temperature = (CZTemperature){tempF, F_TO_C(tempF)};
+    
+    CGFloat highTempF = [JSON[@"main"][@"temp_max"]floatValue];
+    condition.highTemperature = (CZTemperature){highTempF, F_TO_C(highTempF)};
+    
+    CGFloat lowTempF = [JSON[@"main"][@"temp_min"]floatValue];
+    condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
+    
     condition.humidity = [JSON[@"main"][@"humidity"]floatValue];
     condition.description = [JSON[@"weather"]firstObject][@"description"];
     condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];

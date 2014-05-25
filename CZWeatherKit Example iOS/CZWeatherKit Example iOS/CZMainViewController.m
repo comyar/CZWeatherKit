@@ -46,6 +46,7 @@
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     
+    [self.weatherView.activityIndicator startAnimating];
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.service = [CZOpenWeatherMapService serviceWithKey:nil];
     request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
@@ -53,8 +54,16 @@
         if (data) {
             CZWeatherCondition *condition = (CZWeatherCondition *)data;
             self.weatherView.currentTemperatureLabel.text = [NSString stringWithFormat:@"%.0f°", condition.temperature.f];
+            
+            
         }
+        [self.weatherView.activityIndicator stopAnimating];
     }];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
