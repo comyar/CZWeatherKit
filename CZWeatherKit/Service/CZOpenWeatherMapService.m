@@ -47,6 +47,13 @@ static NSString * const host        = @"api.openweathermap.org";
 // Name of the service
 static NSString * const serviceName = @"Open Weather Map";
 
+static NSString * const apiVerstion = @"2.5";
+
+
+#pragma mark - Macros
+
+#define F_TO_C(temp) (5.0/9.0) * (temp - 32.0)
+#define MPH_TO_KPH(speed) (speed * 1.609344)
 
 #pragma mark - CZOpenWeatherMapService Implementation
 
@@ -78,12 +85,133 @@ static NSString * const serviceName = @"Open Weather Map";
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
+    NSURLComponents *components = [NSURLComponents new];
+    components.scheme   = @"http";
+    components.host     = host;
+    components.path     = [NSString stringWithFormat:@"/data/%@/", apiVerstion];
+    
+    if (request.requestType == CZCurrentConditionsRequestType) {
+        components.path = [components.path stringByAppendingString:@"weather?"];
+    } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
+        components.path = [components.path stringByAppendingString:@"forecast/hourly?"];
+    } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestFullDetail) {
+        components.path = [components.path stringByAppendingString:@"forecast/daily?"];
+    }
+    
+    if (request.location[CZWeatherKitLocationName.CoordinateName]) {
+        CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
+        components.path = [components.path stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
+    } if (request.location[CZWeatherKitLocationName.StateCityName]) {
+        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
+    } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
+        components.path = [components.path stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
+    } else {
+        return nil;
+    }
+    
+    components.path = [components.path stringByAppendingString:@"&mode=json&units=imperial"];
+    
+    return [components URL];
+}
+
+- (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
+{
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingAllowFragments
+                                                           error:nil];
+    if (!JSON) {
+        return nil;
+    }
+    
+    if (request.requestType == CZCurrentConditionsRequestType) {
+        return [self parseCurrentConditionsFromJSON:JSON];
+    } else if (request.requestType == CZForecastRequestType) {
+        return [self parseForecastFromJSON:JSON];
+    }
+    
     return nil;
 }
 
-- (CZWeatherData *)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request
+#pragma mark Helper
+
+- (CZWeatherCondition *)parseCurrentConditionsFromJSON:(NSDictionary *)JSON
 {
-    return nil;
+    CZWeatherCondition *condition = [CZWeatherCondition new];
+    
+    CGFloat tempF = [JSON[@"main"][@"temp"]floatValue];
+    condition.temperature = (CZTemperature){tempF, F_TO_C(tempF)};
+    condition.humidity = [JSON[@"main"][@"humidity"]floatValue];
+    condition.description = JSON[@"weather"][@"description"];
+    condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+    
+    CGFloat windSpeedMPH = [JSON[@"wind"][@"speed"]floatValue];
+    condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
+    condition.windDegrees = [JSON[@"wind"][@"deg"]floatValue];
+    
+    return condition;
+}
+
+- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON
+{
+    NSMutableArray *forecastConditions = [NSMutableArray new];
+    
+    NSArray *forecasts = JSON[@"list"];
+    
+    for (NSDictionary *forecast in forecasts) {
+        CZWeatherCondition *condition = [CZWeatherCondition new];
+        
+        CGFloat highTempF = [forecast[@"temp"][@"max"]floatValue];
+        condition.highTemperature = (CZTemperature){highTempF, F_TO_C(highTempF)};
+        
+        CGFloat lowTempF = [forecast[@"temp"][@"min"]floatValue];
+        condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
+        
+        condition.humidity = [forecast[@"humidity"]floatValue];
+        
+        CGFloat windSpeedMPH = [forecast[@"speed"]floatValue];
+        condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
+        
+        condition.windDegrees = [forecast[@"deg"]floatValue];
+        
+        condition.description = forecast[@"weather"][@"description"];
+        
+        condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+        
+        [forecastConditions addObject:condition];
+    }
+    
+    return [forecastConditions copy];
+}
+
+- (Climacon)climaconCharacterForDescription:(NSString *)description
+{
+    Climacon icon = ClimaconSun;
+    NSString *lowercaseDescription = [description lowercaseString];
+    
+    if([lowercaseDescription contains:@"clear"]) {
+        icon = ClimaconSun;
+    } else if([lowercaseDescription contains:@"cloud"]) {
+        icon = ClimaconCloud;
+    } else if([lowercaseDescription contains:@"drizzle"]  ||
+              [lowercaseDescription contains:@"rain"]     ||
+              [lowercaseDescription contains:@"thunderstorm"]) {
+        icon = ClimaconRain;
+    } else if([lowercaseDescription contains:@"snow"]     ||
+              [lowercaseDescription contains:@"hail"]     ||
+              [lowercaseDescription contains:@"ice"]) {
+        icon = ClimaconSnow;
+    } else if([lowercaseDescription contains:@"fog"]      ||
+              [lowercaseDescription contains:@"overcast"] ||
+              [lowercaseDescription contains:@"smoke"]    ||
+              [lowercaseDescription contains:@"dust"]     ||
+              [lowercaseDescription contains:@"ash"]      ||
+              [lowercaseDescription contains:@"mist"]     ||
+              [lowercaseDescription contains:@"haze"]     ||
+              [lowercaseDescription contains:@"spray"]    ||
+              [lowercaseDescription contains:@"squall"]) {
+        icon = ClimaconHaze;
+    }
+    return icon;
 }
 
 @end

@@ -52,10 +52,10 @@ typedef struct {
  Wind struct.
  */
 typedef struct {
-    /** Kilometers per hour */
-    CGFloat kph;
     /** Miles per hour */
     CGFloat mph;
+    /** Kilometers per hour */
+    CGFloat kph;
 } CZWindSpeed;
 
 /**

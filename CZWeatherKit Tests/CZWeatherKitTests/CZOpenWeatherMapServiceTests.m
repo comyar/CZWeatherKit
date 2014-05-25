@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Comyar Zaheri. All rights reserved.
 //
 
+#import "CZWeatherServiceTestCase.h"
+
 
 #pragma mark - CZOpenWeatherMapServiceTests Interface
 

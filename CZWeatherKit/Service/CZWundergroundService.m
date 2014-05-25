@@ -92,9 +92,7 @@ static NSString * const serviceName = @"Weather Underground";
     
     if (request.requestType == CZCurrentConditionsRequestType) {
         components.path = [components.path stringByAppendingString:@"conditions/"];
-    }
-    
-    if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
+    }else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestLightDetail) {
         components.path = [components.path stringByAppendingString:@"forecast/"];
     } else if (request.requestType == CZForecastRequestType && request.detailLevel == CZWeatherRequestFullDetail) {
         components.path = [components.path stringByAppendingString:@"forecast10day/"];
@@ -154,7 +152,7 @@ static NSString * const serviceName = @"Weather Underground";
     condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
     condition.temperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
     condition.windDegrees = [currentObservation[@"wind_degrees"]floatValue];
-    condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_kph"]floatValue], [currentObservation[@"wind_mph"]floatValue]};
+    condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_mph"]floatValue],[currentObservation[@"wind_kph"]floatValue]};
     condition.humidity = [[currentObservation[@"relative_humidity"]stringByReplacingOccurrencesOfString:@"%" withString:@""]floatValue];
     
     return condition;
@@ -176,7 +174,7 @@ static NSString * const serviceName = @"Weather Underground";
         condition.lowTemperature = (CZTemperature){[day[@"low"][@"fahrenheit"]floatValue], [day[@"low"][@"celsius"]floatValue]};
         condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
         condition.humidity = [day[@"avehumidity"]floatValue];
-        condition.windSpeed = (CZWindSpeed){[day[@"avewind"][@"kph"]floatValue], [day[@"avewind"][@"mph"]floatValue]};
+        condition.windSpeed = (CZWindSpeed){[day[@"avewind"][@"mph"]floatValue], [day[@"avewind"][@"kph"]floatValue]};
         condition.windDegrees = [day[@"avewind"][@"degrees"]floatValue];
         [forecasts addObject:condition];
     }
