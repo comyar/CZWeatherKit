@@ -128,7 +128,7 @@
     [self.updatedLabel setNumberOfLines:0];
     [self.updatedLabel setAdjustsFontSizeToFitWidth:YES];
     [self.updatedLabel setFont:[UIFont fontWithName:LIGHT_FONT size:fontSize]];
-    [self.updatedLabel setTextColor:[UIColor blackColor]];
+    [self.updatedLabel setTextColor:[UIColor whiteColor]];
     [self.updatedLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.updatedLabel];
 }
@@ -140,7 +140,7 @@
     [self.conditionIconLabel setCenter:CGPointMake(self.container.center.x, 0.5 * self.center.y)];
     [self.conditionIconLabel setFont:[UIFont fontWithName:CLIMACON_FONT size:fontSize]];
     [self.conditionIconLabel setBackgroundColor:[UIColor clearColor]];
-    [self.conditionIconLabel setTextColor:[UIColor blackColor]];
+    [self.conditionIconLabel setTextColor:[UIColor whiteColor]];
     [self.conditionIconLabel setTextAlignment:NSTextAlignmentCenter];
     [self.container addSubview:self.conditionIconLabel];
 }

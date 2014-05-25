@@ -181,7 +181,7 @@ static NSString * const serviceName = @"Open Weather Map";
         
         condition.windDegrees = [forecast[@"deg"]floatValue];
         
-        condition.description = forecast[@"weather"][@"description"];
+        condition.description = [forecast[@"weather"]firstObject][@"description"];
         
         condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
         

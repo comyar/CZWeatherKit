@@ -24,6 +24,7 @@
 		DDCD8DDB19328DEA00D9B731 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD819328DEA00D9B731 /* Default.png */; };
 		DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD919328DEA00D9B731 /* Default@2x.png */; };
 		DDCD8DE019328E7900D9B731 /* CZWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8DDF19328E7900D9B731 /* CZWeatherView.m */; };
+		DDCD8DE2193297FC00D9B731 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE1193297FC00D9B731 /* Climacons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		DDCD8DD919328DEA00D9B731 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../AFNetworking/Example/Default@2x.png"; sourceTree = "<group>"; };
 		DDCD8DDE19328E7900D9B731 /* CZWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherView.h; sourceTree = "<group>"; };
 		DDCD8DDF19328E7900D9B731 /* CZWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherView.m; sourceTree = "<group>"; };
+		DDCD8DE1193297FC00D9B731 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		DDCD8D9019328DB300D9B731 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDCD8DE1193297FC00D9B731 /* Climacons.ttf */,
 				DDCD8DD819328DEA00D9B731 /* Default.png */,
 				DDCD8DD919328DEA00D9B731 /* Default@2x.png */,
 				DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */,
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCD8DE2193297FC00D9B731 /* Climacons.ttf in Resources */,
 				DDCD8D8C19328D4A00D9B731 /* API_KEY.plist in Resources */,
 				DDCD8C091931BD1700D9B731 /* InfoPlist.strings in Resources */,
 				DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */,
