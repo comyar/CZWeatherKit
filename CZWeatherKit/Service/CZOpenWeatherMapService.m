@@ -57,10 +57,21 @@ static NSString * const serviceName = @"Open Weather Map";
 
 - (instancetype)init
 {
+    return [self initWithKey:nil];
+}
+
+- (instancetype)initWithKey:(NSString *)key
+{
     if (self = [super init]) {
+        _key = key;
         _serviceName = serviceName;
     }
     return self;
+}
+
++ (instancetype)serviceWithKey:(NSString *)key
+{
+    return [[CZOpenWeatherMapService alloc]initWithKey:key];
 }
 
 #pragma mark Using a Weather Service
