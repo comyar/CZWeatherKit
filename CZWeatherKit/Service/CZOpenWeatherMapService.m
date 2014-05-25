@@ -127,7 +127,7 @@ static NSString * const serviceName = @"Open Weather Map";
     if (request.requestType == CZCurrentConditionsRequestType) {
         return [self parseCurrentConditionsFromJSON:JSON];
     } else if (request.requestType == CZForecastRequestType) {
-        return [self parseForecastFromJSON:JSON];
+        return [self parseForecastFromJSON:JSON forDetailLevel:request.detailLevel];
     }
     
     return nil;
@@ -156,10 +156,12 @@ static NSString * const serviceName = @"Open Weather Map";
     condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
     condition.windDegrees = [JSON[@"wind"][@"deg"]floatValue];
     
+    condition.date = [NSDate dateWithTimeIntervalSince1970:[JSON[@"dt"]doubleValue]];
+    
     return condition;
 }
 
-- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON
+- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON forDetailLevel:(CZWeatherRequestDetail)detailLevel
 {
     NSMutableArray *forecastConditions = [NSMutableArray new];
     
@@ -168,20 +170,38 @@ static NSString * const serviceName = @"Open Weather Map";
     for (NSDictionary *forecast in forecasts) {
         CZWeatherCondition *condition = [CZWeatherCondition new];
         
-        CGFloat highTempF = [forecast[@"temp"][@"max"]floatValue];
-        condition.highTemperature = (CZTemperature){highTempF, F_TO_C(highTempF)};
-        
-        CGFloat lowTempF = [forecast[@"temp"][@"min"]floatValue];
-        condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
-        
-        condition.humidity = [forecast[@"humidity"]floatValue];
-        
-        CGFloat windSpeedMPH = [forecast[@"speed"]floatValue];
-        condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
-        
-        condition.windDegrees = [forecast[@"deg"]floatValue];
+        if (detailLevel == CZWeatherRequestLightDetail) {
+            CGFloat highTempF = [forecast[@"main"][@"temp_max"]floatValue];
+            condition.highTemperature = (CZTemperature){highTempF, F_TO_C(highTempF)};
+            
+            CGFloat lowTempF = [forecast[@"main"][@"temp_min"]floatValue];
+            condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
+            
+            condition.humidity = [forecast[@"main"][@"humidity"]floatValue];
+            
+            CGFloat windSpeedMPH = [forecast[@"wind"][@"speed"]floatValue];
+            condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
+            
+            condition.windDegrees = [forecast[@"wind"][@"deg"]floatValue];
+
+        } else if (detailLevel == CZWeatherRequestFullDetail) {
+            CGFloat highTempF = [forecast[@"temp"][@"max"]floatValue];
+            condition.highTemperature = (CZTemperature){highTempF, F_TO_C(highTempF)};
+            
+            CGFloat lowTempF = [forecast[@"temp"][@"min"]floatValue];
+            condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
+            
+            condition.humidity = [forecast[@"humidity"]floatValue];
+            
+            CGFloat windSpeedMPH = [forecast[@"speed"]floatValue];
+            condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
+            
+            condition.windDegrees = [forecast[@"deg"]floatValue];
+        }
         
         condition.description = [forecast[@"weather"]firstObject][@"description"];
+        
+        condition.date = [NSDate dateWithTimeIntervalSince1970:[forecast[@"dt"]doubleValue]];
         
         condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
         

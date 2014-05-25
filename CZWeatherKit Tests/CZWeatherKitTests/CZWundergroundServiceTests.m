@@ -30,21 +30,18 @@
 #import "CZWeatherServiceTestCase.h"
 
 
+#pragma mark - Macros
+
 #if !(TARGET_OS_IPHONE)
 #define valueWithCGPoint valueWithPoint
 #endif
 
 
-
 #pragma mark - Constants
 
-//
+// JSON outputs from API
 static NSString * const currentJSONFilename                 = @"current_wunderground";
-
-//
 static NSString * const forecastLightJSONFilename           = @"forecastLight_wunderground";
-
-//
 static NSString * const forecastFullJSONFilename            = @"forecastFull_wunderground";
 
 
@@ -52,13 +49,9 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_wun
 
 @interface CZWundergroundServiceTests : CZWeatherServiceTestCase
 
-//
+// JSON output data
 @property (nonatomic) NSData *currentData;
-
-//
 @property (nonatomic) NSData *forecastLightData;
-
-//
 @property (nonatomic) NSData *forecastFullData;
 
 @end
