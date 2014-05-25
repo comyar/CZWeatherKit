@@ -6,10 +6,14 @@
 //  Copyright (c) 2014 Comyar Zaheri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+
+#pragma mark - Imports
+
+@import UIKit;
+
+
+#pragma mark - CZAppDelegate Interface
 
 @interface CZAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
 
 @end

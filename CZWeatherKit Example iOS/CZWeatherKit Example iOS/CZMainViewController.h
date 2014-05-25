@@ -6,8 +6,15 @@
 //  Copyright (c) 2014 Comyar Zaheri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface CZViewController : UIViewController
+#pragma mark - Imports
+
+@import UIKit;
+#import "CZWeatherKit.h"
+
+
+#pragma mark - CZMainViewController Interface
+
+@interface CZMainViewController : UIViewController
 
 @end

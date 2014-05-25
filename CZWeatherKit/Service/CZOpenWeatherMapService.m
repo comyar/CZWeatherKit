@@ -147,7 +147,7 @@ static NSString * const apiVerstion = @"2.5";
     CGFloat tempF = [JSON[@"main"][@"temp"]floatValue];
     condition.temperature = (CZTemperature){tempF, F_TO_C(tempF)};
     condition.humidity = [JSON[@"main"][@"humidity"]floatValue];
-    condition.description = JSON[@"weather"][@"description"];
+    condition.description = [JSON[@"weather"]firstObject][@"description"];
     condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
     
     CGFloat windSpeedMPH = [JSON[@"wind"][@"speed"]floatValue];
