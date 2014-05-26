@@ -1,6 +1,8 @@
 ![](https://raw.githubusercontent.com/comyarzaheri/CZWeatherKit/master/Meta/czweatherkit_header.png?token=3284227__eyJzY29wZSI6IlJhd0Jsb2I6Y29teWFyemFoZXJpL0NaV2VhdGhlcktpdC9tYXN0ZXIvTWV0YS9jendlYXRoZXJraXRfaGVhZGVyLnBuZyIsImV4cGlyZXMiOjE0MDE1MTM3NTF9--b8641653a8eef5f1c67badeda79aa443b1836006)
 
-CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for painless downloading of weather data from various weather services. CZWeatherKit is lightweight and requires no external dependencies.
+CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for painless downloading of weather data from various weather services. CZWeatherKit is lightweight and requires no external dependencies. 
+
+CZWeatherKit started as offshoot of work I had done while developing [Sol°](https://github.com/comyarzaheri/Sol), a simple open-source iOS weather app ([App Store Link](http://appstore.com/Sol°)). I will update the README when I finish integrating CZWeatherKit back into Sol° so you can see what CZWeatherKit looks like in a completed app.
 
 # Getting Started
 
@@ -155,6 +157,10 @@ Finally, requests carry with them a detail level. A detail level loosely defines
 ### Adding New Services
 
 Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the `CZWeatherService` protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
+
+# Unit Testing
+
+The unit tests for the project aren't all-encompassing. If you would like to add unit tests, that would be appreciated. 
 
 # Contributing
 
