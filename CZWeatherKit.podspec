@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name      = 'CZWeatherKit'
-    s.version   = '0.5'
+    s.version   = '0.1'
     s.summary   = 'An easy-to-use Cocoa weather library.'
     s.author    = {
         'Comyar Zaheri' => 'comyarzaheri@utexas.edu'
