@@ -26,23 +26,36 @@ CZWeatherKit currently supports the following weather services:
 Some services require an API key while others do not. Consult the documentation for the API you would like to use.
 
 
-Open Weather Map : Getting Current Conditions
+## Examples
 
-```objective-c    
-    const CGFloat latitude  = 30.2500;
-    const CGFloat longitude = -97.7500;
+### Open Weather Map : Getting Current Conditions
+
+```objective-c 
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location[CZWeatherKitLocationName.CountryCityName] = @"London,UK";
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             CZWeatherCondition *conditions = (CZWeatherCondition *)data;
-            
             // Do whatever you like with the data here
         }
     }];
 ```
 
+### Open Weather Map : Getting Hourly Forecast
+
+```objective-c
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location[CZWeatherKitLocationName.CountryCityName] = @"London,UK";
+    request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
+    request.detailLevel = CZWeatherRequestLightDetail;
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            NSArray *forecasts = (NSArray *)data;
+            // Do whatever you like with the data here
+        }
+    }];
+```
 
 
 ## Architecture
