@@ -25,7 +25,7 @@ CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
   * [Open Weather Map](http://openweathermap.org/API)
 
-Some services require an API key while others do not. Consult the documentation for the API you would like to use.
+Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the CZWeatherService protocol. See the 'Adding Services' section of the Readme.
 
 
 # Examples
