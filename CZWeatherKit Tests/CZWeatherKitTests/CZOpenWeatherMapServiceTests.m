@@ -214,5 +214,81 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     XCTAssertEqualWithAccuracy(firstCondition.windSpeed.mph, 14.15, 0.01, @"Wind speed mph not equal");
 }
 
+- (void)test_weatherDataForResponseData_forecastFull
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel   = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    NSArray *data = [self.service weatherDataForResponseData:self.forecastFullData request:request];
+    
+    XCTAssertEqual([data count], 7, @"Forecast full count not equal");
+    
+    CZWeatherCondition *firstCondition = [data firstObject];
+    XCTAssertEqualObjects(firstCondition.date, [NSDate dateWithTimeIntervalSince1970:1401040800], @"First condition date not equal");
+    XCTAssertEqualObjects(firstCondition.description, @"broken clouds", @"First condition description not equal");
+    
+    // Account for floating point rounding errors
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.f, 86.72, 0.01, @"First condition high fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.highTemperature.c, 30.40, 0.01, @"First condition high celsius temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.f, 78.37, 0.01, @"First condition low fahrenheit temperature not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.lowTemperature.c, 25.76, 0.01, @"First condition low celsius temperature not equal");
+    XCTAssertEqual(firstCondition.climaconCharacter, ClimaconCloud, @"Climacon character not equal");
+    
+    XCTAssertEqualWithAccuracy(firstCondition.humidity, 75.0, 0.01, @"Humidity not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windDegrees, 156.0, 0.01, @"Wind degrees not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.kph, 21.629, 0.01, @"Wind speed kph not equal");
+    XCTAssertEqualWithAccuracy(firstCondition.windSpeed.mph, 13.44, 0.01, @"Wind speed mph not equal");
+}
+
+#pragma mark OpenWeatherMap Request Tests
+
+- (void)test_openWeatherMapRequest_full
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel  = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        XCTAssertTrue([data isKindOfClass:[CZWeatherCondition class]], @"Data is not CZWeatherCondition instance");
+    }];
+}
+
+- (void)test_openWeatherMapRequest_configurationError
+{
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.detailLevel  = CZWeatherRequestFullDetail;
+    request.service = nil;
+    
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        XCTAssertNil(data, @"Data should be nil");
+        XCTAssertEqualObjects(error, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                         code:CZWeatherRequestConfigurationError
+                                                     userInfo:nil], @"Error should be configuration error");
+    }];
+}
+
+- (void)test_openWeatherMapRequest_URLError
+{
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    request.service = self.service;
+    
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        XCTAssertNil(data, @"Data should be nil");
+        XCTAssertEqualObjects(error, [NSError errorWithDomain:CZWeatherRequestErrorDomain
+                                                         code:CZWeatherRequestServiceURLError
+                                                     userInfo:nil], @"Error should be URL error");
+    }];
+}
 
 @end
