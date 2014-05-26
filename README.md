@@ -48,6 +48,8 @@ Some services require an API key while others do not. Consult the documentation 
     
 ```
 
+You can also check out the iOS example project to see a few more examples.
+
 
 # Examples
 
