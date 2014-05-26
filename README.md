@@ -17,7 +17,7 @@ Add the following to your Podfile:
     pod "CZWeatherKit"
 ```
 
-and run `pod install`. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but maybe you should really consider Cocoa Pods).
+and run `pod install`. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but you should probably consider using Cocoa Pods).
 
 ### Requirements
 
