@@ -1,5 +1,5 @@
 //
-//  CZViewController.h
+//  CZMainViewController.h
 //  Copyright (c) 2014, Comyar Zaheri, http://comyar.io
 //  All rights reserved.
 //

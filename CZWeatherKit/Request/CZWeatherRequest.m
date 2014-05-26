@@ -32,7 +32,7 @@
 
 #pragma mark - Constants
 
-// 
+// Location name struct
 const struct CZWeatherKitLocationName CZWeatherKitLocationName = {
     .CountryCityName    = @"CZWeatherLocationCountryCityName",
     .CoordinateName     = @"CZWeatherLocationCoordinateName",
@@ -43,13 +43,6 @@ const struct CZWeatherKitLocationName CZWeatherKitLocationName = {
 
 // Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
 NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
-
-
-#pragma mark - CZWeatherRequest Class Extension
-
-@interface CZWeatherRequest ()
-
-@end
 
 
 #pragma mark - CZWeatherRequest Implementation
@@ -72,7 +65,6 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
     }
     return self;
 }
-
 
 + (CZWeatherRequest *)requestWithType:(CZWeatherRequestType)requestType
 {

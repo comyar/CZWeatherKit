@@ -34,10 +34,18 @@
 #pragma mark - CZWeatherServiceTestCase Interface
 
 /**
+ Test case for a weather service.
  */
 @interface CZWeatherServiceTestCase : XCTestCase
 
+// -----
+// @name Properties
+// -----
+
+#pragma mark Properties
+
 /**
+ Weather service to test.
  */
 @property (nonatomic) id<CZWeatherService>  service;
 

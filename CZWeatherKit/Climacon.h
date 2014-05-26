@@ -25,7 +25,13 @@
 //  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+#pragma mark - Macros
+
+// UIFont name of the Climacon font
 #define CLIMACON_FONT @"Climacons-Font"
+
+
+#pragma mark - Type Definitions
 
 /**
  Contains the mappings from icon to character for the Climacons font by Adam Whitcroft.

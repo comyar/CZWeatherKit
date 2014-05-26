@@ -53,6 +53,7 @@ static NSString * const serviceName = @"Open Weather Map";
 #define F_TO_C(temp) (5.0/9.0) * (temp - 32.0)
 #define MPH_TO_KPH(speed) (speed * 1.609344)
 
+
 #pragma mark - CZOpenWeatherMapService Implementation
 
 @implementation CZOpenWeatherMapService

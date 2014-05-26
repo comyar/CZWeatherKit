@@ -55,14 +55,14 @@
 /**
  Creates and returns a weather service with the given key.
  @param key API key to use for the given service.
- @return    A newly created weather service.
+ @return A newly created weather service.
  */
 + (instancetype)serviceWithKey:(NSString *)key;
 
 /**
  Initializes a newly allocated weather service.
  @param key API key to use for the given service.
- @return    A newly initialized weather service.
+ @return A newly initialized weather service.
  */
 - (instancetype)initWithKey:(NSString *)key;
 
@@ -75,7 +75,7 @@
 /**
  Returns the appropriate URL for the given request.
  @param request Weather requests asking for the URL.
- @return        URL for the given request, or nil if the request is malformed.
+ @return URL for the given request, or nil if the request is malformed.
  */
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request;
 
@@ -83,7 +83,7 @@
  Parses the response data from the given request.
  @param data    Response data from a weather request.
  @param request Weather request that retrieved the response data.
- @return        Weather data instance from the parsed response data, or nil if the data is malformed.
+ @return Weather data instance from the parsed response data, or nil if the data is malformed.
  */
 - (id)weatherDataForResponseData:(NSData *)data request:(CZWeatherRequest *)request;
 

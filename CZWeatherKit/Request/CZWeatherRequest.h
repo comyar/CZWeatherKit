@@ -113,10 +113,16 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 #pragma mark Creating a Weather Request
 
 /**
+ Creates a request with the given type.
+ @param requestType Type of request.
+ @return Newly created request object.
  */
 + (CZWeatherRequest *)requestWithType:(CZWeatherRequestType)requestType;
 
 /**
+ Initializes an allocated request.
+ @param requestType Type of request.
+ @return Newly initialized request object.
  */
 - (instancetype)initWithType:(CZWeatherRequestType)requestType;
 
@@ -127,16 +133,12 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 #pragma mark - Using a Weather Request
 
 /**
- Initiates a weather request. 
+ Performs a weather request.
  
  In order for a weather request to complete successfully, the service must not be nil. 
  Otherwise, the request completes immediately and an error is passed to the completion handler.
  
- If both conditionsDetail and forecastDetail are CZWeatherRequestNoDetail, the request
- completes immediately and both the weatherData and error arguments to the completion 
- handler will be nil.
- 
- Changing a request's properties once the request has started is undefined.
+ Changing a request's properties once the request has started may result undefined behavior.
  @param completion Completion handler block
  */
 - (void)performRequestWithHandler:(CZWeatherRequestHandler)handler;
@@ -160,10 +162,12 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 @property (nonatomic) id<CZWeatherService>                  service;
 
 /**
+ Type of request.
  */
 @property (nonatomic) CZWeatherRequestType                  requestType;
 
 /**
+ Detail level of the request.
  */
 @property (nonatomic) CZWeatherRequestDetailLevel           detailLevel;
 
