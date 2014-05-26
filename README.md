@@ -160,8 +160,9 @@ Services can be added somewhat painlessly to CZWeatherKit. To be a weather servi
 
 If you would like to contribute to this project, please try to follow the coding style of the rest of the project. I have a somewhat particular (Ok, very particular...) coding style and would like new features to match. Also, I would appreciate if you add unit tests for anything you add (especially new services!).
 Last but no least, these are the general terms:
-    * The project is under the BSD license, so uh take note of that, I guess.
-    * I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
-    * If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
+
+* The project is under the BSD license, so uh take note of that, I guess.
+* I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
+* If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
 
 
