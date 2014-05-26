@@ -2,7 +2,7 @@
 
 CZWeatherKit is an easy-to-use, extensible weather library for iOS and OS X that allows for painless downloading of weather data from multiple weather services. CZWeatherKit is lightweight and requires no external dependencies.
 
-## Getting Started
+# Getting Started
 
 ### Cocoa Pods
 
@@ -28,13 +28,67 @@ CZWeatherKit currently supports the following weather services:
 Some services require an API key while others do not. Consult the documentation for the API you would like to use.
 
 
-## Examples
+# Examples
 
-### Open Weather Map : Getting Current Conditions
+## Wunderground
+
+### Getting Current Conditions
 
 ```objective-c 
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CountryCityName] = @"London,UK";
+    request.location[CZWeatherKitLocationName.StateCityName] = @"TX/Austin";
+    request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            CZWeatherCondition *current = (CZWeatherCondition *)data;
+            // Do whatever you like with the data here
+        }
+    }];
+```
+
+### Getting Forecast
+
+```objective-c 
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            NSArray *forecasts = (NSArray *)data;
+            // Do whatever you like with the data here
+        }
+    }];
+```
+
+### Getting 10-day Forecast
+
+```objective-c 
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            NSArray *forecasts = (NSArray *)data;
+            // Do whatever you like with the data here
+        }
+    }];
+```
+
+
+## Open Weather Map 
+
+### Getting Current Conditions
+
+```objective-c 
+    const CGFloat latitude  = 30.2500;
+    const CGFloat longitude = -97.7500;
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
@@ -44,13 +98,27 @@ Some services require an API key while others do not. Consult the documentation 
     }];
 ```
 
-### Open Weather Map : Getting Hourly Forecast
+### Getting Hourly Forecast
 
 ```objective-c
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location[CZWeatherKitLocationName.CountryCityName] = @"London,UK";
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
-    request.detailLevel = CZWeatherRequestLightDetail;
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            NSArray *forecasts = (NSArray *)data;
+            // Do whatever you like with the data here
+        }
+    }];
+```
+
+### Getting Daily Forecast
+
+```objective-c
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location[CZWeatherKitLocationName.StateCityName] = @"Austin,TX";
+    request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
+    request.detailLevel = CZWeatherRequestFullDetail;
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             NSArray *forecasts = (NSArray *)data;
