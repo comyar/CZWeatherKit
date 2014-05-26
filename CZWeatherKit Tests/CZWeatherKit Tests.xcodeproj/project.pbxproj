@@ -36,8 +36,12 @@
 		DDCD8D821932807A00D9B731 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D2B1932802800D9B731 /* CZWeatherRequest.m */; };
 		DDCD8D831932807A00D9B731 /* CZOpenWeatherMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D2E1932802800D9B731 /* CZOpenWeatherMapService.m */; };
 		DDCD8D841932807A00D9B731 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D321932802800D9B731 /* CZWundergroundService.m */; };
-		DDCD8D8919328D3400D9B731 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8D8819328D3400D9B731 /* API_KEY.plist */; };
-		DDCD8D8A19328D3800D9B731 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8D8819328D3400D9B731 /* API_KEY.plist */; };
+		DDCD8DE61932A13F00D9B731 /* current_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE31932A13F00D9B731 /* current_openweathermap.json */; };
+		DDCD8DE71932A13F00D9B731 /* forecastFull_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE41932A13F00D9B731 /* forecastFull_openweathermap.json */; };
+		DDCD8DE81932A13F00D9B731 /* forecastLight_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE51932A13F00D9B731 /* forecastLight_openweathermap.json */; };
+		DDCD8DE91932B96B00D9B731 /* current_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE31932A13F00D9B731 /* current_openweathermap.json */; };
+		DDCD8DEA1932B96B00D9B731 /* forecastFull_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE41932A13F00D9B731 /* forecastFull_openweathermap.json */; };
+		DDCD8DEB1932B96B00D9B731 /* forecastLight_openweathermap.json in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE51932A13F00D9B731 /* forecastLight_openweathermap.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +78,9 @@
 		DDCD8D301932802800D9B731 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 		DDCD8D311932802800D9B731 /* CZWundergroundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWundergroundService.h; sourceTree = "<group>"; };
 		DDCD8D321932802800D9B731 /* CZWundergroundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundService.m; sourceTree = "<group>"; };
-		DDCD8D8819328D3400D9B731 /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = API_KEY.plist; path = ../../API_KEY.plist; sourceTree = "<group>"; };
+		DDCD8DE31932A13F00D9B731 /* current_openweathermap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = current_openweathermap.json; path = JSON/current_openweathermap.json; sourceTree = "<group>"; };
+		DDCD8DE41932A13F00D9B731 /* forecastFull_openweathermap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = forecastFull_openweathermap.json; path = JSON/forecastFull_openweathermap.json; sourceTree = "<group>"; };
+		DDCD8DE51932A13F00D9B731 /* forecastLight_openweathermap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = forecastLight_openweathermap.json; path = JSON/forecastLight_openweathermap.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +128,6 @@
 		DD5181E7192AF6D100D896A6 /* CZWeatherKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				DDCD8D8819328D3400D9B731 /* API_KEY.plist */,
 				DD518219192BDD5900D896A6 /* JSON */,
 				DD518210192B159D00D896A6 /* Services */,
 				DDB94A70193073F30079DF6D /* iOS Tests */,
@@ -155,6 +160,9 @@
 		DD518219192BDD5900D896A6 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				DDCD8DE31932A13F00D9B731 /* current_openweathermap.json */,
+				DDCD8DE41932A13F00D9B731 /* forecastFull_openweathermap.json */,
+				DDCD8DE51932A13F00D9B731 /* forecastLight_openweathermap.json */,
 				DD51821A192BDD6400D896A6 /* current_wunderground.json */,
 				DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */,
 				DD51821C192BDD6400D896A6 /* forecastLight_wunderground.json */,
@@ -269,10 +277,10 @@
 		DDCD8D2C1932802800D9B731 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DDCD8D2D1932802800D9B731 /* CZOpenWeatherMapService.h */,
-				DDCD8D2E1932802800D9B731 /* CZOpenWeatherMapService.m */,
 				DDCD8D2F1932802800D9B731 /* CZWeatherService.h */,
 				DDCD8D301932802800D9B731 /* CZWeatherService_Internal.h */,
+				DDCD8D2D1932802800D9B731 /* CZOpenWeatherMapService.h */,
+				DDCD8D2E1932802800D9B731 /* CZOpenWeatherMapService.m */,
 				DDCD8D311932802800D9B731 /* CZWundergroundService.h */,
 				DDCD8D321932802800D9B731 /* CZWundergroundService.m */,
 			);
@@ -349,11 +357,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCD8DE91932B96B00D9B731 /* current_openweathermap.json in Resources */,
+				DDCD8DEA1932B96B00D9B731 /* forecastFull_openweathermap.json in Resources */,
+				DDCD8DEB1932B96B00D9B731 /* forecastLight_openweathermap.json in Resources */,
 				DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */,
 				DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */,
 				DDB94A60193073C40079DF6D /* forecastLight_wunderground.json in Resources */,
 				DDB94A541930737E0079DF6D /* InfoPlist.strings in Resources */,
-				DDCD8D8A19328D3800D9B731 /* API_KEY.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +372,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB94A8B193074520079DF6D /* current_wunderground.json in Resources */,
-				DDCD8D8919328D3400D9B731 /* API_KEY.plist in Resources */,
 				DDB94A8C193074520079DF6D /* forecastFull_wunderground.json in Resources */,
+				DDCD8DE61932A13F00D9B731 /* current_openweathermap.json in Resources */,
 				DDB94A8D193074520079DF6D /* forecastLight_wunderground.json in Resources */,
+				DDCD8DE81932A13F00D9B731 /* forecastLight_openweathermap.json in Resources */,
+				DDCD8DE71932A13F00D9B731 /* forecastFull_openweathermap.json in Resources */,
 				DDB94A8E193074520079DF6D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,8 +460,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -465,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,8 +500,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -499,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
