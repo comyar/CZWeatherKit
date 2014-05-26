@@ -119,4 +119,25 @@
     [aCoder encodeFloat:self.windSpeed.kph      forKey:@"windSpeed_kph"];
 }
 
+#pragma mark NSCopying Methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id copy = [[[self class]alloc]init];
+    
+    if (copy) {
+        [copy setDate:[self.date copyWithZone:zone]];
+        [copy setDescription:[self.description copyWithZone:zone]];
+        [copy setClimaconCharacter:self.climaconCharacter];
+        [copy setLowTemperature:self.lowTemperature];
+        [copy setHighTemperature:self.highTemperature];
+        [copy setTemperature:self.temperature];
+        [copy setHumidity:self.humidity];
+        [copy setWindDegrees:self.windDegrees];
+        [copy setWindSpeed:self.windSpeed];
+    }
+    
+    return copy;
+}
+
 @end

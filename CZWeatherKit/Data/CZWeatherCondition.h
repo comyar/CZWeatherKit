@@ -76,7 +76,7 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  For example, a CZWeatherCondition object may be used to represent the current weather conditions as well as
  forecasted weather condtions at a later date.
  */
-@interface CZWeatherCondition : NSObject <NSCoding>
+@interface CZWeatherCondition : NSObject <NSCoding, NSCopying>
 
 // -----
 // @name Properties
