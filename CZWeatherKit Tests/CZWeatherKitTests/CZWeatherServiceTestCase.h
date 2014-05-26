@@ -1,6 +1,6 @@
 //
 // CZWeatherServiceTestCase.h
-// Copyright (c) 2014, Comyar Zaheri
+// Copyright (c) 2014, Comyar Zaheri, http://comyar.io
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without

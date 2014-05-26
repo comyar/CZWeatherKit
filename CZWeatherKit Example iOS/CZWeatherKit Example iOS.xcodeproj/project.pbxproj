@@ -183,10 +183,10 @@
 		DDCD8D441932803500D9B731 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DDCD8D451932803500D9B731 /* CZOpenWeatherMapService.h */,
-				DDCD8D461932803500D9B731 /* CZOpenWeatherMapService.m */,
 				DDCD8D471932803500D9B731 /* CZWeatherService.h */,
 				DDCD8D481932803500D9B731 /* CZWeatherService_Internal.h */,
+				DDCD8D451932803500D9B731 /* CZOpenWeatherMapService.h */,
+				DDCD8D461932803500D9B731 /* CZOpenWeatherMapService.m */,
 				DDCD8D491932803500D9B731 /* CZWundergroundService.h */,
 				DDCD8D4A1932803500D9B731 /* CZWundergroundService.m */,
 			);

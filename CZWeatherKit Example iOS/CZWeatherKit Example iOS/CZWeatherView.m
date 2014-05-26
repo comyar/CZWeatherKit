@@ -1,66 +1,89 @@
 //
-//  SOLWeatherView.m
-//  Sol
+//  CZWeatherView.m
+//  Copyright (c) 2014, Comyar Zaheri, http://comyar.io
+//  All rights reserved.
 //
-//  Created by Comyar Zaheri on 8/3/13.
-//  Copyright (c) 2013 Comyar Zaheri. All rights reserved.
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
 //
+//  * Redistributions of source code must retain the above copyright notice, this
+//    list of conditions and the following disclaimer.
+//
+//  * Redistributions in binary form must reproduce the above copyright notice,
+//    this list of conditions and the following disclaimer in the documentation
+//    and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+//  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+//  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+//  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+//  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+//  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-#import "CZWeatherView.h"
+#pragma mark - Imports
+
 #import "CZWeatherKit.h"
+#import "CZWeatherView.h"
+
+
+#pragma mark - Macros
 
 #define LIGHT_FONT      @"HelveticaNeue-Light"
 #define ULTRALIGHT_FONT @"HelveticaNeue-UltraLight"
 
 
-#pragma mark - SOLWeatherView Class Extension
+#pragma mark - CZWeatherView Class Extension
 
 @interface CZWeatherView ()
 
-//  Contains all label views
+// Contains all label views
 @property (strong, nonatomic) UIView                    *container;
 
-//  Light-Colored ribbon to display temperatures and forecasts on
+// Light-Colored ribbon to display temperatures and forecasts on
 @property (strong, nonatomic) UIView                    *ribbon;
 
-//  Displays the time the weather data for this view was last updated
+// Displays the time the weather data for this view was last updated
 @property (strong, nonatomic) UILabel                   *updatedLabel;
 
-//  Displays the icon for current conditions
+// Displays the icon for current conditions
 @property (strong, nonatomic) UILabel                   *conditionIconLabel;
 
-//  Displays the description of current conditions
+// Displays the description of current conditions
 @property (strong, nonatomic) UILabel                   *conditionDescriptionLabel;
 
-//  Displays the location whose weather data is being represented by this weather view
+// Displays the location whose weather data is being represented by this weather view
 @property (strong, nonatomic) UILabel                   *locationLabel;
 
-//  Displayes the current temperature
+// Displayes the current temperature
 @property (strong, nonatomic) UILabel                   *currentTemperatureLabel;
 
-//  Displays both the high and low temperatures for today
+// Displays both the high and low temperatures for today
 @property (strong, nonatomic) UILabel                   *hiloTemperatureLabel;
 
-//  Displays the day of the week for the first forecast snapshot
+// Displays the day of the week for the first forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastDayOneLabel;
 
-//  Displays the day of the week for the second forecast snapshot
+// Displays the day of the week for the second forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastDayTwoLabel;
 
-//  Displays the day of the week for the third forecast snapshot
+// Displays the day of the week for the third forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastDayThreeLabel;
 
-//  Displays the icon representing the predicted conditions for the first forecast snapshot
+// Displays the icon representing the predicted conditions for the first forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastIconOneLabel;
 
-//  Displays the icon representing the predicted conditions for the second forecast snapshot
+// Displays the icon representing the predicted conditions for the second forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastIconTwoLabel;
 
-//  Displays the icon representing the predicted conditions for the third forecast snapshot
+// Displays the icon representing the predicted conditions for the third forecast snapshot
 @property (strong, nonatomic) UILabel                   *forecastIconThreeLabel;
 
-//  Indicates whether data is being downloaded for this weather view
+// Indicates whether data is being downloaded for this weather view
 @property (strong, nonatomic) UIActivityIndicatorView   *activityIndicator;
 
 @end
