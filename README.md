@@ -31,6 +31,26 @@ CZWeatherKit currently supports the following weather services:
 
 Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
 
+### Climacons
+
+`CZWeatherCondition` objects have a `climaconCharacter` property that contains an appropriate climacon character mapping for the weather condition description. The [Climacons Font](http://adamwhitcroft.com/climacons/font/) is a font set created by [Adam Whitcroft](http://adamwhitcroft.com/) featuring various weather-related icons. In order to use the `climaconCharacter` property, download the Climacons font and add it to your project. The following example illustrates how to use the character in a `UILabel`:
+
+```objective-c
+    ...
+
+    CZWeatherCondition *condition = ... // Pretend we have this!
+
+    UILabel *label = [[UILabel alloc]initWithFrame:<your_frame>];
+    label.font = [UIFont fontWithName:CLIMACON_FONT size:<your_font_size>];
+    label.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
+    
+    ...
+    
+```
+
+You can also check out the iOS example project to see a few more examples.
+
+
 # Examples
 
 ## Wunderground
@@ -173,5 +193,9 @@ Last but no least, these are the general terms:
 * I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
 * If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
 * If you have any issues or suggestions for the general architecture of CZWeatherKit, I'd love to hear them! Please post an issue.
+
+### Contributers
+
+Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
 
 
