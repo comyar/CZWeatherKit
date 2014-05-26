@@ -33,7 +33,7 @@ Some services require an API key while others do not. Consult the documentation 
 
 ### Climacons
 
-`CZWeatherCondition` objects have a `climaconCharacter` property that contains an appropriate climacon character mapping for the weather condition description. The [Climacons Font](http://adamwhitcroft.com/climacons/font/) is a font set created by [Adam Whitcroft](http://adamwhitcroft.com/). In order to use the `climaconCharacter` property, download the Climacons font and add it to your project. The following example illustrates how to use the character in a `UILabel`:
+`CZWeatherCondition` objects have a `climaconCharacter` property that contains an appropriate climacon character mapping for the weather condition description. The [Climacons Font](http://adamwhitcroft.com/climacons/font/) is a font set created by [Adam Whitcroft](http://adamwhitcroft.com/) featuring various weather-related icons. In order to use the `climaconCharacter` property, download the Climacons font and add it to your project. The following example illustrates how to use the character in a `UILabel`:
 
 ```objective-c
     ...
