@@ -19,7 +19,6 @@
 		DDCD8D4D1932803500D9B731 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D431932803500D9B731 /* CZWeatherRequest.m */; };
 		DDCD8D4E1932803500D9B731 /* CZOpenWeatherMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D461932803500D9B731 /* CZOpenWeatherMapService.m */; };
 		DDCD8D4F1932803500D9B731 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D4A1932803500D9B731 /* CZWundergroundService.m */; };
-		DDCD8D8C19328D4A00D9B731 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8D8B19328D4A00D9B731 /* API_KEY.plist */; };
 		DDCD8DDA19328DEA00D9B731 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */; };
 		DDCD8DDB19328DEA00D9B731 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD819328DEA00D9B731 /* Default.png */; };
 		DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD919328DEA00D9B731 /* Default@2x.png */; };
@@ -55,7 +54,6 @@
 		DDCD8D481932803500D9B731 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 		DDCD8D491932803500D9B731 /* CZWundergroundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWundergroundService.h; sourceTree = "<group>"; };
 		DDCD8D4A1932803500D9B731 /* CZWundergroundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundService.m; sourceTree = "<group>"; };
-		DDCD8D8B19328D4A00D9B731 /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = API_KEY.plist; path = ../../API_KEY.plist; sourceTree = "<group>"; };
 		DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../AFNetworking/Example/Default-568h@2x.png"; sourceTree = "<group>"; };
 		DDCD8DD819328DEA00D9B731 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../AFNetworking/Example/Default.png; sourceTree = "<group>"; };
 		DDCD8DD919328DEA00D9B731 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../AFNetworking/Example/Default@2x.png"; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 				DDCD8DD819328DEA00D9B731 /* Default.png */,
 				DDCD8DD919328DEA00D9B731 /* Default@2x.png */,
 				DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */,
-				DDCD8D8B19328D4A00D9B731 /* API_KEY.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCD8DE2193297FC00D9B731 /* Climacons.ttf in Resources */,
-				DDCD8D8C19328D4A00D9B731 /* API_KEY.plist in Resources */,
 				DDCD8C091931BD1700D9B731 /* InfoPlist.strings in Resources */,
 				DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */,
 				DDCD8DDA19328DEA00D9B731 /* Default-568h@2x.png in Resources */,

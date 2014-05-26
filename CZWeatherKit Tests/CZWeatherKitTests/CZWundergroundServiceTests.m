@@ -66,7 +66,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_wun
 - (void)setUp
 {
     [super setUp];
-    self.service            = [CZWundergroundService serviceWithKey:self.keys[@"wunderground"]];
+    self.service            = [CZWundergroundService serviceWithKey:@"1234567890123456"];
     self.currentData        = [[self loadFile:currentJSONFilename       extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
     self.forecastLightData  = [[self loadFile:forecastLightJSONFilename extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
     self.forecastFullData   = [[self loadFile:forecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
@@ -263,22 +263,6 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_wun
 }
 
 #pragma mark Wunderground Request Tests
-
-- (void)test_wundergroundRequest_full
-{
-    const CGFloat latitude  = 30.2500;
-    const CGFloat longitude = -97.7500;
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
-    request.detailLevel  = CZWeatherRequestFullDetail;
-    request.service = self.service;
-    
-    if ([self.service.key length] > 0) {
-        [request performRequestWithHandler:^(id data, NSError *error) {
-            XCTAssertTrue([data isKindOfClass:[CZWeatherCondition class]], @"Data is not CZWeatherCondition instance");
-        }];
-    }
-}
 
 - (void)test_wundergroundRequest_configurationError
 {

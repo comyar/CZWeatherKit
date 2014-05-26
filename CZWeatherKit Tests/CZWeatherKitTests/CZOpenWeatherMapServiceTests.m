@@ -67,7 +67,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
 - (void)setUp
 {
     [super setUp];
-    self.service            = [CZOpenWeatherMapService serviceWithKey:self.keys[@"openweathermap"]];
+    self.service            = [CZOpenWeatherMapService serviceWithKey:@"1234567890123456"];
     self.currentData        = [[self loadFile:currentJSONFilename       extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
     self.forecastLightData  = [[self loadFile:forecastLightJSONFilename extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];
     self.forecastFullData   = [[self loadFile:forecastFullJSONFilename  extension:@"json"]dataUsingEncoding:NSUTF8StringEncoding];

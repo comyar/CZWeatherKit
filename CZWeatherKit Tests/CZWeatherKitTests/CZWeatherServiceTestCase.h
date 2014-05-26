@@ -41,6 +41,4 @@
  */
 @property (nonatomic) id<CZWeatherService>  service;
 
-@property (nonatomic) NSDictionary *keys;
-
 @end
