@@ -71,7 +71,7 @@ typedef void (^CZWeatherRequestHandler) (id data, NSError *error);
  Indicates the level of detail being requested for a weather request. Weather services
  define the data each detail level provides.
  */
-typedef NS_ENUM(NSInteger, CZWeatherRequestDetail) {
+typedef NS_ENUM(NSInteger, CZWeatherRequestDetailLevel) {
     /** Indicates that the minimum amount of data is being requested. */
     CZWeatherRequestLightDetail = 0,
     /** Indicates that the maxmimum amount of data is being requested. */
@@ -165,6 +165,6 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 
 /**
  */
-@property (nonatomic) CZWeatherRequestDetail                detailLevel;
+@property (nonatomic) CZWeatherRequestDetailLevel           detailLevel;
 
 @end

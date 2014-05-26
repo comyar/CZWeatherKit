@@ -161,7 +161,7 @@ static NSString * const serviceName = @"Open Weather Map";
     return condition;
 }
 
-- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON forDetailLevel:(CZWeatherRequestDetail)detailLevel
+- (NSArray *)parseForecastFromJSON:(NSDictionary *)JSON forDetailLevel:(CZWeatherRequestDetailLevel)detailLevel
 {
     NSMutableArray *forecastConditions = [NSMutableArray new];
     

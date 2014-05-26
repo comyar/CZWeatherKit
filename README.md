@@ -13,7 +13,7 @@ Add the following to your Podfile:
     pod "CZWeatherKit"
 ```
 
-and run `pod install'
+and run `pod install'. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but maybe you should really consider Cocoa Pods).
 
 ### Requirements
 
@@ -26,7 +26,6 @@ CZWeatherKit currently supports the following weather services:
   * [Open Weather Map](http://openweathermap.org/API)
 
 Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the CZWeatherService protocol. See the 'Adding Services' section of the Readme.
-
 
 # Examples
 
@@ -125,8 +124,7 @@ Some services require an API key while others do not. Consult the documentation 
     }];
 ```
 
-
-## Architecture
+# Architecture
 
 ### Classes and Protocols
 
@@ -137,12 +135,33 @@ Some services require an API key while others do not. Consult the documentation 
 |`CZWundergroundService`         | Service class for interacting with the Weather Underground API.
 |`CZOpenWeatherMapService`       | Service class for interacting with the Open Weather Map API.
 
-
 | Protocols         | Description
 |-------------------|:----------------
 |`CZWeatherService` | Declares an interface for weather service objects to implement
     
 ### Creating Requests    
     
+`CZWeatherRequest` objects only have a few properties, but their values can vary widely depending on the weather service being used. For example,
+if you want to get the current weather conditions in Sydney, Australia, you have to set the value for the key `CZWeatherKitLocationName.CountryCityName`
+in the `location` dictionary. Weather services expect the value for the country and city name in varying formats. Wunderground, for example, expects the
+country and city name in the following format: `<Country>/<City>`. Open Weather Map, however, expects the country and city name in the following format: 
+`<City>,<Country>`. When setting the location for a request, consult the API reference for the weather service you are using.
+
+Additionally, weather services differ in the variety of locations they support. For example, Wunderground allows you to query by City/State, City/Country, Zipcode, Latitude/Longitude, and IP address. Open Weather Map only allows you to query by City/State, City/Country, Latitude/Longitude. When performing requests
+to a service, ensure that the query type is supported.
+
+Finally, requests carry with them a detail level. A detail level loosely defines how much information you wish to retrieve for the request, but the meaning can vary from each service. For example, when requesting forecast data from Wunderground, a detail level of `CZWeatherRequestLightDetail` will retrieve a 3-day forecast and `CZWeatherRequestFullDetail` will retrieve a 10-day forecast. When requesting forecast data from Open Weather Map, a detail level of `CZWeatherRequestLightDetail` will retrieve an hourly forecast and `CZWeatherRequestFullDetail` will retrieve a daily forecast 
 
 ### Adding New Services
+
+Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the CZWeatherService protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
+
+# Contributing
+
+If you would like to contribute to this project, please try to follow the coding style of the rest of the project. I have a somewhat particular (Ok, very particular...) coding style and would like new features to match. Also, I would appreciate if you add unit tests for anything you add (especially new services!).
+Last but no least, these are the general terms:
+    * The project is under the BSD license, so uh take note of that, I guess.
+    * I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
+    * If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
+
+
