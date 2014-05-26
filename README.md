@@ -180,9 +180,11 @@ Finally, requests carry with them a detail level. A detail level loosely defines
 
 Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the `CZWeatherService` protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
 
-# Unit Testing
+# Testing
 
 The unit tests for the project aren't all-encompassing. If you would like to add unit tests, that would be appreciated. 
+
+The project is also being tested on the continuous integration service [Travis CI](http://travis-ci.org). You can check the build history [here](https://travis-ci.org/CZWeatherKit/CZWeatherKit).
 
 # Contributing
 
