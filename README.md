@@ -8,9 +8,11 @@ CZWeatherKit is an easy-to-use, extensible weather library for iOS and OS X that
 
 Add the following to your Podfile:
 
+```ruby
     platform :ios, '7.0'
     pod "CZWeatherKit"
-    
+```
+
 and run `pod install'
 
 ### Requirements
