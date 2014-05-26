@@ -4,7 +4,7 @@
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for painless downloading of weather data from various weather services. CZWeatherKit is lightweight and requires no external dependencies. 
 
-CZWeatherKit started as offshoot of work I had done while developing [Sol°](https://github.com/comyarzaheri/Sol), a simple open-source iOS weather app ([App Store Link](http://appstore.com/Sol°)). I will update the README when I finish integrating CZWeatherKit back into Sol° so you can see what CZWeatherKit looks like in a completed app.
+CZWeatherKit started as offshoot of work done while developing [Sol°](https://github.com/comyarzaheri/Sol), a simple open-source iOS weather app ([App Store Link](http://appstore.com/Sol°)). The README will be updated when CZWeatherKit has been integrated back into Sol° so you can see what it looks like in a completed app.
 
 # Getting Started
 
