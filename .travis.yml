@@ -1,1 +1,1 @@
-language: objective-cscript:     - xcodebuild -workspace CZWeatherKit.xcworkspace -scheme "iOS Tests" -sdk iphonesimulator test    - xctool -workspace CZWeatherKit.xcworkspace -scheme "OSX Tests" test
+language: objective-cbefore_install:    - brew update    - brew install xctoolscript:     - xctool -workspace CZWeatherKit.xcworkspace -scheme "iOS Tests" -sdk iphonesimulator test    - xctool -workspace CZWeatherKit.xcworkspace -scheme "OSX Tests" test

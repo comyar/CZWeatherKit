@@ -535,7 +535,7 @@
 				);
 				INFOPLIST_FILE = "OSX Tests/OSX Tests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -555,6 +555,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "OSX Tests/OSX Tests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
