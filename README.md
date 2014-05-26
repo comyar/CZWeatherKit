@@ -6,6 +6,8 @@ CZWeatherKit started as offshoot of work I had done while developing [Sol°](htt
 
 # Getting Started
 
+[![Build Status](https://travis-ci.org/CZWeatherKit/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+
 ### Cocoa Pods
 
 Add the following to your Podfile:
