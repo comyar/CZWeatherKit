@@ -135,9 +135,9 @@ Some services require an API key while others do not. Consult the documentation 
 |`CZWundergroundService`         | Service class for interacting with the Weather Underground API.
 |`CZOpenWeatherMapService`       | Service class for interacting with the Open Weather Map API.
 
-| Protocols         | Description
-|-------------------|:----------------
-|`CZWeatherService` | Declares an interface for weather service objects to implement
+| Protocols                      | Description
+|--------------------------------|:---------------
+|`CZWeatherService`              | Declares an interface for weather service objects to implement
     
 ### Creating Requests    
     
