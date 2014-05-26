@@ -65,8 +65,6 @@ Some services require an API key while others do not. Consult the documentation 
 ### Getting 10-day Forecast
 
 ```objective-c 
-    const CGFloat latitude  = 30.2500;
-    const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.detailLevel = CZWeatherRequestFullDetail;
     request.location[CZWeatherKitLocationName.CountryCityName] = @"Australia/Sydney";
@@ -130,10 +128,21 @@ Some services require an API key while others do not. Consult the documentation 
 
 ## Architecture
 
-### Requests and Services
+### Classes and Protocols
 
-TODO
+| Classes                        | Description
+|--------------------------------|:---------------
+|`CZWeatherRequest`              | Handles requests to weather service API's. 
+|`CZWeatherCondition`            | Represents the weather conditions at a specific moment in time.
+|`CZWundergroundService`         | Service class for interacting with the Weather Underground API.
+|`CZOpenWeatherMapService`       | Service class for interacting with the Open Weather Map API.
 
-### Adding Services
 
-TODO
+| Protocols         | Description
+|-------------------|:----------------
+|`CZWeatherService` | Declares an interface for weather service objects to implement
+    
+### Creating Requests    
+    
+
+### Adding New Services
