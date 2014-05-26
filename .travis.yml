@@ -1,1 +1,1 @@
-language: objective-cscript:     - xctool -workspace CZWeatherKit.xcworkspace -scheme iOS\ Tests test    - xctool -workspace CZWeatherKit.xcworkspace -scheme OSX\ Tests test    - xctool -workspace CZWeatherKit.xcworkspace -scheme CZWeatherKit\ Example\ iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+language: objective-cscript:     - xctool -workspace CZWeatherKit.xcworkspace -scheme iOS\ Tests test    - xctool -workspace CZWeatherKit.xcworkspace -scheme OSX\ Tests test    - xctool -workspace CZWeatherKit.xcworkspace -scheme CZWeatherKit\ Example\ iOS build
