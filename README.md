@@ -69,7 +69,7 @@ Some services require an API key while others do not. Consult the documentation 
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.detailLevel = CZWeatherRequestFullDetail;
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location[CZWeatherKitLocationName.CountryCityName] = @"Australia/Sydney";
     request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
