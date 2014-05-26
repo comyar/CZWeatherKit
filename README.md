@@ -194,4 +194,8 @@ Last but no least, these are the general terms:
 * If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
 * If you have any issues or suggestions for the general architecture of CZWeatherKit, I'd love to hear them! Please post an issue.
 
+### Contributers
+
+Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
+
 
