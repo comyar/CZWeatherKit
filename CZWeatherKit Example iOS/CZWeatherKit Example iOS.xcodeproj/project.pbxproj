@@ -19,11 +19,11 @@
 		DDCD8D4D1932803500D9B731 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D431932803500D9B731 /* CZWeatherRequest.m */; };
 		DDCD8D4E1932803500D9B731 /* CZOpenWeatherMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D461932803500D9B731 /* CZOpenWeatherMapService.m */; };
 		DDCD8D4F1932803500D9B731 /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8D4A1932803500D9B731 /* CZWundergroundService.m */; };
-		DDCD8DDA19328DEA00D9B731 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */; };
-		DDCD8DDB19328DEA00D9B731 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD819328DEA00D9B731 /* Default.png */; };
-		DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DD919328DEA00D9B731 /* Default@2x.png */; };
 		DDCD8DE019328E7900D9B731 /* CZWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCD8DDF19328E7900D9B731 /* CZWeatherView.m */; };
 		DDCD8DE2193297FC00D9B731 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DE1193297FC00D9B731 /* Climacons.ttf */; };
+		DDCD8DF319331D0200D9B731 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DF019331D0200D9B731 /* Default-568h@2x.png */; };
+		DDCD8DF419331D0200D9B731 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DF119331D0200D9B731 /* Default.png */; };
+		DDCD8DF519331D0200D9B731 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD8DF219331D0200D9B731 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,12 +54,12 @@
 		DDCD8D481932803500D9B731 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherService_Internal.h; sourceTree = "<group>"; };
 		DDCD8D491932803500D9B731 /* CZWundergroundService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWundergroundService.h; sourceTree = "<group>"; };
 		DDCD8D4A1932803500D9B731 /* CZWundergroundService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWundergroundService.m; sourceTree = "<group>"; };
-		DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../AFNetworking/Example/Default-568h@2x.png"; sourceTree = "<group>"; };
-		DDCD8DD819328DEA00D9B731 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../AFNetworking/Example/Default.png; sourceTree = "<group>"; };
-		DDCD8DD919328DEA00D9B731 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../AFNetworking/Example/Default@2x.png"; sourceTree = "<group>"; };
 		DDCD8DDE19328E7900D9B731 /* CZWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherView.h; sourceTree = "<group>"; };
 		DDCD8DDF19328E7900D9B731 /* CZWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherView.m; sourceTree = "<group>"; };
 		DDCD8DE1193297FC00D9B731 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
+		DDCD8DF019331D0200D9B731 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DDCD8DF119331D0200D9B731 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DDCD8DF219331D0200D9B731 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +203,10 @@
 		DDCD8D9019328DB300D9B731 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDCD8DF019331D0200D9B731 /* Default-568h@2x.png */,
+				DDCD8DF119331D0200D9B731 /* Default.png */,
+				DDCD8DF219331D0200D9B731 /* Default@2x.png */,
 				DDCD8DE1193297FC00D9B731 /* Climacons.ttf */,
-				DDCD8DD819328DEA00D9B731 /* Default.png */,
-				DDCD8DD919328DEA00D9B731 /* Default@2x.png */,
-				DDCD8DD719328DEA00D9B731 /* Default-568h@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,9 +275,9 @@
 			files = (
 				DDCD8DE2193297FC00D9B731 /* Climacons.ttf in Resources */,
 				DDCD8C091931BD1700D9B731 /* InfoPlist.strings in Resources */,
-				DDCD8DDC19328DEA00D9B731 /* Default@2x.png in Resources */,
-				DDCD8DDA19328DEA00D9B731 /* Default-568h@2x.png in Resources */,
-				DDCD8DDB19328DEA00D9B731 /* Default.png in Resources */,
+				DDCD8DF519331D0200D9B731 /* Default@2x.png in Resources */,
+				DDCD8DF319331D0200D9B731 /* Default-568h@2x.png in Resources */,
+				DDCD8DF419331D0200D9B731 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +435,7 @@
 				DDCD8C321931BD1700D9B731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
