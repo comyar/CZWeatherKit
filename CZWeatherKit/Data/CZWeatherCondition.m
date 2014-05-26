@@ -68,6 +68,8 @@
 
 @implementation CZWeatherCondition
 
+#pragma mark Creating a Weather Condition
+
 - (instancetype)init
 {
     if (self = [super init]) {
@@ -76,6 +78,45 @@
         self.temperature        = (CZTemperature){CZWeatherKitNoValue, CZWeatherKitNoValue};
     }
     return self;
+}
+
+#pragma mark NSCoding Methods
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        self.date               = [aDecoder decodeObjectForKey:@"date"];
+        self.description        = [aDecoder decodeObjectForKey:@"description"];
+        self.climaconCharacter  = [aDecoder decodeIntForKey:@"climaconCharacter"];
+        self.lowTemperature     = (CZTemperature){[aDecoder decodeFloatForKey:@"lowTemperature_f"],
+                                                  [aDecoder decodeFloatForKey:@"lowTemperature_c"]};
+        self.highTemperature    = (CZTemperature){[aDecoder decodeFloatForKey:@"highTemperature_f"],
+                                                  [aDecoder decodeFloatForKey:@"highTemperature_c"]};
+        self.temperature        = (CZTemperature){[aDecoder decodeFloatForKey:@"temperature_f"],
+                                                  [aDecoder decodeFloatForKey:@"temperature_c"]};
+        self.humidity           = [aDecoder decodeFloatForKey:@"humidity"];
+        self.windDegrees        = [aDecoder decodeFloatForKey:@"windDegrees"];
+        self.windSpeed          = (CZWindSpeed){[aDecoder decodeFloatForKey:@"windSpeed_mph"],
+                                                [aDecoder decodeFloatForKey:@"windSpeed_kph"]};
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.date              forKey:@"date"];
+    [aCoder encodeObject:self.description       forKey:@"description"];
+    [aCoder encodeInt:self.climaconCharacter    forKey:@"climaconCharacter"];
+    [aCoder encodeFloat:self.lowTemperature.f   forKey:@"lowTemperature_f"];
+    [aCoder encodeFloat:self.lowTemperature.c   forKey:@"lowTemperature_c"];
+    [aCoder encodeFloat:self.highTemperature.f  forKey:@"highTemperature_f"];
+    [aCoder encodeFloat:self.highTemperature.c  forKey:@"highTemperature_c"];
+    [aCoder encodeFloat:self.temperature.f      forKey:@"temperature_f"];
+    [aCoder encodeFloat:self.temperature.c      forKey:@"temperature_c"];
+    [aCoder encodeFloat:self.humidity           forKey:@"humidity"];
+    [aCoder encodeFloat:self.windDegrees        forKey:@"windDegrees"];
+    [aCoder encodeFloat:self.windSpeed.mph      forKey:@"windSpeed_mph"];
+    [aCoder encodeFloat:self.windSpeed.kph      forKey:@"windSpeed_kph"];
 }
 
 @end
