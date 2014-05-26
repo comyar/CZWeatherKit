@@ -19,7 +19,7 @@ and run `pod install'
 
 CZWeatherKit has only been tested on iOS 7 and OS X 10.9, but the library avoids using newer Cocoa/Cocoa Touch API so it may work on older deployment targets. 
 
-### Usage
+### Supported Weather Services
 
 CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
