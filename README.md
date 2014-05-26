@@ -174,7 +174,7 @@ country and city name in the following format: `<Country>/<City>`. Open Weather 
 Additionally, weather services differ in the variety of locations they support. For example, Wunderground allows you to query by City/State, City/Country, Zipcode, Latitude/Longitude, and IP address. Open Weather Map only allows you to query by City/State, City/Country, Latitude/Longitude. When performing requests
 to a service, ensure that the query type is supported.
 
-Finally, requests carry with them a detail level. A detail level loosely defines how much information you wish to retrieve for the request, but the meaning can vary from each service. For example, when requesting forecast data from Wunderground, a detail level of `CZWeatherRequestLightDetail` will retrieve a 3-day forecast and `CZWeatherRequestFullDetail` will retrieve a 10-day forecast. When requesting forecast data from Open Weather Map, a detail level of `CZWeatherRequestLightDetail` will retrieve an hourly forecast and `CZWeatherRequestFullDetail` will retrieve a daily forecast 
+Finally, requests carry with them a detail level. A detail level loosely defines how much information you wish to retrieve for the request, but the meaning can vary from each service. For example, when requesting forecast data from Wunderground, a detail level of `CZWeatherRequestLightDetail` will retrieve a 3-day forecast and `CZWeatherRequestFullDetail` will retrieve a 10-day forecast. When requesting forecast data from Open Weather Map, a detail level of `CZWeatherRequestLightDetail` will retrieve an hourly forecast and `CZWeatherRequestFullDetail` will retrieve a daily forecast.
 
 ### Adding New Services
 
