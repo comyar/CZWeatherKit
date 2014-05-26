@@ -164,5 +164,6 @@ Last but no least, these are the general terms:
 * The project is under the BSD license, so uh take note of that, I guess.
 * I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
 * If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
+* If you have any issues or suggestions for the general architecture of CZWeatherKit, I'd love to hear them! Please post an issue.
 
 
