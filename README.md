@@ -13,7 +13,7 @@ Add the following to your Podfile:
     pod "CZWeatherKit"
 ```
 
-and run `pod install'. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but maybe you should really consider Cocoa Pods).
+and run `pod install`. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but maybe you should really consider Cocoa Pods).
 
 ### Requirements
 
@@ -25,7 +25,7 @@ CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
   * [Open Weather Map](http://openweathermap.org/API)
 
-Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the CZWeatherService protocol. See the 'Adding Services' section of the Readme.
+Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
 
 # Examples
 
@@ -154,7 +154,7 @@ Finally, requests carry with them a detail level. A detail level loosely defines
 
 ### Adding New Services
 
-Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the CZWeatherService protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
+Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the `CZWeatherService` protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
 
 # Contributing
 
