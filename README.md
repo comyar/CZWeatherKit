@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/comyarzaheri/CZWeatherKit/master/Meta/czweatherkit_header.png?token=3284227__eyJzY29wZSI6IlJhd0Jsb2I6Y29teWFyemFoZXJpL0NaV2VhdGhlcktpdC9tYXN0ZXIvTWV0YS9jendlYXRoZXJraXRfaGVhZGVyLnBuZyIsImV4cGlyZXMiOjE0MDE1MTM3NTF9--b8641653a8eef5f1c67badeda79aa443b1836006)
+![](https://raw.githubusercontent.com/CZWeatherKit/CZWeatherKit/master/Meta/czweatherkit_header.png)
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for painless downloading of weather data from various weather services. CZWeatherKit is lightweight and requires no external dependencies. 
 
