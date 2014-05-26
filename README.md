@@ -4,7 +4,7 @@
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy downloading of weather data from various weather services. CZWeatherKit is extremely lightweight and requires no external dependencies. 
 
-CZWeatherKit started as offshoot of work done while developing [Sol°](https://github.com/comyarzaheri/Sol), a simple open-source iOS weather app ([App Store Link](http://appstore.com/Sol°)). The README will be updated when CZWeatherKit has been integrated back into Sol° so you can see what it looks like in a completed app.
+CZWeatherKit started as way to simplify weather API request for [Sol°](https://github.com/comyarzaheri/Sol), a simple open-source iOS weather app ([App Store Link](http://appstore.com/Sol°)). The README will be updated when CZWeatherKit has been integrated back into Sol° so you can see what it looks like in a completed app.
 
 # Getting Started
 
@@ -29,7 +29,7 @@ CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
   * [Open Weather Map](http://openweathermap.org/API)
 
-Some services require an API key while others do not. Consult the documentation for the API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
+Some weather services require an API key while others do not. Consult the documentation for the weather API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
 
 ### Climacons
 
@@ -174,15 +174,15 @@ country and city name in the following format: `<Country>/<City>`. Open Weather 
 Additionally, weather services differ in the variety of locations they support. For example, Wunderground allows you to query by City/State, City/Country, Zipcode, Latitude/Longitude, and IP address. Open Weather Map only allows you to query by City/State, City/Country, Latitude/Longitude. When performing requests
 to a service, ensure that the query type is supported.
 
-Finally, requests carry with them a detail level. A detail level loosely defines how much information you wish to retrieve for the request, but the meaning can vary from each service. For example, when requesting forecast data from Wunderground, a detail level of `CZWeatherRequestLightDetail` will retrieve a 3-day forecast and `CZWeatherRequestFullDetail` will retrieve a 10-day forecast. When requesting forecast data from Open Weather Map, a detail level of `CZWeatherRequestLightDetail` will retrieve an hourly forecast and `CZWeatherRequestFullDetail` will retrieve a daily forecast.
+Finally, requests carry with them a detail level. A detail level loosely defines how much information you wish to retrieve for the request, but the meaning can vary for each service. For example, when requesting forecast data from Wunderground, a detail level of `CZWeatherRequestLightDetail` will retrieve a 3-day forecast and `CZWeatherRequestFullDetail` will retrieve a 10-day forecast. When requesting forecast data from Open Weather Map, a detail level of `CZWeatherRequestLightDetail` will retrieve an hourly forecast and `CZWeatherRequestFullDetail` will retrieve a daily forecast.
 
 ### Adding New Services
 
-Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the `CZWeatherService` protocol. Weather service objects separate URL generation/response parsing from performing requests. This allows new weather services to be added without any changes to the rest of the API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
+Services can be added somewhat painlessly to CZWeatherKit. To be a weather service, a class should adopt the `CZWeatherService` protocol. Weather service objects separate URL generation/response parsing from performing actual requests. This allows new weather services to be added without any changes to the rest of the CZWeatherKit's API. If you would like to contribute to this project by adding new weather services, please take a look at both `CZWundergroundService` and `CZOpenWeatherMapService`.
 
 # Testing
 
-The unit tests for the project aren't all-encompassing. If you would like to add unit tests, that would be appreciated. 
+The unit tests for the project aren't all-encompassing and are somewhat lacking. If you would like to add unit tests, that would be appreciated. 
 
 The project is also being tested on the continuous integration service [Travis CI](http://travis-ci.org). You can check the build history [here](https://travis-ci.org/CZWeatherKit/CZWeatherKit).
 
