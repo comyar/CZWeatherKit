@@ -27,7 +27,8 @@ Some services require an API key while others do not. Consult the documentation 
 
 
 Open Weather Map : Getting Current Conditions
-    
+
+```objective-c    
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
@@ -40,7 +41,7 @@ Open Weather Map : Getting Current Conditions
             // Do whatever you like with the data here
         }
     }];
-
+```
 
 
 
