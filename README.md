@@ -38,7 +38,7 @@ Some services require an API key while others do not. Consult the documentation 
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
-            CZWeatherCondition *conditions = (CZWeatherCondition *)data;
+            CZWeatherCondition *current = (CZWeatherCondition *)data;
             // Do whatever you like with the data here
         }
     }];
