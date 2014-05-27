@@ -32,10 +32,19 @@
 
 #pragma mark - Constants
 
+// Key for the location's city in the locationData dictionary
 NSString * const CZWeatherLocationCityName          = @"CZWeatherLocationCityName";
+
+// Key for the location's state in the locationData dictionary
 NSString * const CZWeatherLocationStateName         = @"CZWeatherLocationStateName";
+
+// Key for the location's country in the locationData dictionary
 NSString * const CZWeatherLocationCountryName       = @"CZWeatherLocationCountryName";
+
+// Key for the location's zipcode in the locationData dictionary
 NSString * const CZWeatherLocationZipcodeName       = @"CZWeatherLocationZipcodeName";
+
+// Key for the location's coordinate in the locationData dictionary
 NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordinateName";
 
 
@@ -43,10 +52,10 @@ NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordin
 
 @interface CZWeatherLocation ()
 
-//
-@property (nonatomic) NSDictionary          *userData;
+// Contains the location information provided when the object was created.
+@property (nonatomic) NSDictionary          *locationData;
 
-//
+// Indicates the type of location object.
 @property (nonatomic) CZWeatherLocationType locationType;
 
 @end
@@ -56,7 +65,9 @@ NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordin
 
 @implementation CZWeatherLocation
 
-- (instancetype)initWithType:(CZWeatherLocationType)locationType
+#pragma mark Creating a Weather Location
+
+- (instancetype)initWithLocationType:(CZWeatherLocationType)locationType
 {
     if (self = [super init]) {
         self.locationType = locationType;
@@ -66,15 +77,63 @@ NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordin
 
 + (CZWeatherLocation *)locationWithAutoIP
 {
-    CZWeatherLocation *location = [[CZWeatherLocation alloc]initWithType:CZWeatherLocationAutoIPType];
-    return location;
+    CZWeatherLocation *weatherLocation = [CZWeatherLocation new];
+    return weatherLocation;
 }
 
 + (CZWeatherLocation *)locationWithZipcode:(NSString *)zipcode
 {
-    CZWeatherLocation *location = [[CZWeatherLocation alloc]initWithType:CZWeatherLocationZipcodeType];
-    location.userData = @{CZWeatherLocationZipcodeName: zipcode};
-    return location;
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationZipcodeType];
+    if (zipcode) {
+        weatherLocation.locationData = @{CZWeatherLocationZipcodeName: zipcode};
+    }
+    return weatherLocation;
+}
+
++ (CZWeatherLocation *)locationWithCLLocation:(CLLocation *)location
+{
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationCoordinateType];
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    CGPoint coordinatePoint = CGPointMake(coordinate.latitude, coordinate.longitude);
+    weatherLocation.locationData = @{CZWeatherLocationCoordinateName: [NSValue valueWithCGPoint:coordinatePoint]};
+    return weatherLocation;
+}
+
++ (CZWeatherLocation *)locationWithCLPlacemark:(CLPlacemark *)placemark
+{
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationCoordinateType];
+    CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+    CGPoint coordinatePoint = CGPointMake(coordinate.latitude, coordinate.longitude);
+    weatherLocation.locationData = @{CZWeatherLocationCoordinateName: [NSValue valueWithCGPoint:coordinatePoint]};
+    return weatherLocation;
+}
+
++ (CZWeatherLocation *)locationWithCLLocationCoordinate2D:(CLLocationCoordinate2D)coordinate
+{
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationCoordinateType];
+    CGPoint coordinatePoint = CGPointMake(coordinate.latitude, coordinate.longitude);
+    weatherLocation.locationData = @{CZWeatherLocationCoordinateName: [NSValue valueWithCGPoint:coordinatePoint]};
+    return weatherLocation;
+}
+
++ (CZWeatherLocation *)locationWithCity:(NSString *)city state:(NSString *)state
+{
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationCityStateType];
+    if (city && state) {
+        weatherLocation.locationData = @{CZWeatherLocationCityName: city,
+                                         CZWeatherLocationStateName: state};
+    }
+    return weatherLocation;
+}
+
++ (CZWeatherLocation *)locationWithCity:(NSString *)city country:(NSString *)country
+{
+    CZWeatherLocation *weatherLocation = [[CZWeatherLocation alloc]initWithLocationType:CZWeatherLocationCityCountryType];
+    if (city && country) {
+        weatherLocation.locationData = @{CZWeatherLocationCityName: city,
+                                         CZWeatherLocationCountryName: country};
+    }
+    return weatherLocation;
 }
 
 @end

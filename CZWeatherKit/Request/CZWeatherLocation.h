@@ -29,29 +29,45 @@
 
 @import Foundation;
 @import CoreLocation;
+#if TARGET_OS_IPHONE
+@import UIKit;
+#endif
 
 
 #pragma mark - Type Definitions
 
 /**
+ Types of location objects.
  */
 typedef NS_ENUM(NSInteger, CZWeatherLocationType) {
+    /** Auto IP address type */
     CZWeatherLocationAutoIPType = 0,
+    /** Zipcode Type */
     CZWeatherLocationZipcodeType,
-    CZWeatherLocationCLLocationType,
-    CZWeatherLocationCLPlacemarkType,
+    /** City, State Type */
     CZWeatherLocationCityStateType,
+    /** City, Country Type */
     CZWeatherLocationCityCountryType,
-    CZWeatherLocationCLLocationCoordinate2DType
+    /** Coordinate Type */
+    CZWeatherLocationCoordinateType
 };
 
 
 #pragma mark - Constants
 
+/** Key for the location's city in the locationData dictionary */
 extern NSString * const CZWeatherLocationCityName;
+
+/** Key for the location's state in the locationData dictionary */
 extern NSString * const CZWeatherLocationStateName;
+
+/** Key for the location's country in the locationData dictionary */
 extern NSString * const CZWeatherLocationCountryName;
+
+/** Key for the location's zipcode in the locationData dictionary */
 extern NSString * const CZWeatherLocationZipcodeName;
+
+/** Key for the location's coordinate in the locationData dictionary */
 extern NSString * const CZWeatherLocationCoordinateName;
 
 
@@ -114,10 +130,12 @@ extern NSString * const CZWeatherLocationCoordinateName;
 #pragma mark Properties
 
 /**
+ Contains the location information provided when the object was created.
  */
-@property (nonatomic, readonly) NSDictionary            *userData;
+@property (nonatomic, readonly) NSDictionary            *locationData;
 
 /**
+ Indicates the type of location object.
  */
 @property (nonatomic, readonly) CZWeatherLocationType   locationType;
 
