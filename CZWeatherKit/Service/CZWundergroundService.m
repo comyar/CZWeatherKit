@@ -97,17 +97,24 @@ static NSString * const serviceName = @"Weather Underground";
     
     url = [url stringByAppendingString:@"q/"];
     
-    if (request.location[CZWeatherKitLocationName.CoordinateName]) {
-        CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
+    if (request.location.locationType == CZWeatherLocationCoordinateType) {
+        CGPoint coordinate = [request.location.locationData[CZWeatherLocationCoordinateName]CGPointValue];
         url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
-    } else if (request.location[CZWeatherKitLocationName.ZipcodeName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.ZipcodeName]];
-    } else if (request.location[CZWeatherKitLocationName.AutoIPName]) {
+    } else if (request.location.locationType == CZWeatherLocationZipcodeType) {
+        url = [url stringByAppendingString:request.location.locationData[CZWeatherLocationZipcodeName]];
+    } else if (request.location.locationType == CZWeatherLocationAutoIPType) {
         url = [url stringByAppendingString:@"autoip"];
-    } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
-    } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
+    } else if (request.location.locationType == CZWeatherLocationCityStateType) {
+        NSString *city = request.location.locationData[CZWeatherLocationCityName];
+        city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *state = request.location.locationData[CZWeatherLocationStateName];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"%@/%@", state, city]];
+    } else if (request.location.locationType == CZWeatherLocationCityCountryType) {
+        NSString *city = request.location.locationData[CZWeatherLocationCityName];
+        city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *country = request.location.locationData[CZWeatherLocationCountryName];
+        country = [country stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"%@/%@", country, city]];
     } else {
         return nil;
     }
