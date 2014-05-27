@@ -30,9 +30,51 @@
 #import "CZWeatherLocation.h"
 
 
+#pragma mark - Constants
+
+NSString * const CZWeatherLocationCityName          = @"CZWeatherLocationCityName";
+NSString * const CZWeatherLocationStateName         = @"CZWeatherLocationStateName";
+NSString * const CZWeatherLocationCountryName       = @"CZWeatherLocationCountryName";
+NSString * const CZWeatherLocationZipcodeName       = @"CZWeatherLocationZipcodeName";
+NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordinateName";
+
+
+#pragma mark - CZWeatherLocation Class Extension
+
+@interface CZWeatherLocation ()
+
+//
+@property (nonatomic) NSDictionary          *userData;
+
+//
+@property (nonatomic) CZWeatherLocationType locationType;
+
+@end
+
+
 #pragma mark - CZWeatherLocation Implementation
 
 @implementation CZWeatherLocation
 
+- (instancetype)initWithType:(CZWeatherLocationType)locationType
+{
+    if (self = [super init]) {
+        self.locationType = locationType;
+    }
+    return self;
+}
+
++ (CZWeatherLocation *)locationWithAutoIP
+{
+    CZWeatherLocation *location = [[CZWeatherLocation alloc]initWithType:CZWeatherLocationAutoIPType];
+    return location;
+}
+
++ (CZWeatherLocation *)locationWithZipcode:(NSString *)zipcode
+{
+    CZWeatherLocation *location = [[CZWeatherLocation alloc]initWithType:CZWeatherLocationZipcodeType];
+    location.userData = @{CZWeatherLocationZipcodeName: zipcode};
+    return location;
+}
 
 @end

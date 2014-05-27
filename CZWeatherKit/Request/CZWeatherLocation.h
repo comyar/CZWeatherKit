@@ -31,6 +31,30 @@
 @import CoreLocation;
 
 
+#pragma mark - Type Definitions
+
+/**
+ */
+typedef NS_ENUM(NSInteger, CZWeatherLocationType) {
+    CZWeatherLocationAutoIPType = 0,
+    CZWeatherLocationZipcodeType,
+    CZWeatherLocationCLLocationType,
+    CZWeatherLocationCLPlacemarkType,
+    CZWeatherLocationCityStateType,
+    CZWeatherLocationCityCountryType,
+    CZWeatherLocationCLLocationCoordinate2DType
+};
+
+
+#pragma mark - Constants
+
+extern NSString * const CZWeatherLocationCityName;
+extern NSString * const CZWeatherLocationStateName;
+extern NSString * const CZWeatherLocationCountryName;
+extern NSString * const CZWeatherLocationZipcodeName;
+extern NSString * const CZWeatherLocationCoordinateName;
+
+
 #pragma mark - CZWeatherLocation Interface
 
 @interface CZWeatherLocation : NSObject
@@ -89,6 +113,12 @@
 
 #pragma mark Properties
 
+/**
+ */
+@property (nonatomic, readonly) NSDictionary            *userData;
 
+/**
+ */
+@property (nonatomic, readonly) CZWeatherLocationType   locationType;
 
 @end
