@@ -186,7 +186,7 @@ The unit tests for the project aren't all-encompassing and are somewhat lacking.
 
 The project is also being tested on the continuous integration service [Travis CI](http://travis-ci.org). You can check the build history [here](https://travis-ci.org/CZWeatherKit/CZWeatherKit).
 
-# Contributing
+# Contributing and Terms
 
 If you would like to contribute to this project, please try to follow the coding style of the rest of the project. I have a somewhat particular (Ok, very particular...) coding style and would like new features to match. Also, I would appreciate if you add unit tests for anything you add (especially new services!).
 Last but no least, these are the general terms:
