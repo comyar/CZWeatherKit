@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD444CFA193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
+		DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
 		DDB94A541930737E0079DF6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A521930737E0079DF6D /* InfoPlist.strings */; };
 		DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821A192BDD6400D896A6 /* current_wunderground.json */; };
 		DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD444CF8193421BB00361FB3 /* CZWeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherLocation.h; sourceTree = "<group>"; };
+		DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherLocation.m; sourceTree = "<group>"; };
 		DD5181E9192AF6D100D896A6 /* CZWeatherKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKitTests-Info.plist"; sourceTree = "<group>"; };
 		DD5181EB192AF6D100D896A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherServiceTestCase.h; sourceTree = "<group>"; };
@@ -239,9 +243,9 @@
 				DDCD8D211932802800D9B731 /* Climacon.h */,
 				DDCD8D221932802800D9B731 /* CZWeatherKit.h */,
 				DDCD8D231932802800D9B731 /* Data */,
-				DDCD8D261932802800D9B731 /* Helper */,
 				DDCD8D291932802800D9B731 /* Request */,
 				DDCD8D2C1932802800D9B731 /* Service */,
+				DDCD8D261932802800D9B731 /* Helper */,
 			);
 			name = CZWeatherKit;
 			path = ../CZWeatherKit;
@@ -270,6 +274,8 @@
 			children = (
 				DDCD8D2A1932802800D9B731 /* CZWeatherRequest.h */,
 				DDCD8D2B1932802800D9B731 /* CZWeatherRequest.m */,
+				DD444CF8193421BB00361FB3 /* CZWeatherLocation.h */,
+				DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */,
 				DDCD8D801932807A00D9B731 /* CZWeatherCondition.m in Sources */,
 				DDCD8D811932807A00D9B731 /* NSString+CZWeatherKit_Substring.m in Sources */,
 				DDCD8D821932807A00D9B731 /* CZWeatherRequest.m in Sources */,
@@ -403,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD444CFA193421BB00361FB3 /* CZWeatherLocation.m in Sources */,
 				DDB94A92193079380079DF6D /* CZWeatherServiceTestCase.m in Sources */,
 				DDCD8D361932802800D9B731 /* CZOpenWeatherMapService.m in Sources */,
 				DDCD8D351932802800D9B731 /* CZWeatherRequest.m in Sources */,
