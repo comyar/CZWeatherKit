@@ -41,12 +41,46 @@
 
 #pragma mark Creating a Weather Location
 
+/**
+ Creates a location object with the user's current IP address.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithAutoIP;
+
+/**
+ Creates a location object with a U.S. zipcode.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithZipcode:(NSString *)zipcode;
+
+/**
+ Creates a location object with a CLLocation object.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithCLLocation:(CLLocation *)location;
+
+/**
+ Creates a location object with a CLPlacemark object.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithCLPlacemark:(CLPlacemark *)placemark;
+
+/**
+ Creates a location object with a city and U.S. state name.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithCity:(NSString *)city state:(NSString *)state;
+
+/**
+ Creates a location object with a city and country name.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithCity:(NSString *)city country:(NSString *)country;
+
+/**
+ Creates a location object with a CLLocationCoordinate2D.
+ @return Newly created location object.
+ */
 + (CZWeatherLocation *)locationWithCLLocationCoordinate2D:(CLLocationCoordinate2D)coordinate;
 
 @end
