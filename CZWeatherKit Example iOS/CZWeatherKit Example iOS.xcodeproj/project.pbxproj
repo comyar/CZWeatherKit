@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DFAA85E19353B7A001E2691 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFAA85D19353B7A001E2691 /* CZWeatherLocation.m */; };
 		DDCD8BFF1931BD1700D9B731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8BFE1931BD1700D9B731 /* Foundation.framework */; };
 		DDCD8C011931BD1700D9B731 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8C001931BD1700D9B731 /* CoreGraphics.framework */; };
 		DDCD8C031931BD1700D9B731 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCD8C021931BD1700D9B731 /* UIKit.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DFAA85C19353B7A001E2691 /* CZWeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherLocation.h; sourceTree = "<group>"; };
+		2DFAA85D19353B7A001E2691 /* CZWeatherLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherLocation.m; sourceTree = "<group>"; };
 		DDCD8BFB1931BD1700D9B731 /* CZWeatherKit Example iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CZWeatherKit Example iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCD8BFE1931BD1700D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDCD8C001931BD1700D9B731 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -156,6 +159,8 @@
 			children = (
 				DDCD8D3C1932803500D9B731 /* CZWeatherCondition.h */,
 				DDCD8D3D1932803500D9B731 /* CZWeatherCondition.m */,
+				2DFAA85C19353B7A001E2691 /* CZWeatherLocation.h */,
+				2DFAA85D19353B7A001E2691 /* CZWeatherLocation.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFAA85E19353B7A001E2691 /* CZWeatherLocation.m in Sources */,
 				DDCD8C0B1931BD1700D9B731 /* main.m in Sources */,
 				DDCD8D4E1932803500D9B731 /* CZOpenWeatherMapService.m in Sources */,
 				DDCD8DE019328E7900D9B731 /* CZWeatherView.m in Sources */,
