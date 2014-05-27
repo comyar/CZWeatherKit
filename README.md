@@ -1,6 +1,8 @@
 ![](https://raw.githubusercontent.com/CZWeatherKit/CZWeatherKit/master/Meta/czweatherkit_header.png)
 
 [![Build Status](https://travis-ci.org/CZWeatherKit/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+![License](http://img.shields.io/badge/license-BSD-red.svg)
+
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy downloading of weather data from various weather services. CZWeatherKit is extremely lightweight and requires no external dependencies. 
 
