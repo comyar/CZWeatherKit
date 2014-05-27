@@ -34,4 +34,5 @@
 
 @implementation CZWeatherLocation
 
+
 @end

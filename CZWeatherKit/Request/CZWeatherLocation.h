@@ -83,4 +83,12 @@
  */
 + (CZWeatherLocation *)locationWithCLLocationCoordinate2D:(CLLocationCoordinate2D)coordinate;
 
+// -----
+// @name Properties
+// -----
+
+#pragma mark Properties
+
+
+
 @end
