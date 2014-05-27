@@ -32,7 +32,7 @@
 #import "CZWundergroundService.h"
 #import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-
+#import "CZWeatherLocation.h"
 
 #if !(TARGET_OS_IPHONE)
 #define CGPointValue pointValue
@@ -97,17 +97,17 @@ static NSString * const serviceName = @"Weather Underground";
     
     url = [url stringByAppendingString:@"q/"];
     
-    if (request.location[CZWeatherKitLocationName.CoordinateName]) {
-        CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
-    } else if (request.location[CZWeatherKitLocationName.ZipcodeName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.ZipcodeName]];
-    } else if (request.location[CZWeatherKitLocationName.AutoIPName]) {
+    if (CLLocationCoordinate2DIsValid(request.location.locationCoordinate)) {
+        CLLocationCoordinate2D coordinate = request.location.locationCoordinate;
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.latitude, coordinate.longitude]];
+    } else if (request.location.zipcode) {
+        url = [url stringByAppendingString:request.location.zipcode];
+    } else if (request.location.autoIP) {
         url = [url stringByAppendingString:@"autoip"];
-    } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.StateCityName]];
-    } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        url = [url stringByAppendingString:request.location[CZWeatherKitLocationName.CountryCityName]];
+    } else if (request.location.stateCityName) {
+        url = [url stringByAppendingString:request.location.stateCityName];
+    } else if (request.location.countryCityName) {
+        url = [url stringByAppendingString:request.location.countryCityName];
     } else {
         return nil;
     }

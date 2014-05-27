@@ -27,6 +27,7 @@
 #import "Climacon.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherService.h"
+#import "CZWeatherLocation.h"
 #import "CZWeatherCondition.h"
 #import "CZWundergroundService.h"
 #import "CZOpenWeatherMapService.h"
