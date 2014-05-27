@@ -14,6 +14,16 @@
 
 @implementation CZWeatherLocation
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        // Initialize with an invalid object in case it is never set
+        // See: http://stackoverflow.com/questions/8273107/how-to-check-that-cllocationcoordinate2d-is-not-empty
+        _locationCoordinate = kCLLocationCoordinate2DInvalid;
+    }
+    return self;
+}
+
 + (instancetype)locationWithCountryCityName:(NSString *)name {
     CZWeatherLocation *location =  [[CZWeatherLocation alloc] init];
     location.countryCityName = name;

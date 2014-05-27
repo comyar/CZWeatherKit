@@ -28,7 +28,7 @@
 #pragma mark - Imports
 
 #import "CZWeatherRequest.h"
-
+#import "CZWeatherLocation.h"
 
 #pragma mark - Constants
 
@@ -59,7 +59,7 @@ NSString * const CZWeatherRequestErrorDomain = @"CZWeatherRequestErrorDomain";
 - (instancetype)initWithType:(CZWeatherRequestType)requestType
 {
     if (self = [super init]) {
-        _location               = [NSMutableDictionary new];
+        _location               = [[CZWeatherLocation alloc] init];
         _detailLevel            = CZWeatherRequestLightDetail;
         _requestType            = requestType;
     }

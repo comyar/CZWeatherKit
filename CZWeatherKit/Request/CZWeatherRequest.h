@@ -34,7 +34,7 @@
 #pragma mark - Forward Declarations
 
 @class CZWeatherData;
-
+@class CZWeatherLocation;
 
 #pragma mark - Constants
 
@@ -57,7 +57,7 @@ struct CZWeatherKitLocationName {
     /** */
     __unsafe_unretained NSString * const AutoIPName;
 };
-extern const struct CZWeatherKitLocationName CZWeatherKitLocationName;
+extern const struct CZWeatherKitLocationName CZWeatherKitLocationName __attribute__((deprecated("Use CZWeatherLocation instead")));
 
 
 #pragma mark - Type Definitions
@@ -152,7 +152,7 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 /**
  Location to request weather data for.
  */
-@property (nonatomic, readonly) NSMutableDictionary         *location;
+@property (nonatomic) CZWeatherLocation                     *location;
 
 /**
  Service to use when requesting and parsing data. 

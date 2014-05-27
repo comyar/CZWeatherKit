@@ -32,7 +32,7 @@
 #import "CZOpenWeatherMapService.h"
 #import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-
+#import "CZWeatherLocation.h"
 
 #if !(TARGET_OS_IPHONE)
 #define CGPointValue pointValue
@@ -94,15 +94,13 @@ static NSString * const serviceName = @"Open Weather Map";
         url = [url stringByAppendingString:@"forecast/daily?"];
     }
     
-    if (request.location[CZWeatherKitLocationName.CoordinateName]) {
-        CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
-    } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        NSString *query = request.location[CZWeatherKitLocationName.StateCityName];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
-    } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        NSString *query = request.location[CZWeatherKitLocationName.CountryCityName];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
+    if (CLLocationCoordinate2DIsValid(request.location.locationCoordinate)) {
+        CLLocationCoordinate2D coordinate = request.location.locationCoordinate;
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.latitude, coordinate.longitude]];
+    } else if (request.location.stateCityName) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", request.location.stateCityName]];
+    } else if (request.location.countryCityName) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", request.location.countryCityName]];
     } else {
         return nil;
     }
