@@ -30,6 +30,13 @@
 #import "CZWeatherLocation.h"
 
 
+#pragma mark - Macros
+
+#if !(TARGET_OS_IPHONE)
+#define valueWithCGPoint valueWithPoint
+#endif
+
+
 #pragma mark - Constants
 
 // Key for the location's city in the locationData dictionary

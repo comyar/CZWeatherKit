@@ -34,6 +34,8 @@
 #import "CZWeatherRequest.h"
 
 
+#pragma mark - Macros
+
 #if !(TARGET_OS_IPHONE)
 #define CGPointValue pointValue
 #endif
