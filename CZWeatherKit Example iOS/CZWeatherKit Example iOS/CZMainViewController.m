@@ -79,16 +79,16 @@
     [self.weatherView.activityIndicator startAnimating];
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.service = [CZOpenWeatherMapService new];
-    request.location[CZWeatherKitLocationName.StateCityName] = @"Austin,TX";
+    request.location = [CZWeatherLocation locationWithCity:@"Austin" state:@"TX"];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             __block CZWeatherCondition *condition = (CZWeatherCondition *)data;
             CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
             request.service = [CZOpenWeatherMapService new];
-            request.location[CZWeatherKitLocationName.StateCityName] = @"Austin,TX";
+            request.location = [CZWeatherLocation locationWithCity:@"Austin" state:@"TX"];
             [request performRequestWithHandler:^(id data, NSError *error) {
                 if (data) {
-                    self.weatherView.locationLabel.text = request.location[CZWeatherKitLocationName.StateCityName];
+                    self.weatherView.locationLabel.text = @"Austin, TX";
                     
                     // Current Conditions
                     self.weatherView.currentTemperatureLabel.text = [NSString stringWithFormat:@"%.0f°", condition.temperature.f];
