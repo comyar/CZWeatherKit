@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DFAA86019354242001E2691 /* CZWeatherLocationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */; };
+		DD351B4F193568680043CED3 /* CZWeatherLocationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */; };
 		DD444CFA193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
 		DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
 		DDB94A541930737E0079DF6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A521930737E0079DF6D /* InfoPlist.strings */; };
@@ -405,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD351B4F193568680043CED3 /* CZWeatherLocationTestCase.m in Sources */,
 				DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */,
 				DDCD8D801932807A00D9B731 /* CZWeatherCondition.m in Sources */,
 				DDCD8D811932807A00D9B731 /* NSString+CZWeatherKit_Substring.m in Sources */,
