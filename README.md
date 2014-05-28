@@ -195,5 +195,6 @@ Last but no least, these are the general terms:
 ### Contributers
 
 Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
+Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 
 
