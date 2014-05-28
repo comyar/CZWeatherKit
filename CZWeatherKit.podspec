@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "7.0"
   s.osx.deployment_target = "10.9"
   s.source       = { :git => "https://github.com/CZWeatherKit/CZWeatherKit.git", :tag => s.version.to_s}
-  s.source_files = 'CZWeatherKit/*.{h,m}'
+  s.source_files = 'CZWeatherKit/*.{h,m}', 'CZWeatherKit/**/*.{h,m}'
   s.requires_arc = true
 end
