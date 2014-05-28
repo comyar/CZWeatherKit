@@ -34,6 +34,8 @@
 #import "CZWeatherRequest.h"
 
 
+#pragma mark - Macros
+
 #if !(TARGET_OS_IPHONE)
 #define CGPointValue pointValue
 #endif
@@ -94,15 +96,20 @@ static NSString * const serviceName = @"Open Weather Map";
         url = [url stringByAppendingString:@"forecast/daily?"];
     }
     
-    if (request.location[CZWeatherKitLocationName.CoordinateName]) {
-        CGPoint coordinate = [request.location[CZWeatherKitLocationName.CoordinateName] CGPointValue];
+    if (request.location.locationType == CZWeatherLocationCoordinateType) {
+        CGPoint coordinate = [request.location.locationData[CZWeatherLocationCoordinateName]CGPointValue];
         url = [url stringByAppendingString:[NSString stringWithFormat:@"lat=%.4f&lon=%.4f", coordinate.x, coordinate.y]];
-    } else if (request.location[CZWeatherKitLocationName.StateCityName]) {
-        NSString *query = request.location[CZWeatherKitLocationName.StateCityName];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
-    } else if (request.location[CZWeatherKitLocationName.CountryCityName]) {
-        NSString *query = request.location[CZWeatherKitLocationName.CountryCityName];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@", query]];
+    } else if (request.location.locationType == CZWeatherLocationCityStateType) {
+        NSString *city = request.location.locationData[CZWeatherLocationCityName];
+        city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *state = request.location.locationData[CZWeatherLocationStateName];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@,%@", city, state]];
+    } else if (request.location.locationType == CZWeatherLocationCityCountryType) {
+        NSString *city = request.location.locationData[CZWeatherLocationCityName];
+        city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *country = request.location.locationData[CZWeatherLocationCountryName];
+        country = [country stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"q=%@,%@", city, country]];
     } else {
         return nil;
     }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DFAA86019354242001E2691 /* CZWeatherLocationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */; };
+		DD351B4F193568680043CED3 /* CZWeatherLocationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */; };
+		DD444CFA193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
+		DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */; };
 		DDB94A541930737E0079DF6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB94A521930737E0079DF6D /* InfoPlist.strings */; };
 		DDB94A5E193073C40079DF6D /* current_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821A192BDD6400D896A6 /* current_wunderground.json */; };
 		DDB94A5F193073C40079DF6D /* forecastFull_wunderground.json in Resources */ = {isa = PBXBuildFile; fileRef = DD51821B192BDD6400D896A6 /* forecastFull_wunderground.json */; };
@@ -45,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherLocationTestCase.m; sourceTree = "<group>"; };
+		DD444CF8193421BB00361FB3 /* CZWeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherLocation.h; sourceTree = "<group>"; };
+		DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherLocation.m; sourceTree = "<group>"; };
 		DD5181E9192AF6D100D896A6 /* CZWeatherKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKitTests-Info.plist"; sourceTree = "<group>"; };
 		DD5181EB192AF6D100D896A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD518211192B15B600D896A6 /* CZWeatherServiceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherServiceTestCase.h; sourceTree = "<group>"; };
@@ -106,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD351B4E193562F30043CED3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2DFAA85F19354242001E2691 /* CZWeatherLocationTestCase.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		DD5181BC192AF6D100D896A6 = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +143,11 @@
 		DD5181E7192AF6D100D896A6 /* CZWeatherKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD518219192BDD5900D896A6 /* JSON */,
+				DD351B4E193562F30043CED3 /* Data */,
 				DD518210192B159D00D896A6 /* Services */,
 				DDB94A70193073F30079DF6D /* iOS Tests */,
 				DDB94A4F1930737E0079DF6D /* OSX Tests */,
+				DD518219192BDD5900D896A6 /* JSON */,
 				DD5181E8192AF6D100D896A6 /* Supporting Files */,
 			);
 			path = CZWeatherKitTests;
@@ -239,9 +255,9 @@
 				DDCD8D211932802800D9B731 /* Climacon.h */,
 				DDCD8D221932802800D9B731 /* CZWeatherKit.h */,
 				DDCD8D231932802800D9B731 /* Data */,
-				DDCD8D261932802800D9B731 /* Helper */,
 				DDCD8D291932802800D9B731 /* Request */,
 				DDCD8D2C1932802800D9B731 /* Service */,
+				DDCD8D261932802800D9B731 /* Helper */,
 			);
 			name = CZWeatherKit;
 			path = ../CZWeatherKit;
@@ -270,6 +286,8 @@
 			children = (
 				DDCD8D2A1932802800D9B731 /* CZWeatherRequest.h */,
 				DDCD8D2B1932802800D9B731 /* CZWeatherRequest.m */,
+				DD444CF8193421BB00361FB3 /* CZWeatherLocation.h */,
+				DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -388,6 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD351B4F193568680043CED3 /* CZWeatherLocationTestCase.m in Sources */,
+				DD444CFB193421BB00361FB3 /* CZWeatherLocation.m in Sources */,
 				DDCD8D801932807A00D9B731 /* CZWeatherCondition.m in Sources */,
 				DDCD8D811932807A00D9B731 /* NSString+CZWeatherKit_Substring.m in Sources */,
 				DDCD8D821932807A00D9B731 /* CZWeatherRequest.m in Sources */,
@@ -403,8 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD444CFA193421BB00361FB3 /* CZWeatherLocation.m in Sources */,
 				DDB94A92193079380079DF6D /* CZWeatherServiceTestCase.m in Sources */,
 				DDCD8D361932802800D9B731 /* CZOpenWeatherMapService.m in Sources */,
+				2DFAA86019354242001E2691 /* CZWeatherLocationTestCase.m in Sources */,
 				DDCD8D351932802800D9B731 /* CZWeatherRequest.m in Sources */,
 				DDB94A93193079380079DF6D /* CZWundergroundServiceTests.m in Sources */,
 				DDCD8D371932802800D9B731 /* CZWundergroundService.m in Sources */,

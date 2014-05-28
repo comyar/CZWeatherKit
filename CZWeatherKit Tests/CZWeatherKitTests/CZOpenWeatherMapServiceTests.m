@@ -86,7 +86,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel = CZWeatherRequestLightDetail;
     request.service = self.service;
     
@@ -100,7 +100,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -114,7 +114,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel  = CZWeatherRequestLightDetail;
     request.service = self.service;
     
@@ -128,7 +128,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel  = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -142,7 +142,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel   = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -155,7 +155,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
 {
     NSString * const stateCity = @"Austin,TX";
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.StateCityName] = stateCity;
+    request.location = [CZWeatherLocation locationWithCity:@"Austin" state:@"TX"];
     request.detailLevel   = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -168,7 +168,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
 {
     NSString * const countryCity = @"London,UK";
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CountryCityName] = countryCity;
+    request.location = [CZWeatherLocation locationWithCity:@"London" country:@"UK"];
     request.detailLevel   = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -184,7 +184,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];;
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel   = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -207,7 +207,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel   = CZWeatherRequestLightDetail;
     request.service = self.service;
     
@@ -237,7 +237,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel   = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -269,7 +269,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel  = CZWeatherRequestFullDetail;
     request.service = self.service;
     
@@ -283,7 +283,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     const CGFloat latitude  = 30.2500;
     const CGFloat longitude = -97.7500;
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location[CZWeatherKitLocationName.CoordinateName] = [NSValue valueWithCGPoint:CGPointMake(latitude, longitude)];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:CLLocationCoordinate2DMake(latitude, longitude)];
     request.detailLevel  = CZWeatherRequestFullDetail;
     request.service = nil;
     

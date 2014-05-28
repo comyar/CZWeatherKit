@@ -24,9 +24,14 @@
 //  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 //  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
+#ifndef __CZWeatherKit__
+#define __CZWeatherKit__
 #import "Climacon.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherService.h"
+#import "CZWeatherLocation.h"
 #import "CZWeatherCondition.h"
 #import "CZWundergroundService.h"
 #import "CZOpenWeatherMapService.h"
+#endif

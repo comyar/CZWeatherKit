@@ -29,6 +29,7 @@
 
 @import Foundation;
 #import "CZWeatherService.h"
+#import "CZWeatherLocation.h"
 
 
 #pragma mark - Forward Declarations
@@ -42,22 +43,6 @@
  Error domain for errors passed as arguments to CZWeatherRequestCompletion blocks.
  */
 extern NSString * const CZWeatherRequestErrorDomain;
-
-/**
- */
-struct CZWeatherKitLocationName {
-    /** */
-    __unsafe_unretained NSString * const CountryCityName;
-    /** */
-    __unsafe_unretained NSString * const CoordinateName;
-    /** */
-    __unsafe_unretained NSString * const StateCityName;
-    /** */
-    __unsafe_unretained NSString * const ZipcodeName;
-    /** */
-    __unsafe_unretained NSString * const AutoIPName;
-};
-extern const struct CZWeatherKitLocationName CZWeatherKitLocationName;
 
 
 #pragma mark - Type Definitions
@@ -152,7 +137,7 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 /**
  Location to request weather data for.
  */
-@property (nonatomic, readonly) NSMutableDictionary         *location;
+@property (nonatomic) CZWeatherLocation                     *location;
 
 /**
  Service to use when requesting and parsing data. 
@@ -163,11 +148,15 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
 
 /**
  Type of request.
+ 
+ Default is CZCurentConditionsRequestType.
  */
 @property (nonatomic) CZWeatherRequestType                  requestType;
 
 /**
  Detail level of the request.
+ 
+ Default is CZWeatherRequestLightDetail.
  */
 @property (nonatomic) CZWeatherRequestDetailLevel           detailLevel;
 

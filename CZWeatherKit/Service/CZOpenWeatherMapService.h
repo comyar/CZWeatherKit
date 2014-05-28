@@ -29,6 +29,9 @@
 
 @import Foundation;
 #import "CZWeatherService.h"
+#if TARGET_OS_IPHONE
+@import UIKit;
+#endif
 
 
 #pragma mark - CZOpenWeatherMapService Interface
