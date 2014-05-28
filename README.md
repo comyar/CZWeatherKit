@@ -186,10 +186,8 @@ The project is also being tested on the continuous integration service [Travis C
 If you would like to contribute to this project, please try to follow the coding style of the rest of the project. I have a somewhat particular (Ok, very particular...) coding style and would like new features to match. Also, I would appreciate if you add unit tests for anything you add (especially new services!).
 Last but no least, these are the general terms:
 
-* The project is under the BSD license, so uh take note of that, I guess.
-* I will keep the project open-source and on GitHub as long as it's relevant (like, if 10 years from now Cocoa is dead then I'll probably take it down)
+* The project is under the BSD license.
 * If this project results in your production app exploding users' phones, sorry I'm not liable :( . Also, please post an issue if it does.
-* If you make contributions, thanks! If that leads to any issues with licensing or whatever, just let me know and we'll (hopefully) work it out. 
 * If you have any issues or suggestions for the general architecture of CZWeatherKit, I'd love to hear them! Please post an issue.
 
 ### Contributers
