@@ -21,6 +21,11 @@ Add the following to your Podfile:
 
 and run `pod install`. If you're not using Cocoa Pods, add the `CZWeatherKit` directory to your project (but you should probably consider using Cocoa Pods).
 
+### Documentation
+
+Documentation is available on [Cocoa Docs](http://cocoadocs.org/docsets/CZWeatherKit).
+
+
 ### Requirements
 
 CZWeatherKit has only been tested on iOS 7 and OS X 10.9, but the library avoids using newer Cocoa/Cocoa Touch API so it may work on older deployment targets. 
