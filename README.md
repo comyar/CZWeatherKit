@@ -192,7 +192,7 @@ If you would like to contribute to this project, please try to follow the coding
 Last but no least, these are the general terms:
 
 * The project is under the BSD license.
-* If this project results in your production app exploding users' phones, sorry I'm not liable :( . Also, please post an issue if it does.
+* If this project results in your production app exploding users' phones, sorry I'm not liable :confused:. Also, please post an issue if it does.
 * If you have any issues or suggestions for the general architecture of CZWeatherKit, I'd love to hear them! Please post an issue.
 
 ### Contributers
