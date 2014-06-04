@@ -1,5 +1,4 @@
 Pod::Spec.new do |s|
-
   s.name         = "CZWeatherKit"
   s.version      = "0.6.3"
   s.summary      = "A Simple Cocoa Weather Library."
