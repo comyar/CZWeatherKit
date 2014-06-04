@@ -37,7 +37,7 @@
  Contains the mappings from icon to character for the Climacons font by Adam Whitcroft.
  http://adamwhitcroft.com/climacons/font/
  */
-typedef enum {
+typedef NS_ENUM(NSInteger, Climacon) {
     ClimaconCloud                   = '!',
     ClimaconCloudSun                = '"',
     ClimaconCloudMoon               = '#',
@@ -130,4 +130,4 @@ typedef enum {
     ClimaconCloudRefresh            = 'h',
     ClimaconCloudUp                 = 'i',
     ClimaconCloudDown               = 'j'
-} Climacon;
+};
