@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                    CZWeatherKit is a simple, extensible weather library for iOS and OS X 
                    that allows for easy downloading of weather data from various weather services.
                    DESC
-  s.homepage     = "http://www.comyar.io/czweatherkit"
+  s.homepage     = "http://www.comyar.io/projects/czweatherkit"
   s.license      = { :type => "BSD", :file => "LICENSE" }
   s.author       = { "Comyar Zaheri" => "comyarzaheri@utexas.edu" }
   s.ios.deployment_target = "7.0"
