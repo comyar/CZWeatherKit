@@ -25,6 +25,11 @@
 //  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+#pragma mark - Imports
+
+@import Foundation;
+
+
 #pragma mark - Macros
 
 // UIFont name of the Climacon font
@@ -37,7 +42,7 @@
  Contains the mappings from icon to character for the Climacons font by Adam Whitcroft.
  http://adamwhitcroft.com/climacons/font/
  */
-typedef NS_ENUM(NSInteger, Climacon) {
+typedef NS_ENUM(char, Climacon) {
     ClimaconCloud                   = '!',
     ClimaconCloudSun                = '"',
     ClimaconCloudMoon               = '#',
