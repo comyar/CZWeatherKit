@@ -164,6 +164,7 @@ You can also check out the iOS example project to see a few more examples.
 |`CZWeatherCondition`            | Represents the weather conditions at a specific moment in time.
 |`CZWundergroundService`         | Service class for interacting with the Weather Underground API.
 |`CZOpenWeatherMapService`       | Service class for interacting with the Open Weather Map API.
+|`CZForecastioService`           | Service class for interacting with the Forecast.io API.
 
 | Protocols                      | Description
 |--------------------------------|:---------------

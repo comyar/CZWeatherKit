@@ -29,16 +29,10 @@
 
 #import "NSString+CZWeatherKit_Substring.h"
 #import "CZWeatherService_Internal.h"
+#import "CZMacros.h"
 #import "CZWundergroundService.h"
 #import "CZWeatherCondition.h"
 #import "CZWeatherRequest.h"
-
-
-#pragma mark - Macros
-
-#if !(TARGET_OS_IPHONE)
-#define CGPointValue pointValue
-#endif
 
 
 #pragma mark - Constants
@@ -191,29 +185,34 @@ static NSString * const serviceName = @"Weather Underground";
 - (Climacon)climaconCharacterForDescription:(NSString *)description
 {
     Climacon icon = ClimaconSun;
-    NSString *lowercaseDescription = [description lowercaseString];
+    NSString *lowercaseDescription = description.lowercaseString;
     
-    if([lowercaseDescription contains:@"clear"]) {
+    if([lowercaseDescription cz_contains:@"clear"]) {
         icon = ClimaconSun;
-    } else if([lowercaseDescription contains:@"cloud"]) {
+    } else if([lowercaseDescription cz_contains:@"cloud"]) {
         icon = ClimaconCloud;
-    } else if([lowercaseDescription contains:@"drizzle"]  ||
-              [lowercaseDescription contains:@"rain"]     ||
-              [lowercaseDescription contains:@"thunderstorm"]) {
+    } else if([lowercaseDescription cz_contains:@"drizzle"]) {
+        icon = ClimaconDrizzle;
+    } else if([lowercaseDescription cz_contains:@"showers"]) {
+        icon = ClimaconShowers;
+    } else if([lowercaseDescription cz_contains:@"rain"]     ||
+              [lowercaseDescription cz_contains:@"thunderstorm"]) {
         icon = ClimaconRain;
-    } else if([lowercaseDescription contains:@"snow"]     ||
-              [lowercaseDescription contains:@"hail"]     ||
-              [lowercaseDescription contains:@"ice"]) {
+    } else if ([lowercaseDescription cz_contains:@"hail"]) {
+        icon = ClimaconHail;
+    } else if([lowercaseDescription cz_contains:@"snow"]     ||
+              [lowercaseDescription cz_contains:@"ice"]) {
         icon = ClimaconSnow;
-    } else if([lowercaseDescription contains:@"fog"]      ||
-              [lowercaseDescription contains:@"overcast"] ||
-              [lowercaseDescription contains:@"smoke"]    ||
-              [lowercaseDescription contains:@"dust"]     ||
-              [lowercaseDescription contains:@"ash"]      ||
-              [lowercaseDescription contains:@"mist"]     ||
-              [lowercaseDescription contains:@"haze"]     ||
-              [lowercaseDescription contains:@"spray"]    ||
-              [lowercaseDescription contains:@"squall"]) {
+    } else if([lowercaseDescription cz_contains:@"fog"]) {
+        icon = ClimaconFog;
+    } else if ([lowercaseDescription cz_contains:@"overcast"] ||
+              [lowercaseDescription cz_contains:@"smoke"]    ||
+              [lowercaseDescription cz_contains:@"dust"]     ||
+              [lowercaseDescription cz_contains:@"ash"]      ||
+              [lowercaseDescription cz_contains:@"mist"]     ||
+              [lowercaseDescription cz_contains:@"haze"]     ||
+              [lowercaseDescription cz_contains:@"spray"]    ||
+              [lowercaseDescription cz_contains:@"squall"]) {
         icon = ClimaconHaze;
     }
     return icon;
