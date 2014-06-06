@@ -35,6 +35,7 @@ CZWeatherKit has only been tested on iOS 7 and OS X 10.9, but the library avoids
 CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
   * [Open Weather Map](http://openweathermap.org/API)
+  * [Forecast.io](https://developer.forecast.io/)
 
 Some weather services require an API key while others do not. Consult the documentation for the weather API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
 
