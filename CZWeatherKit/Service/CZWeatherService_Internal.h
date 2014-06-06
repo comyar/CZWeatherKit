@@ -27,7 +27,6 @@
 
 #pragma mark - Imports
 
-#import "Climacon.h"
 #import "CZWeatherCondition.h"
 
 

@@ -36,12 +36,18 @@
 
 #pragma mark Instance Methods
 
-- (BOOL)contains:(NSString *)substring
+- (BOOL)cz_contains:(NSString *)substring
 {
-    if([self rangeOfString:substring].location != NSNotFound) {
-        return YES;
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wundeclared-selector"
+    
+    if ([self respondsToSelector:@selector(containsString:)]) {
+        return [[self performSelector:@selector(containsString:) withObject:substring] boolValue];
+        #pragma clang diagnostic pop
+        
+    } else {
+        return ([self rangeOfString:substring].location != NSNotFound);
     }
-    return NO;
 }
 
 @end
