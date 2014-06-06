@@ -55,6 +55,7 @@
 		96AA580E1942034100AC9A82 /* CZMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZMacros.h; sourceTree = "<group>"; };
 		96AA580F1942034B00AC9A82 /* CZForecastioService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZForecastioService.h; sourceTree = "<group>"; };
 		96AA58101942034B00AC9A82 /* CZForecastioService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZForecastioService.m; sourceTree = "<group>"; };
+		DD11A3B819422ED6003DAF0D /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Climacons.h; sourceTree = "<group>"; };
 		DD444CF8193421BB00361FB3 /* CZWeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherLocation.h; sourceTree = "<group>"; };
 		DD444CF9193421BB00361FB3 /* CZWeatherLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherLocation.m; sourceTree = "<group>"; };
 		DD5181E9192AF6D100D896A6 /* CZWeatherKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CZWeatherKitTests-Info.plist"; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		DDCD8B9B19307CF700D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDCD8BA319307D4000D9B731 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DDCD8BA91931ADC400D9B731 /* CZOpenWeatherMapServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZOpenWeatherMapServiceTests.m; sourceTree = "<group>"; };
-		DDCD8D211932802800D9B731 /* Climacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Climacon.h; sourceTree = "<group>"; };
 		DDCD8D221932802800D9B731 /* CZWeatherKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherKit.h; sourceTree = "<group>"; };
 		DDCD8D241932802800D9B731 /* CZWeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZWeatherCondition.h; sourceTree = "<group>"; };
 		DDCD8D251932802800D9B731 /* CZWeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZWeatherCondition.m; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 		DDCD8D201932802800D9B731 /* CZWeatherKit */ = {
 			isa = PBXGroup;
 			children = (
-				DDCD8D211932802800D9B731 /* Climacon.h */,
+				DD11A3B819422ED6003DAF0D /* Climacons.h */,
 				DDCD8D221932802800D9B731 /* CZWeatherKit.h */,
 				DDCD8D231932802800D9B731 /* Data */,
 				DDCD8D291932802800D9B731 /* Request */,
