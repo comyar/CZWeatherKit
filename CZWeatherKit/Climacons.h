@@ -1,5 +1,5 @@
 //
-//  Climacon.h
+//  Climacons.h
 //  Copyright (c) 2014, Comyar Zaheri, http://comyar.io
 //  All rights reserved.
 //
@@ -32,15 +32,18 @@
 
 #pragma mark - Macros
 
-// UIFont name of the Climacon font
-#define CLIMACON_FONT @"Climacons-Font"
+// Font name of the Climacons font
+#define CLIMACONS_FONT @"Climacons-Font"
 
 
 #pragma mark - Type Definitions
 
 /**
- Contains the mappings from icon to character for the Climacons font by Adam Whitcroft.
- http://adamwhitcroft.com/climacons/font/
+ Contains the mappings from icon to character for the Climacons font, bundled by Christian Naths.
+ http://adamwhitcroft.com/climacons/font/ or https://github.com/christiannaths/Climacons-Font
+ 
+ Climacons first created in icon form by Adam Whitcroft.
+ http://adamwhitcroft.com/climacons/
  */
 typedef NS_ENUM(char, Climacon) {
     ClimaconCloud                   = '!',
@@ -51,9 +54,9 @@ typedef NS_ENUM(char, Climacon) {
     ClimaconRainSun                 = '%',
     ClimaconRainMoon                = '&',
     
-    ClimaconRainAlt                 = '\'',
-    ClimaconRainSunAlt              = '(',
-    ClimaconRainMoonAlt             = ')',
+    ClimaconShowers                 = '\'',
+    ClimaconShowersSun              = '(',
+    ClimaconShowersMoon             = ')',
 
     ClimaconDownpour                = '*',
     ClimaconDownpourSun             = '+',

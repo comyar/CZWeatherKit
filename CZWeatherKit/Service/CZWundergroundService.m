@@ -191,16 +191,21 @@ static NSString * const serviceName = @"Weather Underground";
         icon = ClimaconSun;
     } else if([lowercaseDescription cz_contains:@"cloud"]) {
         icon = ClimaconCloud;
-    } else if([lowercaseDescription cz_contains:@"drizzle"]  ||
-              [lowercaseDescription cz_contains:@"rain"]     ||
+    } else if([lowercaseDescription cz_contains:@"drizzle"]) {
+        icon = ClimaconDrizzle;
+    } else if([lowercaseDescription cz_contains:@"showers"]) {
+        icon = ClimaconShowers;
+    } else if([lowercaseDescription cz_contains:@"rain"]     ||
               [lowercaseDescription cz_contains:@"thunderstorm"]) {
         icon = ClimaconRain;
+    } else if ([lowercaseDescription cz_contains:@"hail"]) {
+        icon = ClimaconHail;
     } else if([lowercaseDescription cz_contains:@"snow"]     ||
-              [lowercaseDescription cz_contains:@"hail"]     ||
               [lowercaseDescription cz_contains:@"ice"]) {
         icon = ClimaconSnow;
-    } else if([lowercaseDescription cz_contains:@"fog"]      ||
-              [lowercaseDescription cz_contains:@"overcast"] ||
+    } else if([lowercaseDescription cz_contains:@"fog"]) {
+        icon = ClimaconFog;
+    } else if ([lowercaseDescription cz_contains:@"overcast"] ||
               [lowercaseDescription cz_contains:@"smoke"]    ||
               [lowercaseDescription cz_contains:@"dust"]     ||
               [lowercaseDescription cz_contains:@"ash"]      ||

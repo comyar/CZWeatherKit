@@ -27,7 +27,7 @@
 
 #ifndef __CZWeatherKit__
 #define __CZWeatherKit__
-#import "Climacon.h"
+#import "Climacons.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherService.h"
 #import "CZWeatherLocation.h"

@@ -33,7 +33,7 @@
 @import UIKit;
 #endif
 
-#import "Climacon.h"
+#import "Climacons.h"
 
 
 #pragma mark - Type Definitions
