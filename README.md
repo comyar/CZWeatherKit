@@ -200,4 +200,5 @@ Last but no least, these are the general terms:
 
 * Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
+* Seb Jachec, [@sebj](https://github.com/sebj)
 
