@@ -34,4 +34,5 @@
 #import "CZWeatherCondition.h"
 #import "CZWundergroundService.h"
 #import "CZOpenWeatherMapService.h"
+#import "CZForecastioService.h"
 #endif
