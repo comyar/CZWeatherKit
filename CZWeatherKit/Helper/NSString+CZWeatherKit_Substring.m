@@ -38,16 +38,7 @@
 
 - (BOOL)cz_contains:(NSString *)substring
 {
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wundeclared-selector"
-    
-    if ([self respondsToSelector:@selector(containsString:)]) {
-        return [[self performSelector:@selector(containsString:) withObject:substring] boolValue];
-        #pragma clang diagnostic pop
-        
-    } else {
-        return ([self rangeOfString:substring].location != NSNotFound);
-    }
+    return ([self rangeOfString:substring].location != NSNotFound);
 }
 
 @end
