@@ -128,7 +128,7 @@ static NSString * const serviceName = @"Forecast.io";
     
     NSTimeInterval epoch = [currentObservation[@"time"]doubleValue];
     condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
-    condition.description = currentObservation[@"summary"];
+    condition.summary = currentObservation[@"summary"];
     condition.climaconCharacter = [self climaconCharacterForDescription:currentObservation[@"icon"]];
     
     CGFloat tempF = [currentObservation[@"temperature"]floatValue];
@@ -179,7 +179,7 @@ static NSString * const serviceName = @"Forecast.io";
             condition.windDegrees = [forecast[@"windBearing"]floatValue];
         }
         
-        condition.description = forecast[@"summary"];
+        condition.summary = forecast[@"summary"];
         
         condition.date = [NSDate dateWithTimeIntervalSince1970:[forecast[@"time"]doubleValue]];
         
