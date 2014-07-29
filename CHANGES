@@ -1,8 +1,0 @@
-= 0.6.1 (2014-5-28)
-   * Fixed missing files issue.
-
-= 0.6.0 (2014-05-27)
-
-    * Added CZWeatherLocation to improve request usability.
-
-    * Added tests for CZWeatherLocation.
