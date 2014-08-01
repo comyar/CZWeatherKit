@@ -160,4 +160,9 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestType) {
  */
 @property (nonatomic) CZWeatherRequestDetailLevel           detailLevel;
 
+/**
+ Language of request.
+ */
+@property (nonatomic) NSString                              *language;
+
 @end
