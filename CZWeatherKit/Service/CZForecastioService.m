@@ -97,6 +97,10 @@ static NSString * const serviceName = @"Forecast.io";
         url = [url stringByAppendingString:@"?exclude=minutely,currently,hourly,alerts,flags"];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&lang=%@", request.language]];
+    }
+    
     return [NSURL URLWithString:url];
 }
 

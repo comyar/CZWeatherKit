@@ -91,6 +91,10 @@ static NSString * const serviceName = @"Weather Underground";
         url = [url stringByAppendingString:@"forecast10day/"];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"lang:%@/", request.language]];
+    }
+    
     url = [url stringByAppendingString:@"q/"];
     
     if (request.location.locationType == CZWeatherLocationCoordinateType) {

@@ -108,6 +108,10 @@ static NSString * const serviceName = @"Open Weather Map";
         url = [url stringByAppendingString:[NSString stringWithFormat:@"&appid=%@", self.key]];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&lang=%@", request.language]];
+    }
+    
     return [NSURL URLWithString:url];
 }
 
