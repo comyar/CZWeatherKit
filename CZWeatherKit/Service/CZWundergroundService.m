@@ -91,6 +91,10 @@ static NSString * const serviceName = @"Weather Underground";
         url = [url stringByAppendingString:@"forecast10day/"];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"lang:%@/", request.language]];
+    }
+    
     url = [url stringByAppendingString:@"q/"];
     
     if (request.location.locationType == CZWeatherLocationCoordinateType) {
@@ -153,8 +157,8 @@ static NSString * const serviceName = @"Weather Underground";
     
     NSTimeInterval epoch = [currentObservation[@"observation_epoch"]doubleValue];
     condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
-    condition.description = currentObservation[@"weather"];
-    condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+    condition.summary = currentObservation[@"weather"];
+    condition.climaconCharacter = [self climaconCharacterForDescription:condition.summary];
     condition.temperature = (CZTemperature){[currentObservation[@"temp_f"]floatValue], [currentObservation[@"temp_c"]floatValue]};
     condition.windDegrees = [currentObservation[@"wind_degrees"]floatValue];
     condition.windSpeed = (CZWindSpeed){[currentObservation[@"wind_mph"]floatValue],[currentObservation[@"wind_kph"]floatValue]};
@@ -174,10 +178,10 @@ static NSString * const serviceName = @"Weather Underground";
         
         NSTimeInterval epoch = [day[@"date"][@"epoch"]doubleValue];
         condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
-        condition.description = day[@"conditions"];
+        condition.summary = day[@"conditions"];
         condition.highTemperature = (CZTemperature){[day[@"high"][@"fahrenheit"]floatValue], [day[@"high"][@"celsius"]floatValue]};
         condition.lowTemperature = (CZTemperature){[day[@"low"][@"fahrenheit"]floatValue], [day[@"low"][@"celsius"]floatValue]};
-        condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+        condition.climaconCharacter = [self climaconCharacterForDescription:condition.summary];
         condition.humidity = [day[@"avehumidity"]floatValue];
         condition.windSpeed = (CZWindSpeed){[day[@"avewind"][@"mph"]floatValue], [day[@"avewind"][@"kph"]floatValue]};
         condition.windDegrees = [day[@"avewind"][@"degrees"]floatValue];

@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, CZWeatherKitValue) {
  (e.g. 'Clear', 'Rain', etc.) The possible words/phrases are defined by each weather
  service's API.
  */
-@property (nonatomic, readonly) NSString        *description;
+@property (nonatomic, readonly) NSString        *summary;
 
 /**
  Climacon character that matches the condition description.

@@ -97,6 +97,10 @@ static NSString * const serviceName = @"Forecast.io";
         url = [url stringByAppendingString:@"?exclude=minutely,currently,hourly,alerts,flags"];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&lang=%@", request.language]];
+    }
+    
     return [NSURL URLWithString:url];
 }
 
@@ -128,7 +132,7 @@ static NSString * const serviceName = @"Forecast.io";
     
     NSTimeInterval epoch = [currentObservation[@"time"]doubleValue];
     condition.date = [NSDate dateWithTimeIntervalSince1970:epoch];
-    condition.description = currentObservation[@"summary"];
+    condition.summary = currentObservation[@"summary"];
     condition.climaconCharacter = [self climaconCharacterForDescription:currentObservation[@"icon"]];
     
     CGFloat tempF = [currentObservation[@"temperature"]floatValue];
@@ -179,7 +183,7 @@ static NSString * const serviceName = @"Forecast.io";
             condition.windDegrees = [forecast[@"windBearing"]floatValue];
         }
         
-        condition.description = forecast[@"summary"];
+        condition.summary = forecast[@"summary"];
         
         condition.date = [NSDate dateWithTimeIntervalSince1970:[forecast[@"time"]doubleValue]];
         

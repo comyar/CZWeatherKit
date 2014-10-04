@@ -40,7 +40,7 @@
 @interface CZWeatherCondition (Friend)
 
 - (void)setDate:(NSDate *)date;
-- (void)setDescription:(NSString *)description;
+- (void)setSummary:(NSString *)description;
 - (void)setClimaconCharacter:(Climacon)climaconCharacter;
 - (void)setTemperature:(CZTemperature)temperature;
 - (void)setHighTemperature:(CZTemperature)highTemperature;

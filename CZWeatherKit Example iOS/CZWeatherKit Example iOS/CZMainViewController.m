@@ -95,7 +95,7 @@
                     self.weatherView.hiloTemperatureLabel.text = [NSString stringWithFormat:@"H %.0f  L %.0f", condition.highTemperature.f,
                                                                   condition.lowTemperature.f];
                     self.weatherView.conditionIconLabel.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
-                    self.weatherView.conditionDescriptionLabel.text = [condition.description capitalizedString];
+                    self.weatherView.conditionDescriptionLabel.text = [condition.summary capitalizedString];
                     
                     // Forecast
                     NSArray *forecasts = (NSArray *)data;

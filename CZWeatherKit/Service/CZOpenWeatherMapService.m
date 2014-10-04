@@ -111,6 +111,10 @@ static NSString * const serviceName = @"Open Weather Map";
         url = [url stringByAppendingString:[NSString stringWithFormat:@"&appid=%@", self.key]];
     }
     
+    if ([request.language length] > 0) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&lang=%@", request.language]];
+    }
+    
     return [NSURL URLWithString:url];
 }
 
@@ -148,8 +152,8 @@ static NSString * const serviceName = @"Open Weather Map";
     condition.lowTemperature = (CZTemperature){lowTempF, F_TO_C(lowTempF)};
     
     condition.humidity = [JSON[@"main"][@"humidity"]floatValue];
-    condition.description = [JSON[@"weather"]firstObject][@"description"];
-    condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+    condition.summary = [JSON[@"weather"]firstObject][@"description"];
+    condition.climaconCharacter = [self climaconCharacterForDescription:condition.summary];
     
     CGFloat windSpeedMPH = [JSON[@"wind"][@"speed"]floatValue];
     condition.windSpeed = (CZWindSpeed){windSpeedMPH, MPH_TO_KPH(windSpeedMPH)};
@@ -198,11 +202,11 @@ static NSString * const serviceName = @"Open Weather Map";
             condition.windDegrees = [forecast[@"deg"]floatValue];
         }
         
-        condition.description = [forecast[@"weather"]firstObject][@"description"];
+        condition.summary = [forecast[@"weather"]firstObject][@"description"];
         
         condition.date = [NSDate dateWithTimeIntervalSince1970:[forecast[@"dt"]doubleValue]];
         
-        condition.climaconCharacter = [self climaconCharacterForDescription:condition.description];
+        condition.climaconCharacter = [self climaconCharacterForDescription:condition.summary];
         
         [forecastConditions addObject:condition];
     }

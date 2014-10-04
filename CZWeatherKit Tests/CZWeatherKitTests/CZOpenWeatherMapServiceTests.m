@@ -193,7 +193,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     // Account for floating point rounding errors
     XCTAssertEqualWithAccuracy(currentCondition.temperature.f, 83.61, 0.01, @"Current fahrenheit temperature not equal");
     XCTAssertEqualWithAccuracy(currentCondition.temperature.c, 28.67, 0.01, @"Current celsius temperature not equal");
-    XCTAssertEqualObjects(currentCondition.description, @"few clouds", @"Current description not equal");
+    XCTAssertEqualObjects(currentCondition.summary, @"few clouds", @"Current description not equal");
     XCTAssertEqualObjects(currentCondition.date, [NSDate dateWithTimeIntervalSince1970:1401055200], @"Current date not equal");
     XCTAssertEqual(currentCondition.climaconCharacter, ClimaconCloud, @"Climacon character not equal");
     XCTAssertEqualWithAccuracy(currentCondition.humidity, 75.0, 0.01, @"Humidity not equal");
@@ -217,7 +217,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     
     CZWeatherCondition *firstCondition = [data firstObject];
     XCTAssertEqualObjects(firstCondition.date, [NSDate dateWithTimeIntervalSince1970:1401051600], @"First condition date not equal");
-    XCTAssertEqualObjects(firstCondition.description, @"few clouds", @"First condition description not equal");
+    XCTAssertEqualObjects(firstCondition.summary, @"few clouds", @"First condition description not equal");
     
     // Account for floating point rounding errors
     XCTAssertEqualWithAccuracy(firstCondition.highTemperature.f, 83.25, 0.01, @"First condition high fahrenheit temperature not equal");
@@ -247,7 +247,7 @@ static NSString * const forecastFullJSONFilename            = @"forecastFull_ope
     
     CZWeatherCondition *firstCondition = [data firstObject];
     XCTAssertEqualObjects(firstCondition.date, [NSDate dateWithTimeIntervalSince1970:1401040800], @"First condition date not equal");
-    XCTAssertEqualObjects(firstCondition.description, @"broken clouds", @"First condition description not equal");
+    XCTAssertEqualObjects(firstCondition.summary, @"broken clouds", @"First condition description not equal");
     
     // Account for floating point rounding errors
     XCTAssertEqualWithAccuracy(firstCondition.highTemperature.f, 86.72, 0.01, @"First condition high fahrenheit temperature not equal");
