@@ -149,7 +149,7 @@ static NSString * const serviceName = @"World Weather Online";
     NSDictionary *currentObservation = JSON[@"data"][@"current_condition"][0];
     
     condition.date = [self dateFromTime:currentObservation[@"observation_time"]];
-    condition.description = currentObservation[@"weatherDesc"][0][@"value"];
+    condition.summary = currentObservation[@"weatherDesc"][0][@"value"];
     condition.climaconCharacter = [self climaconCharacterForWeatherCode:[currentObservation[@"weatherCode"]intValue]];
     
     condition.temperature = (CZTemperature){[currentObservation[@"temp_F"]floatValue], [currentObservation[@"temp_C"]floatValue]};
@@ -199,7 +199,7 @@ static NSString * const serviceName = @"World Weather Online";
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         condition.date = [dateFormatter dateFromString:forecast[@"date"]];
         
-        condition.description = forecast[@"weatherDesc"][0][@"value"];
+        condition.summary = forecast[@"weatherDesc"][0][@"value"];
         
         condition.climaconCharacter = [self climaconCharacterForWeatherCode:[forecast[@"weatherCode"]intValue]];
         
