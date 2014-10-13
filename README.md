@@ -80,7 +80,7 @@ You can also check out the iOS example project to see a few more examples.
 
 ### Getting Forecast
 
-```objective-c 
+````smalltalk
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(30.2500, -97.7500);
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:coordinate];
@@ -91,7 +91,7 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 ### Getting 10-day Forecast
 
