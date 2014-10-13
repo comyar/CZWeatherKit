@@ -66,7 +66,7 @@ You can also check out the iOS example project to see a few more examples.
 
 ### Getting Current Conditions
 
-```objective-c 
+````smalltalk
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCity:@"Austin" state:@"TX"];
     request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
@@ -76,7 +76,7 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 ### Getting Forecast
 
@@ -95,7 +95,7 @@ You can also check out the iOS example project to see a few more examples.
 
 ### Getting 10-day Forecast
 
-```objective-c 
+````smalltalk
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCity:@"Sydney" country:@"Australia"];
     request.service = [CZWundergroundService serviceWithKey:<API_KEY_HERE>];
@@ -106,14 +106,14 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 
 ## Open Weather Map 
 
 ### Getting Current Conditions
 
-```objective-c 
+````smalltalk
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(30.2500, -97.7500);
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:coordinate];
@@ -124,11 +124,11 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 ### Getting Hourly Forecast
 
-```objective-c
+````smalltalk
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCity:@"London" country:@"UK"];
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
@@ -138,11 +138,11 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 ### Getting Daily Forecast
 
-```objective-c
+````smalltalk
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCity:@"Austin" state:@"TX"];
     request.service = [CZOpenWeatherMapService serviceWithKey:<API_KEY_HERE>];
@@ -153,7 +153,7 @@ You can also check out the iOS example project to see a few more examples.
             // Do whatever you like with the data here
         }
     }];
-```
+````
 
 # Architecture
 
