@@ -49,7 +49,7 @@ static NSString * const serviceName = @"Weather Underground";
 @implementation CZWundergroundService
 @synthesize key = _key, serviceName = _serviceName;
 
-#pragma mark Creation
+#pragma mark Creating a Weather Service
 
 - (instancetype)init
 {
@@ -73,7 +73,7 @@ static NSString * const serviceName = @"Weather Underground";
     return [[CZWundergroundService alloc]initWithKey:key];
 }
 
-#pragma mark Use
+#pragma mark Using a Weather Service
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {

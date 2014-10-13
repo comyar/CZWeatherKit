@@ -67,7 +67,7 @@ typedef NS_ENUM(NSInteger, CZWeatherRequestDetailLevel) {
  Error codes for errors passed as arguments to CZWeatherRequestCompletion blocks.
  */
 typedef NS_ENUM(NSInteger, CZWeatherRequestError) {
-    /** Indicates an error in configuration, ie. a weather service was not specified. */
+    /** Indicates an error in configuration, e.g. a weather service was not specified. */
     CZWeatherRequestConfigurationError  = -1,
     /** Indicates that no URL was provided by a weather service. */
     CZWeatherRequestServiceURLError     = -2,
