@@ -10,29 +10,29 @@
 	<string>CZWeatherKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>ACA9BA3A-B048-4B7D-82CE-3C4F198EC9A2</key>
+		<key>6460D3FD554697DED41F4E65AFFE4BCAD0354B11</key>
 		<string>https://github.com/CZWeatherKit/CZWeatherKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CZWeatherKit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>ACA9BA3A-B048-4B7D-82CE-3C4F198EC9A2</key>
+		<key>6460D3FD554697DED41F4E65AFFE4BCAD0354B11</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/CZWeatherKit/CZWeatherKit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>ACA9BA3A-B048-4B7D-82CE-3C4F198EC9A2</string>
+	<string>6460D3FD554697DED41F4E65AFFE4BCAD0354B11</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>ACA9BA3A-B048-4B7D-82CE-3C4F198EC9A2</string>
+			<string>6460D3FD554697DED41F4E65AFFE4BCAD0354B11</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CZWeatherKit</string>
 		</dict>

@@ -36,6 +36,7 @@ CZWeatherKit currently supports the following weather services:
   * [Weather Underground](http://www.wunderground.com/weather/api/)
   * [Open Weather Map](http://openweathermap.org/API)
   * [Forecast.io](https://developer.forecast.io)
+  * [World Weather Online](https://developer.worldweatheronline.com)
   
 Some weather services require an API key while others do not. Consult the documentation for the weather API you would like to use. Additional services can be added (somewhat) easily by adopting the `CZWeatherService` protocol. See the 'Adding New Services' section of the README.
 
@@ -159,16 +160,17 @@ You can also check out the iOS example project to see a few more examples.
 ### Classes and Protocols
 
 | Classes                        | Description
-|--------------------------------|:---------------
+|:--------------------------------|:---------------
 |`CZWeatherRequest`              | Handles requests to weather service API. 
 |`CZWeatherLocation`             | Represents the location to request weather data for.
 |`CZWeatherCondition`            | Represents the weather conditions at a specific moment in time.
 |`CZWundergroundService`         | Service class for interacting with the Weather Underground API.
 |`CZOpenWeatherMapService`       | Service class for interacting with the Open Weather Map API.
 |`CZForecastioService`           | Service class for interacting with the Forecast.io API.
+|`CZWorldWeatherOnlineService`   | Service class for interacting with the World Weather Online API.
 
 | Protocols                      | Description
-|--------------------------------|:---------------
+|:--------------------------------|:---------------
 |`CZWeatherService`              | Declares an interface for weather service objects to implement
     
 ### Creating Requests    

@@ -1,5 +1,5 @@
 //
-//  CZForecastioService.h, Created by Sebastian Jachec
+//  CZForecastioService.m, Created by Sebastian Jachec
 //  Copyright (c) 2014, Comyar Zaheri, http://comyar.io
 //  All rights reserved.
 //
@@ -48,7 +48,7 @@ static NSString * const serviceName = @"Forecast.io";
 @implementation CZForecastioService
 @synthesize key = _key, serviceName = _serviceName;
 
-#pragma mark Creating a Weather Service
+#pragma mark Creation
 
 - (instancetype)init
 {
@@ -72,7 +72,7 @@ static NSString * const serviceName = @"Forecast.io";
     return [[CZForecastioService alloc]initWithKey:key];
 }
 
-#pragma mark Using a Weather Service
+#pragma mark Use
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
@@ -84,7 +84,7 @@ static NSString * const serviceName = @"Forecast.io";
     
     if (request.location.locationType == CZWeatherLocationCoordinateType) {
         CGPoint coordinate = [request.location.locationData[CZWeatherLocationCoordinateName]CGPointValue];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
+        url = [url stringByAppendingFormat:@"%.4f,%.4f", coordinate.x, coordinate.y];
     } else {
         return nil;
     }
@@ -122,7 +122,7 @@ static NSString * const serviceName = @"Forecast.io";
     return nil;
 }
 
-#pragma mark Helper
+#pragma mark Helpers
 
 - (CZWeatherCondition *)parseCurrentConditionsFromJSON:(NSDictionary *)JSON
 {

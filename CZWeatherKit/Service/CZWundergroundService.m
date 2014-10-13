@@ -49,7 +49,7 @@ static NSString * const serviceName = @"Weather Underground";
 @implementation CZWundergroundService
 @synthesize key = _key, serviceName = _serviceName;
 
-#pragma mark Creating a Weather Service
+#pragma mark Creation
 
 - (instancetype)init
 {
@@ -73,7 +73,7 @@ static NSString * const serviceName = @"Weather Underground";
     return [[CZWundergroundService alloc]initWithKey:key];
 }
 
-#pragma mark Using a Weather Service
+#pragma mark Use
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
@@ -99,22 +99,27 @@ static NSString * const serviceName = @"Weather Underground";
     
     if (request.location.locationType == CZWeatherLocationCoordinateType) {
         CGPoint coordinate = [request.location.locationData[CZWeatherLocationCoordinateName]CGPointValue];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"%.4f,%.4f", coordinate.x, coordinate.y]];
+        url = [url stringByAppendingFormat:@"%.4f,%.4f", coordinate.x, coordinate.y];
+        
     } else if (request.location.locationType == CZWeatherLocationZipcodeType) {
         url = [url stringByAppendingString:request.location.locationData[CZWeatherLocationZipcodeName]];
+        
     } else if (request.location.locationType == CZWeatherLocationAutoIPType) {
         url = [url stringByAppendingString:@"autoip"];
+        
     } else if (request.location.locationType == CZWeatherLocationCityStateType) {
         NSString *city = request.location.locationData[CZWeatherLocationCityName];
         city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
         NSString *state = request.location.locationData[CZWeatherLocationStateName];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"%@/%@", state, city]];
+        url = [url stringByAppendingFormat:@"%@/%@", state, city];
+        
     } else if (request.location.locationType == CZWeatherLocationCityCountryType) {
         NSString *city = request.location.locationData[CZWeatherLocationCityName];
         city = [city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
         NSString *country = request.location.locationData[CZWeatherLocationCountryName];
         country = [country stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-        url = [url stringByAppendingString:[NSString stringWithFormat:@"%@/%@", country, city]];
+        url = [url stringByAppendingFormat:@"%@/%@", country, city];
+        
     } else {
         return nil;
     }
@@ -142,7 +147,7 @@ static NSString * const serviceName = @"Weather Underground";
     return nil;
 }
 
-#pragma mark Helper
+#pragma mark Helpers
 
 - (CZWeatherCondition *)parseCurrentConditionsFromJSON:(NSDictionary *)JSON
 {
@@ -199,24 +204,24 @@ static NSString * const serviceName = @"Weather Underground";
         icon = ClimaconDrizzle;
     } else if([lowercaseDescription cz_contains:@"showers"]) {
         icon = ClimaconShowers;
-    } else if([lowercaseDescription cz_contains:@"rain"]     ||
+    } else if([lowercaseDescription cz_contains:@"rain"] ||
               [lowercaseDescription cz_contains:@"thunderstorm"]) {
         icon = ClimaconRain;
     } else if ([lowercaseDescription cz_contains:@"hail"]) {
         icon = ClimaconHail;
-    } else if([lowercaseDescription cz_contains:@"snow"]     ||
+    } else if([lowercaseDescription cz_contains:@"snow"] ||
               [lowercaseDescription cz_contains:@"ice"]) {
         icon = ClimaconSnow;
     } else if([lowercaseDescription cz_contains:@"fog"]) {
         icon = ClimaconFog;
     } else if ([lowercaseDescription cz_contains:@"overcast"] ||
-              [lowercaseDescription cz_contains:@"smoke"]    ||
-              [lowercaseDescription cz_contains:@"dust"]     ||
-              [lowercaseDescription cz_contains:@"ash"]      ||
-              [lowercaseDescription cz_contains:@"mist"]     ||
-              [lowercaseDescription cz_contains:@"haze"]     ||
-              [lowercaseDescription cz_contains:@"spray"]    ||
-              [lowercaseDescription cz_contains:@"squall"]) {
+               [lowercaseDescription cz_contains:@"smoke"]    ||
+               [lowercaseDescription cz_contains:@"dust"]     ||
+               [lowercaseDescription cz_contains:@"ash"]      ||
+               [lowercaseDescription cz_contains:@"mist"]     ||
+               [lowercaseDescription cz_contains:@"haze"]     ||
+               [lowercaseDescription cz_contains:@"spray"]    ||
+               [lowercaseDescription cz_contains:@"squall"]) {
         icon = ClimaconHaze;
     }
     return icon;
