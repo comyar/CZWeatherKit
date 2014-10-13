@@ -26,6 +26,7 @@
 
 
 #pragma mark - Imports
+
 #import "NSString+CZWeatherKit_Substring.h"
 #import "CZWeatherService_Internal.h"
 #import "CZMacros.h"
@@ -48,7 +49,7 @@ static NSString * const serviceName = @"Forecast.io";
 @implementation CZForecastioService
 @synthesize key = _key, serviceName = _serviceName;
 
-#pragma mark Creation
+#pragma mark Creating a Weather Service
 
 - (instancetype)init
 {
@@ -72,7 +73,7 @@ static NSString * const serviceName = @"Forecast.io";
     return [[CZForecastioService alloc]initWithKey:key];
 }
 
-#pragma mark Use
+#pragma mark Using a Weather Service
 
 - (NSURL *)urlForRequest:(CZWeatherRequest *)request
 {
