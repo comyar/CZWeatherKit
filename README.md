@@ -1,6 +1,6 @@
 ![](https://raw.githubusercontent.com/CZWeatherKit/CZWeatherKit/master/Meta/czweatherkit_header.png)
 
-[![Build Status](https://travis-ci.org/CZWeatherKit/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+[![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
 ![License](http://img.shields.io/badge/license-BSD-red.svg)
 
 
