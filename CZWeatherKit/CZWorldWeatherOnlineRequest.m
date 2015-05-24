@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWorldWeatherOnlineRequest.m
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,31 @@
 
 #pragma mark - Imports
 
-@import Foundation;
-
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
-#import "CZClimacons.h"
-
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
-
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
-
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
-
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
-
-#import "CZWorldWeatherOnlineAPI.h"
 #import "CZWorldWeatherOnlineRequest.h"
+#import "CZWeatherRequest+Internal.h"
+#import "CZWorldWeatherOnlineAPI.h"
 
+
+#pragma mark - CZWorldWeatherOnlineRequest Class Extension
+
+@interface CZWorldWeatherOnlineRequest ()
+
+@end
+
+
+#pragma mark - CZWorldWeatherOnlineRequest Implementation
+
+@implementation CZWorldWeatherOnlineRequest
+
+- (void)sendWithCompletion:(CZWeatherRequestCompletion)completion
+{
+    [self dispatchWithAPI:self.API
+               completion:completion];
+}
+
+- (Class)API
+{
+    return [CZWorldWeatherOnlineAPI class];
+}
+
+@end

@@ -1,0 +1,407 @@
+{
+    "response": {
+        "version": "0.1",
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+        "features": {
+            "geolookup": 1,
+            "conditions": 1
+        }
+    },
+    "location": {
+        "type": "CITY",
+        "country": "US",
+        "country_iso3166": "US",
+        "country_name": "USA",
+        "state": "CA",
+        "city": "San Francisco",
+        "tz_short": "PDT",
+        "tz_long": "America/Los_Angeles",
+        "lat": "37.77500916",
+        "lon": "-122.41825867",
+        "zip": "94101",
+        "magic": "1",
+        "wmo": "99999",
+        "l": "/q/zmw:94101.1.99999",
+        "requesturl": "US/CA/San_Francisco.html",
+        "wuiurl": "http://www.wunderground.com/US/CA/San_Francisco.html",
+        "nearby_weather_stations": {
+            "airport": {
+                "station": [
+                            {
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KSFO",
+                            "lat": "37.61960983",
+                            "lon": "-122.36557770"
+                            },
+                            {
+                            "city": "Oakland",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KOAK",
+                            "lat": "37.71780014",
+                            "lon": "-122.23294067"
+                            },
+                            {
+                            "city": "Hayward",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KHWD",
+                            "lat": "37.65891647",
+                            "lon": "-122.12174988"
+                            },
+                            {
+                            "city": "Half Moon Bay",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KHAF",
+                            "lat": "37.51361084",
+                            "lon": "-122.49958801"
+                            }
+                            ]
+            },
+            "pws": {
+                "station": [
+                            {
+                            "neighborhood": "NEMA",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR291",
+                            "lat": 37.776077,
+                            "lon": -122.417542,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "SOMA - Near Van Ness",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR58",
+                            "lat": 37.773285,
+                            "lon": -122.417725,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "North Mission (Valencia and Market)",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR49",
+                            "lat": 37.770599,
+                            "lon": -122.4235,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission (at Bar and Burrito)",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR142",
+                            "lat": 37.76553,
+                            "lon": -122.422913,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Lower Haight",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR384",
+                            "lat": 37.7738,
+                            "lon": -122.431984,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR326",
+                            "lat": 37.767326,
+                            "lon": -122.408096,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "SOMA",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR231",
+                            "lat": 37.782803,
+                            "lon": -122.407166,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Lower Haight",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR438",
+                            "lat": 37.773457,
+                            "lon": -122.433182,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR335",
+                            "lat": 37.763035,
+                            "lon": -122.412949,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Western Addition",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR368",
+                            "lat": 37.787674,
+                            "lon": -122.427856,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR424",
+                            "lat": 37.76392,
+                            "lon": -122.431328,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Mission, 19th and Folsom",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR259",
+                            "lat": 37.759354,
+                            "lon": -122.415085,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR486",
+                            "lat": 37.781174,
+                            "lon": -122.399551,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR366",
+                            "lat": 37.761604,
+                            "lon": -122.43,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission Dolores",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR367",
+                            "lat": 37.758671,
+                            "lon": -122.422447,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR354",
+                            "lat": 37.767139,
+                            "lon": -122.437416,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR357",
+                            "lat": 37.761108,
+                            "lon": -122.431992,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR453",
+                            "lat": 37.757778,
+                            "lon": -122.423958,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR415",
+                            "lat": 37.75771,
+                            "lon": -122.423927,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "MemellandstraÃe",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR404",
+                            "lat": 37.75893,
+                            "lon": -122.431519,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR314",
+                            "lat": 37.779007,
+                            "lon": -122.394188,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR472",
+                            "lat": 37.776436,
+                            "lon": -122.393166,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Dolores Heights",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR297",
+                            "lat": 37.758053,
+                            "lon": -122.431664,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            }
+                            ]
+            }
+        }
+    },
+    "current_observation": {
+        "image": {
+            "url": "http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+            "title": "Weather Underground",
+            "link": "http://www.wunderground.com"
+        },
+        "display_location": {
+            "full": "San Francisco, CA",
+            "city": "San Francisco",
+            "state": "CA",
+            "state_name": "California",
+            "country": "US",
+            "country_iso3166": "US",
+            "zip": "94101",
+            "magic": "1",
+            "wmo": "99999",
+            "latitude": "37.77500916",
+            "longitude": "-122.41825867",
+            "elevation": "47.00000000"
+        },
+        "observation_location": {
+            "full": "SOMA - Near Van Ness, San Francisco, California",
+            "city": "SOMA - Near Van Ness, San Francisco",
+            "state": "California",
+            "country": "US",
+            "country_iso3166": "US",
+            "latitude": "37.773285",
+            "longitude": "-122.417725",
+            "elevation": "49 ft"
+        },
+        "estimated": {},
+        "station_id": "KCASANFR58",
+        "observation_time": "Last Updated on May 23, 2:22 PM PDT",
+        "observation_time_rfc822": "Sat, 23 May 2015 14:22:13 -0700",
+        "observation_epoch": "1432416133",
+        "local_time_rfc822": "Sat, 23 May 2015 14:22:22 -0700",
+        "local_epoch": "1432416142",
+        "local_tz_short": "PDT",
+        "local_tz_long": "America/Los_Angeles",
+        "local_tz_offset": "-0700",
+        "weather": "Overcast",
+        "temperature_string": "63.5 F (17.5 C)",
+        "temp_f": 63.5,
+        "temp_c": 17.5,
+        "relative_humidity": "71%",
+        "wind_string": "From the South at 1.0 MPH Gusting to 7.0 MPH",
+        "wind_dir": "South",
+        "wind_degrees": 190,
+        "wind_mph": 1,
+        "wind_gust_mph": "7.0",
+        "wind_kph": 1.6,
+        "wind_gust_kph": "11.3",
+        "pressure_mb": "1019",
+        "pressure_in": "30.10",
+        "pressure_trend": "0",
+        "dewpoint_string": "54 F (12 C)",
+        "dewpoint_f": 54,
+        "dewpoint_c": 12,
+        "heat_index_string": "NA",
+        "heat_index_f": "NA",
+        "heat_index_c": "NA",
+        "windchill_string": "NA",
+        "windchill_f": "NA",
+        "windchill_c": "NA",
+        "feelslike_string": "63.5 F (17.5 C)",
+        "feelslike_f": "63.5",
+        "feelslike_c": "17.5",
+        "visibility_mi": "10.0",
+        "visibility_km": "16.1",
+        "solarradiation": "--",
+        "UV": "3",
+        "precip_1hr_string": "0.00 in ( 0 mm)",
+        "precip_1hr_in": "0.00",
+        "precip_1hr_metric": " 0",
+        "precip_today_string": "0.00 in (0 mm)",
+        "precip_today_in": "0.00",
+        "precip_today_metric": "0",
+        "icon": "cloudy",
+        "icon_url": "http://icons.wxug.com/i/c/k/cloudy.gif",
+        "forecast_url": "http://www.wunderground.com/US/CA/San_Francisco.html",
+        "history_url": "http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KCASANFR58",
+        "ob_url": "http://www.wunderground.com/cgi-bin/findweather/getForecast?query=37.773285,-122.417725",
+        "nowcast": ""
+    }
+}

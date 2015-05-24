@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWeatherData.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -27,38 +27,44 @@
 #pragma mark - Imports
 
 @import Foundation;
+@import CoreLocation;
+
+@class CZWeatherCurrentCondition;
 
 
-#pragma mark - Framework 
+#pragma mark - CZWeatherData Interface
 
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
+/**
+ A CZWeatherData object contains data returned for a weather request.
+ */
+@interface CZWeatherData : NSObject <NSCopying, NSCoding, NSSecureCoding>
 
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
+- (instancetype)init NS_UNAVAILABLE;
 
-#import "CZClimacons.h"
+// -----
+// @name Properties
+// -----
 
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
+#pragma mark Properties
 
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
+/**
+ The placemark representing the location the data was retrieved for.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CLPlacemark *placemark;
 
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
+/**
+ An array of CZWeatherForecastCondition objects.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) NSArray *dailyForecasts;
 
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
+/**
+ An array of CZWeatherHourlyCondition objects.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) NSArray *hourlyForecasts;
 
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
+/**
+ The current weather conditions.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZWeatherCurrentCondition *current;
 
+@end

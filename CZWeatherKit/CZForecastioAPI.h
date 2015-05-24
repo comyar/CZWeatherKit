@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZForecastIOAPI.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,21 @@
 
 #pragma mark - Imports
 
-@import Foundation;
+@import MapKit;
+@import CoreLocation;
 
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
-#import "CZClimacons.h"
-
-// Core
 #import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
 
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
 
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
+#pragma mark - CZForecastioAPI Interface
 
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
+/**
+ CZForecastioAPI conforms to the CZWeatherAPI protocol and implements
+ functionality for supporting the Forecast.io API.
+ 
+ For more information, see
+ https://developer.forecast.io/docs/v2
+ */
+@interface CZForecastioAPI : NSObject <CZWeatherAPI>
 
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
-
+@end

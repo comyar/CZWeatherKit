@@ -1,0 +1,140 @@
+{
+    "cod": "200",
+    "message": 0.0638,
+    "city": {
+        "id": 5391959,
+        "name": "San Francisco",
+        "coord": {
+            "lon": -122.419418,
+            "lat": 37.774929
+        },
+        "country": "US",
+        "population": 0,
+        "sys": {
+            "population": 0
+        }
+    },
+    "cnt": 5,
+    "list": [
+             {
+             "dt": 1433016000,
+             "temp": {
+             "day": 300.44,
+             "min": 283.28,
+             "max": 300.44,
+             "night": 283.28,
+             "eve": 295.44,
+             "morn": 300.44
+             },
+             "pressure": 1005.88,
+             "humidity": 44,
+             "weather": [
+                         {
+                         "id": 800,
+                         "main": "Clear",
+                         "description": "\u044f\u0441\u043d\u043e",
+                         "icon": "01n"
+                         }
+                         ],
+             "speed": 2.05,
+             "deg": 259,
+             "clouds": 0
+             },
+             {
+             "dt": 1433102400,
+             "temp": {
+             "day": 296.11,
+             "min": 282.05,
+             "max": 296.11,
+             "night": 282.05,
+             "eve": 291.12,
+             "morn": 285.55
+             },
+             "pressure": 1006.65,
+             "humidity": 52,
+             "weather": [
+                         {
+                         "id": 804,
+                         "main": "Clouds",
+                         "description": "\u043f\u0430\u0441\u043c\u0443\u0440\u043d\u043e",
+                         "icon": "04d"
+                         }
+                         ],
+             "speed": 3.87,
+             "deg": 261,
+             "clouds": 92
+             },
+             {
+             "dt": 1433188800,
+             "temp": {
+             "day": 295.54,
+             "min": 284.1,
+             "max": 295.54,
+             "night": 284.1,
+             "eve": 291.12,
+             "morn": 287.14
+             },
+             "pressure": 1011.71,
+             "humidity": 59,
+             "weather": [
+                         {
+                         "id": 800,
+                         "main": "Clear",
+                         "description": "\u044f\u0441\u043d\u043e",
+                         "icon": "02d"
+                         }
+                         ],
+             "speed": 4.11,
+             "deg": 255,
+             "clouds": 8
+             },
+             {
+             "dt": 1433275200,
+             "temp": {
+             "day": 291.63,
+             "min": 282.81,
+             "max": 295.24,
+             "night": 286.02,
+             "eve": 295.24,
+             "morn": 282.81
+             },
+             "pressure": 1014.71,
+             "humidity": 0,
+             "weather": [
+                         {
+                         "id": 500,
+                         "main": "Rain",
+                         "description": "\u043b\u0435\u0433\u043a\u0438\u0439 \u0434\u043e\u0436\u0434\u044c",
+                         "icon": "10d"
+                         }
+                         ],
+             "speed": 1.94,
+             "deg": 273,
+             "clouds": 20
+             },
+             {
+             "dt": 1433361600,
+             "temp": {
+             "day": 294.67,
+             "min": 282.12,
+             "max": 298.25,
+             "night": 288.82,
+             "eve": 298.25,
+             "morn": 282.12
+             },
+             "pressure": 1011.51,
+             "humidity": 0,
+             "weather": [
+                         {
+                         "id": 800,
+                         "main": "Clear",
+                         "description": "\u044f\u0441\u043d\u043e",
+                         "icon": "01d"
+                         }
+                         ],
+             "speed": 1.61,
+             "deg": 277,
+             "clouds": 0
+             }
+             ]
+}

@@ -1,0 +1,1254 @@
+{
+    "response": {
+        "version": "0.1",
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+        "features": {
+            "geolookup": 1,
+            "forecast10day": 1
+        }
+    },
+    "location": {
+        "type": "CITY",
+        "country": "US",
+        "country_iso3166": "US",
+        "country_name": "USA",
+        "state": "CA",
+        "city": "San Francisco",
+        "tz_short": "PDT",
+        "tz_long": "America/Los_Angeles",
+        "lat": "37.77500916",
+        "lon": "-122.41825867",
+        "zip": "94101",
+        "magic": "1",
+        "wmo": "99999",
+        "l": "/q/zmw:94101.1.99999",
+        "requesturl": "US/CA/San_Francisco.html",
+        "wuiurl": "http://www.wunderground.com/US/CA/San_Francisco.html",
+        "nearby_weather_stations": {
+            "airport": {
+                "station": [
+                            {
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KSFO",
+                            "lat": "37.61960983",
+                            "lon": "-122.36557770"
+                            },
+                            {
+                            "city": "Oakland",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KOAK",
+                            "lat": "37.71780014",
+                            "lon": "-122.23294067"
+                            },
+                            {
+                            "city": "Hayward",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KHWD",
+                            "lat": "37.65891647",
+                            "lon": "-122.12174988"
+                            },
+                            {
+                            "city": "Half Moon Bay",
+                            "state": "CA",
+                            "country": "US",
+                            "icao": "KHAF",
+                            "lat": "37.51361084",
+                            "lon": "-122.49958801"
+                            }
+                            ]
+            },
+            "pws": {
+                "station": [
+                            {
+                            "neighborhood": "NEMA",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR291",
+                            "lat": 37.776077,
+                            "lon": -122.417542,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "SOMA - Near Van Ness",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR58",
+                            "lat": 37.773285,
+                            "lon": -122.417725,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "North Mission (Valencia and Market)",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR49",
+                            "lat": 37.770599,
+                            "lon": -122.4235,
+                            "distance_km": 0,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission (at Bar and Burrito)",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR142",
+                            "lat": 37.76553,
+                            "lon": -122.422913,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Lower Haight",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR384",
+                            "lat": 37.7738,
+                            "lon": -122.431984,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR326",
+                            "lat": 37.767326,
+                            "lon": -122.408096,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "SOMA",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR231",
+                            "lat": 37.782803,
+                            "lon": -122.407166,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Lower Haight",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR438",
+                            "lat": 37.773457,
+                            "lon": -122.433182,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR335",
+                            "lat": 37.763035,
+                            "lon": -122.412949,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "Western Addition",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR368",
+                            "lat": 37.787674,
+                            "lon": -122.427856,
+                            "distance_km": 1,
+                            "distance_mi": 0
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR424",
+                            "lat": 37.76392,
+                            "lon": -122.431328,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Mission, 19th and Folsom",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR259",
+                            "lat": 37.759354,
+                            "lon": -122.415085,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR486",
+                            "lat": 37.781174,
+                            "lon": -122.399551,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR366",
+                            "lat": 37.761604,
+                            "lon": -122.43,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission Dolores",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR367",
+                            "lat": 37.758671,
+                            "lon": -122.422447,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR354",
+                            "lat": 37.767139,
+                            "lon": -122.437416,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "The Castro",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR357",
+                            "lat": 37.761108,
+                            "lon": -122.431992,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission District",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR453",
+                            "lat": 37.757778,
+                            "lon": -122.423958,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Mission",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR415",
+                            "lat": 37.75771,
+                            "lon": -122.423927,
+                            "distance_km": 1,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "MemellandstraÃe",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR404",
+                            "lat": 37.75893,
+                            "lon": -122.431519,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR314",
+                            "lat": 37.779007,
+                            "lon": -122.394188,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "South of Market",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR472",
+                            "lat": 37.776436,
+                            "lon": -122.393166,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            },
+                            {
+                            "neighborhood": "Dolores Heights",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "id": "KCASANFR297",
+                            "lat": 37.758053,
+                            "lon": -122.431664,
+                            "distance_km": 2,
+                            "distance_mi": 1
+                            }
+                            ]
+            }
+        }
+    },
+    "forecast": {
+        "txt_forecast": {
+            "date": "2:27 PM PDT",
+            "forecastday": [
+                            {
+                            "period": 0,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Saturday",
+                            "fcttext": "A mix of clouds and sun. High 62F. Winds W at 10 to 20 mph.",
+                            "fcttext_metric": "Sunshine and clouds mixed. High 16C. Winds W at 15 to 30 km/h.",
+                            "pop": "0"
+                            },
+                            {
+                            "period": 1,
+                            "icon": "nt_clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_clear.gif",
+                            "title": "Saturday Night",
+                            "fcttext": "A few passing clouds. Low 53F. Winds SW at 10 to 15 mph.",
+                            "fcttext_metric": "A few passing clouds. Low 11C. Winds SW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 2,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Sunday",
+                            "fcttext": "Some clouds in the morning will give way to mainly sunny skies for the afternoon. High 64F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Sunshine along with some cloudy intervals. High 17C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 3,
+                            "icon": "nt_mostlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+                            "title": "Sunday Night",
+                            "fcttext": "Partly cloudy skies in the evening, then becoming cloudy overnight. Low 54F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Partly cloudy skies early will become overcast later during the night. Low 12C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 4,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Monday",
+                            "fcttext": "Cloudy early with partial sunshine expected late. High 64F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Cloudy skies early, followed by partial clearing. High 17C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 5,
+                            "icon": "nt_mostlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+                            "title": "Monday Night",
+                            "fcttext": "Mostly cloudy skies. Low near 55F. Winds WSW at 10 to 15 mph.",
+                            "fcttext_metric": "Mainly cloudy. Low 12C. Winds SW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 6,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Tuesday",
+                            "fcttext": "Cloudy skies early, followed by partial clearing. High near 65F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Cloudy early with partial sunshine expected late. High 17C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 7,
+                            "icon": "nt_mostlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif",
+                            "title": "Tuesday Night",
+                            "fcttext": "Partly cloudy skies in the evening, then becoming cloudy overnight. Low 53F. Winds WSW at 10 to 15 mph.",
+                            "fcttext_metric": "Partly cloudy during the evening followed by cloudy skies overnight. Low 11C. Winds WSW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 8,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Wednesday",
+                            "fcttext": "Mostly cloudy early, then afternoon sunshine. High near 65F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Morning clouds will give way to sunshine for the afternoon. High 18C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 9,
+                            "icon": "nt_clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_clear.gif",
+                            "title": "Wednesday Night",
+                            "fcttext": "Partly cloudy. Low 54F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Clear to partly cloudy. Low 12C. Winds WSW at 15 to 25 km/h.",
+                            "pop": "20"
+                            },
+                            {
+                            "period": 10,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Thursday",
+                            "fcttext": "Sunshine and clouds mixed. High around 65F. Winds W at 10 to 20 mph.",
+                            "fcttext_metric": "Sunshine and clouds mixed. High 18C. Winds W at 15 to 30 km/h.",
+                            "pop": "20"
+                            },
+                            {
+                            "period": 11,
+                            "icon": "nt_partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+                            "title": "Thursday Night",
+                            "fcttext": "A few clouds from time to time. Low 54F. Winds WSW at 10 to 15 mph.",
+                            "fcttext_metric": "A few clouds. Low 12C. Winds WSW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 12,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Friday",
+                            "fcttext": "Intervals of clouds and sunshine. High near 65F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Partly cloudy. High 18C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 13,
+                            "icon": "nt_partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+                            "title": "Friday Night",
+                            "fcttext": "Partly cloudy. Low around 55F. Winds WSW at 10 to 15 mph.",
+                            "fcttext_metric": "A few clouds from time to time. Low 12C. Winds WSW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 14,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Saturday",
+                            "fcttext": "Partly cloudy skies. High 66F. Winds WSW at 10 to 20 mph.",
+                            "fcttext_metric": "Some clouds in the morning will give way to mainly sunny skies for the afternoon. High 18C. Winds WSW at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 15,
+                            "icon": "nt_clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_clear.gif",
+                            "title": "Saturday Night",
+                            "fcttext": "Mostly clear. Low around 55F. Winds WSW at 10 to 15 mph.",
+                            "fcttext_metric": "Mostly clear. Low 12C. Winds WSW at 15 to 25 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 16,
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "title": "Sunday",
+                            "fcttext": "Partly cloudy. High 67F. Winds W at 10 to 20 mph.",
+                            "fcttext_metric": "Partly cloudy skies. High 19C. Winds W at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 17,
+                            "icon": "nt_clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_clear.gif",
+                            "title": "Sunday Night",
+                            "fcttext": "Mostly clear skies. Low near 55F. Winds W at 10 to 20 mph.",
+                            "fcttext_metric": "Mainly clear. Low 13C. Winds W at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 18,
+                            "icon": "clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/clear.gif",
+                            "title": "Monday",
+                            "fcttext": "Mostly sunny. High 68F. Winds W at 10 to 20 mph.",
+                            "fcttext_metric": "Sunny skies. High 19C. Winds W at 15 to 30 km/h.",
+                            "pop": "10"
+                            },
+                            {
+                            "period": 19,
+                            "icon": "nt_clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/nt_clear.gif",
+                            "title": "Monday Night",
+                            "fcttext": "A mostly clear sky. Low 57F. Winds W at 10 to 15 mph.",
+                            "fcttext_metric": "A mostly clear sky. Low 13C. Winds W at 15 to 25 km/h.",
+                            "pop": "10"
+                            }
+                            ]
+        },
+        "simpleforecast": {
+            "forecastday": [
+                            {
+                            "date": {
+                            "epoch": "1432432800",
+                            "pretty": "7:00 PM PDT on May 23, 2015",
+                            "day": 23,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 142,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Sat",
+                            "weekday": "Saturday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 1,
+                            "high": {
+                            "fahrenheit": "65",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "53",
+                            "celsius": "12"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 0,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "W",
+                            "degrees": 267
+                            },
+                            "avewind": {
+                            "mph": 15,
+                            "kph": 24,
+                            "dir": "W",
+                            "degrees": 267
+                            },
+                            "avehumidity": 65,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432519200",
+                            "pretty": "7:00 PM PDT on May 24, 2015",
+                            "day": 24,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 143,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Sun",
+                            "weekday": "Sunday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 2,
+                            "high": {
+                            "fahrenheit": "64",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "54",
+                            "celsius": "12"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 242
+                            },
+                            "avewind": {
+                            "mph": 16,
+                            "kph": 26,
+                            "dir": "WSW",
+                            "degrees": 242
+                            },
+                            "avehumidity": 72,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432605600",
+                            "pretty": "7:00 PM PDT on May 25, 2015",
+                            "day": 25,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 144,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Mon",
+                            "weekday": "Monday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 3,
+                            "high": {
+                            "fahrenheit": "64",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "55",
+                            "celsius": "13"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 248
+                            },
+                            "avewind": {
+                            "mph": 14,
+                            "kph": 23,
+                            "dir": "WSW",
+                            "degrees": 248
+                            },
+                            "avehumidity": 72,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432692000",
+                            "pretty": "7:00 PM PDT on May 26, 2015",
+                            "day": 26,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 145,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Tue",
+                            "weekday": "Tuesday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 4,
+                            "high": {
+                            "fahrenheit": "65",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "53",
+                            "celsius": "12"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 245
+                            },
+                            "avewind": {
+                            "mph": 13,
+                            "kph": 21,
+                            "dir": "WSW",
+                            "degrees": 245
+                            },
+                            "avehumidity": 71,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432778400",
+                            "pretty": "7:00 PM PDT on May 27, 2015",
+                            "day": 27,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 146,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Wed",
+                            "weekday": "Wednesday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 5,
+                            "high": {
+                            "fahrenheit": "65",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "54",
+                            "celsius": "12"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 257
+                            },
+                            "avewind": {
+                            "mph": 14,
+                            "kph": 23,
+                            "dir": "WSW",
+                            "degrees": 257
+                            },
+                            "avehumidity": 73,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432864800",
+                            "pretty": "7:00 PM PDT on May 28, 2015",
+                            "day": 28,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 147,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Thu",
+                            "weekday": "Thursday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 6,
+                            "high": {
+                            "fahrenheit": "65",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "54",
+                            "celsius": "12"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 20,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "W",
+                            "degrees": 259
+                            },
+                            "avewind": {
+                            "mph": 14,
+                            "kph": 23,
+                            "dir": "W",
+                            "degrees": 259
+                            },
+                            "avehumidity": 72,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1432951200",
+                            "pretty": "7:00 PM PDT on May 29, 2015",
+                            "day": 29,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 148,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Fri",
+                            "weekday": "Friday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 7,
+                            "high": {
+                            "fahrenheit": "65",
+                            "celsius": "18"
+                            },
+                            "low": {
+                            "fahrenheit": "55",
+                            "celsius": "13"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 253
+                            },
+                            "avewind": {
+                            "mph": 13,
+                            "kph": 21,
+                            "dir": "WSW",
+                            "degrees": 253
+                            },
+                            "avehumidity": 73,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1433037600",
+                            "pretty": "7:00 PM PDT on May 30, 2015",
+                            "day": 30,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 149,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Sat",
+                            "weekday": "Saturday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 8,
+                            "high": {
+                            "fahrenheit": "66",
+                            "celsius": "19"
+                            },
+                            "low": {
+                            "fahrenheit": "55",
+                            "celsius": "13"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "WSW",
+                            "degrees": 255
+                            },
+                            "avewind": {
+                            "mph": 13,
+                            "kph": 21,
+                            "dir": "WSW",
+                            "degrees": 255
+                            },
+                            "avehumidity": 73,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1433124000",
+                            "pretty": "7:00 PM PDT on May 31, 2015",
+                            "day": 31,
+                            "month": 5,
+                            "year": 2015,
+                            "yday": 150,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "May",
+                            "monthname_short": "May",
+                            "weekday_short": "Sun",
+                            "weekday": "Sunday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 9,
+                            "high": {
+                            "fahrenheit": "67",
+                            "celsius": "19"
+                            },
+                            "low": {
+                            "fahrenheit": "55",
+                            "celsius": "13"
+                            },
+                            "conditions": "Partly Cloudy",
+                            "icon": "partlycloudy",
+                            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "W",
+                            "degrees": 265
+                            },
+                            "avewind": {
+                            "mph": 16,
+                            "kph": 26,
+                            "dir": "W",
+                            "degrees": 265
+                            },
+                            "avehumidity": 72,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            },
+                            {
+                            "date": {
+                            "epoch": "1433210400",
+                            "pretty": "7:00 PM PDT on June 01, 2015",
+                            "day": 1,
+                            "month": 6,
+                            "year": 2015,
+                            "yday": 151,
+                            "hour": 19,
+                            "min": "00",
+                            "sec": 0,
+                            "isdst": "1",
+                            "monthname": "June",
+                            "monthname_short": "Jun",
+                            "weekday_short": "Mon",
+                            "weekday": "Monday",
+                            "ampm": "PM",
+                            "tz_short": "PDT",
+                            "tz_long": "America/Los_Angeles"
+                            },
+                            "period": 10,
+                            "high": {
+                            "fahrenheit": "68",
+                            "celsius": "20"
+                            },
+                            "low": {
+                            "fahrenheit": "57",
+                            "celsius": "14"
+                            },
+                            "conditions": "Clear",
+                            "icon": "clear",
+                            "icon_url": "http://icons.wxug.com/i/c/k/clear.gif",
+                            "skyicon": "",
+                            "pop": 10,
+                            "qpf_allday": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_day": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "qpf_night": {
+                            "in": 0,
+                            "mm": 0
+                            },
+                            "snow_allday": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_day": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "snow_night": {
+                            "in": 0,
+                            "cm": 0
+                            },
+                            "maxwind": {
+                            "mph": 20,
+                            "kph": 32,
+                            "dir": "W",
+                            "degrees": 272
+                            },
+                            "avewind": {
+                            "mph": 15,
+                            "kph": 24,
+                            "dir": "W",
+                            "degrees": 272
+                            },
+                            "avehumidity": 70,
+                            "maxhumidity": 0,
+                            "minhumidity": 0
+                            }
+                            ]
+        }
+    }
+}

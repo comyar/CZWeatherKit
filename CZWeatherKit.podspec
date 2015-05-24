@@ -1,17 +1,17 @@
 Pod::Spec.new do |s|
   s.name         = "CZWeatherKit"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "A Simple Cocoa Weather Library."
   s.description  = <<-DESC
                    CZWeatherKit is a simple, extensible weather library for iOS and OS X 
                    that allows for easy downloading of weather data from various weather services.
                    DESC
-  s.homepage     = "http://www.comyar.io/projects/czweatherkit"
-  s.license      = { :type => "BSD", :file => "LICENSE" }
-  s.author       = { "Comyar Zaheri" => "comyarzaheri@utexas.edu" }
-  s.ios.deployment_target = "7.0"
-  s.osx.deployment_target = "10.9"
-  s.source       = { :git => "https://github.com/CZWeatherKit/CZWeatherKit.git", :tag => s.version.to_s}
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.author       = { "Comyar Zaheri" => "" }
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
+  s.source       = { :git => "https://github.com/comyarzaheri/CZWeatherKit.git", :tag => s.version.to_s}
   s.source_files = 'CZWeatherKit/*.{h,m}', 'CZWeatherKit/**/*.{h,m}'
+  s.module_name = 'CZWeatherKit'
   s.requires_arc = true
 end

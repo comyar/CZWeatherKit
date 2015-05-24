@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWorldWeatherOnlineAPI.m
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,31 @@
 
 #pragma mark - Imports
 
-@import Foundation;
-
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
-#import "CZClimacons.h"
-
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
-
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
-
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
-
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
-
 #import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
 
+
+#pragma mark - CZWorldWeatherOnlineAPI Class Extension
+
+@interface CZWorldWeatherOnlineAPI ()
+
+@end
+
+
+#pragma mark - CZWorldWeatherOnlineAPI Implementation
+
+@implementation CZWorldWeatherOnlineAPI
+
++ (NSURLRequest *)transformRequest:(CZWeatherRequest *)request
+{
+    return nil;
+}
+
++ (CZWeatherData *)transformResponse:(NSURLResponse *)response
+                                data:(NSData *)data
+                               error:(NSError *)error
+                          forRequest:(CZWeatherRequest *)request
+{
+    return nil;
+}
+
+@end

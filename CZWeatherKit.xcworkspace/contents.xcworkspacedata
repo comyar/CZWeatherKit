@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CZWeatherKit Tests/CZWeatherKit Tests.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:CZWeatherKit Example iOS/CZWeatherKit Example iOS.xcodeproj">
+      location = "group:CZWeatherKit.xcodeproj">
    </FileRef>
 </Workspace>

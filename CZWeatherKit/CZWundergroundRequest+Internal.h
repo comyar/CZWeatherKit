@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWundergroundRequest+Internal.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,25 @@
 
 #pragma mark - Imports
 
-@import Foundation;
-
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
-#import "CZClimacons.h"
-
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
-
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
-
-#import "CZWundergroundAPI.h"
 #import "CZWundergroundRequest.h"
 
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
 
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
+#pragma mark - CZWeatherDataRequest Internal Category Interface
 
+/**
+ @warning Not for external use.
+ */
+@interface CZWundergroundRequest (Internal)
+
+// -----
+// @name Internal
+// -----
+
+#pragma mark Internal
+
+/**
+ @warning Not for external use.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) NSString *feature;
+
+@end

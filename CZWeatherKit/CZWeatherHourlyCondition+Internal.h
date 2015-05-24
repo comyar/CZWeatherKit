@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWeatherHourlyCondition+Internal.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,60 @@
 
 #pragma mark - Imports
 
-@import Foundation;
-
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
-#import "CZClimacons.h"
-
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
 #import "CZWeatherHourlyCondition.h"
 
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
 
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
+#pragma mark - CZWeatherHourlyCondition Internal Category Interface
 
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
+/**
+ @warning Not for external use.
+ */
+@interface CZWeatherHourlyCondition (Internal)
 
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
+// -----
+// @name Internal
+// -----
 
+#pragma mark Internal
+
+/**
+ @warning Not for external use.
+ */
+- (instancetype)_init;
+
+/**
+ @warning Not for external use.
+ */
+@property (NS_NONATOMIC_IOSONLY) NSDate *date;
+
+/**
+ @warning Not for external use.
+ */
+@property (copy, NS_NONATOMIC_IOSONLY) NSString *summary;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) Climacon climacon;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZHumidity humidity;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZWindSpeed windSpeed;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZWindDirection windDirection;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZTemperature temperature;
+
+@end

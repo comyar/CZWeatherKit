@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  NSDictionary+JSON.m
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,39 +26,20 @@
 
 #pragma mark - Imports
 
-@import Foundation;
+#import "NSDictionary+Internal.h"
 
 
-#pragma mark - Framework 
+#pragma mark - NSDictionary Internal Category Implementation
 
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
+@implementation NSDictionary (Internal)
 
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
+- (id)objectForKey:(id)aKey class:(Class)clazz
+{
+    id object = [self objectForKey:aKey];
+    if ([object isKindOfClass:clazz]) {
+        return object;
+    }
+    return nil;
+}
 
-#import "CZClimacons.h"
-
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
-
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
-
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
-
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
-
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
-
+@end

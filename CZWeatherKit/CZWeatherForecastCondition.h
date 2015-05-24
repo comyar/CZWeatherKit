@@ -1,5 +1,5 @@
 //
-//  CZWeatherKit.h
+//  CZWeatherForecastCondition.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -28,37 +28,54 @@
 
 @import Foundation;
 
-
-#pragma mark - Framework 
-
-// Project version number for CZWeatherKit.
-FOUNDATION_EXPORT double CZWeatherKitVersionNumber;
-
-// Project version string for CZWeatherKit.
-FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
-
 #import "CZClimacons.h"
+#import "CZWeatherKitTypes.h"
 
-// Core
-#import "CZWeatherAPI.h"
-#import "CZWeatherData.h"
-#import "CZWeatherRequest.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
-#import "CZWeatherCurrentCondition.h"
-#import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
 
-// APIs
-#import "CZForecastioAPI.h"
-#import "CZForecastioRequest.h"
+#pragma mark - CZWeatherForecastCondition Interface
 
-#import "CZWundergroundAPI.h"
-#import "CZWundergroundRequest.h"
+/**
+ A CZWeatherForecastCondition object represents the forecasted weather 
+ conditions for a day.
+ */
+@interface CZWeatherForecastCondition : NSObject
 
-#import "CZOpenWeatherMapAPI.h"
-#import "CZOpenWeatherMapRequest.h"
+- (instancetype)init NS_UNAVAILABLE;
 
-#import "CZWorldWeatherOnlineAPI.h"
-#import "CZWorldWeatherOnlineRequest.h"
+// -----
+// @name Properties
+// -----
 
+#pragma mark Properties
+
+/**
+ The date of the forecast.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) NSDate *date;
+
+/**
+ A short description of the weather conditions, e.g. "Partly Cloudy".
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) NSString *summary;
+
+/**
+ The Climacon character that represents the weather conditions.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) Climacon climacon;
+
+/**
+ The humidity.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZHumidity humidity;
+
+/**
+ The low temperature.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZTemperature lowTemperature;
+
+/**
+ The high temperature.
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZTemperature highTemperature;
+
+@end
