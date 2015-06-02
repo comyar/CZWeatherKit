@@ -56,7 +56,7 @@ static const float epsilon = 0.001;
     XCTAssertEqualObjects(@"hourly", [CZWundergroundRequest newHourlyRequest].feature);
     XCTAssertEqualObjects(@"hourly10day", [CZWundergroundRequest newHourly10DayRequest].feature);
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:1432432281];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:1432422281];
     XCTAssertEqualObjects(@"history_20150523", [CZWundergroundRequest newHistoryRequestForDate:date].feature);
     
     [[CZWundergroundRequest newConditionsRequest]copy];
