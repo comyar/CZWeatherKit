@@ -108,7 +108,7 @@ CZWeatherKit currently supports the following weather services:
 * [Weather Underground](http://www.wunderground.com/weather/api/)
 * [Open Weather Map](http://openweathermap.org/API)
 * [Forecast.io](https://developer.forecast.io)
-* <del>[World Weather Online](https://developer.worldweatheronline.com)</del> : World Weather Online support hasn't made its way into 2.0 yet; there is an outstanding [issue]() for adding support. To give me a sense of how important this is to users, please leave a `+1` in the comments of the issue if you need this feature.
+* <del>[World Weather Online](https://developer.worldweatheronline.com)</del> : World Weather Online support hasn't made its way into 2.0 yet; there is an outstanding [issue](https://github.com/comyarzaheri/CZWeatherKit/issues/17) for adding support. To give me a sense of how important this is to users, please leave a `+1` in the comments of the issue if you need this feature.
 
 ## Climacons
 
