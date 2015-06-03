@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD5F57C11B06DB8800C90D15"
+               BuildableName = "CZWeatherKit OSX Tests.xctest"
+               BlueprintName = "CZWeatherKit OSX Tests"
+               ReferencedContainer = "container:CZWeatherKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DD5F58161B06E15800C90D15"
+            BuildableName = "CZWeatherKit.framework"
+            BlueprintName = "CZWeatherKit OSX"
+            ReferencedContainer = "container:CZWeatherKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"

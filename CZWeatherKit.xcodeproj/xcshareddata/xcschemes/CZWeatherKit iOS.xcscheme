@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD7E38151B05938000DBAD3D"
-               BuildableName = "CZWeatherKitTests.xctest"
-               BlueprintName = "CZWeatherKitTests"
+               BlueprintIdentifier = "DD5F579E1B06DADA00C90D15"
+               BuildableName = "CZWeatherKit iOS Tests.xctest"
+               BlueprintName = "CZWeatherKit iOS Tests"
                ReferencedContainer = "container:CZWeatherKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
