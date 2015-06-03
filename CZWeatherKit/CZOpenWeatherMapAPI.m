@@ -343,7 +343,7 @@
                 [location.city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                 [location.country stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     }
-    return [NSString stringWithFormat:@"lat=%.4f,lon=%.4f",
+    return [NSString stringWithFormat:@"lat=%.4f&lon=%.4f",
             location.coordinate.latitude, location.coordinate.longitude];
 }
 

@@ -76,7 +76,7 @@ static const float epsilon = 0.001;
     
     request.location = [CZWeatherLocation locationFromLatitude:10.0 longitude:-10.0];
     URLRequest = [CZOpenWeatherMapAPI transformRequest:request];
-    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/weather?lat=10.0000,lon=-10.0000&lang=fr&mode=json&APPID=APIKEY",
+    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/weather?lat=10.0000&lon=-10.0000&lang=fr&mode=json&APPID=APIKEY",
                           URLRequest.URL.absoluteString);
 }
 
@@ -97,7 +97,7 @@ static const float epsilon = 0.001;
     
     request.location = [CZWeatherLocation locationFromLatitude:10.0 longitude:-10.0];
     URLRequest = [CZOpenWeatherMapAPI transformRequest:request];
-    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/forecast/daily?lat=10.0000,lon=-10.0000&lang=fr&mode=json&cnt=5",
+    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/forecast/daily?lat=10.0000&lon=-10.0000&lang=fr&mode=json&cnt=5",
                           URLRequest.URL.absoluteString);
 }
 
@@ -118,7 +118,7 @@ static const float epsilon = 0.001;
     
     request.location = [CZWeatherLocation locationFromLatitude:10.0 longitude:-10.0];
     URLRequest = [CZOpenWeatherMapAPI transformRequest:request];
-    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/forecast/hourly?lat=10.0000,lon=-10.0000&lang=fr&mode=json",
+    XCTAssertEqualObjects(@"http://api.openweathermap.org/data/2.5/forecast/hourly?lat=10.0000&lon=-10.0000&lang=fr&mode=json",
                           URLRequest.URL.absoluteString);
 }
 
@@ -142,7 +142,7 @@ static const float epsilon = 0.001;
     
     request.location = [CZWeatherLocation locationFromLatitude:10.0 longitude:-10.0];
     URLRequest = [CZOpenWeatherMapAPI transformRequest:request];
-    XCTAssertEqualObjects(@"http://openweathermap.org/data/2.5/history/city?lat=10.0000,lon=-10.0000&lang=fr&mode=json&type=hourly&start=1432432281&end=1432439281",
+    XCTAssertEqualObjects(@"http://openweathermap.org/data/2.5/history/city?lat=10.0000&lon=-10.0000&lang=fr&mode=json&type=hourly&start=1432432281&end=1432439281",
                           URLRequest.URL.absoluteString);
 }
 
