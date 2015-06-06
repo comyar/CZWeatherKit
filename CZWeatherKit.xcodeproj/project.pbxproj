@@ -20,8 +20,8 @@
 		DD0DA9381B09346B008CDEAE /* CZWorldWeatherOnlineRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0DA9361B09346B008CDEAE /* CZWorldWeatherOnlineRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD0DA9391B09346B008CDEAE /* CZWorldWeatherOnlineRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA9371B09346B008CDEAE /* CZWorldWeatherOnlineRequest.m */; };
 		DD0DA93C1B0936E7008CDEAE /* CZWeatherRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0DA93A1B0936E6008CDEAE /* CZWeatherRequest+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		DD110E6B1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD110E6A1B22A70300E42042 /* CZForecastioRequest+Internal.h */; };
-		DD110E6C1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD110E6A1B22A70300E42042 /* CZForecastioRequest+Internal.h */; };
+		DD110E6B1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD110E6A1B22A70300E42042 /* CZForecastioRequest+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		DD110E6C1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD110E6A1B22A70300E42042 /* CZForecastioRequest+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DD110E6E1B22A99300E42042 /* CZWeatherLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD110E6D1B22A99300E42042 /* CZWeatherLocationTests.m */; };
 		DD110E6F1B22A99300E42042 /* CZWeatherLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD110E6D1B22A99300E42042 /* CZWeatherLocationTests.m */; };
 		DD1CB5801B114A0900F8ECA9 /* wunderground_hourly10day.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1CB57F1B114A0900F8ECA9 /* wunderground_hourly10day.json */; };
@@ -517,7 +517,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD110E6C1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */,
 				DDDA4AA91B11253D00756AD0 /* CZWeatherKitTypes.h in Headers */,
 				DDDA4AA71B11245A00756AD0 /* CZClimacons.h in Headers */,
 				DD5F58351B06E32100C90D15 /* CZWeatherKit.h in Headers */,
@@ -542,6 +541,7 @@
 				DDDA4A9A1B1119C100756AD0 /* CZWeatherHourlyCondition+Internal.h in Headers */,
 				DDDA4AAF1B11256900756AD0 /* CZWeatherForecastCondition+Internal.h in Headers */,
 				DDDA4AB01B11256C00756AD0 /* CZWeatherRequest+Internal.h in Headers */,
+				DD110E6C1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */,
 				DDDA4AB11B11256E00756AD0 /* CZWeatherLocation+Internal.h in Headers */,
 				DDDA4A721B10774700756AD0 /* NSDictionary+Internal.h in Headers */,
 			);
@@ -551,7 +551,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD110E6B1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */,
 				DD7E38111B05938000DBAD3D /* CZWeatherKit.h in Headers */,
 				DDDA4AA81B11253400756AD0 /* CZClimacons.h in Headers */,
 				DDDA4AB71B1125DD00756AD0 /* CZWeatherKitTypes.h in Headers */,
@@ -576,6 +575,7 @@
 				DD5F58631B08472900C90D15 /* CZWeatherCurrentCondition+Internal.h in Headers */,
 				DD0DA93C1B0936E7008CDEAE /* CZWeatherRequest+Internal.h in Headers */,
 				DDDA4AB21B11257E00756AD0 /* CZWeatherForecastCondition+Internal.h in Headers */,
+				DD110E6B1B22A70300E42042 /* CZForecastioRequest+Internal.h in Headers */,
 				DDDA4A6D1B10487000756AD0 /* CZWeatherLocation+Internal.h in Headers */,
 				DDDA4A991B1119C100756AD0 /* CZWeatherHourlyCondition+Internal.h in Headers */,
 			);

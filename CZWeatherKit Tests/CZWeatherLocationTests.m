@@ -15,11 +15,6 @@
 #import "CZWeatherKitInternal.h"
 
 
-#pragma mark - Constants
-
-static const float epsilon = 0.001;
-
-
 #pragma mark - CZWeatherLocationTests Interface
 
 @interface CZWeatherLocationTests : XCTestCase
