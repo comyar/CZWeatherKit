@@ -45,6 +45,6 @@
 /**
  @warning Not for external use.
  */
-@property (readonly, NS_NONATOMIC_IOSONLY) NSString *feature;
+@property (NS_NONATOMIC_IOSONLY) NSString *feature;
 
 @end

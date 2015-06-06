@@ -54,8 +54,27 @@ static const float epsilon = 0.001;
     XCTAssertEqualObjects(@"forecast/hourly", [CZOpenWeatherMapRequest newHourlyForecastRequest].feature);
     XCTAssertEqualObjects(@"forecast/daily", [CZOpenWeatherMapRequest newDailyForecastRequestForDays:5].feature);
     XCTAssertEqualObjects(@"history/city", [CZOpenWeatherMapRequest newHistoryRequestFrom:nil to:nil].feature);
+}
+
+- (void)testOpenWeatherMapRequestCopying
+{
+    CZOpenWeatherMapRequest *request = [[CZOpenWeatherMapRequest alloc]_init];
+    request.location = [CZWeatherLocation locationFromCity:@"Seattle" country:@"WA"];
+    request.feature = @"feature";
+    request.start = [NSDate date];
+    request.end = [NSDate date];
+    request.language = @"en";
+    request.key = @"apiKey";
+    request.days = 5;
     
-    [[CZOpenWeatherMapRequest newCurrentRequest]copy];
+    CZOpenWeatherMapRequest *copy = [request copy];
+    XCTAssertEqualObjects(request.location, copy.location);
+    XCTAssertEqualObjects(request.language, copy.language);
+    XCTAssertEqualObjects(request.feature, copy.feature);
+    XCTAssertEqualObjects(request.start, copy.start);
+    XCTAssertEqualObjects(request.end, copy.end);
+    XCTAssertEqualObjects(request.key, copy.key);
+    XCTAssertEqual(request.days, copy.days);
 }
 
 - (void)testTransformCurrentRequest

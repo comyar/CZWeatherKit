@@ -111,6 +111,7 @@ static NSDateFormatter *dateFormatter;
     copy.feature = [self.feature copy];
     copy.language = [self.language copy];
     copy.location = [self.location copy];
+    copy.key = [self.key copy];
     return copy;
 }
 

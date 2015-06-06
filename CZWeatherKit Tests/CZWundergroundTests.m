@@ -58,8 +58,21 @@ static const float epsilon = 0.001;
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:1432422281];
     XCTAssertEqualObjects(@"history_20150523", [CZWundergroundRequest newHistoryRequestForDate:date].feature);
+}
+
+- (void)testWundergroundRequestCopying
+{
+    CZWundergroundRequest *request = [[CZWundergroundRequest alloc]_init];
+    request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
+    request.feature = @"feature";
+    request.language = @"en";
+    request.key = @"apiKey";
     
-    [[CZWundergroundRequest newConditionsRequest]copy];
+    CZWundergroundRequest *copy = [request copy];
+    XCTAssertEqualObjects(request.key, copy.key);
+    XCTAssertEqualObjects(request.feature, copy.feature);
+    XCTAssertEqualObjects(request.language, copy.language);
+    XCTAssertEqualObjects(request.location, copy.location);
 }
 
 - (void)testTransformConditionsRequest

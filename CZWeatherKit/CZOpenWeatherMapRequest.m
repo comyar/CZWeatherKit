@@ -104,6 +104,10 @@
     copy.feature = [self.feature copy];
     copy.language = [self.language copy];
     copy.location = [self.location copy];
+    copy.start = [self.start copy];
+    copy.end = [self.end copy];
+    copy.key = [self.key copy];
+    copy.days = self.days;
     return copy;
 }
 

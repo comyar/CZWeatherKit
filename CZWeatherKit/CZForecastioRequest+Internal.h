@@ -1,5 +1,5 @@
 //
-//  CZOpenWeatherMapRequest+Internal.h
+//  CZForecastioRequest+Internal.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,15 +26,15 @@
 
 #pragma mark - Imports
 
-#import "CZOpenWeatherMapRequest.h"
+#import "CZForecastioRequest.h"
 
 
-#pragma mark - CZOpenWeatherMapRequest Internal Category Interface
+#pragma mark - CZForecastioRequest Internal Category Interface
 
 /**
  @warning Not for external use.
  */
-@interface CZOpenWeatherMapRequest (Internal)
+@interface CZForecastioRequest (Internal)
 
 // -----
 // @name Internal
@@ -45,21 +45,7 @@
 /**
  @warning Not for external use.
  */
-@property (NS_NONATOMIC_IOSONLY) NSDate *end;
-
-/**
- @warning Not for external use.
- */
-@property (NS_NONATOMIC_IOSONLY) NSDate *start;
-
-/**
- @warning Not for external use.
- */
-@property (NS_NONATOMIC_IOSONLY) NSInteger days;
-
-/**
- @warning Not for external use.
- */
-@property (NS_NONATOMIC_IOSONLY) NSString *feature;
+@property (NS_NONATOMIC_IOSONLY) NSDate *date;
 
 @end
+

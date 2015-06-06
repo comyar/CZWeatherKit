@@ -78,6 +78,7 @@
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     CZForecastioRequest *copy = [[CZForecastioRequest alloc]_init];
+    copy.key = [self.key copy];
     copy.date = [self.date copy];
     copy.language = [self.language copy];
     copy.location = [self.location copy];

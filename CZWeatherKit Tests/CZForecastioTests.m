@@ -56,8 +56,21 @@ static const float epsilon = 0.001;
     NSDate *date = [NSDate date];
     request = [CZForecastioRequest newForecastRequestWithDate:date];
     XCTAssertEqualWithAccuracy([date timeIntervalSince1970], [request.date timeIntervalSince1970], epsilon);
+}
+
+- (void)testForecastioRequestCopying
+{
+    CZForecastioRequest *request = [[CZForecastioRequest alloc]_init];
+    request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
+    request.date = [NSDate date];
+    request.key = @"apiKey";
+    request.language = @"en";
     
-    [request copy];
+    CZForecastioRequest *copy = [request copy];
+    XCTAssertEqualObjects(request.key, copy.key);
+    XCTAssertEqualObjects(request.location, copy.location);
+    XCTAssertEqualObjects(request.language, copy.language);
+    XCTAssertEqualObjects(request.date, copy.date);
 }
 
 - (void)testTransformRequest

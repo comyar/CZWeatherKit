@@ -37,6 +37,7 @@
 #import "CZWeatherData+Internal.h"
 #import "CZWeatherRequest+Internal.h"
 #import "CZWeatherLocation+Internal.h"
+#import "CZForecastioRequest+Internal.h"
 #import "CZWundergroundRequest+Internal.h"
 #import "CZOpenWeatherMapRequest+Internal.h"
 #import "CZWeatherHourlyCondition+Internal.h"
