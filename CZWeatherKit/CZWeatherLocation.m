@@ -106,6 +106,50 @@
 
 }
 
+#pragma mark NSObject
+
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[CZWeatherLocation class]]) {
+        CZWeatherLocation *other = (CZWeatherLocation *)object;
+        
+        if (self.state && ![self.state isEqualToString:other.state]) {
+            return NO;
+        }
+        
+        if (self.country && ![self.country isEqualToString:other.country]) {
+            return NO;
+        }
+        
+        if (self.city && ![self.city isEqualToString:other.city]) {
+            return NO;
+        }
+        
+        if (self.coordinate.longitude != 0.0 && self.coordinate.latitude != 0.0) {
+            return  (self.coordinate.latitude == other.coordinate.latitude &&
+                     self.coordinate.longitude == other.coordinate.longitude);
+        }
+        
+        return YES;
+    }
+    return NO;
+}
+
+- (NSUInteger)hash
+{
+    NSUInteger hash = [self.state hash] ^ [self.country hash] ^ [self.city hash];
+    
+    if (self.coordinate.latitude != 0.0){
+        hash *= self.coordinate.latitude;
+    }
+    
+    if (self.coordinate.longitude != 0.0) {
+        hash *= self.coordinate.longitude;
+    }
+    
+    return hash;
+}
+
 #pragma mark NSCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
