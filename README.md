@@ -77,10 +77,10 @@ request.sendWithCompletion { (data, error) -> Void in
 ```objc
 #import <CZWeatherKit/CZWeatherKit.h>
 
-CZOpenWeatherMap *request = [CZOpenWeatherMap newCurrentRequest];
+CZOpenWeatherMap *request = [CZOpenWeatherMapRequest newCurrentRequest];
 request.location = [CZWeatherLocation locationForCity:@"Seattle" state:@"WA"];
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-	CZWeatherCurrentCondition *condition = date.current;
+	CZWeatherCurrentCondition *condition = data.current;
 	// dreams come true here
 }];
 ```
