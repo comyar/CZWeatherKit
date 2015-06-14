@@ -84,7 +84,7 @@
                                  userInfo:nil];
 }
 
-- (void)dispatchWithAPI:(Class)API
+- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
              completion:(CZWeatherRequestCompletion)completion
 {
     if (!completion) {

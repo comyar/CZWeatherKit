@@ -34,6 +34,11 @@
 
 @implementation CZWundergroundAPI
 
++ (NSString *)cacheKeyForRequest:(CZWeatherRequest *)request
+{
+    return [CZWundergroundAPI transformRequest:request].URL.absoluteString;
+}
+
 + (NSURLRequest *)transformRequest:(CZWeatherRequest *)request
 {
     if ([request isKindOfClass:[CZWundergroundRequest class]]) {

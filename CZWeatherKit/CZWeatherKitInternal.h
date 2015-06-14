@@ -23,18 +23,18 @@
 //  IN THE SOFTWARE.
 //
 
-
 // -----
 // @warning Not for external use.
 // -----
-
 
 #pragma mark - Imports
 
 #import <AddressBook/AddressBook.h>
 
+#import "CZWeatherKit.h"
 #import "NSDictionary+Internal.h"
 #import "CZWeatherData+Internal.h"
+#import "CZWeatherService+Internal.h"
 #import "CZWeatherRequest+Internal.h"
 #import "CZWeatherLocation+Internal.h"
 #import "CZForecastioRequest+Internal.h"
@@ -43,7 +43,6 @@
 #import "CZWeatherHourlyCondition+Internal.h"
 #import "CZWeatherCurrentCondition+Internal.h"
 #import "CZWeatherForecastCondition+Internal.h"
-
 
 #if TARGET_OS_IPHONE
 

@@ -1,5 +1,5 @@
 //
-//  CZWeatherLocationTests.m
+//  CZPINWeatherDataCache.m
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -23,48 +23,54 @@
 //  IN THE SOFTWARE.
 //
 
-
 #pragma mark - Imports
 
-@import XCTest;
-
-#import "CZWeatherKit.h"
+#import "CZPINWeatherDataCache.h"
 #import "CZWeatherKitInternal.h"
+#import "CZWeatherAPI.h"
+
+#import <PINCache/PINCache.h>
 
 
-#pragma mark - CZWeatherLocationTests Interface
+#pragma mark - CZPINWeatherDataCache Class Extension
 
-@interface CZWeatherLocationTests : XCTestCase
+@interface CZPINWeatherDataCache ()
+
+@property (NS_NONATOMIC_IOSONLY) PINCache *cache;
 
 @end
 
 
-#pragma mark - CZWeatherLocationTests Implementation
+#pragma mark - CZPINWeatherDataCache Implementation
 
-@implementation CZWeatherLocationTests
+@implementation CZPINWeatherDataCache
 
-- (void)testEquals
+- (instancetype)init
 {
-    CZWeatherLocation *a = [CZWeatherLocation locationFromCity:@"Seattle" country:@"US"];
-    CZWeatherLocation *b = [CZWeatherLocation locationFromCity:@"Seattle" country:@"US"];
-    XCTAssertEqualObjects(a, b);
-    XCTAssertEqual([a hash], [b hash]);
-    
-    a = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
-    b = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
-    XCTAssertEqualObjects(a, b);
-    XCTAssertEqual([a hash], [b hash]);
-    
-    a = [CZWeatherLocation locationFromCoordinate:CLLocationCoordinate2DMake(10.0, -10.0)];
-    b = [CZWeatherLocation locationFromCoordinate:CLLocationCoordinate2DMake(10.0, -10.0)];
-    XCTAssertEqualObjects(a, b);
-    XCTAssertEqual([a hash], [b hash]);
-    
-    a = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
-    b = [CZWeatherLocation locationFromCity:@"Austin" state:@"TX"];
-    
-    XCTAssertNotEqualObjects(a, b);
-    XCTAssertNotEqual([a hash], [b hash]);
+    if (self = [super init]) {
+        self.cache = [[PINCache alloc]initWithName:@"com.czweatherkit.pincache"];
+        self.cache.diskCache.ageLimit   = 3600; // one hour
+        self.cache.memoryCache.ageLimit = 3600;
+    }
+    return self;
+}
+
+- (void)dataForRequest:(CZWeatherRequest *)request completion:(CZWeatherDataCacheCompletion)completion
+{
+    NSString *key = [request.API cacheKeyForRequest:request];
+    [self.cache objectForKey:key block:^(PINCache *cache, NSString *key, id __nullable object) {
+        if ([object isKindOfClass:[CZWeatherData class]]) {
+            completion(object);
+        } else {
+            completion(nil);
+        }
+    }];
+}
+
+- (void)storeData:(CZWeatherData *)data forRequest:(CZWeatherRequest *)request
+{
+    NSString *key = [request.API cacheKeyForRequest:request];
+    [self.cache setObject:data forKey:key block:nil];
 }
 
 @end

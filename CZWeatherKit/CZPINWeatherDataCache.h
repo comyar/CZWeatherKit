@@ -1,5 +1,5 @@
 //
-//  CZWeatherDataRequest+Internal.h
+//  CZPINWeatherDataCache.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,36 +26,20 @@
 
 #pragma mark - Imports
 
-#import "CZWeatherRequest.h"
+@import Foundation;
+
+#import "CZWeatherDataCache.h"
 
 
-#pragma mark - CZWeatherDataRequest Internal Category Interface
-
-/**
- @warning Not for external use.
- */
-@interface CZWeatherRequest (Internal)
-
-// -----
-// @name Internal
-// -----
-
-#pragma mark Internal
+#pragma mark - CZPINWeatherDataCache Interface
 
 /**
- @warning Not for external use.
+ CZPINWeatherDataCache is an implementation of the CZWeatherDataCache that uses
+ PINCache to cache weather data. 
+ 
+ For more information regarding PINCache, see
+ https://github.com/pinterest/PINCache
  */
-- (instancetype)_init;
-
-/**
- @warning Not for external use.
- */
-- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
-             completion:(CZWeatherRequestCompletion)completion;
-
-/**
- @warning Not for external use.
- */
-@property (readonly, NS_NONATOMIC_IOSONLY) id<CZWeatherAPI> API;
+@interface CZPINWeatherDataCache : NSObject <CZWeatherDataCache>
 
 @end

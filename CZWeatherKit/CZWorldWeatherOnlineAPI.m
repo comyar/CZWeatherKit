@@ -40,6 +40,11 @@
 
 @implementation CZWorldWeatherOnlineAPI
 
++ (NSString *)cacheKeyForRequest:(CZWeatherRequest *)request
+{
+    return nil;
+}
+
 + (NSURLRequest *)transformRequest:(CZWeatherRequest *)request
 {
     return nil;
