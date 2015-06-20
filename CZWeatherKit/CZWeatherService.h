@@ -46,8 +46,22 @@
  @param     data
             The weather data for the request. May be nil if the request was 
             invalid or the weather service was unable to fulfill the request.
+ @param     error   
+            An error if one occurred, or nil. Currently unused.
  */
 typedef void (^CZWeatherServiceCompletion)(CZWeatherData *data, NSError *error);
+
+/**
+ Completion handler for dispatched batch of requests.
+ 
+ @param     data
+            An array of CZWeatherData and/or NSNull objects whose indices
+            in the array match the indices of their corresponding requests. The
+            array is never nil.
+ @param     error
+            An error if one occurred, or nil. Currently unused.
+ */
+typedef void (^CZWeatherServiceBatchCompletion)(NSArray *data, NSError *error);
 
 
 #pragma mark - CZWeatherService Interface
@@ -181,6 +195,26 @@ typedef void (^CZWeatherServiceCompletion)(CZWeatherData *data, NSError *error);
  */
 - (void)dispatchRequest:(CZWeatherRequest *)request
              completion:(CZWeatherServiceCompletion)completion;
+
+/**
+ Asynchronously dispatches the given requests.
+ 
+ The completion handler is executed when all of the given requests complete. Use
+ this method if your app requires multiple requests to retrieve data. For 
+ example, one use case would be if you require both current weather data and
+ forecasted weather data before updating your user interface.
+ 
+ @param     requests
+            The requests to dispatch.
+ @param     completion
+            The completion handler for the requests.
+ @warning   The completion handler is not guaranteed to be executed on any
+            specific queue. If you are updating any user interface elements in
+            the completion handler, you must explictly perform the updates on
+            the main queue.
+ */
+- (void)dispatchRequests:(NSArray *)requests
+              completion:(CZWeatherServiceBatchCompletion)completion;
 
 // -----
 // @name Properties
