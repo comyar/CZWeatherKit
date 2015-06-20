@@ -39,7 +39,7 @@ CZWundergroundRequest *request = [CZWundergroundRequest newConditionsRequest];
 request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
 request.key = @"wundergroundApiKey";
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-	CZWeatherCurrentCondition *condition = date.current;
+	CZWeatherCurrentCondition *condition = data.current;
 	// dreams come true here
 }];
 ```
