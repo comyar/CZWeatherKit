@@ -36,7 +36,7 @@ Included in this project is a Swift playground, `CZWeatherKit.playground`, that 
 #import <CZWeatherKit/CZWeatherKit.h>
 
 CZWundergroundRequest *request = [CZWundergroundRequest newConditionsRequest];
-request.location = [CZWeatherLocation locationForCity:@"Seattle" state:@"WA"];
+request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
 request.key = @"wundergroundApiKey";
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
 	CZWeatherCurrentCondition *condition = date.current;
@@ -68,7 +68,7 @@ request.sendWithCompletion { (data, error) -> Void in
 #import <CZWeatherKit/CZWeatherKit.h>
 
 CZOpenWeatherMap *request = [CZOpenWeatherMapRequest newCurrentRequest];
-request.location = [CZWeatherLocation locationForCity:@"Seattle" state:@"WA"];
+request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
 	CZWeatherCurrentCondition *condition = data.current;
 	// dreams come true here
