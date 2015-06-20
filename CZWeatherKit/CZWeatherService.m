@@ -140,6 +140,52 @@
     });
 }
 
+- (void)dispatchRequests:(NSArray *)requests
+              completion:(CZWeatherServiceBatchCompletion)completion
+{
+    NSMutableArray *data = [NSMutableArray new];
+    
+    if (!completion) {
+        return;
+    } else if (!requests) {
+        completion(data, nil);
+        return;
+    }
+    
+    NSMutableArray *copies = [NSMutableArray new];
+    for (NSObject *object in requests) {
+        if ([object isKindOfClass:[CZWeatherRequest class]]) {
+            [copies addObject:[object copy]];
+        }
+    }
+    
+    __weak CZWeatherService *weak = self;
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_async(self.queue, ^{
+        for (CZWeatherRequest *request in copies) {
+            dispatch_group_enter(group);
+            dispatch_async(self.queue, ^{
+                CZWeatherService *strong = weak;
+                if (strong) {
+                    CZWeatherData *weatherData = [strong handleRequest:request];
+                    if (weatherData) {
+                        [data addObject:weatherData];
+                    } else {
+                        [data addObject:[NSNull null]];
+                    }
+                } else {
+                    [data addObject:[NSNull null]];
+                }
+                dispatch_group_leave(group);
+            });
+        }
+        
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        
+        completion(data, nil);
+    });
+}
+
 - (CZWeatherData *)handleRequest:(CZWeatherRequest *)request
 {
     if (!request.key) {

@@ -116,23 +116,143 @@
     remoteRequest.location = [CZWeatherLocation locationFromLatitude:47.6097 longitude:-122.3331];
     
     service.remoteBlock = ^ CZWeatherData * (CZWeatherRequest *request) {
-        if (request == remoteRequest) {
-            XCTAssertEqualObjects(@"key", request.key);
-            NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-            NSString *path = [bundle pathForResource:@"openweathermap_current"
-                                              ofType:@"json"];
-            NSData *data = [NSData dataWithContentsOfFile:path];
-            return [CZOpenWeatherMapAPI transformResponse:nil
-                                                     data:data
-                                                    error:nil
-                                               forRequest:nil];
-        }
-        return nil;
+        XCTAssertEqualObjects(@"key", request.key);
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [bundle pathForResource:@"openweathermap_current"
+                                          ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        return [CZOpenWeatherMapAPI transformResponse:nil
+                                                 data:data
+                                                error:nil
+                                           forRequest:request];
     };
     
     XCTAssertNotNil([service handleRequest:remoteRequest]);
     remoteRequest.key = @"key";
     XCTAssertNotNil([service cachedWeatherDataForRequest:remoteRequest]);
 }
+
+- (void)testDispatchRequestCache
+{
+    CZMemoryWeatherDataCache *cache = [CZMemoryWeatherDataCache new];
+    CZWeatherService *service = [CZWeatherService serviceWithConfiguration:nil
+                                                                       key:@"key"
+                                                                     cache:cache];
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [bundle pathForResource:@"forecastio_current"
+                                      ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    
+    CZForecastioRequest *cachedRequest = [CZForecastioRequest newForecastRequest];
+    cachedRequest.location = [CZWeatherLocation locationFromLatitude:47.6097 longitude:-122.3331];
+    cachedRequest.key = @"key";
+    
+    CZWeatherData *cachedWeatherData = [CZForecastioAPI transformResponse:nil
+                                                                     data:data
+                                                                    error:nil
+                                                               forRequest:nil];
+    [cache storeData:cachedWeatherData forRequest:cachedRequest];
+    
+    __block CZWeatherData *result = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [service dispatchRequest:cachedRequest completion:^(CZWeatherData *data, NSError *error) {
+        result = data;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    XCTAssertNotNil(result);
+}
+
+- (void)testDispatchRequestRemote
+{
+    CZMemoryWeatherDataCache *cache = [CZMemoryWeatherDataCache new];
+    CZTestWeatherService *service = [CZTestWeatherService serviceWithConfiguration:nil
+                                                                               key:@"key"
+                                                                             cache:cache];
+    
+    CZOpenWeatherMapRequest *remoteRequest = [CZOpenWeatherMapRequest newCurrentRequest];
+    remoteRequest.location = [CZWeatherLocation locationFromLatitude:47.6097 longitude:-122.3331];
+    
+    service.remoteBlock = ^ CZWeatherData * (CZWeatherRequest *request) {
+        XCTAssertEqualObjects(@"key", request.key);
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [bundle pathForResource:@"openweathermap_current"
+                                          ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        return [CZOpenWeatherMapAPI transformResponse:nil
+                                                 data:data
+                                                error:nil
+                                           forRequest:request];
+    };
+    
+    __block CZWeatherData *result = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [service dispatchRequest:remoteRequest completion:^(CZWeatherData *data, NSError *error) {
+        result = data;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    XCTAssertNotNil(result);
+    
+    remoteRequest.key = @"key";
+    XCTAssertNotNil([service cachedWeatherDataForRequest:remoteRequest]);
+}
+
+- (void)testDispatchRequests
+{
+    CZMemoryWeatherDataCache *cache = [CZMemoryWeatherDataCache new];
+    CZTestWeatherService *service = [CZTestWeatherService serviceWithConfiguration:nil
+                                                                               key:@"key"
+                                                                             cache:cache];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [bundle pathForResource:@"forecastio_current"
+                                      ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    CZForecastioRequest *cachedRequest = [CZForecastioRequest newForecastRequest];
+    cachedRequest.location = [CZWeatherLocation locationFromLatitude:47.6097 longitude:-122.3331];
+    cachedRequest.key = @"key";
+    CZWeatherData *cachedWeatherData = [CZForecastioAPI transformResponse:nil
+                                                                     data:data
+                                                                    error:nil
+                                                               forRequest:nil];
+    [cache storeData:cachedWeatherData forRequest:cachedRequest];
+    
+    CZOpenWeatherMapRequest *remoteRequest = [CZOpenWeatherMapRequest newCurrentRequest];
+    remoteRequest.location = [CZWeatherLocation locationFromLatitude:47.6097 longitude:-122.3331];
+    
+    service.remoteBlock = ^ CZWeatherData * (CZWeatherRequest *request) {
+        XCTAssertEqualObjects(@"key", request.key);
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [bundle pathForResource:@"openweathermap_current"
+                                          ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        return [CZOpenWeatherMapAPI transformResponse:nil
+                                                 data:data
+                                                error:nil
+                                           forRequest:request];
+    };
+    
+    __block NSArray *result = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [service dispatchRequests:@[cachedRequest, remoteRequest] completion:^(NSArray *data, NSError *error) {
+        result = data;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    XCTAssertEqual(2, [result count]);
+    XCTAssertNotEqualObjects([NSNull null], result[0]);
+    XCTAssertNotEqualObjects([NSNull null], result[1]);
+    
+    remoteRequest.key = @"key";
+    XCTAssertNotNil([service cachedWeatherDataForRequest:remoteRequest]);
+}
+
 
 @end
