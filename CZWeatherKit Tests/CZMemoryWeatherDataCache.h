@@ -1,5 +1,5 @@
 //
-//  CZWeatherDataRequest+Internal.h
+//  CZMemoryWeatherDataCache.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,36 +26,17 @@
 
 #pragma mark - Imports
 
-#import "CZWeatherRequest.h"
+@import Foundation;
+
+#import "CZWeatherDataCache.h"
 
 
-#pragma mark - CZWeatherDataRequest Internal Category Interface
-
-/**
- @warning Not for external use.
- */
-@interface CZWeatherRequest (Internal)
-
-// -----
-// @name Internal
-// -----
-
-#pragma mark Internal
+#pragma mark - CZMemoryWeatherDataCache Interface
 
 /**
- @warning Not for external use.
+ An implementation of CZWeatherDataCache used for testing purposes. All 
+ operations are performed synchronously and data is only stored in memory.
  */
-- (instancetype)_init;
-
-/**
- @warning Not for external use.
- */
-- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
-             completion:(CZWeatherRequestCompletion)completion;
-
-/**
- @warning Not for external use.
- */
-@property (readonly, NS_NONATOMIC_IOSONLY) id<CZWeatherAPI> API;
+@interface CZMemoryWeatherDataCache : NSObject <CZWeatherDataCache>
 
 @end

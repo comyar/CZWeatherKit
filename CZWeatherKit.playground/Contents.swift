@@ -23,15 +23,26 @@
 //  IN THE SOFTWARE.
 //
 
-
-
 import CZWeatherKit
 import XCPlayground
-XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: false) // <- Set this to true to use playground
+/*:
+This allows asynchronous operations to complete in our playground. 
+[NSHipster](http://nshipster.com/xcplayground/#asynchronous-execution) has a 
+section that goes over this in more detail.
 
-let location = CZWeatherLocation(fromCity: "Seattle", country: "WA")
-
-// Getting the current weather
+Set this to `true` to use this playground.
+*/
+XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: false)
+/*:
+We're going to use this location for the playground.
+*/
+let location = CZWeatherLocation(fromLatitude: 47.6097, longitude: -122.3331)
+/*:
+# Getting the Current Conditions
+This example shows how to get the current conditions from the [Open Weather Map
+API.](http://openweathermap.org/api)
+Getting the current conditions from other APIs is just as simple. 
+*/
 var request = CZOpenWeatherMapRequest.newCurrentRequest()
 request.location = location
 request.sendWithCompletion { (data, error) -> Void in
@@ -44,8 +55,11 @@ request.sendWithCompletion { (data, error) -> Void in
         println("Failed to get current weather :(")
     }
 }
-
-// Getting the forecasted weather
+/*:
+# Getting the Forecasted Conditions
+This example shows how to get the forecast conditions for the next 3 days from 
+the [Open Weather Map API.](http://openweathermap.org/api)
+*/
 request = CZOpenWeatherMapRequest.newDailyForecastRequestForDays(3)
 request.location = location
 request.sendWithCompletion { (data, error) -> Void in
@@ -54,23 +68,30 @@ request.sendWithCompletion { (data, error) -> Void in
             println("\(forecast.summary), H:\(forecast.highTemperature.f)° L:\(forecast.lowTemperature.f)°)")
         }
     } else {
-        println("Well, they always said you can't predict the future...")
+        println("Something went wrong :(")
     }
 }
 
-// Getting the historical weather
-// This requires an API key
-
-let from = NSDate(timeIntervalSince1970: 1427346000)
-let to = NSDate(timeIntervalSince1970: 1427432399)
-request = CZOpenWeatherMapRequest.newHistoryRequestFrom(from, to: to)
+/*:
+# Using a Weather Service
+This is an example showing how to use a weather service. As you can see it's
+pretty similar to CZWeatherRequest's API however a service can be configured
+with a cache, allows for user configuration of the NSURLSession it's using, and
+can manage your API key if you're calling an API that requires one. For 
+simplicity, this example doesn't get into all that but feel free to experiment
+with those features in this playground.
+*/
+let service = CZWeatherService()
+request = CZOpenWeatherMapRequest.newCurrentRequest()
 request.location = location
-//request.sendWithCompletion { (data, error) -> Void in
-//    if let weather = data {
-//        for forecast in weather.hourlyForecasts {
-//            println("\(forecast.summary), \(forecast.temperature.f)°")
-//        }
-//    } else {
-//        println("Perhaps history really is a mystery...")
-//    }
-//}
+service.dispatchRequest(request, completion: { (data, error) -> Void in
+    if let weather = data {
+        for forecast in weather.dailyForecasts {
+            println("\(forecast.summary), H:\(forecast.highTemperature.f)° L:\(forecast.lowTemperature.f)°)")
+        }
+    } else {
+        println("Something went wrong :(")
+    }
+})
+
+

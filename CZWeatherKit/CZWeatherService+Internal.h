@@ -1,5 +1,5 @@
 //
-//  CZWeatherDataRequest+Internal.h
+//  CZWeatherService+Internal.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,15 +26,15 @@
 
 #pragma mark - Imports
 
-#import "CZWeatherRequest.h"
+#import "CZWeatherService.h"
 
 
-#pragma mark - CZWeatherDataRequest Internal Category Interface
+#pragma mark - CZWeatherService Internal Category Interface
 
 /**
  @warning Not for external use.
  */
-@interface CZWeatherRequest (Internal)
+@interface CZWeatherService (Internal)
 
 // -----
 // @name Internal
@@ -45,17 +45,16 @@
 /**
  @warning Not for external use.
  */
-- (instancetype)_init;
+- (CZWeatherData *)handleRequest:(CZWeatherRequest *)request;
 
 /**
  @warning Not for external use.
  */
-- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
-             completion:(CZWeatherRequestCompletion)completion;
+- (CZWeatherData *)cachedWeatherDataForRequest:(CZWeatherRequest *)request;
 
 /**
  @warning Not for external use.
  */
-@property (readonly, NS_NONATOMIC_IOSONLY) id<CZWeatherAPI> API;
+- (CZWeatherData *)remoteWeatherDataForRequest:(CZWeatherRequest *)request;
 
 @end

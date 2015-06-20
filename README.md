@@ -5,24 +5,14 @@
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy fetching of weather data from various weather services.
 
-#### What's New in v2.0
+#### What's New in v2.1
 
 ###### Features
 
-* New architecture.
-* Support for historical and hourly data, [Issue #14](https://github.com/comyarzaheri/CZWeatherKit/issues/14).
+* Caching Support.
+* Support for historical and hourly data.
+* Improved request management when sending frequent requests.
 * Addition of more data, including humidity, wind speed, and more.
-
-###### Bug Fixes
-
-* Overall improved testing 
-* Improved JSON parsing, [Issue #16](https://github.com/comyarzaheri/CZWeatherKit/issues/16).
-* Fixed issue where Climacons were only correct for English language data, [Issue #12](https://github.com/comyarzaheri/CZWeatherKit/issues/12).
-
-###### What's next?
-
-* Better support for use cases that require frequent requests (i.e. like a weather app)
-* Built-in caching support
 
 # Getting Started
 
@@ -101,6 +91,24 @@ request.sendWithCompletion { (data, error) -> Void in
 }
 ```
 
+## Using a Weather Service
+
+A weather service allows for the dispatching of weather data requests and allows for finer-grain control over how requests are handled as opposed to the interface provided by `CZWeatherDataRequest`. An ideal use case for a weather service is powering a weather app.
+
+```swift
+import CZWeatherKit
+
+let service = CZWeatherService()
+request = CZOpenWeatherMapRequest.newCurrentRequest()
+request.location = location
+service.dispatchRequest(request, completion: { (data, error) -> Void in
+    if let weather = data {
+        // dreams come true here
+    }
+})
+
+```
+
 ## Supported Weather APIs
 
 CZWeatherKit currently supports the following weather services:
@@ -115,6 +123,11 @@ CZWeatherKit currently supports the following weather services:
 CZWeatherKit supports Climacons out of the box. The [Climacons Font](http://adamwhitcroft.com/climacons/font/) is a font set created by [Adam Whitcroft](http://adamwhitcroft.com/) featuring weather icons. 
 
 # Architecture 
+
+| Core | Description |
+|:--------|:------------|
+| `CZWeatherService` | Asyncronously dispatches requests, caches responses, and simplifies key management when making frequent API calls. |
+| `CZPINWeatherDataCache` | An implementation of the `CZWeatherDataCache` protocol that uses [PINCache](https://github.com/pinterest/PINCache) for caching weather data.
 
 | Model Type | Description |
 |:--------|:------------|
@@ -139,6 +152,7 @@ CZWeatherKit supports Climacons out of the box. The [Climacons Font](http://adam
 | Protocols | Description |
 |:---|:-------------|
 | `CZWeatherAPI` | The protocol for weather API classes. |
+| `CZWeatherDataCache` | The protocol for a cache used by a `CZWeatherService`. |
 
 | Headers | Description |
 |:---|:-------------|

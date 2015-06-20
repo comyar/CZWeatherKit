@@ -53,6 +53,18 @@
 #pragma mark Using a Weather API
 
 /**
+ Returns a cache key for the given request.
+ 
+ Calls to this method with the same or an equivalent request object must return
+ the same cache key.
+ 
+ @param     request
+            The request to create a cache key for.
+ @return    The cache key for the given request.
+ */
++ (NSString *)cacheKeyForRequest:(CZWeatherRequest *)request;
+
+/**
  Transforms a CZWeatherRequest into an NSURLRequest.
  
  @param     request

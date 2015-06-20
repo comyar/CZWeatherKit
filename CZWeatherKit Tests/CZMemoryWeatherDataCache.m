@@ -1,5 +1,5 @@
 //
-//  CZWeatherDataRequest+Internal.h
+//  CZMemoryWeatherDataCache.m
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,36 +26,54 @@
 
 #pragma mark - Imports
 
-#import "CZWeatherRequest.h"
+#import "CZMemoryWeatherDataCache.h"
+#import "CZWeatherKitInternal.h"
+#import "CZWeatherAPI.h"
 
 
-#pragma mark - CZWeatherDataRequest Internal Category Interface
+#pragma mark - CZMemoryWeatherDataCache Class Extension
 
-/**
- @warning Not for external use.
- */
-@interface CZWeatherRequest (Internal)
+@interface CZMemoryWeatherDataCache ()
 
-// -----
-// @name Internal
-// -----
+@property (NS_NONATOMIC_IOSONLY) NSMutableDictionary *cache;
 
-#pragma mark Internal
+@end
 
-/**
- @warning Not for external use.
- */
-- (instancetype)_init;
 
-/**
- @warning Not for external use.
- */
-- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
-             completion:(CZWeatherRequestCompletion)completion;
+#pragma mark - CZMemoryWeatherDataCache Implementation
 
-/**
- @warning Not for external use.
- */
-@property (readonly, NS_NONATOMIC_IOSONLY) id<CZWeatherAPI> API;
+@implementation CZMemoryWeatherDataCache
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.cache = [NSMutableDictionary new];
+    }
+    return self;
+}
+
+- (void)dataForRequest:(CZWeatherRequest *)request completion:(CZWeatherDataCacheCompletion)completion
+{
+    if (!completion) {
+        return;
+    }
+    
+    NSString *key = [request.API cacheKeyForRequest:request];
+    if (key) {
+        completion(self.cache[key]);
+    } else {
+        completion(nil);
+    }
+}
+
+- (void)storeData:(CZWeatherData *)data forRequest:(CZWeatherRequest *)request
+{
+    if (data) {
+        NSString *key = [request.API cacheKeyForRequest:request];
+        if (key) {
+            self.cache[key] = data;
+        }
+    }
+}
 
 @end

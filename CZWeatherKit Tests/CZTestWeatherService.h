@@ -1,5 +1,5 @@
 //
-//  CZWeatherDataRequest+Internal.h
+//  CZTestWeatherService.h
 //  CZWeatherKit
 //
 //  Copyright (c) 2015 Comyar Zaheri. All rights reserved.
@@ -26,36 +26,28 @@
 
 #pragma mark - Imports
 
-#import "CZWeatherRequest.h"
+#import "CZWeatherService.h"
 
 
-#pragma mark - CZWeatherDataRequest Internal Category Interface
+#pragma mark - CZTestWeatherService Interface
 
 /**
- @warning Not for external use.
+ A subclass of CZWeatherService used for testing purposes. Allows for mocking of 
+ remote requests.
  */
-@interface CZWeatherRequest (Internal)
+@interface CZTestWeatherService : CZWeatherService
+
+- (instancetype)init NS_UNAVAILABLE;
 
 // -----
-// @name Internal
+// @name Properties
 // -----
 
-#pragma mark Internal
+#pragma mark Properties
 
 /**
- @warning Not for external use.
+ Block to execute when attempting to retrieve weather data from a remote source.
  */
-- (instancetype)_init;
-
-/**
- @warning Not for external use.
- */
-- (void)dispatchWithAPI:(id<CZWeatherAPI>)API
-             completion:(CZWeatherRequestCompletion)completion;
-
-/**
- @warning Not for external use.
- */
-@property (readonly, NS_NONATOMIC_IOSONLY) id<CZWeatherAPI> API;
+@property (copy, NS_NONATOMIC_IOSONLY) CZWeatherData * (^remoteBlock)(CZWeatherRequest *);
 
 @end

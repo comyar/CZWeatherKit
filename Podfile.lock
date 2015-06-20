@@ -1,0 +1,10 @@
+PODS:
+  - PINCache (2.0)
+
+DEPENDENCIES:
+  - PINCache (~> 2.0)
+
+SPEC CHECKSUMS:
+  PINCache: ca953ba93ce1edde056fdd99121ee65b295a08c9
+
+COCOAPODS: 0.37.2

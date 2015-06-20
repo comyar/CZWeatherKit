@@ -42,12 +42,16 @@ FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
 // Core
 #import "CZWeatherAPI.h"
 #import "CZWeatherData.h"
+#import "CZWeatherService.h"
 #import "CZWeatherRequest.h"
 #import "CZWeatherLocation.h"
-#import "CZWeatherLocation.h"
+#import "CZWeatherHourlyCondition.h"
 #import "CZWeatherCurrentCondition.h"
 #import "CZWeatherForecastCondition.h"
-#import "CZWeatherHourlyCondition.h"
+
+// Cache
+#import "CZWeatherDataCache.h"
+#import "CZPINWeatherDataCache.h"
 
 // APIs
 #import "CZForecastioAPI.h"
@@ -61,4 +65,7 @@ FOUNDATION_EXPORT const unsigned char CZWeatherKitVersionString[];
 
 #import "CZWorldWeatherOnlineAPI.h"
 #import "CZWorldWeatherOnlineRequest.h"
+
+
+
 

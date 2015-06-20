@@ -150,6 +150,20 @@
     return hash;
 }
 
+- (NSString *)description
+{
+    if (self.city && self.state) {
+        return [NSString stringWithFormat:@"%@, %@",
+                [self.city capitalizedString], [self.state capitalizedString]];
+    } else if (self.city && self.country) {
+        return [NSString stringWithFormat:@"%@, %@",
+                [self.city capitalizedString], [self.country capitalizedString]];
+    } else {
+        return [NSString stringWithFormat:@"%.4f, %.4f",
+                self.coordinate.latitude, self.coordinate.longitude];
+    }
+}
+
 #pragma mark NSCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
