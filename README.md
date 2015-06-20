@@ -49,7 +49,7 @@ request.key = @"wundergroundApiKey";
 import CZWeatherKit
 
 let request = CZWundergroundRequest.newForecastRequest()
-request.location = CZWeatherLocation(fromCity: "Seattle", country: "WA")
+request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 request.key = "wundergroundApiKey"
 request.sendWithCompletion { (data, error) -> Void in
     if let weather = data {
@@ -81,7 +81,7 @@ request.location = [CZWeatherLocation locationForCity:@"Seattle" state:@"WA"];
 import CZWeatherKit
 
 let request = CZOpenWeatherMapRequest.newDailyForecastRequestForDays(3)
-request.location = CZWeatherLocation(fromCity: "Seattle", country: "WA")
+request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 request.sendWithCompletion { (data, error) -> Void in
     if let weather = data {
   		for forecast in weather.dailyForecasts {
@@ -100,7 +100,7 @@ import CZWeatherKit
 
 let service = CZWeatherService()
 request = CZOpenWeatherMapRequest.newCurrentRequest()
-request.location = location
+request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 service.dispatchRequest(request, completion: { (data, error) -> Void in
     if let weather = data {
         // dreams come true here
