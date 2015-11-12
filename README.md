@@ -94,7 +94,7 @@ request.sendWithCompletion { (data, error) -> Void in
 
 ## Using a Weather Service
 
-A weather service allows for the dispatching of weather data requests and allows for finer-grain control over how requests are handled as opposed to the interface provided by `CZWeatherDataRequest`. An ideal use case for a weather service is powering a weather app.
+A weather service allows for the dispatching of weather data requests and allows for more fine-grained control over how requests are handled as opposed to the interface provided by `CZWeatherDataRequest`. An ideal use case for a weather service is powering a weather app.
 
 ```swift
 import CZWeatherKit
