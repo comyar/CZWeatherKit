@@ -122,7 +122,7 @@ typedef NS_ENUM(char, Climacon) {
     ClimaconThermometerHigh         = ']',
     ClimaconThermometerFull         = '^',
     ClimaconCelsius                 = '_',
-    ClimaconFahrenheit              = '\'',
+    ClimaconFahrenheit              = '`',
     ClimaconCompass                 = 'a',
     ClimaconCompassNorth            = 'b',
     ClimaconCompassEast             = 'c',
