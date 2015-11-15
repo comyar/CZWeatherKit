@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
+  s.tvos.deployment_target = '9.0'
   s.source_files = 'CZWeatherKit/*.{h,m}', 'CZWeatherKit/**/*.{h,m}'
   s.dependency 'PINCache', '~> 2.0'
 end
