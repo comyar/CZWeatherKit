@@ -1,6 +1,9 @@
 ![](header.png)
 
 [![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+[![Version](http://img.shields.io/cocoapods/v/CZWeatherKit.svg)](http://cocoapods.org/?q=CZWeatherKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/comyarzaheri/CZWeatherKit)
+[![Platform](http://img.shields.io/cocoapods/p/CZWeatherKit.svg)]()
 ![License](http://img.shields.io/badge/license-MIT-33e0ff.svg)
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy fetching of weather data from various weather services.
@@ -94,7 +97,7 @@ request.sendWithCompletion { (data, error) -> Void in
 
 ## Using a Weather Service
 
-A weather service allows for the dispatching of weather data requests and allows for finer-grain control over how requests are handled as opposed to the interface provided by `CZWeatherDataRequest`. An ideal use case for a weather service is powering a weather app.
+A weather service allows for the dispatching of weather data requests and allows for more fine-grained control over how requests are handled as opposed to the interface provided by `CZWeatherDataRequest`. An ideal use case for a weather service is powering a weather app.
 
 ```swift
 import CZWeatherKit
