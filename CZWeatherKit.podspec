@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CZWeatherKit"
-  s.version      = "2.2.1"
+  s.version      = "2.2.2"
   s.summary      = "A Simple Cocoa Weather Library."
   s.description  = <<-DESC
                    CZWeatherKit is a simple, extensible weather library for iOS and OS X 
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
-  s.tvos.deployment_target = '9.0'
+  s.tvos.deployment_target = "9.0"
   s.source_files = 'CZWeatherKit/*.{h,m}', 'CZWeatherKit/**/*.{h,m}'
   s.dependency 'PINCache', '~> 2.0'
 end

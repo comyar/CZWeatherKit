@@ -25,7 +25,7 @@ CZWeatherKit is a simple, extensible weather library for iOS and OS X that allow
 Add the following to your Podfile:
 
 ```ruby
-    pod "CZWeatherKit"
+pod "CZWeatherKit"
 ```
 
 # Usage
@@ -43,8 +43,8 @@ CZWundergroundRequest *request = [CZWundergroundRequest newConditionsRequest];
 request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
 request.key = @"wundergroundApiKey";
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-	CZWeatherCurrentCondition *condition = data.current;
-	// dreams come true here
+CZWeatherCurrentCondition *condition = data.current;
+// dreams come true here
 }];
 ```
 ###### Getting Forecast Conditions, Swift
@@ -56,11 +56,11 @@ let request = CZWundergroundRequest.newForecastRequest()
 request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 request.key = "wundergroundApiKey"
 request.sendWithCompletion { (data, error) -> Void in
-    if let weather = data {
-  		for forecast in weather.dailyForecasts {
-  			// dreams come true here
-  		}
-    }
+if let weather = data {
+for forecast in weather.dailyForecasts {
+// dreams come true here
+}
+}
 }
 ```
 
@@ -74,8 +74,8 @@ request.sendWithCompletion { (data, error) -> Void in
 CZOpenWeatherMap *request = [CZOpenWeatherMapRequest newCurrentRequest];
 request.location = [CZWeatherLocation locationFromCity:@"Seattle" state:@"WA"];
 [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-	CZWeatherCurrentCondition *condition = data.current;
-	// dreams come true here
+CZWeatherCurrentCondition *condition = data.current;
+// dreams come true here
 }];
 ```
 
@@ -87,11 +87,11 @@ import CZWeatherKit
 let request = CZOpenWeatherMapRequest.newDailyForecastRequestForDays(3)
 request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 request.sendWithCompletion { (data, error) -> Void in
-    if let weather = data {
-  		for forecast in weather.dailyForecasts {
-  			// dreams come true here
-  		}
-    }
+if let weather = data {
+for forecast in weather.dailyForecasts {
+// dreams come true here
+}
+}
 }
 ```
 
@@ -106,9 +106,9 @@ let service = CZWeatherService()
 request = CZOpenWeatherMapRequest.newCurrentRequest()
 request.location = CZWeatherLocation(fromCity: "Seattle", state: "WA")
 service.dispatchRequest(request, completion: { (data, error) -> Void in
-    if let weather = data {
-        // dreams come true here
-    }
+if let weather = data {
+// dreams come true here
+}
 })
 
 ```
@@ -174,4 +174,3 @@ For feature requests or general questions, feel free to post an issue.
 * Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 * Seb Jachec, [@sebj](https://github.com/sebj)
-
