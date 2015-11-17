@@ -77,7 +77,9 @@
             CZOpenWeatherMapRequest *openWeatherMapRequest = (CZOpenWeatherMapRequest *)request;
             CZWeatherData *weatherData = [[CZWeatherData alloc]_init];
             
+#if !(TARGET_OS_TV)
             weatherData.placemark = [CZOpenWeatherMapAPI placemarkForJSON:JSON];
+#endif
             
             if ([openWeatherMapRequest.feature isEqualToString:@"weather"]) {
                 weatherData.current = [CZOpenWeatherMapAPI conditionForCurrentJSON:JSON];
@@ -276,6 +278,7 @@
     return ClimaconUnknown;
 }
 
+#if !(TARGET_OS_TV)
 + (CLPlacemark *)placemarkForJSON:(NSDictionary *)JSON
 {
     if (JSON) {
@@ -318,6 +321,7 @@
     }
     return nil;
 }
+#endif
 
 + (NSString *)queryForRequest:(CZOpenWeatherMapRequest *)request
 {

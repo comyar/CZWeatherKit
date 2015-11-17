@@ -26,7 +26,10 @@
 
 #pragma mark - Imports
 
+#if !(TARGET_OS_TV)
 @import MapKit;
+#endif
+
 @import CoreLocation;
 
 #import "CZWeatherAPI.h"
