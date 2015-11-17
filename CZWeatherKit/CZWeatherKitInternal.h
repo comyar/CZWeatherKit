@@ -29,7 +29,9 @@
 
 #pragma mark - Imports
 
+#if !(TARGET_OS_TV)
 #import <AddressBook/AddressBook.h>
+#endif
 
 #import "CZWeatherKit.h"
 #import "NSDictionary+Internal.h"

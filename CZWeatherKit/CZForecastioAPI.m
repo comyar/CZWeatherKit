@@ -255,12 +255,14 @@
 
 + (CLPlacemark *)placemarkForJSON:(NSDictionary *)JSON
 {
+#if !(TARGET_OS_TV)
     if (JSON) {
         CLLocationDegrees latitude = [JSON[@"latitude"]floatValue];
         CLLocationDegrees longitude = [JSON[@"longitude"]floatValue];
         return [[MKPlacemark alloc]initWithCoordinate:CLLocationCoordinate2DMake(latitude, longitude)
                                     addressDictionary:nil];
     }
+#endif
     return nil;
 }
 
