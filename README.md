@@ -6,7 +6,7 @@
 [![Platform](http://img.shields.io/cocoapods/p/CZWeatherKit.svg)]()
 ![License](http://img.shields.io/badge/license-MIT-33e0ff.svg)
 
-CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy fetching of weather data from various weather services.
+CZWeatherKit is a simple, extensible weather library for iOS, tvOS, and OS X that allows for easy fetching of weather data from various weather services.
 
 #### What's New in v2.2.3
 
