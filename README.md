@@ -1,22 +1,25 @@
 ![](header.png)
 
-[![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+[![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/comyarzaheri/CZWeatherKit)
 [![Version](http://img.shields.io/cocoapods/v/CZWeatherKit.svg)](http://cocoapods.org/?q=CZWeatherKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/comyarzaheri/CZWeatherKit)
 [![Platform](http://img.shields.io/cocoapods/p/CZWeatherKit.svg)]()
 ![License](http://img.shields.io/badge/license-MIT-33e0ff.svg)
 
-CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy fetching of weather data from various weather services.
+CZWeatherKit is a simple, extensible weather library for iOS, tvOS, and OS X that allows for easy fetching of weather data from various weather services.
 
-#### What's New in v2.2
+#### What's New in v2.2.3
 
 ###### Features
 
+* tvOS Support*.
 * Caching Support.
 * Support for historical and hourly data.
 * Request batching when using a weather service.
 * Improved request management when sending frequent requests.
 * Addition of more data, including humidity, wind speed, and more.
+
+**\*Note:** Features requiring MapKit are unsupported with tvOS.
 
 # Getting Started
 
@@ -174,4 +177,5 @@ For feature requests or general questions, feel free to post an issue.
 * Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 * Seb Jachec, [@sebj](https://github.com/sebj)
+* Seth Sandler [@cerupcat](https://github.com/cerupcat)
 
