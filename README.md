@@ -177,4 +177,5 @@ For feature requests or general questions, feel free to post an issue.
 * Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 * Seb Jachec, [@sebj](https://github.com/sebj)
+* Seth Sandler [@cerupcat](https://github.com/cerupcat)
 
