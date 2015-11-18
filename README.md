@@ -1,6 +1,6 @@
 ![](header.png)
 
-[![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/CZWeatherKit/CZWeatherKit)
+[![Build Status](https://travis-ci.org/comyarzaheri/CZWeatherKit.svg?branch=master)](https://travis-ci.org/comyarzaheri/CZWeatherKit)
 [![Version](http://img.shields.io/cocoapods/v/CZWeatherKit.svg)](http://cocoapods.org/?q=CZWeatherKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/comyarzaheri/CZWeatherKit)
 [![Platform](http://img.shields.io/cocoapods/p/CZWeatherKit.svg)]()
