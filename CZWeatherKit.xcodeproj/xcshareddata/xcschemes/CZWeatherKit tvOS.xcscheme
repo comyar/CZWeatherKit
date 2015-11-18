@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD5F58161B06E15800C90D15"
-               BuildableName = "CZWeatherKit.framework"
-               BlueprintName = "CZWeatherKit OSX"
+               BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
+               BuildableName = "CZWeatherKit tvOS.framework"
+               BlueprintName = "CZWeatherKit tvOS"
                ReferencedContainer = "container:CZWeatherKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD5F57C11B06DB8800C90D15"
-               BuildableName = "CZWeatherKit OSX Tests.xctest"
-               BlueprintName = "CZWeatherKit OSX Tests"
+               BlueprintIdentifier = "DD7D405E1BFC30B900CB9420"
+               BuildableName = "CZWeatherKit tvOS Tests.xctest"
+               BlueprintName = "CZWeatherKit tvOS Tests"
                ReferencedContainer = "container:CZWeatherKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DD5F58161B06E15800C90D15"
-            BuildableName = "CZWeatherKit.framework"
-            BlueprintName = "CZWeatherKit OSX"
+            BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
+            BuildableName = "CZWeatherKit tvOS.framework"
+            BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DD5F58161B06E15800C90D15"
-            BuildableName = "CZWeatherKit.framework"
-            BlueprintName = "CZWeatherKit OSX"
+            BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
+            BuildableName = "CZWeatherKit tvOS.framework"
+            BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DD5F58161B06E15800C90D15"
-            BuildableName = "CZWeatherKit.framework"
-            BlueprintName = "CZWeatherKit OSX"
+            BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
+            BuildableName = "CZWeatherKit tvOS.framework"
+            BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

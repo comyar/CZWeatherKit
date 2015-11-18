@@ -101,11 +101,9 @@
         return;
     }
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue currentQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               CZWeatherData *result = [API transformResponse:response data:data error:connectionError forRequest:copy];
-                               completion(result, connectionError);
+    [[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]]dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        CZWeatherData *result = [API transformResponse:response data:data error:error forRequest:copy];
+        completion(result, error);
     }];
 }
 

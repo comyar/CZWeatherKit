@@ -85,7 +85,7 @@
             NSDictionary *features = [resp objectForKey:@"features"
                                                   class:[NSDictionary class]];
             
-#if !(TARGET_OS_TV)
+#if TARGET_OS_IOS || TARGET_OS_OSX
             if (features[@"geolookup"]) {
                 NSDictionary *location = [JSON objectForKey:@"location" class:[NSDictionary class]];
                 weatherData.placemark = [CZWundergroundAPI placemarkForLocation:location];
@@ -290,7 +290,7 @@ static NSDateFormatter *historyDateFormatter = nil;
     return dictionary[name] ? [dictionary[name]floatValue] : CZValueUnavailable;
 }
 
-#if !(TARGET_OS_TV)
+#if TARGET_OS_IOS || TARGET_OS_OSX
 + (CLPlacemark *)placemarkForLocation:(NSDictionary *)location
 {
     if (location) {

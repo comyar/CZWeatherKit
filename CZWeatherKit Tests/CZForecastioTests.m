@@ -103,10 +103,10 @@ static const float epsilon = 0.001;
                                                                data:data
                                                               error:nil
                                                          forRequest:nil];
-    
+#if TARGET_OS_IOS || TARGET_OS_OSX
     XCTAssertEqualWithAccuracy(47.6097, weatherData.placemark.location.coordinate.latitude, epsilon);
     XCTAssertEqualWithAccuracy(-122.3331, weatherData.placemark.location.coordinate.longitude, epsilon);
-    
+#endif
     XCTAssertEqual(ClimaconCloudMoon, weatherData.current.climacon);
     XCTAssertEqualObjects(@"Partly Cloudy", weatherData.current.summary);
     XCTAssertEqualWithAccuracy(61.95, weatherData.current.temperature.f, epsilon);
@@ -153,10 +153,10 @@ static const float epsilon = 0.001;
                                                                data:data
                                                               error:nil
                                                          forRequest:nil];
-    
+#if TARGET_OS_IOS || TARGET_OS_OSX
     XCTAssertEqualWithAccuracy(47.6097, weatherData.placemark.location.coordinate.latitude, epsilon);
     XCTAssertEqualWithAccuracy(-122.3331, weatherData.placemark.location.coordinate.longitude, epsilon);
-    
+#endif
     XCTAssertEqual(ClimaconRain, weatherData.current.climacon);
     XCTAssertEqualObjects(@"Light Rain", weatherData.current.summary);
     XCTAssertEqualWithAccuracy(47.99, weatherData.current.temperature.f, epsilon);

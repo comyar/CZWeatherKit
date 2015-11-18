@@ -255,7 +255,7 @@
 
 + (CLPlacemark *)placemarkForJSON:(NSDictionary *)JSON
 {
-#if !(TARGET_OS_TV)
+#if TARGET_OS_IOS || TARGET_OS_OSX
     if (JSON) {
         CLLocationDegrees latitude = [JSON[@"latitude"]floatValue];
         CLLocationDegrees longitude = [JSON[@"longitude"]floatValue];

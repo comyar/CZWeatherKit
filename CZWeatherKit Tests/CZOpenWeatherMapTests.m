@@ -177,13 +177,13 @@ static const float epsilon = 0.001;
                                                                    data:data
                                                                   error:nil
                                                              forRequest:request];
-    
+#if TARGET_OS_IOS || TARGET_OS_OSX
     XCTAssertEqualObjects(@"US", weatherData.placemark.country);
     XCTAssertEqualObjects(@"US", weatherData.placemark.ISOcountryCode);
     XCTAssertEqualObjects(@"San Francisco", weatherData.placemark.locality);
     XCTAssertEqualWithAccuracy(37.77, weatherData.placemark.location.coordinate.latitude, epsilon);
     XCTAssertEqualWithAccuracy(-122.42, weatherData.placemark.location.coordinate.longitude, epsilon);
-    
+#endif
     XCTAssertEqual(ClimaconCloudMoon, weatherData.current.climacon);
     XCTAssertEqualObjects(@"Clear", weatherData.current.summary);
     XCTAssertEqualWithAccuracy(65.2765, weatherData.current.temperature.f, epsilon);
@@ -209,13 +209,13 @@ static const float epsilon = 0.001;
                                                                    data:data
                                                                   error:nil
                                                              forRequest:request];
-    
+#if TARGET_OS_IOS || TARGET_OS_OSX
     XCTAssertEqualObjects(@"US", weatherData.placemark.country);
     XCTAssertEqualObjects(@"US", weatherData.placemark.ISOcountryCode);
     XCTAssertEqualObjects(@"San Francisco", weatherData.placemark.locality);
     XCTAssertEqualWithAccuracy(37.7749, weatherData.placemark.location.coordinate.latitude, epsilon);
     XCTAssertEqualWithAccuracy(-122.4194, weatherData.placemark.location.coordinate.longitude, epsilon);
-    
+#endif
     XCTAssertEqual(5, [weatherData.dailyForecasts count]);
     
     CZWeatherForecastCondition *condition = weatherData.dailyForecasts[0];
@@ -242,13 +242,13 @@ static const float epsilon = 0.001;
                                                                    data:data
                                                                   error:nil
                                                              forRequest:request];
-    
+#if TARGET_OS_IOS || TARGET_OS_OSX
     XCTAssertEqualObjects(@"US", weatherData.placemark.country);
     XCTAssertEqualObjects(@"US", weatherData.placemark.ISOcountryCode);
     XCTAssertEqualObjects(@"San Francisco", weatherData.placemark.locality);
     XCTAssertEqualWithAccuracy(37.7749, weatherData.placemark.location.coordinate.latitude, epsilon);
     XCTAssertEqualWithAccuracy(-122.4194, weatherData.placemark.location.coordinate.longitude, epsilon);
-    
+#endif
     XCTAssertEqual(40, [weatherData.hourlyForecasts count]);
     
     CZWeatherHourlyCondition *condition = weatherData.hourlyForecasts[0];
