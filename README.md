@@ -8,15 +8,18 @@
 
 CZWeatherKit is a simple, extensible weather library for iOS and OS X that allows for easy fetching of weather data from various weather services.
 
-#### What's New in v2.2
+#### What's New in v2.2.3
 
 ###### Features
 
+* tvOS Support*.
 * Caching Support.
 * Support for historical and hourly data.
 * Request batching when using a weather service.
 * Improved request management when sending frequent requests.
 * Addition of more data, including humidity, wind speed, and more.
+
+**\*Note:** Features requiring MapKit are unsupported with tvOS.
 
 # Getting Started
 
