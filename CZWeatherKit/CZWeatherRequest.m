@@ -36,6 +36,8 @@
 
 @interface CZWeatherRequest ()
 
+@property (NS_NONATOMIC_IOSONLY) NSURLSession *session;
+
 @end
 
 
@@ -46,7 +48,7 @@
 - (instancetype)_init
 {
     if (self = [super init]) {
-        // nothing to do
+        self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     }
     return self;
 }
@@ -101,10 +103,10 @@
         return;
     }
     
-    [[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]]dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         CZWeatherData *result = [API transformResponse:response data:data error:error forRequest:copy];
         completion(result, error);
-    }];
+    }]resume];
 }
 
 #pragma mark NSCopying

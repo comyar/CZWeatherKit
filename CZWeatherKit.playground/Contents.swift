@@ -26,13 +26,12 @@
 import CZWeatherKit
 import XCPlayground
 /*:
-This allows asynchronous operations to complete in our playground. 
-[NSHipster](http://nshipster.com/xcplayground/#asynchronous-execution) has a 
-section that goes over this in more detail.
+This allows asynchronous operations to complete in our playground.
 
 Set this to `true` to use this playground.
 */
-XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: false)
+XCPlaygroundPage.currentPage.needsIndefiniteExecution = false
+let APIKEY = ""
 /*:
 We're going to use this location for the playground.
 */
@@ -45,14 +44,15 @@ Getting the current conditions from other APIs is just as simple.
 */
 var request = CZOpenWeatherMapRequest.newCurrentRequest()
 request.location = location
+request.key = APIKEY
 request.sendWithCompletion { (data, error) -> Void in
     if let weather = data {
-        println("The current weather in Seattle, WA is:")
-        println("\(weather.current.summary), at \(weather.current.temperature.f)° F")
-        println("\(weather.current.humidity)% Humidity")
-        println("Wind speed is \(weather.current.windSpeed.mph) mph, bearing \(weather.current.windDirection)°")
+        print("The current weather in Seattle, WA is:")
+        print("\(weather.current.summary), at \(weather.current.temperature.f)° F")
+        print("\(weather.current.humidity)% Humidity")
+        print("Wind speed is \(weather.current.windSpeed.mph) mph, bearing \(weather.current.windDirection)°")
     } else {
-        println("Failed to get current weather :(")
+        print("Failed to get current weather :(")
     }
 }
 /*:
@@ -62,13 +62,14 @@ the [Open Weather Map API.](http://openweathermap.org/api)
 */
 request = CZOpenWeatherMapRequest.newDailyForecastRequestForDays(3)
 request.location = location
+request.key = APIKEY
 request.sendWithCompletion { (data, error) -> Void in
     if let weather = data {
         for forecast in weather.dailyForecasts {
-            println("\(forecast.summary), H:\(forecast.highTemperature.f)° L:\(forecast.lowTemperature.f)°)")
+            print("\(forecast.summary), H:\(forecast.highTemperature.f)° L:\(forecast.lowTemperature.f)°")
         }
     } else {
-        println("Something went wrong :(")
+        print("Something went wrong :(")
     }
 }
 
@@ -81,16 +82,14 @@ can manage your API key if you're calling an API that requires one. For
 simplicity, this example doesn't get into all that but feel free to experiment
 with those features in this playground.
 */
-let service = CZWeatherService()
+let service = CZWeatherService(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), key: APIKEY)
 request = CZOpenWeatherMapRequest.newCurrentRequest()
 request.location = location
 service.dispatchRequest(request, completion: { (data, error) -> Void in
     if let weather = data {
-        for forecast in weather.dailyForecasts {
-            println("\(forecast.summary), H:\(forecast.highTemperature.f)° L:\(forecast.lowTemperature.f)°)")
-        }
+        NSLog("%ld", weather.dailyForecasts.count)
     } else {
-        println("Something went wrong :(")
+        print("Something went wrong :(")
     }
 })
 
