@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
-               BuildableName = "CZWeatherKit tvOS.framework"
+               BuildableName = "CZWeatherKit.framework"
                BlueprintName = "CZWeatherKit tvOS"
                ReferencedContainer = "container:CZWeatherKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
-            BuildableName = "CZWeatherKit tvOS.framework"
+            BuildableName = "CZWeatherKit.framework"
             BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
-            BuildableName = "CZWeatherKit tvOS.framework"
+            BuildableName = "CZWeatherKit.framework"
             BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD7D40521BFC30A500CB9420"
-            BuildableName = "CZWeatherKit tvOS.framework"
+            BuildableName = "CZWeatherKit.framework"
             BlueprintName = "CZWeatherKit tvOS"
             ReferencedContainer = "container:CZWeatherKit.xcodeproj">
          </BuildableReference>
