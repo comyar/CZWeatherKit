@@ -66,11 +66,13 @@
         self.climacon = [aDecoder decodeIntegerForKey:@"climacon"];
         self.humidity = [aDecoder decodeFloatForKey:@"humidity"];
         
-        NSValue *lowTemperatureValue = [aDecoder decodeObjectOfClass:[NSValue class] forKey:@"lowTemperature"];
-        [lowTemperatureValue getValue:&_lowTemperature];
+        float lowTemperatureF = [aDecoder decodeFloatForKey:@"lowTemperature.f"];
+        float lowTemperatureC = [aDecoder decodeFloatForKey:@"lowTemperature.c"];
+        _lowTemperature = (CZTemperature) { lowTemperatureF, lowTemperatureC };
         
-        NSValue *highTemperatureValue = [aDecoder decodeObjectOfClass:[NSValue class] forKey:@"highTemperature"];
-        [highTemperatureValue getValue:&_highTemperature];
+        float highTemperatureF = [aDecoder decodeFloatForKey:@"highTemperature.f"];
+        float highTemperatureC = [aDecoder decodeFloatForKey:@"highTemperature.c"];
+        _highTemperature = (CZTemperature) { highTemperatureF, highTemperatureC };
     }
     return self;
 }
@@ -82,15 +84,11 @@
     [aCoder encodeInteger:self.climacon forKey:@"climacon"];
     [aCoder encodeFloat:self.humidity forKey:@"humidity"];
     
-    NSValue *lowTemperatureValue = [NSValue value:&_lowTemperature
-                                     withObjCType:@encode(CZTemperature)];
-    [aCoder encodeObject:lowTemperatureValue
-                  forKey:@"lowTemperature"];
+    [aCoder encodeFloat:self.lowTemperature.f forKey:@"lowTemperature.f"];
+    [aCoder encodeFloat:self.lowTemperature.c forKey:@"lowTemperature.c"];
     
-    NSValue *highTemperatureValue = [NSValue value:&_highTemperature
-                                      withObjCType:@encode(CZTemperature)];
-    [aCoder encodeObject:highTemperatureValue
-                  forKey:@"highTemperature"];
+    [aCoder encodeFloat:self.highTemperature.f forKey:@"highTemperature.f"];
+    [aCoder encodeFloat:self.highTemperature.c forKey:@"highTemperature.c"];
 }
 
 #pragma mark NSSecureCoding

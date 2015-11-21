@@ -175,9 +175,10 @@
                                             forKey:@"state"];
         self.country = [aDecoder decodeObjectOfClass:[NSString class]
                                               forKey:@"country"];
-        NSValue *coordinateValue = [aDecoder decodeObjectOfClass:[NSValue class]
-                                                          forKey:@"coordinate"];
-        [coordinateValue getValue:&_coordinate];
+        
+        CLLocationDegrees latitude = (CLLocationDegrees)[aDecoder decodeDoubleForKey:@"coordinate.latitude"];
+        CLLocationDegrees longitude = (CLLocationDegrees)[aDecoder decodeDoubleForKey:@"coordinate.longitude"];
+        _coordinate = (CLLocationCoordinate2D) { latitude, longitude };
     }
     return self;
 }
@@ -188,9 +189,8 @@
     [aCoder encodeObject:self.state forKey:@"state"];
     [aCoder encodeObject:self.country forKey:@"country"];
     
-    NSValue *coordinateValue = [NSValue value:&_coordinate
-                                 withObjCType:@encode(CLLocationCoordinate2D)];
-    [aCoder encodeObject:coordinateValue forKey:@"coordinate"];
+    [aCoder encodeDouble:self.coordinate.latitude forKey:@"coordinate.latitude"];
+    [aCoder encodeDouble:self.coordinate.longitude forKey:@"coordinate.longitude"];
 }
 
 #pragma mark NSSecureCoding

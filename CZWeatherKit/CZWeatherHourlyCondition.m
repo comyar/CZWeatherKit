@@ -68,11 +68,13 @@
         self.humidity = [aDecoder decodeFloatForKey:@"humidity"];
         self.windDirection = [aDecoder decodeFloatForKey:@"windDirection"];
         
-        NSValue *windSpeedValue = [aDecoder decodeObjectOfClass:[NSValue class] forKey:@"windSpeed"];
-        [windSpeedValue getValue:&_windDirection];
+        float mph = [aDecoder decodeFloatForKey:@"windSpeed.mph"];
+        float kph = [aDecoder decodeFloatForKey:@"windSpeed.kph"];
+        _windSpeed = (CZWindSpeed) { mph, kph };
         
-        NSValue *temperatureValue = [aDecoder decodeObjectOfClass:[NSValue class] forKey:@"temperature"];
-        [temperatureValue getValue:&_temperature];
+        float f = [aDecoder decodeFloatForKey:@"temperature.f"];
+        float c = [aDecoder decodeFloatForKey:@"temperature.c"];
+        _temperature = (CZTemperature) { f, c };
     }
     return self;
 }
@@ -85,11 +87,11 @@
     [aCoder encodeFloat:self.humidity forKey:@"humidity"];
     [aCoder encodeFloat:self.windDirection forKey:@"windDirection"];
     
-    NSValue *windSpeedValue = [NSValue value:&_windSpeed withObjCType:@encode(CZWindSpeed)];
-    [aCoder encodeObject:windSpeedValue forKey:@"windSpeed"];
+    [aCoder encodeFloat:self.windSpeed.mph forKey:@"windSpeed.mph"];
+    [aCoder encodeFloat:self.windSpeed.kph forKey:@"windSpeed.kph"];
     
-    NSValue *temperatureValue = [NSValue value:&_temperature withObjCType:@encode(CZTemperature)];
-    [aCoder encodeObject:temperatureValue forKey:@"temperature"];
+    [aCoder encodeFloat:self.temperature.f forKey:@"temperature.f"];
+    [aCoder encodeFloat:self.temperature.c forKey:@"temperature.c"];
 }
 
 #pragma mark NSSecureCoding

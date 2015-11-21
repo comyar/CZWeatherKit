@@ -67,4 +67,15 @@
     XCTAssertNotEqual([a hash], [b hash]);
 }
 
+- (void)testArchiving
+{
+    CZWeatherLocation *a = [CZWeatherLocation locationFromCity:@"Seattle" country:@"US"];
+    
+    [NSKeyedArchiver archiveRootObject:a toFile:[NSTemporaryDirectory() stringByAppendingString:@"CZWeatherLocation.archive"]];
+    CZWeatherLocation *b = [NSKeyedUnarchiver unarchiveObjectWithFile:[NSTemporaryDirectory() stringByAppendingString:@"CZWeatherLocation.archive"]];
+    
+    XCTAssertEqualObjects(a, b);
+    XCTAssertEqual([a hash], [b hash]);
+}
+
 @end
