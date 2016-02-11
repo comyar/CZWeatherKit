@@ -23,7 +23,7 @@ CZWeatherKit is a simple, extensible weather library for iOS, tvOS, and OS X tha
 
 # Getting Started
 
-### Cocoa Pods
+### CocoaPods
 
 Add the following to your Podfile:
 
