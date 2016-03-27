@@ -179,3 +179,4 @@ For feature requests or general questions, feel free to post an issue.
 * Seb Jachec, [@sebj](https://github.com/sebj)
 * Seth Sandler [@cerupcat](https://github.com/cerupcat)
 * Alexandre Perez [@awph](https://github.com/awph)
+* [@ferhoodle](https://github.com/ferhoodle)
