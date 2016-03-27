@@ -190,8 +190,8 @@ static const float epsilon = 0.001;
     XCTAssertEqualWithAccuracy(18.4869, weatherData.current.temperature.c, epsilon);
     XCTAssertEqualWithAccuracy(1433035292, [weatherData.current.date timeIntervalSince1970], 100);
     XCTAssertEqualWithAccuracy(238.5050, weatherData.current.windDirection, epsilon);
-    XCTAssertEqualWithAccuracy(1.2427, weatherData.current.windSpeed.mph, epsilon);
-    XCTAssertEqualWithAccuracy(2.0000, weatherData.current.windSpeed.kph, epsilon);
+    XCTAssertEqualWithAccuracy(4.47387258, weatherData.current.windSpeed.mph, epsilon);
+    XCTAssertEqualWithAccuracy(7.2, weatherData.current.windSpeed.kph, epsilon);
     XCTAssertEqualWithAccuracy(1016.9000, weatherData.current.pressure.mb, epsilon);
     XCTAssertEqualWithAccuracy(30.0291, weatherData.current.pressure.inch, epsilon);
     XCTAssertEqualWithAccuracy(68, weatherData.current.humidity, epsilon);
@@ -259,8 +259,8 @@ static const float epsilon = 0.001;
     XCTAssertEqualWithAccuracy(18.4900, condition.temperature.c, epsilon);
     XCTAssertEqualWithAccuracy(1433030400, [condition.date timeIntervalSince1970], 100);
     XCTAssertEqualWithAccuracy(238.5050, condition.windDirection, epsilon);
-    XCTAssertEqualWithAccuracy(1.2427, condition.windSpeed.mph, epsilon);
-    XCTAssertEqualWithAccuracy(2.000, condition.windSpeed.kph, epsilon);
+    XCTAssertEqualWithAccuracy(4.47387258, condition.windSpeed.mph, epsilon);
+    XCTAssertEqualWithAccuracy(7.2, condition.windSpeed.kph, epsilon);
     XCTAssertEqualWithAccuracy(68, condition.humidity, epsilon);
 }
 
@@ -287,8 +287,8 @@ static const float epsilon = 0.001;
     XCTAssertEqualWithAccuracy(11.6799, condition.temperature.c, epsilon);
     XCTAssertEqualWithAccuracy(1369728000, [condition.date timeIntervalSince1970], 100);
     XCTAssertEqualWithAccuracy(210.0, condition.windDirection, epsilon);
-    XCTAssertEqualWithAccuracy(1.9262, condition.windSpeed.mph, epsilon);
-    XCTAssertEqualWithAccuracy(3.1000, condition.windSpeed.kph, epsilon);
+    XCTAssertEqualWithAccuracy(6.934502499, condition.windSpeed.mph, epsilon);
+    XCTAssertEqualWithAccuracy(11.16, condition.windSpeed.kph, epsilon);
     XCTAssertEqualWithAccuracy(58.0000, condition.humidity, epsilon);
 }
 

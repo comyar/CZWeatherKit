@@ -87,8 +87,12 @@ static inline float cz_mtokph(float mph) {
     return 1.60934 * mph;
 }
 
-static inline float cz_ktomph(float kph) {
-    return 0.6213727366 * kph;
+static inline float cz_mpstomph(float mps) {
+    return 2.236936 * mps;
+}
+
+static inline float cz_mpstokph(float mps) {
+    return 3.6 * mps;
 }
 
 static inline float cz_mbtoin(float mb) {

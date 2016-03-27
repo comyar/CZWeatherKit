@@ -201,8 +201,8 @@
 + (CZWindSpeed)windSpeedForDataPoint:(NSDictionary *)dataPoint
 {
     return (CZWindSpeed) {
-        .mph = dataPoint[@"speed"] ? cz_ktomph([dataPoint[@"speed"]floatValue]) : CZValueUnavailable,
-        .kph = dataPoint[@"speed"] ? [dataPoint[@"speed"]floatValue] : CZValueUnavailable
+        .mph = dataPoint[@"speed"] ? cz_mpstomph([dataPoint[@"speed"]floatValue]) : CZValueUnavailable,
+        .kph = dataPoint[@"speed"] ? cz_mpstokph([dataPoint[@"speed"]floatValue]) : CZValueUnavailable
     };
 }
 
