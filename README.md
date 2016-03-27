@@ -8,7 +8,7 @@
 
 CZWeatherKit is a simple, extensible weather library for iOS, tvOS, and OS X that allows for easy fetching of weather data from various weather services.
 
-#### What's New in v2.2.3
+#### What's New in v2.2.5
 
 ###### Features
 
@@ -23,7 +23,7 @@ CZWeatherKit is a simple, extensible weather library for iOS, tvOS, and OS X tha
 
 # Getting Started
 
-### Cocoa Pods
+### CocoaPods
 
 Add the following to your Podfile:
 
@@ -178,4 +178,4 @@ For feature requests or general questions, feel free to post an issue.
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 * Seb Jachec, [@sebj](https://github.com/sebj)
 * Seth Sandler [@cerupcat](https://github.com/cerupcat)
-
+* Alexandre Perez [@awph](https://github.com/awph)
