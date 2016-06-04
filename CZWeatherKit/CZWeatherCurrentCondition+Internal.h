@@ -87,4 +87,14 @@
  */
 @property (assign, NS_NONATOMIC_IOSONLY) CZTemperature temperature;
 
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZTemperature lowTemperature;
+
+/**
+ @warning Not for external use.
+ */
+@property (assign, NS_NONATOMIC_IOSONLY) CZTemperature highTemperature;
+
 @end

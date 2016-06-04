@@ -88,4 +88,14 @@
  */
 @property (readonly, NS_NONATOMIC_IOSONLY) CZWindSpeed windSpeed;
 
+/**
+ *  The min temperature
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZTemperature lowTemperature;
+
+/**
+ *  The max temperature
+ */
+@property (readonly, NS_NONATOMIC_IOSONLY) CZTemperature highTemperature;
+
 @end
