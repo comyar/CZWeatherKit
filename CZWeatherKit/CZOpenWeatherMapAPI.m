@@ -181,6 +181,8 @@
     
     condition.date = [CZOpenWeatherMapAPI dateForDataPoint:JSON];
     condition.temperature = [CZOpenWeatherMapAPI temperatureForDataPoint:main name:@"temp"];
+    condition.lowTemperature = [CZOpenWeatherMapAPI temperatureForDataPoint:main name:@"temp_min"];
+    condition.highTemperature = [CZOpenWeatherMapAPI temperatureForDataPoint:main name:@"temp_max"];
     condition.windSpeed = [CZOpenWeatherMapAPI windSpeedForDataPoint:wind];
     condition.windDirection = [CZOpenWeatherMapAPI windDirectionForDataPoint:wind];
     condition.pressure = [CZOpenWeatherMapAPI pressureForDataPoint:main];

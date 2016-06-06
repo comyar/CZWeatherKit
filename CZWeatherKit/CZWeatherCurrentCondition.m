@@ -42,6 +42,8 @@
 @property (assign, NS_NONATOMIC_IOSONLY) CZWindSpeed windSpeed;
 @property (assign, NS_NONATOMIC_IOSONLY) CZWindDirection windDirection;
 @property (assign, NS_NONATOMIC_IOSONLY) CZTemperature temperature;
+@property (assign, NS_NONATOMIC_IOSONLY) CZTemperature lowTemperature;
+@property (assign, NS_NONATOMIC_IOSONLY) CZTemperature highTemperature;
 
 @end
 
@@ -80,6 +82,14 @@
         float f = [aDecoder decodeFloatForKey:@"temperature.f"];
         float c = [aDecoder decodeFloatForKey:@"temperature.c"];
         _temperature = (CZTemperature) { f, c };
+        
+        float minf = [aDecoder decodeFloatForKey:@"lowTemperature.f"];
+        float minc = [aDecoder decodeFloatForKey:@"lowTemperature.c"];
+        _lowTemperature = (CZTemperature) { minf, minc };
+        
+        float maxf = [aDecoder decodeFloatForKey:@"highTemperature.f"];
+        float maxc = [aDecoder decodeFloatForKey:@"highTemperature.c"];
+        _highTemperature = (CZTemperature) { maxf, maxc };
     }
     return self;
 }
@@ -100,6 +110,12 @@
     
     [aCoder encodeFloat:self.temperature.f forKey:@"temperature.f"];
     [aCoder encodeFloat:self.temperature.c forKey:@"temperature.c"];
+    
+    [aCoder encodeFloat:self.lowTemperature.f forKey:@"lowTemperature.f"];
+    [aCoder encodeFloat:self.highTemperature.c forKey:@"lowTemperature.c"];
+    
+    [aCoder encodeFloat:self.lowTemperature.f forKey:@"highTemperature.f"];
+    [aCoder encodeFloat:self.highTemperature.c forKey:@"highTemperature.c"];
 }
 
 #pragma mark NSSecureCoding
@@ -122,6 +138,8 @@
     copy.windDirection = self.windDirection;
     copy.windSpeed = self.windSpeed;
     copy.temperature = self.temperature;
+    copy.lowTemperature = self.lowTemperature;
+    copy.highTemperature = self.highTemperature;
     return copy;
 }
 
