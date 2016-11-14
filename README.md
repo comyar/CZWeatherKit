@@ -174,7 +174,7 @@ For feature requests or general questions, feel free to post an issue.
 
 ### Contributers
 
-* Comyar Zaheri, [@comyarzaheri](https://github.com/comyarzaheri)
+* Comyar Zaheri, [@comyar](https://github.com/comyar)
 * Eli Perkins, [@eliperkins](https://github.com/eliperkins)
 * Seb Jachec, [@sebj](https://github.com/sebj)
 * Seth Sandler [@cerupcat](https://github.com/cerupcat)
