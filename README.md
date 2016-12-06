@@ -1,3 +1,5 @@
+### Deprecated, consider using [Jupiter](https://github.com/comyar/Jupiter) instead.
+
 ![](header.png)
 
 [![Build Status](https://travis-ci.org/comyar/CZWeatherKit.svg?branch=master)](https://travis-ci.org/comyar/CZWeatherKit)
