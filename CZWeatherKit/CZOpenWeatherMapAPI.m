@@ -46,7 +46,7 @@
         CZOpenWeatherMapRequest *openWeatherMapRequest = (CZOpenWeatherMapRequest *)request;
         
         NSURLComponents *components = [NSURLComponents new];
-        components.scheme = @"http";
+        components.scheme = @"https";
         components.host = [openWeatherMapRequest.feature isEqualToString:@"history/city"] ? @"openweathermap.org" : @"api.openweathermap.org";
         components.path = [NSString stringWithFormat:@"/data/2.5/%@", openWeatherMapRequest.feature];
         components.query = [CZOpenWeatherMapAPI queryForRequest:openWeatherMapRequest];
